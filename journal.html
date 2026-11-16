@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OKIDOKEI · Journal</title>
+    <meta name="description" content="Artículos sobre relojería: esqueletado, relojes de buceo y fases lunares.">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layouts.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<script src="js/iconos.js"></script>
+
+<header class="site-header" id="siteHeader">
+    <div class="hdr">
+        <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mnav"><svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg></button>
+        <nav class="hdr-nav" aria-label="Principal">
+            <a href="tienda.html">Tienda</a>
+            <div class="has-drop">
+                <a class="drop-trigger" href="colecciones.html">Colecciones</a>
+                <div class="drop">
+                    <a href="colecciones.html#esqueleto">Esqueleto <span>el arte en movimiento</span></a>
+                    <a href="colecciones.html#heritage">Heritage <span>elegancia atemporal</span></a>
+                    <a href="colecciones.html#marine">Marine <span>hechos para la acción</span></a>
+                    <a href="colecciones.html#noir">Noir <span>negro y cobre</span></a>
+                    <a href="colecciones.html#luna">Luna <span>el cielo en tu muñeca</span></a>
+                    <a href="colecciones.html#origine">Origine <span>piezas numeradas</span></a>
+                    <a class="drop-all" href="colecciones.html">Ver todas las colecciones</a>
+                </div>
+            </div>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="journal.html" aria-current="page">Journal</a>
+        </nav>
+        <a class="brand" href="index.html" aria-label="OKIDOKEI, ir al inicio">
+            <svg class="brand-mark" aria-hidden="true"><use href="#emblem"/></svg>
+            <span class="brand-word cu-text">OKIDOKEI</span>
+        </a>
+        <div class="hdr-actions">
+            <button class="icon-btn" id="searchBtn" type="button" aria-label="Buscar" aria-expanded="false" aria-controls="searchPanel"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></button>
+            <a class="icon-btn act-user" id="userBtn" href="cuenta.html" aria-label="Mi cuenta"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></a>
+            <a class="icon-btn act-fav" id="favBtn" href="favoritos.html" aria-label="Favoritos"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span class="badge" data-count="favoritos" hidden>0</span></a>
+            <a class="icon-btn" id="cartBtn" href="carrito.html" aria-label="Carrito"><svg class="icon" aria-hidden="true"><use href="#i-bag"/></svg><span class="badge" data-count="carrito" hidden>0</span></a>
+        </div>
+    </div>
+    <div class="search-panel" id="searchPanel" hidden>
+        <div class="search-inner">
+            <label class="search-field" for="searchInput">
+                <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+                <input id="searchInput" type="search" placeholder="Busca un reloj, una colección…" autocomplete="off">
+            </label>
+            <div class="search-results" id="searchResults" aria-live="polite"></div>
+        </div>
+    </div>
+</header>
+
+<div class="mnav" id="mnav" aria-hidden="true">
+    <div class="mnav-scrim" data-close-menu></div>
+    <nav class="mnav-panel" aria-label="Menú móvil">
+        <div class="mnav-top">
+            <span class="brand-word mnav-word cu-text">OKIDOKEI</span>
+            <button class="icon-btn" type="button" data-close-menu aria-label="Cerrar menú"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+        </div>
+        <a href="index.html">Inicio</a>
+        <a href="tienda.html">Tienda</a>
+        <a href="colecciones.html">Colecciones</a>
+        <div class="mnav-sub">
+        <a href="colecciones.html#esqueleto">Esqueleto</a>
+        <a href="colecciones.html#heritage">Heritage</a>
+        <a href="colecciones.html#marine">Marine</a>
+        <a href="colecciones.html#noir">Noir</a>
+        <a href="colecciones.html#luna">Luna</a>
+        <a href="colecciones.html#origine">Origine</a>
+        </div>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="journal.html" aria-current="page">Journal</a>
+        <a href="favoritos.html">Favoritos</a>
+        <a href="carrito.html">Carrito</a>
+        <a href="cuenta.html">Mi cuenta</a>
+        <a href="ayuda.html">Ayuda</a>
+    </nav>
+</div>
+
+<main>
+    <section class="page-hero">
+        <div class="wrap">
+            <nav class="crumbs" aria-label="Estás aquí"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Journal</span></nav>
+            <p class="eyebrow">Historias que inspiran</p>
+            <h1 class="page-title">Journal</h1>
+            <p class="page-sub">Oficio, guías y curiosidades del mundo de la relojería.</p>
+        </div>
+        <svg class="page-mark" aria-hidden="true"><use href="#emblem"/></svg>
+    </section>
+
+    <section class="section-dark section" id="articulos" aria-labelledby="jTitle">
+        <div class="wrap">
+            <div class="sec-head"><div><p class="eyebrow">Artículos</p><h2 class="sec-title" id="jTitle">Últimos artículos</h2></div></div>
+            <div class="grid-3">
+                <article class="story"><a class="story-img foto" href="#esqueletado" tabindex="-1" aria-hidden="true"><img src="assets/journal/esqueletado.jpg" alt="Detalle del volante y los puentes de un movimiento esqueletado" loading="lazy" data-foto></a>
+                    <div class="story-body"><p class="eyebrow">Artesanía</p><h3><a href="#esqueletado">El arte del esqueletado</a></h3><p>Cómo se vacía un movimiento sin restarle resistencia.</p><a class="link-arrow" href="#esqueletado">Leer más <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></a></div></article>
+                <article class="story"><a class="story-img foto" href="#buceo" tabindex="-1" aria-hidden="true"><img src="assets/journal/buceo.jpg" alt="Perfil de un reloj de buceo con bisel giratorio y corona" loading="lazy" data-foto></a>
+                    <div class="story-body"><p class="eyebrow">Guía</p><h3><a href="#buceo">Cómo elegir tu primer reloj de buceo</a></h3><p>Hermeticidad, bisel y legibilidad: lo que de verdad importa.</p><a class="link-arrow" href="#buceo">Leer más <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></a></div></article>
+                <article class="story"><a class="story-img foto" href="#fases-lunares" tabindex="-1" aria-hidden="true"><img src="assets/journal/fases-lunares.jpg" alt="Ventana de fases lunares sobre una esfera blanca" loading="lazy" data-foto></a>
+                    <div class="story-body"><p class="eyebrow">Colecciones</p><h3><a href="#fases-lunares">Fases lunares, una complicación poética</a></h3><p>El mecanismo que sigue el ciclo de 29,5 días de la luna.</p><a class="link-arrow" href="#fases-lunares">Leer más <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></a></div></article>
+            </div>
+        </div>
+    </section>
+    <div class="section-2">
+        <article class="article" id="esqueletado" aria-labelledby="t-esqueletado">
+            <header class="article-head"><p class="eyebrow">Artesanía</p><h2 id="t-esqueletado">El arte del esqueletado</h2><p class="article-meta">12 de noviembre de 2026 · 4 min de lectura</p></header>
+            <div class="article-img foto"><img src="assets/journal/esqueletado.jpg" alt="Detalle del volante y los puentes de un movimiento esqueletado" loading="lazy" data-foto></div>
+            <div class="prose">
+                <p>Un reloj esqueletado es aquel al que se le ha quitado todo el metal que no es imprescindible de la platina y los puentes, para que el movimiento quede a la vista. Lo que queda es una estructura de arcos y brazos que tiene que seguir sujetando cada rueda en su sitio, al micrómetro.</p>
+                <h3>Cómo se hace</h3>
+                <p>Tradicionalmente, el relojero dibuja el diseño sobre la pieza, taladra pequeños agujeros de entrada y recorta con una sierra de marquetería muy fina. Después lima y pule cada borde a mano. Hoy muchas casas recortan con máquinas de control numérico o electroerosión y reservan la mano para lo que más se nota: el acabado.</p>
+                <h3>Los acabados que lo hacen brillar</h3>
+                <ul><li><strong>Biselado:</strong> los cantos se achaflanan y se pulen para que cada brazo atrape la luz.</li><li><strong>Perlado:</strong> pequeños círculos superpuestos sobre la platina, como escamas.</li><li><strong>Côtes de Genève:</strong> franjas onduladas sobre los puentes.</li></ul>
+                <p>En un esqueleto los acabados importan más que en ningún otro reloj, porque no hay esfera que los esconda.</p>
+                <blockquote>Quitar metal es fácil. Quitarlo sin que el reloj pierda rigidez es el oficio.</blockquote>
+                <p>Nuestra colección <a href="colecciones.html#esqueleto">Esqueleto</a> deja ver el barrilete con el emblema de OKIDOKEI, el tren de rodaje y el volante latiendo cuatro veces por segundo (28.800 alternancias por hora). <a href="producto.html#esqueleto-cobre">Míralo de cerca</a>.</p>
+            </div>
+            <div class="article-foot"><a class="link-arrow" href="#articulos"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg>Volver a los artículos</a><a class="link-arrow" href="tienda.html">Ir a la tienda <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></a></div>
+        </article>
+        <article class="article" id="buceo" aria-labelledby="t-buceo">
+            <header class="article-head"><p class="eyebrow">Guía</p><h2 id="t-buceo">Cómo elegir tu primer reloj de buceo</h2><p class="article-meta">5 de noviembre de 2026 · 5 min de lectura</p></header>
+            <div class="article-img foto"><img src="assets/journal/buceo.jpg" alt="Perfil de un reloj de buceo con bisel giratorio y corona" loading="lazy" data-foto></div>
+            <div class="prose">
+                <p>Un reloj de buceo es probablemente el reloj más versátil que puedes tener: aguanta el agua, se lee en cualquier luz y queda bien con traje. Estas son las claves para elegir el primero.</p>
+                <h3>Hermeticidad: lo que significan los metros</h3>
+                <p>La cifra de la esfera (100 m, 200 m, 300 m) es una presión de prueba en laboratorio, no la profundidad a la que puedes bajar. Para nadar basta con 10 ATM (100 m). La norma internacional de relojes de buceo, ISO 6425, exige como mínimo 100 metros.</p>
+                <h3>El bisel solo gira en un sentido</h3>
+                <p>Antes de sumergirte alineas el triángulo del bisel con el minutero. Como solo gira hacia la izquierda, si se mueve por un golpe marcará más tiempo de inmersión, nunca menos. Es una medida de seguridad.</p>
+                <h3>Legibilidad y corona</h3>
+                <ul><li>Agujas e índices con material luminiscente: la norma pide poder leer la hora a 25 cm en la oscuridad.</li><li>Corona roscada: enróscala siempre antes de entrar en el agua.</li><li>Después del mar, acláralo con agua dulce.</li></ul>
+                <h3>¿Brazalete o caucho?</h3>
+                <p>El brazalete de acero dura toda la vida y combina con todo; el caucho es más ligero y cómodo dentro del agua. La piel, para el agua, mejor no.</p>
+                <p>Nuestro <a href="colecciones.html#marine">Marine</a> cumple todo lo anterior con 300 metros de hermeticidad. Si buceas a menudo, revisa sus juntas cada año.</p>
+            </div>
+            <div class="article-foot"><a class="link-arrow" href="#articulos"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg>Volver a los artículos</a><a class="link-arrow" href="tienda.html">Ir a la tienda <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></a></div>
+        </article>
+        <article class="article" id="fases-lunares" aria-labelledby="t-fases-lunares">
+            <header class="article-head"><p class="eyebrow">Colecciones</p><h2 id="t-fases-lunares">Fases lunares, una complicación poética</h2><p class="article-meta">28 de octubre de 2026 · 4 min de lectura</p></header>
+            <div class="article-img foto"><img src="assets/journal/fases-lunares.jpg" alt="Ventana de fases lunares sobre una esfera blanca" loading="lazy" data-foto></div>
+            <div class="prose">
+                <p>De todas las complicaciones de un reloj, la fase lunar es la más poética: no sirve para llegar puntual, sirve para saber cómo está el cielo.</p>
+                <h3>Cómo funciona</h3>
+                <p>De una luna nueva a la siguiente pasan unos 29,53 días (el mes sinódico). El mecanismo clásico usa un disco con 59 dientes y dos lunas pintadas: avanza un diente cada día y completa media vuelta, una lunación, en 29,5 días.</p>
+                <h3>¿Es exacto?</h3>
+                <p>Casi. La diferencia entre 29,5 y 29,53 días hace que el disco se adelante un día aproximadamente cada dos años y siete meses. Los mecanismos de alta precisión, con ruedas de 135 dientes, reducen el error a un día cada 122 años.</p>
+                <h3>Cómo ponerlo en hora</h3>
+                <ol><li>Busca la fecha de la última luna llena.</li><li>Gira el disco con el corrector hasta que la luna quede centrada en la ventana.</li><li>Avanza un paso por cada día que haya pasado desde entonces.</li></ol>
+                <p class="note">Evita corregir la fase lunar o la fecha entre las 21:00 y las 3:00: a esas horas el mecanismo está engranando y puede dañarse.</p>
+                <p>En nuestro <a href="colecciones.html#luna">Luna</a> dos lunas de cobre recorren un cielo negro con estrellas. <a href="producto.html#luna-acero">Míralo de cerca</a>.</p>
+            </div>
+            <div class="article-foot"><a class="link-arrow" href="#articulos"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg>Volver a los artículos</a><a class="link-arrow" href="tienda.html">Ir a la tienda <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></a></div>
+        </article>
+    </div>
+
+    <section class="on-light news" id="newsletter" aria-labelledby="newsTitle">
+        <div class="wrap news-grid">
+            <div class="news-art" aria-hidden="true">
+                <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width=".7">
+                    <circle cx="100" cy="100" r="78"/><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="52"/><circle cx="100" cy="100" r="4"/>
+                    <path d="M100 30v10M100 160v10M30 100h10M160 100h10M135 39.4l-5 8.7M65 160.6l5-8.7M39.4 65l8.7 5M160.6 135l-8.7-5M39.4 135l8.7-5M160.6 65l-8.7 5M65 39.4l5 8.7M135 160.6l-5-8.7"/>
+                    <path d="M100 100 70 72M100 100l38-20"/><path d="M178 92h8v16h-8M88 22V10h24v12M88 178v12h24v-12"/>
+                    <circle cx="100" cy="132" r="14"/><circle cx="100" cy="132" r="9"/>
+                </svg>
+            </div>
+            <div class="news-copy">
+                <p class="eyebrow">Sé el primero en saberlo</p>
+                <h2 id="newsTitle">Únete a nuestra comunidad.</h2>
+                <p>Recibe novedades, lanzamientos y ofertas exclusivas directamente en tu correo.</p>
+            </div>
+            <form class="news-form" data-newsletter novalidate>
+                <div class="news-row">
+                    <label class="sr-only" for="newsEmail">Correo electrónico</label>
+                    <input id="newsEmail" name="email" type="email" placeholder="Tu correo electrónico" autocomplete="email" required>
+                    <button class="btn btn-dark" type="submit">Suscribirme</button>
+                </div>
+                <label class="check" for="newsConsent"><input id="newsConsent" type="checkbox" required> <span>Acepto recibir comunicaciones de OKIDOKEI y la <a href="legal.html#privacidad">política de privacidad</a>.</span></label>
+                <p class="form-msg" role="status"></p>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="wrap foot-grid">
+        <div class="foot-brand">
+            <a class="brand" href="index.html" aria-label="OKIDOKEI, ir al inicio"><svg class="brand-mark" aria-hidden="true"><use href="#emblem"/></svg><span class="brand-word cu-text">OKIDOKEI</span></a>
+            <p>Tu relojería online de confianza. Relojes seleccionados uno a uno, revisados en taller y enviados a tu puerta.</p>
+            <div class="social">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#i-fb"/></svg></a>
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><svg class="icon" aria-hidden="true"><use href="#i-yt"/></svg></a>
+                <a href="https://www.pinterest.com/" target="_blank" rel="noopener" aria-label="Pinterest"><svg class="icon" aria-hidden="true"><use href="#i-pinterest"/></svg></a>
+            </div>
+        </div>
+        <div class="foot-col"><h4>Tienda</h4><ul><li><a href="tienda.html">Todos los relojes</a></li><li><a href="tienda.html#novedades">Novedades</a></li><li><a href="tienda.html#limitadas">Ediciones limitadas</a></li><li><a href="favoritos.html">Mis favoritos</a></li><li><a href="carrito.html">Mi carrito</a></li></ul></div>
+        <div class="foot-col"><h4>Colecciones</h4><ul><li><a href="colecciones.html#heritage">Vestir</a></li><li><a href="colecciones.html#marine">Deportivos</a></li><li><a href="colecciones.html#esqueleto">Esqueleto</a></li><li><a href="colecciones.html#luna">Fases lunares</a></li><li><a href="colecciones.html#noir">Noir</a></li><li><a href="colecciones.html#origine">Ediciones limitadas</a></li></ul></div>
+        <div class="foot-col"><h4>Ayuda</h4><ul><li><a href="ayuda.html#contacto">Contacto</a></li><li><a href="ayuda.html#envios">Envíos y entregas</a></li><li><a href="ayuda.html#devoluciones">Devoluciones</a></li><li><a href="ayuda.html#garantia">Garantía</a></li><li><a href="ayuda.html#faq">Preguntas frecuentes</a></li></ul></div>
+        <div class="foot-col"><h4>Nosotros</h4><ul><li><a href="nosotros.html">Nuestra historia</a></li><li><a href="nosotros.html#taller">El taller</a></li><li><a href="nosotros.html#servicios">Servicios</a></li><li><a href="journal.html">Journal</a></li><li><a href="nosotros.html#empleo">Trabaja con nosotros</a></li></ul></div>
+        <div class="foot-col"><h4>Compra segura</h4><ul><li><a href="cuenta.html">Mi cuenta</a></li><li><span>Envíos a toda España y la UE</span></li><li><span>Atención de lunes a viernes</span></li></ul><div class="pay" aria-label="Métodos de pago"><span>Tarjeta</span><span>PayPal</span><span>Bizum</span><span>Transferencia</span></div></div>
+    </div>
+    <div class="wrap foot-bottom">
+        <span>© <span data-year>2026</span> OKIDOKEI. Todos los derechos reservados.</span>
+        <nav aria-label="Legal"><a href="legal.html#aviso">Aviso legal</a><a href="legal.html#privacidad">Privacidad</a><a href="legal.html#cookies">Cookies</a></nav>
+        <span>España · EUR €</span>
+    </div>
+</footer>
+
+<div class="drawer" id="cart" aria-hidden="true">
+    <div class="drawer-scrim" data-close-cart></div>
+    <aside class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+        <div class="drawer-head"><h2 id="cartTitle">Tu carrito</h2><button class="icon-btn" type="button" data-close-cart aria-label="Cerrar carrito"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button></div>
+        <div class="cart-list" id="cartList"></div>
+        <div class="drawer-foot">
+            <div class="subtotal"><span>Subtotal</span><strong id="cartTotal">0 €</strong></div>
+            <small>Envío asegurado gratuito. Impuestos incluidos.</small>
+            <a class="btn btn-ghost" href="carrito.html">Ver carrito</a>
+            <a class="btn btn-copper" href="carrito.html#resumen">Finalizar compra</a>
+        </div>
+    </aside>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/datos.js"></script>
+<script src="js/comun.js"></script>
+</body>
+</html>

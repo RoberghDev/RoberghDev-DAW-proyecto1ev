@@ -1,0 +1,29 @@
+:root {
+
+    --black: #0a0a0a;
+    --black-2: #121110;
+    --black-3: #1a1816;
+    --line-dark: #2c2825;
+    --paper: #f5f1eb;
+    --paper-2: #ebe4da;
+    --line-light: #d9d0c4;
+    --white: #ffffff;
+    --copper: #c98a5f;
+    --copper-hi: #efc19d;
+    --copper-lo: #8c4f2c;
+    --copper-ink: #8f512e;
+    --text-on-dark: #ece6df;
+    --muted-on-dark: #a69f97;
+    --text-on-light: #161412;
+    --muted-on-light: #5d5650;
+    --danger: #e0806b;
+    --cu-grad: linear-gradient(100deg, #8c4f2c 0%, #cf9468 28%, #f2cba9 46%, #c4855a 64%, #93542f 82%, #d29a70 100%);
+
+    --display: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+    --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+    --sans: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+
+    --wrap: 1320px;
+    --hdr: 92px;
+    color-scheme: dark;
+}

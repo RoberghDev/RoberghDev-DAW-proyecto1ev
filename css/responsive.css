@@ -1,0 +1,381 @@
+@media (max-width: 1180px) {
+    .cats-row {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 30px;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .craft {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .craft-list {
+        grid-column: 1 / -1;
+        border-left: 0;
+        border-top: 1px solid var(--line-light);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: none;
+    }
+
+    .craft-item {
+        border-right: 1px solid var(--line-light);
+    }
+
+    .trust-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .trust-item:nth-child(4) {
+        border-left: 0;
+    }
+
+    .trust-item {
+        border-bottom: 1px solid var(--line-dark);
+    }
+
+    .limited-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pieces {
+        grid-column: 1 / -1;
+        justify-self: center;
+        margin-bottom: 40px;
+    }
+
+    .man-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .services {
+        grid-column: 1 / -1;
+    }
+
+    .quote {
+        border-right: 0;
+    }
+
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .story {
+        grid-template-columns: 38% 1fr;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .news-art {
+        display: none;
+    }
+
+    .foot-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .foot-brand {
+        grid-column: 1 / -1;
+    }
+
+    .values {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .value:nth-child(3) {
+        border-left: 0;
+    }
+
+    .value:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line-dark);
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 30px;
+    }
+
+    .cart-layout {
+        grid-template-columns: 1fr 340px;
+    }
+
+    .acc-panel {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .acc-panel .acc-card:first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 900px) {
+    :root {
+        --hdr: 76px;
+    }
+
+    .hdr {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .hdr-nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: inline-grid;
+    }
+
+    .brand-mark {
+        width: 24px;
+        height: 24px;
+    }
+
+    .act-user,
+    .act-fav {
+        display: none;
+    }
+
+    .hero-tab {
+        min-width: auto;
+        padding: 0 16px;
+    }
+
+    .hero-foot {
+        grid-template-columns: 1fr auto;
+    }
+
+    .hero-foot .drag-hint {
+        display: none;
+    }
+
+    .hero-model {
+        display: none;
+    }
+
+    .craft {
+        grid-template-columns: 1fr;
+    }
+
+    .craft-visual {
+        min-height: 360px;
+    }
+
+    .craft-text {
+        padding: 44px clamp(16px, 5vw, 40px);
+    }
+
+    .pdp {
+        grid-template-columns: 1fr;
+    }
+
+    .pdp-gallery {
+        position: static;
+    }
+
+    .coll,
+    .coll:nth-of-type(even) {
+        grid-template-columns: 1fr;
+    }
+
+    .coll:nth-of-type(even) .coll-media {
+        order: 0;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+    }
+
+    .about-visual {
+        min-height: 340px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .jobs {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .summary {
+        position: static;
+    }
+
+    .acc-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .acc-tabs {
+        display: flex;
+    }
+
+    .acc-form {
+        display: none;
+    }
+
+    .acc-form.is-active {
+        display: flex;
+    }
+
+    .help-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .legal {
+        grid-template-columns: 1fr;
+    }
+
+    .legal-nav {
+        position: static;
+        grid-template-columns: repeat(3, auto);
+        justify-content: start;
+    }
+}
+
+@media (max-width: 640px) {
+    .cats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .craft-list {
+        grid-template-columns: 1fr;
+    }
+
+    .craft-item {
+        border-right: 0;
+    }
+
+    .trust-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .trust-item {
+        justify-content: flex-start;
+        border-left: 0 !important;
+    }
+
+    .trust-item:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .limited-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .limited-img {
+        min-height: 300px;
+    }
+
+    .limited-text {
+        padding: 0;
+    }
+
+    .man-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quote {
+        border-left: 0;
+        padding: 0;
+    }
+
+    .story {
+        grid-template-columns: 1fr;
+    }
+
+    .story-img {
+        aspect-ratio: 16 / 10;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .news-row input {
+        border-right: 1px solid #b9ada0;
+    }
+
+    .foot-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-title {
+        letter-spacing: .24em;
+        padding-left: .24em;
+    }
+
+    .page-title {
+        letter-spacing: .18em;
+    }
+
+    .values {
+        grid-template-columns: 1fr;
+    }
+
+    .value + .value {
+        border-left: 0;
+        border-top: 1px solid var(--line-dark);
+    }
+
+    .value:nth-child(-n+2) {
+        border-bottom: 0;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .row-item {
+        grid-template-columns: 80px 1fr;
+        gap: 12px 16px;
+    }
+
+    .row-thumb {
+        width: 80px;
+        height: 80px;
+        grid-row: span 2;
+    }
+
+    .row-item .qty {
+        justify-self: start;
+    }
+
+    .row-price {
+        text-align: left;
+        min-width: 0;
+    }
+
+    .acc-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+
+    .shop-filters .field {
+        min-width: calc(50% - 7px);
+        flex: 1;
+    }
+
+    .legal-nav {
+        grid-template-columns: 1fr;
+    }
+}
