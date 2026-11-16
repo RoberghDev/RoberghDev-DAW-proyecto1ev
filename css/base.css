@@ -205,7 +205,7 @@ table {
     content: "";
     position: absolute;
     inset: 0;
-    background: url('../assets/emblema.svg') center / 30% no-repeat;
+    background: url('/assets/emblema.svg') center / 30% no-repeat;
     opacity: .16;
 }
 
