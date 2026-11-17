@@ -41,6 +41,8 @@ Los comandos disponibles están definidos en `package.json`:
 
 No hay scripts de tests ni de lint configurados en este frontend.
 
+enlace de la web en producción: https://robergh-dev-daw-proyecto1ev.vercel.app/
+
 ## Tecnologías
 
 - **React 19** y **React DOM**: montaje de la aplicación y creación de la vista.
@@ -49,6 +51,7 @@ No hay scripts de tests ni de lint configurados en este frontend.
 - **JavaScript**: lógica de interacción, catálogo, persistencia local y API.
 - **Three.js**: modelos y carrusel 3D del inicio. La biblioteca está incluida localmente en `public/js/vendor/`; no se descarga desde un CDN.
 - **CSS**: estilos propios organizados por tokens, elementos comunes, layouts y páginas.
+- **Vercel**: servicios de hosting
 
 Las versiones de dependencias y los scripts están en `package.json`; `package-lock.json` fija el árbol instalado.
 
