@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from 'react';
 import { createRoot } from 'react-dom/client';
 import parse from 'html-react-parser';
-import { login } from '../services/api.js';
+import { login, registrarNuevoUsuario } from '../services/api.js';
 import '../css/tokens.css';
 import '../css/base.css';
 import '../css/components.css';
@@ -84,7 +84,7 @@ function App() {
 		const description = document.querySelector('meta[name="description"]');
 		if (description) description.content = plantillaPagina.description;
 
-		window.OKI_API = { login };
+		window.OKI_API = { login, registrarNuevoUsuario };
 
 		let efectoActivo = true;
 		loadScripts(plantillaPagina.scripts).catch((errorCarga) => {

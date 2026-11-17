@@ -92,13 +92,14 @@ var OKI_API = window.OKI_API;
     });
 
     // LISTENER PARA CREAR UN NUEVO USUARIO
-    formRegistro.addEventListener('submit', function (eventoEnvio) {
+    formRegistro.addEventListener('submit', async function (eventoEnvio) {
         eventoEnvio.preventDefault();
         var nombre = $('#regNombre').value.trim();
         var correoElectronico = $('#regEmail').value.trim();
         var contrasena = $('#regPass').value.trim();
-        var telefono = $('regTelefono').value.trim();
+        var telefono = $('#regTelefono').value.trim();
         var mensajeFormulario = $('.form-msg', formRegistro);
+        var botonEnviar = $('button[type="submit"]', formRegistro);
 
         if (nombre.length < 2) {
             mensajeFormulario.textContent = 'Escribe tu nombre.';
@@ -116,7 +117,8 @@ var OKI_API = window.OKI_API;
         }
 
         if (telefono.length != 9) {
-            mensajeFormulario.textContent = "Escribe un número de teléfono válido."
+            mensajeFormulario.textContent = 'Escribe un número de teléfono válido.';
+            return;
         }
 
         if (!$('#regAcepto').checked) {
@@ -124,20 +126,25 @@ var OKI_API = window.OKI_API;
             return;
         }
 
+        mensajeFormulario.textContent = 'Creando cuenta…';
+        botonEnviar.disabled = true;
+
         try {
-            OKI_API.registrarNuevoUsuario(nombrem, contrasena, correoElectronico, telefono)
+            await OKI_API.registrarNuevoUsuario(nombre, contrasena, correoElectronico, telefono);
+            var datos = await OKI_API.login(correoElectronico, contrasena);
             if (!datos || !datos.token) {
                 throw new Error('La API no devolvió el token de sesión esperado.');
             }
-            
-            var usuario = { 
-                nombre  : nombre, 
-                email   : correoElectronico
+
+            var usuario = {
+                nombre: nombre,
+                email: correoElectronico
             };
 
             var registrados = OKI.leer('cuentas', {});
             registrados[correoElectronico.toLowerCase()] = usuario;
             OKI.guardar('cuentas', registrados);
+            OKI.guardar('token', datos.token);
             OKI.guardar('usuario', usuario);
             mensajeFormulario.textContent = '';
             formRegistro.reset();
@@ -145,8 +152,8 @@ var OKI_API = window.OKI_API;
             OKI.aviso('Cuenta creada. Bienvenido, ' + nombre);
 
         } catch (error) {
-            console.error('Error al iniciar sesión:', error);
-            mensajeFormulario.textContent = error.message || 'No se pudo iniciar sesión.';
+            console.error('Error al registrar usuario:', error);
+            mensajeFormulario.textContent = error.message || 'No se pudo crear la cuenta.';
         } finally {
             botonEnviar.disabled = false;
         }
