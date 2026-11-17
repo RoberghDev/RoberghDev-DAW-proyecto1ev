@@ -1,26 +1,31 @@
 (function () {
     'use strict';
-    var $ = OKI.$;
-    var grid = $('#favGrid');
-    if (!grid) return;
+    var seleccionar = OKI.$;
+    var cuadrillaFavoritos = seleccionar('#favGrid');
+    if (!cuadrillaFavoritos) return;
 
-    function pintar() {
-        var lista = OKI.favoritos.lista().map(buscarProducto);
-        grid.innerHTML = lista.map(OKI.tarjetaHTML).join('');
-        $('#favEmpty').hidden = lista.length > 0;
-        $('#favActions').hidden = lista.length === 0;
-        $('#favCountText').textContent = lista.length + (lista.length === 1 ? ' reloj guardado' : ' relojes guardados');
+    // ACTUALIZA LA LISTA DE FAVORITOS Y SU ESTADO VISUAL.
+    function pintarFavoritos() {
+        var productosFavoritos = OKI.favoritos.lista().map(buscarProducto);
+        cuadrillaFavoritos.innerHTML = productosFavoritos.map(OKI.tarjetaHTML).join('');
+        seleccionar('#favEmpty').hidden = productosFavoritos.length > 0;
+        seleccionar('#favActions').hidden = productosFavoritos.length === 0;
+        seleccionar('#favCountText').textContent = productosFavoritos.length + (productosFavoritos.length === 1 ? ' reloj guardado' : ' relojes guardados');
         OKI.pintarCorazones();
-        OKI.prepararFotos(grid);
+        OKI.prepararFotos(cuadrillaFavoritos);
     }
 
-    $('#favAllToCart').addEventListener('click', function () {
-        var lista = OKI.favoritos.lista();
-        lista.forEach(function (id) { OKI.carrito.anadir(id, 1); });
-        OKI.aviso(lista.length + (lista.length === 1 ? ' reloj añadido' : ' relojes añadidos') + ' al carrito');
+    // AÑADE TODOS LOS FAVORITOS AL CARRITO Y ABRE EL MINICARRITO.
+    seleccionar('#favAllToCart').addEventListener('click', function () {
+        var identificadoresFavoritos = OKI.favoritos.lista();
+        identificadoresFavoritos.forEach(function (identificadorProducto) {
+            OKI.carrito.anadir(identificadorProducto, 1);
+        });
+        OKI.aviso(identificadoresFavoritos.length + (identificadoresFavoritos.length === 1 ? ' reloj añadido' : ' relojes añadidos') + ' al carrito');
         OKI.abrirMiniCarrito();
     });
 
-    document.addEventListener('oki:favoritos', pintar);
-    pintar();
+    // REPINTA LA PÁGINA CUANDO CAMBIA LA LISTA DE FAVORITOS.
+    document.addEventListener('oki:favoritos', pintarFavoritos);
+    pintarFavoritos();
 })();

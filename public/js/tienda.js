@@ -1,64 +1,107 @@
 (function () {
     'use strict';
-    var $ = OKI.$, $$ = OKI.$$;
-    var grid = $('#shopGrid');
-    if (!grid) return;
+    var seleccionar = OKI.$;
+    var seleccionarTodos = OKI.$$;
+    var cuadrillaTienda = seleccionar('#shopGrid');
+    if (!cuadrillaTienda) return;
 
-    var tarjetas = $$('.card', grid);
-    var estado = { coleccion: 'todas', caja: 'todas', correa: 'todas', novedades: false, orden: 'destacados' };
-    var chips = $$('[data-filtro-coleccion]');
-    var selCaja = $('#fCaja'), selCorrea = $('#fCorrea'), selOrden = $('#fOrden'), chkNuevos = $('#fNuevos');
+    var tarjetasProducto = seleccionarTodos('.card', cuadrillaTienda);
+    var estadoFiltros = { coleccion: 'todas', caja: 'todas', correa: 'todas', novedades: false, orden: 'destacados' };
+    var botonesColeccion = seleccionarTodos('[data-filtro-coleccion]');
+    var selectorCaja = seleccionar('#fCaja');
+    var selectorCorrea = seleccionar('#fCorrea');
+    var selectorOrden = seleccionar('#fOrden');
+    var casillaNovedades = seleccionar('#fNuevos');
 
-    function aplicar(actualizarDireccion) {
-        var visibles = tarjetas.filter(function (t) {
-            var ok = (estado.coleccion === 'todas' || t.dataset.coleccion === estado.coleccion) &&
-                (estado.caja === 'todas' || t.dataset.caja === estado.caja) &&
-                (estado.correa === 'todas' || t.dataset.correa === estado.correa) &&
-                (!estado.novedades || t.dataset.nuevo === 'si');
-            t.hidden = !ok;
-            return ok;
+    // APLICA FILTROS, ORDEN Y ESTADO VISUAL AL CATÁLOGO.
+    function aplicarFiltros(actualizarDireccion) {
+        var productosVisibles = tarjetasProducto.filter(function (tarjetaProducto) {
+            var coincideConFiltros = (estadoFiltros.coleccion === 'todas' || tarjetaProducto.dataset.coleccion === estadoFiltros.coleccion) &&
+                (estadoFiltros.caja === 'todas' || tarjetaProducto.dataset.caja === estadoFiltros.caja) &&
+                (estadoFiltros.correa === 'todas' || tarjetaProducto.dataset.correa === estadoFiltros.correa) &&
+                (!estadoFiltros.novedades || tarjetaProducto.dataset.nuevo === 'si');
+            tarjetaProducto.hidden = !coincideConFiltros;
+            return coincideConFiltros;
         });
-        var orden = tarjetas.slice().sort(function (a, b) {
-            if (estado.orden === 'precio-asc') return a.dataset.precio - b.dataset.precio;
-            if (estado.orden === 'precio-desc') return b.dataset.precio - a.dataset.precio;
-            if (estado.orden === 'nombre') return a.dataset.nombre.localeCompare(b.dataset.nombre, 'es');
-            return a.dataset.orden - b.dataset.orden;
+        var tarjetasOrdenadas = tarjetasProducto.slice().sort(function (primeraTarjeta, segundaTarjeta) {
+            if (estadoFiltros.orden === 'precio-asc') return primeraTarjeta.dataset.precio - segundaTarjeta.dataset.precio;
+            if (estadoFiltros.orden === 'precio-desc') return segundaTarjeta.dataset.precio - primeraTarjeta.dataset.precio;
+            if (estadoFiltros.orden === 'nombre') return primeraTarjeta.dataset.nombre.localeCompare(segundaTarjeta.dataset.nombre, 'es');
+            return primeraTarjeta.dataset.orden - segundaTarjeta.dataset.orden;
         });
-        orden.forEach(function (t) { grid.appendChild(t); });
+        tarjetasOrdenadas.forEach(function (tarjetaProducto) { cuadrillaTienda.appendChild(tarjetaProducto); });
 
-        chips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-filtro-coleccion') === estado.coleccion ? 'true' : 'false'); });
-        selCaja.value = estado.caja; selCorrea.value = estado.correa; selOrden.value = estado.orden; chkNuevos.checked = estado.novedades;
-        $('#shopCount').textContent = visibles.length + (visibles.length === 1 ? ' reloj' : ' relojes');
-        $('#shopEmpty').hidden = visibles.length > 0;
+        botonesColeccion.forEach(function (botonColeccion) {
+            botonColeccion.setAttribute('aria-pressed', botonColeccion.getAttribute('data-filtro-coleccion') === estadoFiltros.coleccion ? 'true' : 'false');
+        });
+        selectorCaja.value = estadoFiltros.caja;
+        selectorCorrea.value = estadoFiltros.correa;
+        selectorOrden.value = estadoFiltros.orden;
+        casillaNovedades.checked = estadoFiltros.novedades;
+        seleccionar('#shopCount').textContent = productosVisibles.length + (productosVisibles.length === 1 ? ' reloj' : ' relojes');
+        seleccionar('#shopEmpty').hidden = productosVisibles.length > 0;
 
-        var c = buscarColeccion(estado.coleccion);
-        $('#shopTitle').textContent = c ? 'Colección ' + c.nombre : estado.novedades ? 'Novedades' : 'Todos los relojes';
+        var coleccionSeleccionada = buscarColeccion(estadoFiltros.coleccion);
+        seleccionar('#shopTitle').textContent = coleccionSeleccionada ? 'Colección ' + coleccionSeleccionada.nombre : estadoFiltros.novedades ? 'Novedades' : 'Todos los relojes';
 
         if (actualizarDireccion && history.replaceState) {
-            var hash = estado.coleccion !== 'todas' ? '#' + estado.coleccion : estado.novedades ? '#novedades' : '';
-            history.replaceState(null, '', location.pathname + hash);
+            var fragmentoDireccion = estadoFiltros.coleccion !== 'todas' ? '#' + estadoFiltros.coleccion : estadoFiltros.novedades ? '#novedades' : '';
+            history.replaceState(null, '', location.pathname + fragmentoDireccion);
         }
     }
 
+    // RESTAURA LOS FILTROS DE LA URL ACTUAL.
     function leerDireccion() {
-        var h = location.hash.slice(1);
-        estado.coleccion = 'todas'; estado.novedades = false;
-        if (h === 'novedades') estado.novedades = true;
-        else if (h === 'limitadas') estado.coleccion = 'origine';
-        else if (buscarColeccion(h)) estado.coleccion = h;
-        aplicar(false);
+        var fragmentoDireccion = location.hash.slice(1);
+        estadoFiltros.coleccion = 'todas';
+        estadoFiltros.novedades = false;
+        if (fragmentoDireccion === 'novedades') estadoFiltros.novedades = true;
+        else if (fragmentoDireccion === 'limitadas') estadoFiltros.coleccion = 'origine';
+        else if (buscarColeccion(fragmentoDireccion)) estadoFiltros.coleccion = fragmentoDireccion;
+        aplicarFiltros(false);
     }
 
-    chips.forEach(function (c) {
-        c.addEventListener('click', function () { estado.coleccion = c.getAttribute('data-filtro-coleccion'); aplicar(true); });
+    botonesColeccion.forEach(function (botonColeccion) {
+        // FILTRA EL CATÁLOGO POR LA COLECCIÓN SELECCIONADA.
+        botonColeccion.addEventListener('click', function () {
+            estadoFiltros.coleccion = botonColeccion.getAttribute('data-filtro-coleccion');
+            aplicarFiltros(true);
+        });
     });
-    selCaja.addEventListener('change', function () { estado.caja = selCaja.value; aplicar(true); });
-    selCorrea.addEventListener('change', function () { estado.correa = selCorrea.value; aplicar(true); });
-    selOrden.addEventListener('change', function () { estado.orden = selOrden.value; aplicar(true); });
-    chkNuevos.addEventListener('change', function () { estado.novedades = chkNuevos.checked; aplicar(true); });
-    $$('[data-limpiar]').forEach(function (b) {
-        b.addEventListener('click', function () { estado = { coleccion: 'todas', caja: 'todas', correa: 'todas', novedades: false, orden: 'destacados' }; aplicar(true); });
+
+    // ACTUALIZA EL FILTRO DE CAJA CUANDO CAMBIA SU SELECTOR.
+    selectorCaja.addEventListener('change', function () {
+        estadoFiltros.caja = selectorCaja.value;
+        aplicarFiltros(true);
     });
+
+    // ACTUALIZA EL FILTRO DE CORREA CUANDO CAMBIA SU SELECTOR.
+    selectorCorrea.addEventListener('change', function () {
+        estadoFiltros.correa = selectorCorrea.value;
+        aplicarFiltros(true);
+    });
+
+    // ACTUALIZA EL ORDEN DEL CATÁLOGO.
+    selectorOrden.addEventListener('change', function () {
+        estadoFiltros.orden = selectorOrden.value;
+        aplicarFiltros(true);
+    });
+
+    // ACTIVA O DESACTIVA EL FILTRO DE NOVEDADES.
+    casillaNovedades.addEventListener('change', function () {
+        estadoFiltros.novedades = casillaNovedades.checked;
+        aplicarFiltros(true);
+    });
+
+    seleccionarTodos('[data-limpiar]').forEach(function (botonLimpiar) {
+        // RESTABLECE TODOS LOS FILTROS A SUS VALORES INICIALES.
+        botonLimpiar.addEventListener('click', function () {
+            estadoFiltros = { coleccion: 'todas', caja: 'todas', correa: 'todas', novedades: false, orden: 'destacados' };
+            aplicarFiltros(true);
+        });
+    });
+
+    // ACTUALIZA LOS FILTROS SI CAMBIA EL FRAGMENTO DE LA URL.
     window.addEventListener('hashchange', leerDireccion);
     leerDireccion();
 })();

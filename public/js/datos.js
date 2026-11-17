@@ -97,32 +97,38 @@ var PRODUCTOS = [
 var TEXTOS_CAJA = { cobre: 'Cobre', acero: 'Acero', negro: 'Acero negro' };
 var TEXTOS_CORREA = { piel: 'Piel', acero: 'Brazalete de acero', caucho: 'Caucho' };
 
-function buscarProducto(id) {
-    for (var i = 0; i < PRODUCTOS.length; i++) {
-        if (PRODUCTOS[i].id === id) return PRODUCTOS[i];
+// BUSCA UN PRODUCTO POR SU IDENTIFICADOR.
+function buscarProducto(identificadorProducto) {
+    for (var indiceProducto = 0; indiceProducto < PRODUCTOS.length; indiceProducto++) {
+        if (PRODUCTOS[indiceProducto].id === identificadorProducto) return PRODUCTOS[indiceProducto];
     }
     return null;
 }
 
-function buscarColeccion(id) {
-    for (var i = 0; i < COLECCIONES.length; i++) {
-        if (COLECCIONES[i].id === id) return COLECCIONES[i];
+// BUSCA UNA COLECCIÓN POR SU IDENTIFICADOR.
+function buscarColeccion(identificadorColeccion) {
+    for (var indiceColeccion = 0; indiceColeccion < COLECCIONES.length; indiceColeccion++) {
+        if (COLECCIONES[indiceColeccion].id === identificadorColeccion) return COLECCIONES[indiceColeccion];
     }
     return null;
 }
 
-function productosDe(idColeccion) {
-    return PRODUCTOS.filter(function (p) { return p.coleccion === idColeccion; });
+// DEVUELVE LOS PRODUCTOS PERTENECIENTES A UNA COLECCIÓN.
+function productosDe(identificadorColeccion) {
+    return PRODUCTOS.filter(function (producto) { return producto.coleccion === identificadorColeccion; });
 }
 
-function fotoProducto(p, numero) {
-    return 'assets/relojes/' + p.id + (numero > 1 ? '-' + numero : '') + '.jpg';
+// CONSTRUYE LA RUTA DE LA FOTOGRAFÍA INDICADA PARA UN PRODUCTO.
+function fotoProducto(producto, numeroFotografia) {
+    return 'assets/relojes/' + producto.id + (numeroFotografia > 1 ? '-' + numeroFotografia : '') + '.jpg';
 }
 
-function precioTexto(numero) {
-    return String(numero).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' €';
+// FORMATEA UN PRECIO CON SEPARADOR DE MILES Y SÍMBOLO DE EURO.
+function precioTexto(precio) {
+    return String(precio).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' €';
 }
 
-function resumenProducto(p) {
-    return p.movimiento + ' · ' + TEXTOS_CAJA[p.caja] + ' · ' + p.mm + ' mm';
+// GENERA EL RESUMEN TÉCNICO BREVE DE UN PRODUCTO.
+function resumenProducto(producto) {
+    return producto.movimiento + ' · ' + TEXTOS_CAJA[producto.caja] + ' · ' + producto.mm + ' mm';
 }

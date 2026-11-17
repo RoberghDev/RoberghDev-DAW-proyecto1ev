@@ -1,10 +1,11 @@
 (function () {
     'use strict';
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var reducirMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     Array.prototype.forEach.call(document.querySelectorAll('canvas[data-engranajes]'), iniciar);
 
-    function iniciar(cv) {
-        var ctx = cv.getContext('2d'), W = 0, H = 0, dpr = 1, fondo = null, sprites = [], visible = false, raf = 0, t0 = performance.now();
+    // PREPARA Y ANIMA LOS ENGRANAJES EN EL CANVAS INDICADO.
+    function iniciar(canvasEngranajes) {
+        var ctx = canvasEngranajes.getContext('2d'), W = 0, H = 0, dpr = 1, fondo = null, sprites = [], visible = false, raf = 0, t0 = performance.now();
         var MOD = 0.0105;
         var defs = [
             { id: 'g1', N: 64, x: 0.30, y: 0.58, spokes: 5, metal: 'cu' },
@@ -21,6 +22,7 @@
             por[d.id] = d;
         });
 
+        // CALCULA LA POSICIÓN ANGULAR DE CADA ENGRANAJE.
         function angulos(t) {
             var A = {};
             A.g1 = 0.16 * t;
@@ -28,36 +30,39 @@
             var q = por.g3p; A.g3 = -(por.g2.N / q.N) * (A.g2 - q.phi) + q.phi + Math.PI + Math.PI / q.N;
             return A;
         }
-        function metal(c, r, tipo) {
-            var g = c.createConicGradient ? c.createConicGradient(0.6, 0, 0) : c.createLinearGradient(-r, -r, r, r);
+        // CREA EL DEGRADADO METÁLICO USADO PARA DIBUJAR LAS PIEZAS.
+        function metal(contexto, radio, tipo) {
+            var g = contexto.createConicGradient ? contexto.createConicGradient(0.6, 0, 0) : contexto.createLinearGradient(-radio, -radio, radio, radio);
             var stops = tipo === 'steel' ? ['#f4f4f4', '#8f9093', '#e9eaeb', '#6e6f72', '#f4f4f4'] : tipo === 'cu-dark' ? ['#b97a52', '#5d331c', '#a9693f', '#4e2a16', '#b97a52'] : ['#f7cfae', '#b06c42', '#efbb93', '#8a4b28', '#f7cfae'];
             stops.forEach(function (s, i) { g.addColorStop(i / (stops.length - 1), s); });
             return g;
         }
-        function rueda(c, d) {
-            var N = d.N, rp = d.rp * H, m = MOD * H, ra = rp + m * 0.95, rf = rp - m * 1.15, p = Math.PI * 2 / N;
-            c.beginPath();
+        // DIBUJA LA GEOMETRÍA DE UNA RUEDA DENTADA.
+        function rueda(contexto, definicionRueda) {
+            var N = definicionRueda.N, rp = definicionRueda.rp * H, m = MOD * H, ra = rp + m * 0.95, rf = rp - m * 1.15, p = Math.PI * 2 / N;
+            contexto.beginPath();
             for (var k = 0; k < N; k++) {
                 var a = k * p;
                 [[rf, a - 0.31 * p], [ra, a - 0.15 * p], [ra, a + 0.15 * p], [rf, a + 0.31 * p]].forEach(function (pt, j) {
                     var x = Math.cos(pt[1]) * pt[0], y = Math.sin(pt[1]) * pt[0];
-                    if (k === 0 && j === 0) c.moveTo(x, y); else c.lineTo(x, y);
+                    if (k === 0 && j === 0) contexto.moveTo(x, y); else contexto.lineTo(x, y);
                 });
             }
-            c.closePath();
-            if (d.spokes) {
+            contexto.closePath();
+            if (definicionRueda.spokes) {
                 var rIn = rf - Math.max(m * 2.2, rp * 0.13), hub = rp * 0.24, sw = rp * 0.07;
-                for (var s = 0; s < d.spokes; s++) {
-                    var a0 = s * 2 * Math.PI / d.spokes, a1 = (s + 1) * 2 * Math.PI / d.spokes;
-                    c.moveTo(Math.cos(a0 + sw / rIn) * rIn, Math.sin(a0 + sw / rIn) * rIn);
-                    c.arc(0, 0, rIn, a0 + sw / rIn, a1 - sw / rIn);
-                    c.arc(0, 0, hub, a1 - sw / hub, a0 + sw / hub, true);
-                    c.closePath();
+                for (var s = 0; s < definicionRueda.spokes; s++) {
+                    var a0 = s * 2 * Math.PI / definicionRueda.spokes, a1 = (s + 1) * 2 * Math.PI / definicionRueda.spokes;
+                    contexto.moveTo(Math.cos(a0 + sw / rIn) * rIn, Math.sin(a0 + sw / rIn) * rIn);
+                    contexto.arc(0, 0, rIn, a0 + sw / rIn, a1 - sw / rIn);
+                    contexto.arc(0, 0, hub, a1 - sw / hub, a0 + sw / hub, true);
+                    contexto.closePath();
                 }
             }
             return { ra: ra, rf: rf, rp: rp };
         }
 
+        // GENERA LOS CANVAS EN CACHÉ QUE REPRESENTAN CADA ENGRANAJE.
         function prepararRuedas() {
             sprites = defs.map(function (d) {
                 var rp = d.rp * H * dpr, size = Math.ceil((rp + MOD * H * dpr * 2) * 2 + 40 * dpr);
@@ -74,6 +79,7 @@
             });
         }
 
+        // CREA EL FONDO TEXTURIZADO DEL MECANISMO.
         function prepararFondo() {
             var c = document.createElement('canvas'); c.width = W * dpr; c.height = H * dpr;
             var x = c.getContext('2d');
@@ -93,24 +99,27 @@
             x.fillStyle = v; x.fillRect(0, 0, c.width, c.height);
             fondo = c;
         }
-        function rubi(x, y, r) {
-            ctx.beginPath(); ctx.arc(x, y, r * 1.7, 0, Math.PI * 2); ctx.fillStyle = metal(ctx, r * 2, 'cu'); ctx.fill();
-            var g = ctx.createRadialGradient(x - r * 0.35, y - r * 0.35, 0, x, y, r);
+        // DIBUJA UN RUBÍ DECORATIVO EN LA POSICIÓN INDICADA.
+        function rubi(x, y, radio) {
+            ctx.beginPath(); ctx.arc(x, y, radio * 1.7, 0, Math.PI * 2); ctx.fillStyle = metal(ctx, radio * 2, 'cu'); ctx.fill();
+            var g = ctx.createRadialGradient(x - radio * 0.35, y - radio * 0.35, 0, x, y, radio);
             g.addColorStop(0, '#ff8aa0'); g.addColorStop(0.35, '#c0123a'); g.addColorStop(1, '#4a0010');
-            ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fillStyle = g; ctx.fill();
+            ctx.beginPath(); ctx.arc(x, y, radio, 0, Math.PI * 2); ctx.fillStyle = g; ctx.fill();
         }
-        function puente(pts, w) {
+        // DIBUJA UN PUENTE METÁLICO A PARTIR DE UNA SERIE DE PUNTOS.
+        function puente(puntos, grosor) {
             ctx.save();
             ctx.lineCap = 'round'; ctx.lineJoin = 'round';
-            ctx.beginPath(); pts.forEach(function (p, i) { if (i) ctx.lineTo(p[0], p[1]); else ctx.moveTo(p[0], p[1]); });
+            ctx.beginPath(); puntos.forEach(function (punto, indicePunto) { if (indicePunto) ctx.lineTo(punto[0], punto[1]); else ctx.moveTo(punto[0], punto[1]); });
             ctx.shadowColor = 'rgba(0,0,0,.7)'; ctx.shadowBlur = 18; ctx.shadowOffsetY = 6;
-            ctx.lineWidth = w; ctx.strokeStyle = '#2a2827'; ctx.stroke();
+            ctx.lineWidth = grosor; ctx.strokeStyle = '#2a2827'; ctx.stroke();
             ctx.shadowColor = 'transparent';
             var g = ctx.createLinearGradient(0, 0, W, H); g.addColorStop(0, '#5c5957'); g.addColorStop(0.5, '#3a3837'); g.addColorStop(1, '#4d4a48');
-            ctx.lineWidth = w - 3; ctx.strokeStyle = g; ctx.stroke();
+            ctx.lineWidth = grosor - 3; ctx.strokeStyle = g; ctx.stroke();
             ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(236,190,150,.55)'; ctx.stroke();
             ctx.restore();
         }
+        // DIBUJA UN FRAME COMPLETO DE LOS ENGRANAJES Y EL VOLANTE.
         function dibujar(t) {
             ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
             ctx.clearRect(0, 0, W, H);
@@ -147,16 +156,20 @@
                 ctx.save(); ctx.translate(p[0], p[1]); ctx.rotate(0.7); ctx.fillStyle = '#2a2a2a'; ctx.fillRect(-0.02 * H, -0.003 * H, 0.04 * H, 0.006 * H); ctx.restore();
             });
         }
+        // REDIMENSIONA EL CANVAS Y REGENERA SUS TEXTURAS.
         function tamano() {
-            var r = cv.getBoundingClientRect(); if (!r.width || !r.height) return;
-            dpr = Math.min(window.devicePixelRatio || 1, 2); W = r.width; H = r.height;
-            cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+            var rectanguloCanvas = canvasEngranajes.getBoundingClientRect(); if (!rectanguloCanvas.width || !rectanguloCanvas.height) return;
+            dpr = Math.min(window.devicePixelRatio || 1, 2); W = rectanguloCanvas.width; H = rectanguloCanvas.height;
+            canvasEngranajes.width = Math.round(W * dpr); canvasEngranajes.height = Math.round(H * dpr);
             prepararFondo(); prepararRuedas(); dibujar((performance.now() - t0) / 1000);
         }
+        // MANTIENE LA ANIMACIÓN ACTIVA MIENTRAS EL CANVAS SEA VISIBLE.
         function bucle() { if (!visible) { raf = 0; return; } dibujar((performance.now() - t0) / 1000); raf = requestAnimationFrame(bucle); }
-        new ResizeObserver(tamano).observe(cv);
-        if (!reduce && 'IntersectionObserver' in window) {
-            new IntersectionObserver(function (es) { visible = es[0].isIntersecting; if (visible && !raf) raf = requestAnimationFrame(bucle); }).observe(cv);
+        // REGENERA LAS TEXTURAS CUANDO CAMBIA EL TAMAÑO DEL CANVAS.
+        new ResizeObserver(tamano).observe(canvasEngranajes);
+        if (!reducirMovimiento && 'IntersectionObserver' in window) {
+            // INICIA LA ANIMACIÓN CUANDO LOS ENGRANAJES ENTRAN EN PANTALLA.
+            new IntersectionObserver(function (entradas) { visible = entradas[0].isIntersecting; if (visible && !raf) raf = requestAnimationFrame(bucle); }).observe(canvasEngranajes);
         }
     }
 })();
