@@ -56,15 +56,18 @@ export default function Cuenta() {
         try {
             const respuestaLogin = await login(correoElectronico, contrasena);
             if (!respuestaLogin || !respuestaLogin.token) throw new Error('La API no devolvió el token de sesión esperado.');
-            const usuario = { nombre: correoElectronico, email: correoElectronico };
+
+            const usuario = { nombre: respuestaLogin.username , email: correoElectronico };
             guardar('token', respuestaLogin.token);
             guardar('usuario', usuario);
             setMensajeEntrar('');
             pintar();
             aviso('Hola de nuevo, ' + usuario.nombre);
+
         } catch (error) {
             console.error('Error al registrar', error);
             setMensajeEntrar(error.message || 'No se pudo iniciar sesión.');
+            
         } finally {
             setEntrando(false);
         }

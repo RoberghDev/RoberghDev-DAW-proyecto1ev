@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { COLECCIONES, PRODUCTOS, buscarColeccion } from '../data.js';
+import { COLECCIONES, buscarColeccion } from '../data.js';
 import { useLocation, useNavigate } from 'react-router';
 import { ProductCard } from '../components/Commerce.jsx';
+import { verTodosLosProductos } from '../../services/api.js';
 
 // Migrada desde la plantilla heredada tienda.html y public/js/tienda.js (fase 3).
 export const title = 'OKIDOKEI · Tienda';
@@ -29,21 +30,85 @@ function coincide(producto, filtros) {
 }
 
 // ORDENA TODO EL CATÁLOGO (TAMBIÉN LAS TARJETAS OCULTAS), PARTIENDO SIEMPRE DEL ORDEN ORIGINAL.
-function ordenar(orden) {
-    return PRODUCTOS.slice().sort((a, b) => {
+function ordenar(orden, productos) {
+    return productos.slice().sort((a, b) => {
         if (orden === 'precio-asc') return a.precio - b.precio;
         if (orden === 'precio-desc') return b.precio - a.precio;
         if (orden === 'nombre') return a.nombre.localeCompare(b.nombre, 'es');
-        return PRODUCTOS.indexOf(a) - PRODUCTOS.indexOf(b);
+        return productos.indexOf(a) - productos.indexOf(b);
+    });
+}
+
+// ADAPTA LOS DATOS DE LA API A LA ESTRUCTURA QUE USA LAS TARJETAS EXISTENTES.
+function normalizarProductos(datos) {
+    const productos = Array.isArray(datos) ? datos : datos?.productos || datos?.data || [];
+
+    return productos.map((item, indice) => {
+        const materiales = item.materiales || '';
+        const texto = `${item.nombreProducto || item.nombre || ''} ${item.descripcion || ''} ${materiales}`.toLowerCase();
+
+        const caja = texto.includes('negro') ? 'negro' : texto.includes('cobre') ? 'cobre' : 'acero';
+        const correa = texto.includes('cuero') || texto.includes('piel') ? 'piel'
+            : texto.includes('caucho') || texto.includes('silicona') || texto.includes('resina') ? 'caucho'
+            : 'acero';
+        const coleccion = texto.includes('buceo') || texto.includes('diver') || texto.includes('buc')
+            ? 'marine'
+            : texto.includes('negro') ? 'noir'
+            : texto.includes('luna') ? 'luna'
+            : 'heritage';
+
+        return {
+            id: item._id || item.id || `producto-${indice}`,
+            nombre: item.nombreProducto || item.nombre || 'Reloj',
+            precio: Number(item.precio) || 0,
+            descripcion: item.descripcion || '',
+            cantidad: item.cantidad,
+            nuevo: Boolean(item.nuevo),
+            limitado: Boolean(item.limitado),
+            coleccion,
+            caja,
+            correa,
+            correaTexto: correa === 'piel' ? 'Correa de piel'
+                : correa === 'caucho' ? 'Correa de caucho'
+                    : 'Brazalete de acero',
+            mm: item.mm || 42,
+            movimiento: item.tipoMovimiento || item.movimiento || 'Movimiento automático',
+            reserva: item.reserva || '',
+            agua: item.agua || '',
+            cristal: item.cristal || '',
+            ref: item.ref || item._id || item.id || `OK-${indice + 1}`,
+            modelo: item.modelo || {}
+        };
     });
 }
 
 export default function Tienda() {
     const [filtros, setFiltros] = useState(() => filtrosDesdeDireccion(FILTROS_INICIALES));
+    const [productos, setProductos] = useState([]);
+    const [cargando, setCargando] = useState(true);
+    const [error, setError] = useState(null);
     const novedadesRef = useRef(null);
 
+    useEffect(() => {
+        let activo = true;
+
+        async function cargarProductos() {
+            try {
+                const datos = await verTodosLosProductos();
+                if (activo) setProductos(normalizarProductos(datos));
+            } catch (errorCarga) {
+                if (activo) setError(errorCarga.message);
+            } finally {
+                if (activo) setCargando(false);
+            }
+        }
+
+        cargarProductos();
+        return () => { activo = false; };
+    }, []);
+
     // LA CASILLA SE SINCRONIZA POR PROPIEDAD (COMO tienda.js), SIN ESCRIBIR EL ATRIBUTO checked.
-    useEffect(() => { novedadesRef.current.checked = filtros.novedades; }, [filtros.novedades]);
+    useEffect(() => { if (novedadesRef.current) novedadesRef.current.checked = filtros.novedades; }, [filtros.novedades]);
 
     // ACTUALIZA LOS FILTROS SI CAMBIA EL FRAGMENTO DE LA URL DESDE FUERA (ENLACE, ATRÁS/ADELANTE…),
     // COMO EL hashchange DE tienda.js. LOS CAMBIOS QUE ESCRIBE LA PROPIA TIENDA SE IGNORAN.
@@ -64,8 +129,8 @@ export default function Tienda() {
     }
     const limpiar = () => cambiar(FILTROS_INICIALES);
 
-    const ordenados = ordenar(filtros.orden);
-    const visibles = PRODUCTOS.filter((producto) => coincide(producto, filtros)).length;
+    const ordenados = ordenar(filtros.orden, productos);
+    const visibles = productos.filter((producto) => coincide(producto, filtros)).length;
     const coleccion = buscarColeccion(filtros.coleccion);
     const titulo = coleccion ? 'Colección ' + coleccion.nombre : filtros.novedades ? 'Novedades' : 'Todos los relojes';
 
@@ -77,7 +142,7 @@ export default function Tienda() {
                     <nav className={'crumbs'} aria-label={'Estás aquí'}><a href={'/'}>Inicio</a><span aria-hidden={'true'}>/</span><span aria-current={'page'}>Tienda</span></nav>
                     <p className={'eyebrow'}>Relojería online</p>
                     <h1 className={'page-title'}>Tienda</h1>
-                    <p className={'page-sub'}>12 relojes en 6 colecciones, con envío asegurado, 30 días de devolución y 3 años de garantía.</p>
+                    <p className={'page-sub'}>{productos.length || 'Todos'} los relojes disponibles, con envío asegurado, 30 días de devolución y 3 años de garantía.</p>
                 </div>
                 <svg className={'page-mark'} aria-hidden={'true'}><use href={'#emblem'} /></svg>
             </section>
@@ -94,10 +159,12 @@ export default function Tienda() {
                         </div>
                     </div>
                     <div className="shop-head"><h2 id="shopTitle">{titulo}</h2><p><span className="shop-count" id="shopCount">{visibles + (visibles === 1 ? ' reloj' : ' relojes')}</span> · <button className="shop-clear" type="button" data-limpiar="" onClick={limpiar}>Quitar filtros</button></p></div>
+                    {cargando && <p role="status">Cargando productos...</p>}
+                    {error && <p role="alert">No se pudieron cargar los productos: {error}</p>}
                     <div className="grid-4" id="shopGrid">
                         {ordenados.map((producto) => <ProductCard key={producto.id} product={producto} hidden={!coincide(producto, filtros)} />)}
                     </div>
-                    <div className="empty" id="shopEmpty" hidden={visibles > 0}>
+                    <div className="empty" id="shopEmpty" hidden={cargando || Boolean(error) || visibles > 0}>
                         <svg className="mark" aria-hidden="true"><use href="#emblem" /></svg>
                         <h2>Ningún reloj con esos filtros</h2>
                         <p>Prueba con otra caja u otra correa, o mira toda la colección.</p>

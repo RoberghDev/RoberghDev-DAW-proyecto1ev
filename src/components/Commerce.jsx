@@ -30,10 +30,44 @@ export function ProductCard({ product, order, hidden = false, destacada = false 
   const collection = buscarColeccion(product.coleccion);
   const { fav, favLabel, toggleFav, add } = useAccionesProducto(product);
   const filtro = destacada ? {} : { 'data-coleccion': product.coleccion, 'data-caja': product.caja, 'data-correa': product.correa, 'data-precio': product.precio, 'data-nombre': product.nombre, 'data-orden': order ?? PRODUCTOS.indexOf(product), 'data-nuevo': product.nuevo ? 'si' : 'no' };
-  return <article className="card" data-id={product.id} {...filtro} hidden={hidden}>
-    <div className="card-media"><a className="card-img foto" href={`/producto/${product.id}`} tabIndex="-1" aria-hidden="true"><img src={fotoProducto(product)} alt={`${product.nombre}: caja de ${TEXTOS_CAJA[product.caja].toLowerCase()} y ${product.correaTexto.toLowerCase()}`} loading="lazy" data-foto="" {...eventosFoto} /></a>{(product.limitado || product.nuevo) && <span className="tag">{product.limitado ? 'Edición limitada' : 'Nuevo'}</span>}<button className="fav" type="button" data-fav={product.id} aria-pressed={String(fav)} aria-label={favLabel} onClick={toggleFav}><Icon name="heart" /></button></div>
-    <div className="card-body"><p className="card-coll">{collection.nombre}</p><h3 className="card-name"><a href={`/producto/${product.id}`}>{product.nombre}</a></h3><p className="card-spec">{resumenProducto(product)}</p><div className="card-foot"><span className="card-price">{precioTexto(product.precio)}</span><button className="add-btn" type="button" data-add={product.id} onClick={add}><Icon name="bag" />Añadir</button></div></div>
-  </article>;
+  return (
+    <article className="card" data-id={product.id} {...filtro} hidden={hidden}>
+      <div className="card-media">
+        <a className="card-img foto" href={`/producto/${product.id}`} tabIndex="-1" aria-hidden="true">
+          <img
+            src={fotoProducto(product)}
+            alt={`${product.nombre}: caja de ${TEXTOS_CAJA[product.caja].toLowerCase()} y ${product.correaTexto.toLowerCase()}`}
+            loading="lazy"
+            data-foto=""
+            {...eventosFoto}
+          />
+        </a>
+
+        {(product.limitado || product.nuevo) &&
+          <span className="tag">{product.limitado ? 'Edición limitada' : 'Nuevo'}</span>
+        }
+
+        <button className="fav" type="button" data-fav={product.id} aria-pressed={String(fav)} aria-label={favLabel} onClick={toggleFav}>
+          <Icon name="heart" />
+        </button>
+      </div>
+
+      <div className="card-body">
+        <p className="card-coll">{collection.nombre}</p>
+        <h3 className="card-name">
+          <a href={`/producto/${product.id}`}>{product.nombre}</a>
+        </h3>
+        <p className="card-spec">{resumenProducto(product)}</p>
+        <div className="card-foot">
+          <span className="card-price">{precioTexto(product.precio)}</span>
+          <button className="add-btn" type="button" data-add={product.id} onClick={add}>
+            <Icon name="bag" />
+            Añadir
+          </button>
+        </div>
+      </div>
+    </article>
+  );
 }
 
 // TARJETA QUE GENERABA OKI.tarjetaHTML (RELACIONADOS DE LA FICHA Y FAVORITOS): SIN LOS data-*
