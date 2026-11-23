@@ -58,6 +58,8 @@ npm run lint
 
 Las pruebas arrancan Vite automáticamente en `127.0.0.1:4173` y lo detienen al terminar. Se ejecutan con 3 workers porque la portada usa WebGL por software en el navegador de pruebas.
 
+enlace de la web en producción: https://robergh-dev-daw-proyecto1ev.vercel.app/
+
 ## Tecnologías
 
 - **React 19** y **React DOM**: montaje de la aplicación y creación de la vista.
@@ -66,6 +68,7 @@ Las pruebas arrancan Vite automáticamente en `127.0.0.1:4173` y lo detienen al 
 - **JavaScript (JSX)**: componentes, catálogo, estado compartido, persistencia local y API.
 - **Three.js**: modelos y carrusel 3D del inicio. La biblioteca está incluida localmente en `public/js/vendor/` y `src/visual/three.js` la carga una sola vez cuando la portada la necesita; no se descarga desde un CDN.
 - **CSS**: estilos propios organizados por tokens, elementos comunes, layouts y páginas.
+- **Vercel**: servicios de hosting
 
 Las versiones de dependencias y los scripts están en `package.json`; `package-lock.json` fija el árbol instalado.
 
