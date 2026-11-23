@@ -1,98 +1,70 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import { PRODUCTOS, buscarProducto } from './data.js';
+import { buscarProducto } from './data.js';
+import { borrar, carrito, favoritos, guardar, leer } from './store/storage.js';
+import { aviso, suscribirUI } from './store/ui.js';
 
-const PREFIX = 'okidokei.';
-const fallback = {};
+// CAPA REACT SOBRE src/store/storage.js Y src/store/ui.js. No reimplementa la lógica
+// de negocio: la expone en un contexto y se vuelve a pintar cuando cambia el estado.
 const StoreContext = createContext(null);
 
-function read(key, initial) {
-  try {
-    const stored = localStorage.getItem(PREFIX + key);
-    return stored == null ? initial : JSON.parse(stored);
-  } catch {
-    return Object.hasOwn(fallback, key) ? fallback[key] : initial;
-  }
-}
-function write(key, value) {
-  fallback[key] = value;
-  try { localStorage.setItem(PREFIX + key, JSON.stringify(value)); } catch {}
-  window.dispatchEvent(new CustomEvent('oki:change'));
-}
-function clear(key) {
-  delete fallback[key];
-  try { localStorage.removeItem(PREFIX + key); } catch {}
-  window.dispatchEvent(new CustomEvent('oki:change'));
+const DURACION_AVISO = 2800;
+
+// AVISO GLOBAL. Siempre presente en el DOM (como el #toast heredado) para que la
+// transición CSS de .toast/.show funcione; al ocultarse conserva el último texto.
+function Toast({ texto, visible }) {
+  return <div className={`toast${visible ? ' show' : ''}`} id="toast" role="status" aria-live="polite">{texto}</div>;
 }
 
 export function StoreProvider({ children }) {
   const [revision, setRevision] = useState(0);
-  const [toast, setToast] = useState('');
+  const [avisoActual, setAvisoActual] = useState({ texto: '', visible: false, numero: 0 });
   const [cartOpen, setCartOpen] = useState(false);
+  const refresh = useCallback(() => setRevision((value) => value + 1), []);
   useEffect(() => {
-    const update = () => setRevision((value) => value + 1);
-    window.addEventListener('oki:change', update);
-    window.addEventListener('storage', update);
-    return () => { window.removeEventListener('oki:change', update); window.removeEventListener('storage', update); };
-  }, []);
+    document.addEventListener('oki:carrito', refresh);
+    document.addEventListener('oki:favoritos', refresh);
+    window.addEventListener('storage', refresh);
+    return () => {
+      document.removeEventListener('oki:carrito', refresh);
+      document.removeEventListener('oki:favoritos', refresh);
+      window.removeEventListener('storage', refresh);
+    };
+  }, [refresh]);
+  useEffect(() => suscribirUI((orden) => {
+    if (orden.tipo === 'aviso') setAvisoActual((anterior) => ({ texto: orden.texto, visible: true, numero: anterior.numero + 1 }));
+    if (orden.tipo === 'abrir-carrito') setCartOpen(true);
+  }), []);
   useEffect(() => {
-    if (!toast) return undefined;
-    const timer = window.setTimeout(() => setToast(''), 2800);
+    if (!avisoActual.visible) return undefined;
+    // CADA AVISO NUEVO REINICIA EL TEMPORIZADOR, AUNQUE EL TEXTO SE REPITA.
+    const timer = window.setTimeout(() => setAvisoActual((anterior) => ({ ...anterior, visible: false })), DURACION_AVISO);
     return () => window.clearTimeout(timer);
-  }, [toast]);
-  const cart = read('carrito', []).filter((line) => buscarProducto(line.id) && line.qty > 0);
-  const favorites = read('favoritos', []).filter((id) => buscarProducto(id));
-  const user = read('usuario', null);
+  }, [avisoActual.numero, avisoActual.visible]);
+  // LOS DATOS SOLO SE RELEEN CUANDO CAMBIA EL ESTADO COMPARTIDO (IGUAL QUE EL LEGADO).
+  const datos = useMemo(() => ({
+    cart: carrito.items(),
+    favorites: favoritos.lista(),
+    user: leer('usuario', null),
+    cartCount: carrito.cantidad(),
+    total: carrito.total()
+  }), [revision]);
   const api = useMemo(() => ({
-    revision, toast, setToast, cartOpen, setCartOpen, cart, favorites, user,
-    cartCount: cart.reduce((sum, line) => sum + line.qty, 0),
-    total: cart.reduce((sum, line) => sum + buscarProducto(line.id).precio * line.qty, 0),
+    ...datos,
+    revision, cartOpen, setCartOpen,
+    toast: avisoActual.visible ? avisoActual.texto : '',
+    setToast(texto) { aviso(texto); },
     add(id, qty = 1) {
       if (!buscarProducto(id)) return;
-      const lines = [...read('carrito', [])];
-      const found = lines.find((line) => line.id === id);
-      if (found) found.qty += qty; else lines.push({ id, qty });
-      write('carrito', lines);
+      carrito.anadir(id, qty);
     },
-    setQty(id, qty) { write('carrito', read('carrito', []).map((line) => line.id === id ? { id, qty } : line).filter((line) => line.qty > 0)); },
-    remove(id) { write('carrito', read('carrito', []).filter((line) => line.id !== id)); },
-    clearCart() { write('carrito', []); },
-    toggleFavorite(id) {
-      const list = read('favoritos', []).filter((value) => buscarProducto(value));
-      const added = !list.includes(id);
-      write('favoritos', added ? [...list, id] : list.filter((value) => value !== id));
-      return added;
-    },
-    save(key, value) { write(key, value); },
-    forget(key) { clear(key); }
-  }), [revision, toast, cartOpen, cart, favorites, user]);
-  return <StoreContext.Provider value={api}>{children}{toast && <div className="toast show" role="status" aria-live="polite">{toast}</div>}</StoreContext.Provider>;
+    setQty(id, qty) { carrito.poner(id, qty); },
+    remove(id) { carrito.quitar(id); },
+    clearCart() { carrito.vaciar(); },
+    toggleFavorite(id) { return favoritos.alternar(id); },
+    read(key, initial) { return leer(key, initial); },
+    save(key, value) { guardar(key, value); refresh(); },
+    forget(key) { borrar(key); refresh(); }
+  }), [datos, revision, cartOpen, avisoActual, refresh]);
+  return <StoreContext.Provider value={api}>{children}<Toast texto={avisoActual.texto} visible={avisoActual.visible} /></StoreContext.Provider>;
 }
 export function useStore() { return useContext(StoreContext); }
-export function useStoreRevision() {
-  const store = useStore();
-  return store?.revision ?? 0;
-}
-export function usePageEvents() {
-  const store = useStore();
-  const onClick = useCallback((event) => {
-    const addButton = event.target.closest('[data-add]');
-    if (addButton) {
-      const id = addButton.dataset.add;
-      const product = PRODUCTOS.find((item) => item.id === id);
-      if (!product) return;
-      store.add(id);
-      store.setToast(`${product.nombre} añadido al carrito`);
-      store.setCartOpen(true);
-      return;
-    }
-    const favoriteButton = event.target.closest('[data-fav]');
-    if (favoriteButton) {
-      event.preventDefault();
-      const id = favoriteButton.dataset.fav;
-      const product = buscarProducto(id);
-      const added = store.toggleFavorite(id);
-      if (product) store.setToast(`${product.nombre} ${added ? 'guardado en' : 'quitado de'} favoritos`);
-    }
-  }, [store]);
-  return onClick;
-}
