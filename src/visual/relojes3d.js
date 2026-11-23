@@ -1,15 +1,25 @@
-(function () {
-    'use strict';
-    var THREE = window.THREE;
-    if (!THREE) { document.documentElement.classList.add('no-webgl'); return; }
+import { buscarColeccion, buscarProducto } from '../data.js';
+import { EMBLEMA } from '../components/emblema.js';
+
+// MODELOS 3D DE LOS RELOJES (antes public/js/relojes3d.js, que se exponía como window.OKI3D).
+// Los cálculos de geometría, texturas y animación son los mismos; cambia el empaquetado:
+// recibe THREE, importa el catálogo y el emblema, y añade liberar() para soltar sus cachés
+// de texturas y geometrías cuando se desmonta el carrusel.
+export function crearRelojes3D(THREE) {
 
     var DIAL_R = 1.15;
-    var EMBLEM = new Path2D(window.OKI_EMBLEMA || '');
+    var EMBLEM = new Path2D(EMBLEMA);
 
     var soporte = null;
     function soportado() {
         if (soporte !== null) return soporte;
-        try { var c = document.createElement('canvas'); soporte = !!(c.getContext('webgl2') || c.getContext('webgl')); }
+        try {
+            var c = document.createElement('canvas'), gl = c.getContext('webgl2') || c.getContext('webgl');
+            soporte = !!gl;
+            // LIBERA EL CONTEXTO DE PRUEBA EN LUGAR DE DEJARLO VIVO HASTA LA RECOLECCIÓN.
+            var perder = gl && gl.getExtension('WEBGL_lose_context');
+            if (perder) perder.loseContext();
+        }
         catch (e) { soporte = false; }
         if (!soporte) document.documentElement.classList.add('no-webgl');
         return soporte;
@@ -631,7 +641,15 @@
         return { h: d.getHours(), m: d.getMinutes(), s: d.getSeconds() + Math.floor(d.getMilliseconds() / 125) / 8 };
     }
 
-    window.OKI3D = {
+    // LIBERA LAS TEXTURAS Y GEOMETRÍAS CACHEADAS (SE COMPARTEN ENTRE LOS SEIS RELOJES).
+    function liberar() {
+        Object.keys(TEX).forEach(function (clave) { TEX[clave].dispose(); delete TEX[clave]; });
+        // LA CACHÉ TAMBIÉN GUARDA CURVAS (strap-curve), QUE NO OCUPAN GPU NI TIENEN dispose().
+        GEO.forEach(function (valor) { if (typeof valor.dispose === 'function') valor.dispose(); });
+        GEO.clear();
+    }
+
+    return {
         soportado: soportado,
         fuentes: fuentes,
         config: config,
@@ -639,6 +657,7 @@
         materiales: materiales,
         entorno: entorno,
         luces: luces,
-        horaActual: horaActual
+        horaActual: horaActual,
+        liberar: liberar
     };
-})();
+}
