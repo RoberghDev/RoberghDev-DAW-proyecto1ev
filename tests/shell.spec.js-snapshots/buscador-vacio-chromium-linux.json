@@ -1,0 +1,71 @@
+{
+ "t": "div",
+ "a": {
+  "class": "search-panel",
+  "id": "searchPanel"
+ },
+ "c": [
+  {
+   "t": "div",
+   "a": {
+    "class": "search-inner"
+   },
+   "c": [
+    {
+     "t": "label",
+     "a": {
+      "class": "search-field",
+      "for": "searchInput"
+     },
+     "c": [
+      {
+       "t": "svg",
+       "a": {
+        "aria-hidden": "true",
+        "class": "icon"
+       },
+       "c": [
+        {
+         "t": "use",
+         "a": {
+          "href": "#i-search"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "input",
+       "a": {
+        "autocomplete": "off",
+        "id": "searchInput",
+        "placeholder": "Busca un reloj, una colección…",
+        "type": "search"
+       },
+       "c": []
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "aria-live": "polite",
+      "class": "search-results",
+      "id": "searchResults"
+     },
+     "c": [
+      {
+       "t": "p",
+       "a": {
+        "class": "search-empty"
+       },
+       "c": [
+        "No hay relojes que coincidan. Prueba con «cobre», «acero» o «luna»."
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

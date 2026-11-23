@@ -1,0 +1,150 @@
+{
+ "t": "div",
+ "a": {
+  "aria-hidden": "true",
+  "class": "drawer",
+  "id": "cart"
+ },
+ "c": [
+  {
+   "t": "div",
+   "a": {
+    "class": "drawer-scrim",
+    "data-close-cart": ""
+   },
+   "c": []
+  },
+  {
+   "t": "aside",
+   "a": {
+    "aria-labelledby": "cartTitle",
+    "aria-modal": "true",
+    "class": "drawer-panel",
+    "role": "dialog"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "drawer-head"
+     },
+     "c": [
+      {
+       "t": "h2",
+       "a": {
+        "id": "cartTitle"
+       },
+       "c": [
+        "Tu carrito"
+       ]
+      },
+      {
+       "t": "button",
+       "a": {
+        "aria-label": "Cerrar carrito",
+        "class": "icon-btn",
+        "data-close-cart": "",
+        "type": "button"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-close"
+           },
+           "c": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "cart-list",
+      "id": "cartList"
+     },
+     "c": [
+      {
+       "t": "p",
+       "a": {
+        "class": "cart-empty"
+       },
+       "c": [
+        "Tu carrito está vacío."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "drawer-foot"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "subtotal"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Subtotal"
+         ]
+        },
+        {
+         "t": "strong",
+         "a": {
+          "id": "cartTotal"
+         },
+         "c": [
+          "0 €"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "small",
+       "a": {},
+       "c": [
+        "Envío asegurado gratuito. Impuestos incluidos."
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "btn btn-ghost",
+        "href": "carrito.html"
+       },
+       "c": [
+        "Ver carrito"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "btn btn-copper",
+        "href": "carrito.html#resumen"
+       },
+       "c": [
+        "Finalizar compra"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

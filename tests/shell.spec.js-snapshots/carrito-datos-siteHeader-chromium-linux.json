@@ -1,0 +1,450 @@
+{
+ "t": "header",
+ "a": {
+  "class": "site-header",
+  "id": "siteHeader"
+ },
+ "c": [
+  {
+   "t": "div",
+   "a": {
+    "class": "hdr"
+   },
+   "c": [
+    {
+     "t": "button",
+     "a": {
+      "aria-controls": "mnav",
+      "aria-expanded": "false",
+      "aria-label": "Abrir menú",
+      "class": "icon-btn menu-btn",
+      "id": "menuBtn",
+      "type": "button"
+     },
+     "c": [
+      {
+       "t": "svg",
+       "a": {
+        "aria-hidden": "true",
+        "class": "icon"
+       },
+       "c": [
+        {
+         "t": "use",
+         "a": {
+          "href": "#i-menu"
+         },
+         "c": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "nav",
+     "a": {
+      "aria-label": "Principal",
+      "class": "hdr-nav"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "href": "tienda.html"
+       },
+       "c": [
+        "Tienda"
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "has-drop"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "class": "drop-trigger",
+          "href": "colecciones.html"
+         },
+         "c": [
+          "Colecciones"
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "drop"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "colecciones.html#esqueleto"
+           },
+           "c": [
+            "Esqueleto",
+            {
+             "t": "span",
+             "a": {},
+             "c": [
+              "el arte en movimiento"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "href": "colecciones.html#heritage"
+           },
+           "c": [
+            "Heritage",
+            {
+             "t": "span",
+             "a": {},
+             "c": [
+              "elegancia atemporal"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "href": "colecciones.html#marine"
+           },
+           "c": [
+            "Marine",
+            {
+             "t": "span",
+             "a": {},
+             "c": [
+              "hechos para la acción"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "href": "colecciones.html#noir"
+           },
+           "c": [
+            "Noir",
+            {
+             "t": "span",
+             "a": {},
+             "c": [
+              "negro y cobre"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "href": "colecciones.html#luna"
+           },
+           "c": [
+            "Luna",
+            {
+             "t": "span",
+             "a": {},
+             "c": [
+              "el cielo en tu muñeca"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "href": "colecciones.html#origine"
+           },
+           "c": [
+            "Origine",
+            {
+             "t": "span",
+             "a": {},
+             "c": [
+              "piezas numeradas"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "class": "drop-all",
+            "href": "colecciones.html"
+           },
+           "c": [
+            "Ver todas las colecciones"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "nosotros.html"
+       },
+       "c": [
+        "Nosotros"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "journal.html"
+       },
+       "c": [
+        "Journal"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "a",
+     "a": {
+      "aria-label": "OKIDOKEI, ir al inicio",
+      "class": "brand",
+      "href": "index.html"
+     },
+     "c": [
+      {
+       "t": "svg",
+       "a": {
+        "aria-hidden": "true",
+        "class": "brand-mark"
+       },
+       "c": [
+        {
+         "t": "use",
+         "a": {
+          "href": "#emblem"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "span",
+       "a": {
+        "class": "brand-word cu-text"
+       },
+       "c": [
+        "OKIDOKEI"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "hdr-actions"
+     },
+     "c": [
+      {
+       "t": "button",
+       "a": {
+        "aria-controls": "searchPanel",
+        "aria-expanded": "false",
+        "aria-label": "Buscar",
+        "class": "icon-btn",
+        "id": "searchBtn",
+        "type": "button"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-search"
+           },
+           "c": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "aria-label": "Mi cuenta (Ana)",
+        "class": "icon-btn act-user is-logged",
+        "href": "cuenta.html",
+        "id": "userBtn"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-user"
+           },
+           "c": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "aria-label": "Favoritos, 1 reloj",
+        "class": "icon-btn act-fav",
+        "href": "favoritos.html",
+        "id": "favBtn"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-heart"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "badge",
+          "data-count": "favoritos"
+         },
+         "c": [
+          "1"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "aria-current": "page",
+        "aria-label": "Carrito, 3 artículos",
+        "class": "icon-btn",
+        "href": "carrito.html",
+        "id": "cartBtn"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-bag"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "badge",
+          "data-count": "carrito"
+         },
+         "c": [
+          "3"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "div",
+   "a": {
+    "class": "search-panel",
+    "hidden": "",
+    "id": "searchPanel"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "search-inner"
+     },
+     "c": [
+      {
+       "t": "label",
+       "a": {
+        "class": "search-field",
+        "for": "searchInput"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-search"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "input",
+         "a": {
+          "autocomplete": "off",
+          "id": "searchInput",
+          "placeholder": "Busca un reloj, una colección…",
+          "type": "search"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "aria-live": "polite",
+        "class": "search-results",
+        "id": "searchResults"
+       },
+       "c": []
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,441 @@
+{
+ "t": "div",
+ "a": {
+  "aria-hidden": "true",
+  "class": "drawer",
+  "id": "cart"
+ },
+ "c": [
+  {
+   "t": "div",
+   "a": {
+    "class": "drawer-scrim",
+    "data-close-cart": ""
+   },
+   "c": []
+  },
+  {
+   "t": "aside",
+   "a": {
+    "aria-labelledby": "cartTitle",
+    "aria-modal": "true",
+    "class": "drawer-panel",
+    "role": "dialog"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "drawer-head"
+     },
+     "c": [
+      {
+       "t": "h2",
+       "a": {
+        "id": "cartTitle"
+       },
+       "c": [
+        "Tu carrito"
+       ]
+      },
+      {
+       "t": "button",
+       "a": {
+        "aria-label": "Cerrar carrito",
+        "class": "icon-btn",
+        "data-close-cart": "",
+        "type": "button"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-close"
+           },
+           "c": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "cart-list",
+      "id": "cartList"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "cart-item",
+        "data-id": "esqueleto-cobre"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "class": "cart-thumb foto",
+          "href": "producto.html#esqueleto-cobre"
+         },
+         "c": [
+          {
+           "t": "img",
+           "a": {
+            "alt": "",
+            "data-foto": "",
+            "src": "assets/relojes/esqueleto-cobre.jpg"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "href": "producto.html#esqueleto-cobre"
+             },
+             "c": [
+              "Esqueleto Cobre"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "p",
+           "a": {
+            "class": "unit"
+           },
+           "c": [
+            "4.950 €"
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "qty"
+           },
+           "c": [
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Quitar una unidad de Esqueleto Cobre",
+              "data-q": "-1",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-minus"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "span",
+             "a": {},
+             "c": [
+              "2"
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Añadir una unidad de Esqueleto Cobre",
+              "data-q": "1",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-plus"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "cart-line"
+         },
+         "c": [
+          {
+           "t": "p",
+           "a": {
+            "class": "line"
+           },
+           "c": [
+            "9.900 €"
+           ]
+          },
+          {
+           "t": "button",
+           "a": {
+            "class": "rm",
+            "data-rm": "",
+            "type": "button"
+           },
+           "c": [
+            "Eliminar"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "cart-item",
+        "data-id": "origine"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "class": "cart-thumb foto",
+          "href": "producto.html#origine"
+         },
+         "c": [
+          {
+           "t": "img",
+           "a": {
+            "alt": "",
+            "data-foto": "",
+            "src": "assets/relojes/origine.jpg"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "href": "producto.html#origine"
+             },
+             "c": [
+              "Origine Tourbillon"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "p",
+           "a": {
+            "class": "unit"
+           },
+           "c": [
+            "18.900 €"
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "qty"
+           },
+           "c": [
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Quitar una unidad de Origine Tourbillon",
+              "data-q": "-1",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-minus"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "span",
+             "a": {},
+             "c": [
+              "1"
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Añadir una unidad de Origine Tourbillon",
+              "data-q": "1",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-plus"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "cart-line"
+         },
+         "c": [
+          {
+           "t": "p",
+           "a": {
+            "class": "line"
+           },
+           "c": [
+            "18.900 €"
+           ]
+          },
+          {
+           "t": "button",
+           "a": {
+            "class": "rm",
+            "data-rm": "",
+            "type": "button"
+           },
+           "c": [
+            "Eliminar"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "drawer-foot"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "subtotal"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Subtotal"
+         ]
+        },
+        {
+         "t": "strong",
+         "a": {
+          "id": "cartTotal"
+         },
+         "c": [
+          "28.800 €"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "small",
+       "a": {},
+       "c": [
+        "Envío asegurado gratuito. Impuestos incluidos."
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "btn btn-ghost",
+        "href": "carrito.html"
+       },
+       "c": [
+        "Ver carrito"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "btn btn-copper",
+        "href": "carrito.html#resumen"
+       },
+       "c": [
+        "Finalizar compra"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

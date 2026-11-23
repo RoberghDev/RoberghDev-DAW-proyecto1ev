@@ -1,0 +1,215 @@
+{
+ "t": "div",
+ "a": {
+  "aria-hidden": "true",
+  "class": "mnav",
+  "id": "mnav"
+ },
+ "c": [
+  {
+   "t": "div",
+   "a": {
+    "class": "mnav-scrim",
+    "data-close-menu": ""
+   },
+   "c": []
+  },
+  {
+   "t": "nav",
+   "a": {
+    "aria-label": "Menú móvil",
+    "class": "mnav-panel"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "mnav-top"
+     },
+     "c": [
+      {
+       "t": "span",
+       "a": {
+        "class": "brand-word mnav-word cu-text"
+       },
+       "c": [
+        "OKIDOKEI"
+       ]
+      },
+      {
+       "t": "button",
+       "a": {
+        "aria-label": "Cerrar menú",
+        "class": "icon-btn",
+        "data-close-menu": "",
+        "type": "button"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-close"
+           },
+           "c": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "a",
+     "a": {
+      "href": "index.html"
+     },
+     "c": [
+      "Inicio"
+     ]
+    },
+    {
+     "t": "a",
+     "a": {
+      "aria-current": "page",
+      "href": "tienda.html"
+     },
+     "c": [
+      "Tienda"
+     ]
+    },
+    {
+     "t": "a",
+     "a": {
+      "href": "colecciones.html"
+     },
+     "c": [
+      "Colecciones"
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "mnav-sub"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "href": "colecciones.html#esqueleto"
+       },
+       "c": [
+        "Esqueleto"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "colecciones.html#heritage"
+       },
+       "c": [
+        "Heritage"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "colecciones.html#marine"
+       },
+       "c": [
+        "Marine"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "colecciones.html#noir"
+       },
+       "c": [
+        "Noir"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "colecciones.html#luna"
+       },
+       "c": [
+        "Luna"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "colecciones.html#origine"
+       },
+       "c": [
+        "Origine"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "a",
+     "a": {
+      "href": "nosotros.html"
+     },
+     "c": [
+      "Nosotros"
+     ]
+    },
+    {
+     "t": "a",
+     "a": {
+      "href": "journal.html"
+     },
+     "c": [
+      "Journal"
+     ]
+    },
+    {
+     "t": "a",
+     "a": {
+      "href": "favoritos.html"
+     },
+     "c": [
+      "Favoritos"
+     ]
+    },
+    {
+     "t": "a",
+     "a": {
+      "href": "carrito.html"
+     },
+     "c": [
+      "Carrito"
+     ]
+    },
+    {
+     "t": "a",
+     "a": {
+      "href": "cuenta.html"
+     },
+     "c": [
+      "Mi cuenta"
+     ]
+    },
+    {
+     "t": "a",
+     "a": {
+      "href": "ayuda.html"
+     },
+     "c": [
+      "Ayuda"
+     ]
+    }
+   ]
+  }
+ ]
+}

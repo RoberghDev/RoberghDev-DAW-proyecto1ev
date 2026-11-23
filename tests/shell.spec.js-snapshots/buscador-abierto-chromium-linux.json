@@ -1,0 +1,336 @@
+{
+ "t": "div",
+ "a": {
+  "class": "search-panel",
+  "id": "searchPanel"
+ },
+ "c": [
+  {
+   "t": "div",
+   "a": {
+    "class": "search-inner"
+   },
+   "c": [
+    {
+     "t": "label",
+     "a": {
+      "class": "search-field",
+      "for": "searchInput"
+     },
+     "c": [
+      {
+       "t": "svg",
+       "a": {
+        "aria-hidden": "true",
+        "class": "icon"
+       },
+       "c": [
+        {
+         "t": "use",
+         "a": {
+          "href": "#i-search"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "input",
+       "a": {
+        "autocomplete": "off",
+        "id": "searchInput",
+        "placeholder": "Busca un reloj, una colección…",
+        "type": "search"
+       },
+       "c": []
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "aria-live": "polite",
+      "class": "search-results",
+      "id": "searchResults"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "href": "producto.html#esqueleto-cobre"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Esqueleto Cobre",
+          {
+           "t": "span",
+           "a": {
+            "class": "price"
+           },
+           "c": [
+            "· Automático esqueletado · Cobre · 42 mm"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "price"
+         },
+         "c": [
+          "4.950 €"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "producto.html#esqueleto-acero"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Esqueleto Acero",
+          {
+           "t": "span",
+           "a": {
+            "class": "price"
+           },
+           "c": [
+            "· Automático esqueletado · Acero · 42 mm"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "price"
+         },
+         "c": [
+          "4.650 €"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "producto.html#heritage-cobre"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Heritage Cobre",
+          {
+           "t": "span",
+           "a": {
+            "class": "price"
+           },
+           "c": [
+            "· Automático · Cobre · 40 mm"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "price"
+         },
+         "c": [
+          "1.980 €"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "producto.html#heritage-acero"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Heritage Acero",
+          {
+           "t": "span",
+           "a": {
+            "class": "price"
+           },
+           "c": [
+            "· Automático · Acero · 40 mm"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "price"
+         },
+         "c": [
+          "1.790 €"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "producto.html#marine-acero"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Marine Acero",
+          {
+           "t": "span",
+           "a": {
+            "class": "price"
+           },
+           "c": [
+            "· Automático · Acero · 42 mm"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "price"
+         },
+         "c": [
+          "2.890 €"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "producto.html#marine-caucho"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Marine Caucho",
+          {
+           "t": "span",
+           "a": {
+            "class": "price"
+           },
+           "c": [
+            "· Automático · Acero · 42 mm"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "price"
+         },
+         "c": [
+          "2.690 €"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "producto.html#marine-cobre"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Marine Cobre",
+          {
+           "t": "span",
+           "a": {
+            "class": "price"
+           },
+           "c": [
+            "· Automático · Cobre · 42 mm"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "price"
+         },
+         "c": [
+          "3.190 €"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "producto.html#noir-caucho"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Noir Caucho",
+          {
+           "t": "span",
+           "a": {
+            "class": "price"
+           },
+           "c": [
+            "· Automático · Acero negro · 41 mm"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "price"
+         },
+         "c": [
+          "3.450 €"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "search-all",
+        "href": "tienda.html"
+       },
+       "c": [
+        "Ver todos los relojes en la tienda"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

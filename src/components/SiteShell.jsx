@@ -1,72 +1,193 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { COLECCIONES, PRODUCTOS, TEXTOS_CAJA, TEXTOS_CORREA, buscarColeccion, buscarProducto, fotoProducto, precioTexto, resumenProducto } from '../data.js';
 import { useStore } from '../store.jsx';
 import IconSprite from './IconSprite.jsx';
+import { eventosFoto } from './foto.js';
 
-const collectionLinks = COLECCIONES.map((collection) => <a key={collection.id} href={`colecciones.html#${collection.id}`}>{collection.nombre}<span>{collection.lema.toLowerCase()}</span></a>);
+// PARTES COMUNES DEL SITIO. Reproducen exactamente el HTML de las plantillas heredadas
+// y el comportamiento que antes aportaba public/js/comun.js.
+
 function Icon({ name }) { return <svg className="icon" aria-hidden="true"><use href={`#i-${name}`} /></svg>; }
+
+// NORMALIZA TEXTO PARA COMPARAR BÚSQUEDAS SIN DIFERENCIAR ACENTOS NI MAYÚSCULAS.
+function normalizarTexto(texto) { return texto.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
+
+// FILTRA LOS PRODUCTOS QUE COINCIDEN CON EL TEXTO BUSCADO.
+function buscarRelojes(texto) {
+  const consulta = normalizarTexto(texto.trim());
+  return PRODUCTOS.filter((producto) => {
+    const coleccion = buscarColeccion(producto.coleccion);
+    return !consulta || normalizarTexto([producto.nombre, coleccion.nombre, coleccion.categoria, TEXTOS_CAJA[producto.caja], TEXTOS_CORREA[producto.correa], producto.movimiento].join(' ')).indexOf(consulta) > -1;
+  });
+}
 
 export function Header({ page }) {
   const store = useStore();
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  // EL LEGADO NO PINTA RESULTADOS HASTA QUE SE ABRE EL BUSCADOR POR PRIMERA VEZ.
+  const [searchPainted, setSearchPainted] = useState(false);
   const [query, setQuery] = useState('');
   const [scrolled, setScrolled] = useState(false);
+  const searchInputRef = useRef(null);
+  const firstMenuLinkRef = useRef(null);
+  const { setCartOpen } = store;
+
   useEffect(() => {
     const scroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener('scroll', scroll, { passive: true });
     scroll();
-    const escape = (event) => { if (event.key === 'Escape') { setMenuOpen(false); setSearchOpen(false); store.setCartOpen(false); } };
-    window.addEventListener('keydown', escape);
-    return () => { window.removeEventListener('scroll', scroll); window.removeEventListener('keydown', escape); };
-  }, [store]);
-  const results = useMemo(() => {
-    const normalize = (text) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-    const search = normalize(query.trim());
-    return PRODUCTOS.filter((product) => {
-      const collection = buscarColeccion(product.coleccion);
-      return !search || normalize([product.nombre, collection.nombre, collection.categoria, TEXTOS_CAJA[product.caja], TEXTOS_CORREA[product.correa], product.movimiento].join(' ')).includes(search);
-    }).slice(0, 8);
-  }, [query]);
-  const current = (name) => page === name ? { 'aria-current': 'page' } : {};
+    return () => window.removeEventListener('scroll', scroll);
+  }, []);
+  useEffect(() => {
+    // CIERRA LOS PANELES ABIERTOS AL PULSAR ESCAPE.
+    const escape = (event) => { if (event.key === 'Escape') { setCartOpen(false); setMenuOpen(false); setSearchOpen(false); } };
+    document.addEventListener('keydown', escape);
+    return () => document.removeEventListener('keydown', escape);
+  }, [setCartOpen]);
+  useEffect(() => { if (searchOpen) searchInputRef.current.focus(); }, [searchOpen]);
+  useEffect(() => { if (menuOpen) firstMenuLinkRef.current.focus(); }, [menuOpen]);
+
+  const results = useMemo(() => buscarRelojes(query), [query]);
+  // LA FICHA DE PRODUCTO SE MARCA COMO PARTE DE LA TIENDA.
+  const activa = page === 'producto' ? 'tienda' : page;
+  const current = (name) => activa === name ? { 'aria-current': 'page' } : {};
+  const cartCount = store.cartCount;
+  const favCount = store.favorites.length;
+  const user = store.user;
+
   return <>
     <IconSprite />
     <header className={`site-header${scrolled ? ' scrolled' : ''}`} id="siteHeader">
       <div className="hdr">
-        <button className="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded={menuOpen} aria-controls="mnav" onClick={() => setMenuOpen(true)}><Icon name="menu" /></button>
-        <nav className="hdr-nav" aria-label="Principal"><a href="tienda.html" {...current('tienda')}>Tienda</a><div className="has-drop"><a className="drop-trigger" href="colecciones.html" {...current('colecciones')}>Colecciones</a><div className="drop">{collectionLinks}<a className="drop-all" href="colecciones.html">Ver todas las colecciones</a></div></div><a href="nosotros.html" {...current('nosotros')}>Nosotros</a><a href="journal.html" {...current('journal')}>Journal</a></nav>
-        <a className="brand" href="index.html" aria-label="OKIDOKEI, ir al inicio"><svg className="brand-mark" aria-hidden="true"><use href="#emblem" /></svg><span className="brand-word cu-text">OKIDOKEI</span></a>
+        <button className="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded={String(menuOpen)} aria-controls="mnav" onClick={() => setMenuOpen(true)}><Icon name="menu" /></button>
+        <nav className="hdr-nav" aria-label="Principal">
+          <a href="tienda.html" {...current('tienda')}>Tienda</a>
+          <div className="has-drop">
+            <a className="drop-trigger" href="colecciones.html" {...current('colecciones')}>Colecciones</a>
+            <div className="drop">
+              {COLECCIONES.map((collection) => <a key={collection.id} href={`colecciones.html#${collection.id}`}>{`${collection.nombre} `}<span>{collection.lema.toLowerCase()}</span></a>)}
+              <a className="drop-all" href="colecciones.html">Ver todas las colecciones</a>
+            </div>
+          </div>
+          <a href="nosotros.html" {...current('nosotros')}>Nosotros</a>
+          <a href="journal.html" {...current('journal')}>Journal</a>
+        </nav>
+        <a className="brand" href="index.html" aria-label="OKIDOKEI, ir al inicio">
+          <svg className="brand-mark" aria-hidden="true"><use href="#emblem" /></svg>
+          <span className="brand-word cu-text">OKIDOKEI</span>
+        </a>
         <div className="hdr-actions">
-          <button className="icon-btn" id="searchBtn" type="button" aria-label="Buscar" aria-expanded={searchOpen} aria-controls="searchPanel" onClick={() => setSearchOpen((open) => !open)}><Icon name="search" /></button>
-          <a className={`icon-btn act-user${store.user ? ' is-logged' : ''}`} id="userBtn" href="cuenta.html" aria-label={store.user ? `Mi cuenta (${store.user.nombre})` : 'Mi cuenta'}><Icon name="user" /></a>
-          <a className="icon-btn act-fav" id="favBtn" href="favoritos.html" aria-label={`Favoritos, ${store.favorites.length} relojes`}><Icon name="heart" /><span className="badge" data-count="favoritos" hidden={!store.favorites.length}>{store.favorites.length}</span></a>
-          <a className="icon-btn" id="cartBtn" href="carrito.html" aria-label={`Carrito, ${store.cartCount} artículos`}><Icon name="bag" /><span className="badge" data-count="carrito" hidden={!store.cartCount}>{store.cartCount}</span></a>
+          <button className="icon-btn" id="searchBtn" type="button" aria-label="Buscar" aria-expanded={String(searchOpen)} aria-controls="searchPanel" onClick={() => { if (searchOpen) { setSearchOpen(false); } else { setSearchPainted(true); setSearchOpen(true); } }}><Icon name="search" /></button>
+          <a className={`icon-btn act-user${user ? ' is-logged' : ''}`} id="userBtn" href="cuenta.html" aria-label={user ? `Mi cuenta (${user.nombre})` : 'Mi cuenta'} {...current('cuenta')}><Icon name="user" /></a>
+          <a className="icon-btn act-fav" id="favBtn" href="favoritos.html" aria-label={`Favoritos, ${favCount}${favCount === 1 ? ' reloj' : ' relojes'}`} {...current('favoritos')}><Icon name="heart" /><span className="badge" data-count="favoritos" hidden={favCount === 0}>{favCount}</span></a>
+          <a className="icon-btn" id="cartBtn" href="carrito.html" aria-label={`Carrito, ${cartCount}${cartCount === 1 ? ' artículo' : ' artículos'}`} {...current('carrito')}><Icon name="bag" /><span className="badge" data-count="carrito" hidden={cartCount === 0}>{cartCount}</span></a>
         </div>
       </div>
-      <div className="search-panel" id="searchPanel" hidden={!searchOpen}><div className="search-inner"><label className="search-field" htmlFor="searchInput"><Icon name="search" /><input id="searchInput" type="search" placeholder="Busca un reloj, una colección…" autoComplete="off" value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter' && results[0]) window.location.href = `producto.html#${results[0].id}`; }} /></label><div className="search-results" id="searchResults" aria-live="polite">{results.length ? <>{results.map((product) => <a key={product.id} href={`producto.html#${product.id}`}><span>{product.nombre} <span className="price">· {resumenProducto(product)}</span></span><span className="price">{precioTexto(product.precio)}</span></a>)}<a className="search-all" href="tienda.html">Ver todos los relojes en la tienda</a></> : <p className="search-empty">No hay relojes que coincidan. Prueba con «cobre», «acero» o «luna».</p>}</div></div></div>
+      <div className="search-panel" id="searchPanel" hidden={!searchOpen}>
+        <div className="search-inner">
+          <label className="search-field" htmlFor="searchInput">
+            <Icon name="search" />
+            <input ref={searchInputRef} id="searchInput" type="search" placeholder="Busca un reloj, una colección…" autoComplete="off" onChange={(event) => setQuery(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter' && searchPainted && results[0]) window.location.href = `producto.html#${results[0].id}`; }} />
+          </label>
+          <div className="search-results" id="searchResults" aria-live="polite">
+            {searchPainted && (results.length
+              ? <>{results.slice(0, 8).map((product) => <a key={product.id} href={`producto.html#${product.id}`}><span>{`${product.nombre} `}<span className="price">{`· ${resumenProducto(product)}`}</span></span><span className="price">{precioTexto(product.precio)}</span></a>)}<a className="search-all" href="tienda.html">Ver todos los relojes en la tienda</a></>
+              : <p className="search-empty">No hay relojes que coincidan. Prueba con «cobre», «acero» o «luna».</p>)}
+          </div>
+        </div>
+      </div>
     </header>
-    <div className={`mnav${menuOpen ? ' open' : ''}`} id="mnav" aria-hidden={!menuOpen}><div className="mnav-scrim" data-close-menu onClick={() => setMenuOpen(false)} /><nav className="mnav-panel" aria-label="Menú móvil"><div className="mnav-top"><span className="brand-word mnav-word cu-text">OKIDOKEI</span><button className="icon-btn" type="button" data-close-menu aria-label="Cerrar menú" onClick={() => setMenuOpen(false)}><Icon name="close" /></button></div><a href="index.html" {...current('index')}>Inicio</a><a href="tienda.html" {...current('tienda')}>Tienda</a><a href="colecciones.html" {...current('colecciones')}>Colecciones</a><div className="mnav-sub">{COLECCIONES.map((collection) => <a key={collection.id} href={`colecciones.html#${collection.id}`}>{collection.nombre}</a>)}</div><a href="nosotros.html" {...current('nosotros')}>Nosotros</a><a href="journal.html" {...current('journal')}>Journal</a><a href="favoritos.html" {...current('favoritos')}>Favoritos</a><a href="carrito.html" {...current('carrito')}>Carrito</a><a href="cuenta.html" {...current('cuenta')}>Mi cuenta</a><a href="ayuda.html" {...current('ayuda')}>Ayuda</a></nav></div>
+    <div className={`mnav${menuOpen ? ' open' : ''}`} id="mnav" aria-hidden={String(!menuOpen)}>
+      <div className="mnav-scrim" data-close-menu="" onClick={() => setMenuOpen(false)} />
+      <nav className="mnav-panel" aria-label="Menú móvil">
+        <div className="mnav-top">
+          <span className="brand-word mnav-word cu-text">OKIDOKEI</span>
+          <button className="icon-btn" type="button" data-close-menu="" aria-label="Cerrar menú" onClick={() => setMenuOpen(false)}><Icon name="close" /></button>
+        </div>
+        <a ref={firstMenuLinkRef} href="index.html" {...current('index')}>Inicio</a>
+        <a href="tienda.html" {...current('tienda')}>Tienda</a>
+        <a href="colecciones.html" {...current('colecciones')}>Colecciones</a>
+        <div className="mnav-sub">
+          {COLECCIONES.map((collection) => <a key={collection.id} href={`colecciones.html#${collection.id}`}>{collection.nombre}</a>)}
+        </div>
+        <a href="nosotros.html" {...current('nosotros')}>Nosotros</a>
+        <a href="journal.html" {...current('journal')}>Journal</a>
+        <a href="favoritos.html" {...current('favoritos')}>Favoritos</a>
+        <a href="carrito.html" {...current('carrito')}>Carrito</a>
+        <a href="cuenta.html" {...current('cuenta')}>Mi cuenta</a>
+        <a href="ayuda.html" {...current('ayuda')}>Ayuda</a>
+      </nav>
+    </div>
   </>;
 }
 
 export function Footer() {
-  return <footer className="footer"><div className="wrap foot-grid"><div className="foot-brand"><a className="brand" href="index.html" aria-label="OKIDOKEI, ir al inicio"><svg className="brand-mark" aria-hidden="true"><use href="#emblem" /></svg><span className="brand-word cu-text">OKIDOKEI</span></a><p>Tu relojería online de confianza. Relojes seleccionados uno a uno, revisados en taller y enviados a tu puerta.</p><div className="social"><a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><Icon name="ig" /></a><a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><Icon name="fb" /></a><a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><Icon name="yt" /></a><a href="https://www.pinterest.com/" target="_blank" rel="noopener" aria-label="Pinterest"><Icon name="pinterest" /></a></div></div><div className="foot-col"><h4>Tienda</h4><ul><li><a href="tienda.html">Todos los relojes</a></li><li><a href="tienda.html#novedades">Novedades</a></li><li><a href="tienda.html#limitadas">Ediciones limitadas</a></li><li><a href="favoritos.html">Mis favoritos</a></li><li><a href="carrito.html">Mi carrito</a></li></ul></div><div className="foot-col"><h4>Colecciones</h4><ul><li><a href="colecciones.html#heritage">Vestir</a></li><li><a href="colecciones.html#marine">Deportivos</a></li><li><a href="colecciones.html#esqueleto">Esqueleto</a></li><li><a href="colecciones.html#luna">Fases lunares</a></li><li><a href="colecciones.html#noir">Noir</a></li><li><a href="colecciones.html#origine">Ediciones limitadas</a></li></ul></div><div className="foot-col"><h4>Ayuda</h4><ul><li><a href="ayuda.html#contacto">Contacto</a></li><li><a href="ayuda.html#envios">Envíos y entregas</a></li><li><a href="ayuda.html#devoluciones">Devoluciones</a></li><li><a href="ayuda.html#garantia">Garantía</a></li><li><a href="ayuda.html#faq">Preguntas frecuentes</a></li></ul></div><div className="foot-col"><h4>Nosotros</h4><ul><li><a href="nosotros.html">Nuestra historia</a></li><li><a href="nosotros.html#taller">El taller</a></li><li><a href="nosotros.html#servicios">Servicios</a></li><li><a href="journal.html">Journal</a></li><li><a href="nosotros.html#empleo">Trabaja con nosotros</a></li></ul></div><div className="foot-col"><h4>Compra segura</h4><ul><li><a href="cuenta.html">Mi cuenta</a></li><li><span>Envíos a toda España y la UE</span></li><li><span>Atención de lunes a viernes</span></li></ul><div className="pay" aria-label="Métodos de pago"><span>Tarjeta</span><span>PayPal</span><span>Bizum</span><span>Transferencia</span></div></div></div><div className="wrap foot-bottom"><span>© <span data-year>{new Date().getFullYear()}</span> OKIDOKEI. Todos los derechos reservados.</span><nav aria-label="Legal"><a href="legal.html#aviso">Aviso legal</a><a href="legal.html#privacidad">Privacidad</a><a href="legal.html#cookies">Cookies</a></nav><span>España · EUR €</span></div></footer>;
+  return <footer className="footer">
+    <div className="wrap foot-grid">
+      <div className="foot-brand">
+        <a className="brand" href="index.html" aria-label="OKIDOKEI, ir al inicio"><svg className="brand-mark" aria-hidden="true"><use href="#emblem" /></svg><span className="brand-word cu-text">OKIDOKEI</span></a>
+        <p>Tu relojería online de confianza. Relojes seleccionados uno a uno, revisados en taller y enviados a tu puerta.</p>
+        <div className="social">
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><Icon name="ig" /></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><Icon name="fb" /></a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><Icon name="yt" /></a>
+          <a href="https://www.pinterest.com/" target="_blank" rel="noopener" aria-label="Pinterest"><Icon name="pinterest" /></a>
+        </div>
+      </div>
+      <div className="foot-col"><h4>Tienda</h4><ul><li><a href="tienda.html">Todos los relojes</a></li><li><a href="tienda.html#novedades">Novedades</a></li><li><a href="tienda.html#limitadas">Ediciones limitadas</a></li><li><a href="favoritos.html">Mis favoritos</a></li><li><a href="carrito.html">Mi carrito</a></li></ul></div>
+      <div className="foot-col"><h4>Colecciones</h4><ul><li><a href="colecciones.html#heritage">Vestir</a></li><li><a href="colecciones.html#marine">Deportivos</a></li><li><a href="colecciones.html#esqueleto">Esqueleto</a></li><li><a href="colecciones.html#luna">Fases lunares</a></li><li><a href="colecciones.html#noir">Noir</a></li><li><a href="colecciones.html#origine">Ediciones limitadas</a></li></ul></div>
+      <div className="foot-col"><h4>Ayuda</h4><ul><li><a href="ayuda.html#contacto">Contacto</a></li><li><a href="ayuda.html#envios">Envíos y entregas</a></li><li><a href="ayuda.html#devoluciones">Devoluciones</a></li><li><a href="ayuda.html#garantia">Garantía</a></li><li><a href="ayuda.html#faq">Preguntas frecuentes</a></li></ul></div>
+      <div className="foot-col"><h4>Nosotros</h4><ul><li><a href="nosotros.html">Nuestra historia</a></li><li><a href="nosotros.html#taller">El taller</a></li><li><a href="nosotros.html#servicios">Servicios</a></li><li><a href="journal.html">Journal</a></li><li><a href="nosotros.html#empleo">Trabaja con nosotros</a></li></ul></div>
+      <div className="foot-col"><h4>Compra segura</h4><ul><li><a href="cuenta.html">Mi cuenta</a></li><li><span>Envíos a toda España y la UE</span></li><li><span>Atención de lunes a viernes</span></li></ul><div className="pay" aria-label="Métodos de pago"><span>Tarjeta</span><span>PayPal</span><span>Bizum</span><span>Transferencia</span></div></div>
+    </div>
+    <div className="wrap foot-bottom">
+      <span>© <span data-year="">{new Date().getFullYear()}</span> OKIDOKEI. Todos los derechos reservados.</span>
+      <nav aria-label="Legal"><a href="legal.html#aviso">Aviso legal</a><a href="legal.html#privacidad">Privacidad</a><a href="legal.html#cookies">Cookies</a></nav>
+      <span>España · EUR €</span>
+    </div>
+  </footer>;
 }
 
-function CartLine({ line, drawer = false }) {
+// LÍNEA DEL MINICARRITO (MISMO HTML QUE GENERABA comun.js).
+function DrawerLine({ line }) {
   const store = useStore(); const product = buscarProducto(line.id);
-  if (!product) return null;
-  const collection = buscarColeccion(product.coleccion);
-  return drawer ? <div className="cart-item" data-id={product.id}><a href={`producto.html#${product.id}`} className="cart-thumb foto"><img src={fotoProducto(product)} alt="" data-foto /></a><div><h3><a href={`producto.html#${product.id}`}>{product.nombre}</a></h3><p className="unit">{precioTexto(product.precio)}</p><div className="qty"><button type="button" aria-label={`Quitar una unidad de ${product.nombre}`} onClick={() => store.setQty(product.id, line.qty - 1)}><Icon name="minus" /></button><span>{line.qty}</span><button type="button" aria-label={`Añadir una unidad de ${product.nombre}`} onClick={() => store.setQty(product.id, line.qty + 1)}><Icon name="plus" /></button></div></div><div className="cart-line"><p className="line">{precioTexto(product.precio * line.qty)}</p><button type="button" className="rm" onClick={() => store.remove(product.id)}>Eliminar</button></div></div> : <li className="row-item" data-id={product.id}><a className="row-thumb foto" href={`producto.html#${product.id}`}><img src={fotoProducto(product)} alt={product.nombre} data-foto /></a><div className="row-info"><p className="card-coll">{collection.nombre}</p><h3><a href={`producto.html#${product.id}`}>{product.nombre}</a></h3><p className="row-spec">{resumenProducto(product)} · {product.correaTexto}</p><button type="button" className="rm" onClick={() => { store.remove(product.id); store.setToast(`${product.nombre} eliminado del carrito`); }}>Eliminar</button></div><div className="qty"><button type="button" aria-label={`Quitar una unidad de ${product.nombre}`} onClick={() => store.setQty(product.id, line.qty - 1)}><Icon name="minus" /></button><span>{line.qty}</span><button type="button" aria-label={`Añadir una unidad de ${product.nombre}`} onClick={() => store.setQty(product.id, line.qty + 1)}><Icon name="plus" /></button></div><p className="row-price">{precioTexto(product.precio * line.qty)}{line.qty > 1 && <small>{precioTexto(product.precio)} / ud.</small>}</p></li>;
+  return <div className="cart-item" data-id={line.id}>
+    <a href={`producto.html#${product.id}`} className="cart-thumb foto"><img src={fotoProducto(product)} alt="" data-foto="" {...eventosFoto} /></a>
+    <div><h3><a href={`producto.html#${product.id}`}>{product.nombre}</a></h3><p className="unit">{precioTexto(product.precio)}</p>
+      <div className="qty"><button type="button" data-q="-1" aria-label={`Quitar una unidad de ${product.nombre}`} onClick={() => store.setQty(product.id, line.qty - 1)}><svg className="icon"><use href="#i-minus" /></svg></button><span>{line.qty}</span>
+        <button type="button" data-q="1" aria-label={`Añadir una unidad de ${product.nombre}`} onClick={() => store.setQty(product.id, line.qty + 1)}><svg className="icon"><use href="#i-plus" /></svg></button></div></div>
+    <div className="cart-line"><p className="line">{precioTexto(product.precio * line.qty)}</p><button type="button" className="rm" data-rm="" onClick={() => store.remove(product.id)}>Eliminar</button></div>
+  </div>;
 }
 
 export function CartDrawer() {
   const store = useStore();
-  useEffect(() => { if (!store.cartOpen) return; const esc = (event) => { if (event.key === 'Escape') store.setCartOpen(false); }; window.addEventListener('keydown', esc); return () => window.removeEventListener('keydown', esc); }, [store]);
-  return <div className={`drawer${store.cartOpen ? ' open' : ''}`} id="cart" aria-hidden={!store.cartOpen}><div className="drawer-scrim" data-close-cart onClick={() => store.setCartOpen(false)} /><aside className="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><div className="drawer-head"><h2 id="cartTitle">Tu carrito</h2><button className="icon-btn" type="button" data-close-cart aria-label="Cerrar carrito" onClick={() => store.setCartOpen(false)}><Icon name="close" /></button></div><div className="cart-list">{store.cart.length ? store.cart.map((line) => <CartLine key={line.id} line={line} drawer />) : <p className="cart-empty">Tu carrito está vacío.</p>}</div><div className="drawer-foot"><div className="subtotal"><span>Subtotal</span><strong>{precioTexto(store.total)}</strong></div><small>Envío asegurado gratuito. Impuestos incluidos.</small><a className="btn btn-ghost" href="carrito.html">Ver carrito</a><a className="btn btn-copper" href="carrito.html#resumen">Finalizar compra</a></div></aside></div>;
+  const { cartOpen, setCartOpen } = store;
+  const closeButtonRef = useRef(null);
+  const previousFocusRef = useRef(null);
+  useEffect(() => {
+    if (cartOpen) {
+      // GUARDA EL ELEMENTO AL QUE DEVOLVER EL FOCO Y ENFOCA EL BOTÓN DE CIERRE.
+      previousFocusRef.current = document.activeElement;
+      closeButtonRef.current.focus();
+    } else if (previousFocusRef.current) {
+      previousFocusRef.current.focus();
+      previousFocusRef.current = null;
+    }
+  }, [cartOpen]);
+  const close = () => setCartOpen(false);
+  return <div className={`drawer${cartOpen ? ' open' : ''}`} id="cart" aria-hidden={String(!cartOpen)}>
+    <div className="drawer-scrim" data-close-cart="" onClick={close} />
+    <aside className="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <div className="drawer-head"><h2 id="cartTitle">Tu carrito</h2><button ref={closeButtonRef} className="icon-btn" type="button" data-close-cart="" aria-label="Cerrar carrito" onClick={close}><Icon name="close" /></button></div>
+      <div className="cart-list" id="cartList">{store.cart.length ? store.cart.map((line) => <DrawerLine key={line.id} line={line} />) : <p className="cart-empty">Tu carrito está vacío.</p>}</div>
+      <div className="drawer-foot">
+        <div className="subtotal"><span>Subtotal</span><strong id="cartTotal">{precioTexto(store.total)}</strong></div>
+        <small>Envío asegurado gratuito. Impuestos incluidos.</small>
+        <a className="btn btn-ghost" href="carrito.html">Ver carrito</a>
+        <a className="btn btn-copper" href="carrito.html#resumen">Finalizar compra</a>
+      </div>
+    </aside>
+  </div>;
 }
-export function CartPageContent() {
-  const store = useStore(); const items = store.cart.length;
-  return <><section className="page-hero"><div className="wrap"><nav className="crumbs" aria-label="Estás aquí"><a href="index.html">Inicio</a><span>/</span><span aria-current="page">Carrito</span></nav><p className="eyebrow">Tu compra</p><h1 className="page-title">Carrito</h1><p className="page-sub">Revisa tus relojes antes de finalizar la compra.</p></div><svg className="page-mark" aria-hidden="true"><use href="#emblem" /></svg></section><section className="section-dark section" aria-label="Contenido del carrito"><div className="wrap">{!items ? <div className="empty"><svg className="mark" aria-hidden="true"><use href="#emblem" /></svg><h2>Tu carrito está vacío</h2><p>Cuando añadas un reloj lo verás aquí. Tus favoritos te esperan en su página.</p><div className="row row-center"><a className="btn btn-outline" href="tienda.html">Ir a la tienda</a><a className="link-arrow" href="favoritos.html">Ver favoritos <Icon name="right" /></a></div></div> : <div className="cart-layout"><div><div className="list-head"><a className="link-arrow" href="tienda.html"><Icon name="left" />Seguir comprando</a><button className="rm" type="button" onClick={() => { store.clearCart(); store.setToast('Carrito vaciado'); }}>Vaciar carrito</button></div><ul>{store.cart.map((line) => <CartLine line={line} key={line.id} />)}</ul></div><aside className="summary" id="resumen" aria-labelledby="sumTitle"><h2 id="sumTitle">Resumen</h2><div className="sum-row"><span>Artículos</span><strong>{store.cartCount} {store.cartCount === 1 ? 'artículo' : 'artículos'}</strong></div><div className="sum-row"><span>Subtotal</span><strong>{precioTexto(store.total)}</strong></div><div className="sum-row"><span>Envío asegurado</span><strong>Gratis</strong></div><div className="sum-total"><span>Total</span><strong>{precioTexto(store.total)}</strong></div><small>Incluye {precioTexto(Math.round(store.total - store.total / 1.21))} de IVA (21 %)</small><Checkout /><div className="pay-icons" aria-label="Métodos de pago"><span>Tarjeta</span><span>PayPal</span><span>Bizum</span><span>Transferencia</span></div></aside></div>}</div></section></>;
-}
-function Checkout() { const [accepted, setAccepted] = useState(false); const [message, setMessage] = useState(''); return <form className="stack" noValidate onSubmit={(event) => { event.preventDefault(); setMessage(accepted ? 'Pago de prueba: aquí se conectará la pasarela de pago de la tienda.' : 'Acepta las condiciones de compra para continuar.'); }}><label className="check" htmlFor="acepto"><input type="checkbox" id="acepto" checked={accepted} onChange={(event) => setAccepted(event.target.checked)} /> <span>He leído y acepto las <a href="legal.html#aviso">condiciones de compra</a> y la <a href="legal.html#privacidad">política de privacidad</a>.</span></label><button className="btn btn-copper btn-block" type="submit"><Icon name="lock" />Finalizar compra</button><p className="form-msg" role="status">{message}</p></form>; }

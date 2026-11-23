@@ -1,0 +1,747 @@
+{
+ "t": "footer",
+ "a": {
+  "class": "footer"
+ },
+ "c": [
+  {
+   "t": "div",
+   "a": {
+    "class": "wrap foot-grid"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "foot-brand"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "aria-label": "OKIDOKEI, ir al inicio",
+        "class": "brand",
+        "href": "index.html"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "brand-mark"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#emblem"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "brand-word cu-text"
+         },
+         "c": [
+          "OKIDOKEI"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "a": {},
+       "c": [
+        "Tu relojería online de confianza. Relojes seleccionados uno a uno, revisados en taller y enviados a tu puerta."
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "social"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "aria-label": "Instagram",
+          "href": "https://www.instagram.com/",
+          "rel": "noopener",
+          "target": "_blank"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-ig"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "aria-label": "Facebook",
+          "href": "https://www.facebook.com/",
+          "rel": "noopener",
+          "target": "_blank"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-fb"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "aria-label": "YouTube",
+          "href": "https://www.youtube.com/",
+          "rel": "noopener",
+          "target": "_blank"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-yt"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "aria-label": "Pinterest",
+          "href": "https://www.pinterest.com/",
+          "rel": "noopener",
+          "target": "_blank"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-pinterest"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "foot-col"
+     },
+     "c": [
+      {
+       "t": "h4",
+       "a": {},
+       "c": [
+        "Tienda"
+       ]
+      },
+      {
+       "t": "ul",
+       "a": {},
+       "c": [
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "tienda.html"
+           },
+           "c": [
+            "Todos los relojes"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "tienda.html#novedades"
+           },
+           "c": [
+            "Novedades"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "tienda.html#limitadas"
+           },
+           "c": [
+            "Ediciones limitadas"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "favoritos.html"
+           },
+           "c": [
+            "Mis favoritos"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "carrito.html"
+           },
+           "c": [
+            "Mi carrito"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "foot-col"
+     },
+     "c": [
+      {
+       "t": "h4",
+       "a": {},
+       "c": [
+        "Colecciones"
+       ]
+      },
+      {
+       "t": "ul",
+       "a": {},
+       "c": [
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "colecciones.html#heritage"
+           },
+           "c": [
+            "Vestir"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "colecciones.html#marine"
+           },
+           "c": [
+            "Deportivos"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "colecciones.html#esqueleto"
+           },
+           "c": [
+            "Esqueleto"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "colecciones.html#luna"
+           },
+           "c": [
+            "Fases lunares"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "colecciones.html#noir"
+           },
+           "c": [
+            "Noir"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "colecciones.html#origine"
+           },
+           "c": [
+            "Ediciones limitadas"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "foot-col"
+     },
+     "c": [
+      {
+       "t": "h4",
+       "a": {},
+       "c": [
+        "Ayuda"
+       ]
+      },
+      {
+       "t": "ul",
+       "a": {},
+       "c": [
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "ayuda.html#contacto"
+           },
+           "c": [
+            "Contacto"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "ayuda.html#envios"
+           },
+           "c": [
+            "Envíos y entregas"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "ayuda.html#devoluciones"
+           },
+           "c": [
+            "Devoluciones"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "ayuda.html#garantia"
+           },
+           "c": [
+            "Garantía"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "ayuda.html#faq"
+           },
+           "c": [
+            "Preguntas frecuentes"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "foot-col"
+     },
+     "c": [
+      {
+       "t": "h4",
+       "a": {},
+       "c": [
+        "Nosotros"
+       ]
+      },
+      {
+       "t": "ul",
+       "a": {},
+       "c": [
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "nosotros.html"
+           },
+           "c": [
+            "Nuestra historia"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "nosotros.html#taller"
+           },
+           "c": [
+            "El taller"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "nosotros.html#servicios"
+           },
+           "c": [
+            "Servicios"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "journal.html"
+           },
+           "c": [
+            "Journal"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "nosotros.html#empleo"
+           },
+           "c": [
+            "Trabaja con nosotros"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "foot-col"
+     },
+     "c": [
+      {
+       "t": "h4",
+       "a": {},
+       "c": [
+        "Compra segura"
+       ]
+      },
+      {
+       "t": "ul",
+       "a": {},
+       "c": [
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "href": "cuenta.html"
+           },
+           "c": [
+            "Mi cuenta"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Envíos a toda España y la UE"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Atención de lunes a viernes"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "aria-label": "Métodos de pago",
+        "class": "pay"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Tarjeta"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "PayPal"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Bizum"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Transferencia"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "div",
+   "a": {
+    "class": "wrap foot-bottom"
+   },
+   "c": [
+    {
+     "t": "span",
+     "a": {},
+     "c": [
+      "©",
+      {
+       "t": "span",
+       "a": {
+        "data-year": ""
+       },
+       "c": [
+        "<año>"
+       ]
+      },
+      "OKIDOKEI. Todos los derechos reservados."
+     ]
+    },
+    {
+     "t": "nav",
+     "a": {
+      "aria-label": "Legal"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "href": "legal.html#aviso"
+       },
+       "c": [
+        "Aviso legal"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "legal.html#privacidad"
+       },
+       "c": [
+        "Privacidad"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "legal.html#cookies"
+       },
+       "c": [
+        "Cookies"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "span",
+     "a": {},
+     "c": [
+      "España · EUR €"
+     ]
+    }
+   ]
+  }
+ ]
+}

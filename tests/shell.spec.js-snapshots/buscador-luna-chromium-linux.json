@@ -1,0 +1,138 @@
+{
+ "t": "div",
+ "a": {
+  "class": "search-panel",
+  "id": "searchPanel"
+ },
+ "c": [
+  {
+   "t": "div",
+   "a": {
+    "class": "search-inner"
+   },
+   "c": [
+    {
+     "t": "label",
+     "a": {
+      "class": "search-field",
+      "for": "searchInput"
+     },
+     "c": [
+      {
+       "t": "svg",
+       "a": {
+        "aria-hidden": "true",
+        "class": "icon"
+       },
+       "c": [
+        {
+         "t": "use",
+         "a": {
+          "href": "#i-search"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "input",
+       "a": {
+        "autocomplete": "off",
+        "id": "searchInput",
+        "placeholder": "Busca un reloj, una colección…",
+        "type": "search"
+       },
+       "c": []
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "aria-live": "polite",
+      "class": "search-results",
+      "id": "searchResults"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "href": "producto.html#luna-acero"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Luna Acero",
+          {
+           "t": "span",
+           "a": {
+            "class": "price"
+           },
+           "c": [
+            "· Automático con fase lunar · Acero · 40 mm"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "price"
+         },
+         "c": [
+          "3.150 €"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "producto.html#luna-cobre"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Luna Cobre",
+          {
+           "t": "span",
+           "a": {
+            "class": "price"
+           },
+           "c": [
+            "· Automático con fase lunar · Cobre · 40 mm"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "price"
+         },
+         "c": [
+          "3.350 €"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "search-all",
+        "href": "tienda.html"
+       },
+       "c": [
+        "Ver todos los relojes en la tienda"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

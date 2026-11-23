@@ -1,0 +1,10 @@
+{
+ "t": "div",
+ "a": {
+  "aria-live": "polite",
+  "class": "toast",
+  "id": "toast",
+  "role": "status"
+ },
+ "c": []
+}
