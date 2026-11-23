@@ -1,0 +1,1856 @@
+{
+ "t": "main",
+ "a": {},
+ "c": [
+  {
+   "t": "div",
+   "a": {
+    "class": "crumb-bar"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "nav",
+       "a": {
+        "aria-label": "Estás aquí",
+        "class": "crumbs"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "href": "index.html"
+         },
+         "c": [
+          "Inicio"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-hidden": "true"
+         },
+         "c": [
+          "/"
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "href": "tienda.html"
+         },
+         "c": [
+          "Tienda"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-hidden": "true"
+         },
+         "c": [
+          "/"
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "href": "colecciones.html#luna",
+          "id": "crumbColeccion"
+         },
+         "c": [
+          "Luna"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-hidden": "true"
+         },
+         "c": [
+          "/"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-current": "page",
+          "id": "crumbNombre"
+         },
+         "c": [
+          "Luna Cobre"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "pNombre",
+    "class": "wrap pdp"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "pdp-gallery"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "pdp-main foto"
+       },
+       "c": [
+        {
+         "t": "img",
+         "a": {
+          "alt": "Luna Cobre: caja de cobre y piel marrón",
+          "data-foto": "",
+          "id": "pFoto",
+          "src": "assets/relojes/luna-cobre.jpg"
+         },
+         "c": []
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "tag",
+          "id": "pTag"
+         },
+         "c": [
+          "Nuevo"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "pdp-thumbs",
+        "hidden": "",
+        "id": "pThumbs"
+       },
+       "c": []
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "pdp-info"
+     },
+     "c": [
+      {
+       "t": "p",
+       "a": {
+        "class": "eyebrow",
+        "id": "pColeccion"
+       },
+       "c": [
+        "Colección Luna · Fases lunares"
+       ]
+      },
+      {
+       "t": "h1",
+       "a": {
+        "id": "pNombre"
+       },
+       "c": [
+        "Luna Cobre"
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "pdp-ref",
+        "id": "pRef"
+       },
+       "c": [
+        "Ref. OK-1502"
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "pdp-price"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {
+          "id": "pPrecio"
+         },
+         "c": [
+          "3.350 €"
+         ]
+        },
+        {
+         "t": "small",
+         "a": {},
+         "c": [
+          "IVA incluido · Envío asegurado gratis"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "pdp-desc",
+        "id": "pDesc"
+       },
+       "c": [
+        "Una ventana a las 6 sigue el ciclo de 29,5 días de la luna, con dos lunas de cobre sobre un cielo negro."
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "field"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {
+          "class": "lbl"
+         },
+         "c": [
+          "Elige tu versión"
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "variants",
+          "id": "pVariantes"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "class": "variant",
+            "href": "producto.html#luna-acero"
+           },
+           "c": [
+            {
+             "t": "span",
+             "a": {
+              "class": "variant-swatch sw-acero"
+             },
+             "c": []
+            },
+            {
+             "t": "span",
+             "a": {},
+             "c": [
+              {
+               "t": "strong",
+               "a": {},
+               "c": [
+                "Acero"
+               ]
+              },
+              "Piel negra con pespunte cobre"
+             ]
+            },
+            {
+             "t": "em",
+             "a": {},
+             "c": [
+              "3.150 €"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "aria-current": "true",
+            "class": "variant",
+            "href": "producto.html#luna-cobre"
+           },
+           "c": [
+            {
+             "t": "span",
+             "a": {
+              "class": "variant-swatch sw-cobre"
+             },
+             "c": []
+            },
+            {
+             "t": "span",
+             "a": {},
+             "c": [
+              {
+               "t": "strong",
+               "a": {},
+               "c": [
+                "Cobre"
+               ]
+              },
+              "Piel marrón"
+             ]
+            },
+            {
+             "t": "em",
+             "a": {},
+             "c": [
+              "3.350 €"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "pdp-buy"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {
+          "class": "qty"
+         },
+         "c": [
+          {
+           "t": "button",
+           "a": {
+            "aria-label": "Una unidad menos",
+            "data-step": "-1",
+            "type": "button"
+           },
+           "c": [
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-minus"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "label",
+           "a": {
+            "class": "sr-only",
+            "for": "pQty"
+           },
+           "c": [
+            "Cantidad"
+           ]
+          },
+          {
+           "t": "input",
+           "a": {
+            "id": "pQty",
+            "inputmode": "numeric",
+            "max": "9",
+            "min": "1",
+            "type": "number",
+            "value": "1"
+           },
+           "c": []
+          },
+          {
+           "t": "button",
+           "a": {
+            "aria-label": "Una unidad más",
+            "data-step": "1",
+            "type": "button"
+           },
+           "c": [
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-plus"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "button",
+         "a": {
+          "class": "btn btn-copper",
+          "id": "pAdd",
+          "type": "button"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-bag"
+             },
+             "c": []
+            }
+           ]
+          },
+          "Añadir al carrito"
+         ]
+        },
+        {
+         "t": "button",
+         "a": {
+          "aria-label": "Añadir Luna Cobre a favoritos",
+          "aria-pressed": "false",
+          "class": "fav fav-big",
+          "data-fav": "luna-cobre",
+          "id": "pFav",
+          "type": "button"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-heart"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "ul",
+       "a": {
+        "class": "pdp-perks"
+       },
+       "c": [
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-truck"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Envío asegurado gratis a toda España ·",
+            {
+             "t": "a",
+             "a": {
+              "href": "ayuda.html#envios"
+             },
+             "c": [
+              "Envíos"
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-return"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "30 días para devolverlo ·",
+            {
+             "t": "a",
+             "a": {
+              "href": "ayuda.html#devoluciones"
+             },
+             "c": [
+              "Devoluciones"
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {},
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-shield"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "3 años de garantía y certificado de autenticidad ·",
+            {
+             "t": "a",
+             "a": {
+              "href": "ayuda.html#garantia"
+             },
+             "c": [
+              "Garantía"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "details",
+       "a": {
+        "class": "acc",
+        "open": ""
+       },
+       "c": [
+        {
+         "t": "summary",
+         "a": {},
+         "c": [
+          "Especificaciones"
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "acc-body"
+         },
+         "c": [
+          {
+           "t": "table",
+           "a": {
+            "class": "specs"
+           },
+           "c": [
+            {
+             "t": "tbody",
+             "a": {
+              "id": "pSpecs"
+             },
+             "c": [
+              {
+               "t": "tr",
+               "a": {},
+               "c": [
+                {
+                 "t": "th",
+                 "a": {
+                  "scope": "row"
+                 },
+                 "c": [
+                  "Referencia"
+                 ]
+                },
+                {
+                 "t": "td",
+                 "a": {},
+                 "c": [
+                  "OK-1502"
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "tr",
+               "a": {},
+               "c": [
+                {
+                 "t": "th",
+                 "a": {
+                  "scope": "row"
+                 },
+                 "c": [
+                  "Caja"
+                 ]
+                },
+                {
+                 "t": "td",
+                 "a": {},
+                 "c": [
+                  "Cobre, 40 mm"
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "tr",
+               "a": {},
+               "c": [
+                {
+                 "t": "th",
+                 "a": {
+                  "scope": "row"
+                 },
+                 "c": [
+                  "Movimiento"
+                 ]
+                },
+                {
+                 "t": "td",
+                 "a": {},
+                 "c": [
+                  "Automático con fase lunar"
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "tr",
+               "a": {},
+               "c": [
+                {
+                 "t": "th",
+                 "a": {
+                  "scope": "row"
+                 },
+                 "c": [
+                  "Reserva de marcha"
+                 ]
+                },
+                {
+                 "t": "td",
+                 "a": {},
+                 "c": [
+                  "40 horas"
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "tr",
+               "a": {},
+               "c": [
+                {
+                 "t": "th",
+                 "a": {
+                  "scope": "row"
+                 },
+                 "c": [
+                  "Hermeticidad"
+                 ]
+                },
+                {
+                 "t": "td",
+                 "a": {},
+                 "c": [
+                  "3 ATM (30 m)"
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "tr",
+               "a": {},
+               "c": [
+                {
+                 "t": "th",
+                 "a": {
+                  "scope": "row"
+                 },
+                 "c": [
+                  "Cristal"
+                 ]
+                },
+                {
+                 "t": "td",
+                 "a": {},
+                 "c": [
+                  "Zafiro"
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "tr",
+               "a": {},
+               "c": [
+                {
+                 "t": "th",
+                 "a": {
+                  "scope": "row"
+                 },
+                 "c": [
+                  "Correa"
+                 ]
+                },
+                {
+                 "t": "td",
+                 "a": {},
+                 "c": [
+                  "Piel marrón"
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "details",
+       "a": {
+        "class": "acc"
+       },
+       "c": [
+        {
+         "t": "summary",
+         "a": {},
+         "c": [
+          "Envío y devoluciones"
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "acc-body"
+         },
+         "c": [
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Lo enviamos asegurado, en su estuche y con el certificado de autenticidad. Tienes 30 días desde que lo recibes para devolverlo sin usar y con sus precintos."
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Los relojes con grabado personalizado no admiten devolución.",
+            {
+             "t": "a",
+             "a": {
+              "class": "link-arrow",
+              "href": "ayuda.html#devoluciones"
+             },
+             "c": [
+              "Cómo devolver"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "details",
+       "a": {
+        "class": "acc"
+       },
+       "c": [
+        {
+         "t": "summary",
+         "a": {},
+         "c": [
+          "Garantía y servicio"
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "acc-body"
+         },
+         "c": [
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "3 años de garantía frente a defectos de fabricación. Te recomendamos una revisión del movimiento cada 4 o 5 años; puedes pedirla en nuestro",
+            {
+             "t": "a",
+             "a": {
+              "class": "link-arrow",
+              "href": "nosotros.html#mantenimiento"
+             },
+             "c": [
+              "servicio de taller"
+             ]
+            },
+            "."
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "details",
+       "a": {
+        "class": "acc"
+       },
+       "c": [
+        {
+         "t": "summary",
+         "a": {},
+         "c": [
+          "¿Tienes dudas?"
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "acc-body"
+         },
+         "c": [
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Escríbenos y te ayudamos a elegir talla de correa, grabado o regalo.",
+            {
+             "t": "a",
+             "a": {
+              "class": "link-arrow",
+              "href": "ayuda.html#contacto"
+             },
+             "c": [
+              "Contactar"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "relTitle",
+    "class": "section section-2"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "sec-head"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "p",
+           "a": {
+            "class": "eyebrow"
+           },
+           "c": [
+            "Sigue explorando"
+           ]
+          },
+          {
+           "t": "h2",
+           "a": {
+            "class": "sec-title",
+            "id": "relTitle"
+           },
+           "c": [
+            "También te puede gustar"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "class": "link-arrow",
+          "href": "tienda.html"
+         },
+         "c": [
+          "Ver toda la tienda",
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-right"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "grid-4",
+        "id": "pRelacionados"
+       },
+       "c": [
+        {
+         "t": "article",
+         "a": {
+          "class": "card",
+          "data-id": "luna-acero"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {
+            "class": "card-media"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "aria-hidden": "true",
+              "class": "card-img foto",
+              "href": "producto.html#luna-acero",
+              "tabindex": "-1"
+             },
+             "c": [
+              {
+               "t": "img",
+               "a": {
+                "alt": "",
+                "data-foto": "",
+                "loading": "lazy",
+                "src": "assets/relojes/luna-acero.jpg"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Añadir Luna Acero a favoritos",
+              "aria-pressed": "false",
+              "class": "fav",
+              "data-fav": "luna-acero",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-heart"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "card-coll"
+             },
+             "c": [
+              "Luna"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {
+              "class": "card-name"
+             },
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "producto.html#luna-acero"
+               },
+               "c": [
+                "Luna Acero"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {
+              "class": "card-spec"
+             },
+             "c": [
+              "Automático con fase lunar · Acero · 40 mm"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "card-foot"
+             },
+             "c": [
+              {
+               "t": "span",
+               "a": {
+                "class": "card-price"
+               },
+               "c": [
+                "3.150 €"
+               ]
+              },
+              {
+               "t": "button",
+               "a": {
+                "class": "add-btn",
+                "data-add": "luna-acero",
+                "type": "button"
+               },
+               "c": [
+                {
+                 "t": "svg",
+                 "a": {
+                  "aria-hidden": "true",
+                  "class": "icon"
+                 },
+                 "c": [
+                  {
+                   "t": "use",
+                   "a": {
+                    "href": "#i-bag"
+                   },
+                   "c": []
+                  }
+                 ]
+                },
+                "Añadir"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "article",
+         "a": {
+          "class": "card",
+          "data-id": "esqueleto-cobre"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {
+            "class": "card-media"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "aria-hidden": "true",
+              "class": "card-img foto",
+              "href": "producto.html#esqueleto-cobre",
+              "tabindex": "-1"
+             },
+             "c": [
+              {
+               "t": "img",
+               "a": {
+                "alt": "",
+                "data-foto": "",
+                "loading": "lazy",
+                "src": "assets/relojes/esqueleto-cobre.jpg"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "span",
+             "a": {
+              "class": "tag"
+             },
+             "c": [
+              "Nuevo"
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Añadir Esqueleto Cobre a favoritos",
+              "aria-pressed": "false",
+              "class": "fav",
+              "data-fav": "esqueleto-cobre",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-heart"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "card-coll"
+             },
+             "c": [
+              "Esqueleto"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {
+              "class": "card-name"
+             },
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "producto.html#esqueleto-cobre"
+               },
+               "c": [
+                "Esqueleto Cobre"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {
+              "class": "card-spec"
+             },
+             "c": [
+              "Automático esqueletado · Cobre · 42 mm"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "card-foot"
+             },
+             "c": [
+              {
+               "t": "span",
+               "a": {
+                "class": "card-price"
+               },
+               "c": [
+                "4.950 €"
+               ]
+              },
+              {
+               "t": "button",
+               "a": {
+                "class": "add-btn",
+                "data-add": "esqueleto-cobre",
+                "type": "button"
+               },
+               "c": [
+                {
+                 "t": "svg",
+                 "a": {
+                  "aria-hidden": "true",
+                  "class": "icon"
+                 },
+                 "c": [
+                  {
+                   "t": "use",
+                   "a": {
+                    "href": "#i-bag"
+                   },
+                   "c": []
+                  }
+                 ]
+                },
+                "Añadir"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "article",
+         "a": {
+          "class": "card",
+          "data-id": "heritage-cobre"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {
+            "class": "card-media"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "aria-hidden": "true",
+              "class": "card-img foto",
+              "href": "producto.html#heritage-cobre",
+              "tabindex": "-1"
+             },
+             "c": [
+              {
+               "t": "img",
+               "a": {
+                "alt": "",
+                "data-foto": "",
+                "loading": "lazy",
+                "src": "assets/relojes/heritage-cobre.jpg"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Añadir Heritage Cobre a favoritos",
+              "aria-pressed": "false",
+              "class": "fav",
+              "data-fav": "heritage-cobre",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-heart"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "card-coll"
+             },
+             "c": [
+              "Heritage"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {
+              "class": "card-name"
+             },
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "producto.html#heritage-cobre"
+               },
+               "c": [
+                "Heritage Cobre"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {
+              "class": "card-spec"
+             },
+             "c": [
+              "Automático · Cobre · 40 mm"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "card-foot"
+             },
+             "c": [
+              {
+               "t": "span",
+               "a": {
+                "class": "card-price"
+               },
+               "c": [
+                "1.980 €"
+               ]
+              },
+              {
+               "t": "button",
+               "a": {
+                "class": "add-btn",
+                "data-add": "heritage-cobre",
+                "type": "button"
+               },
+               "c": [
+                {
+                 "t": "svg",
+                 "a": {
+                  "aria-hidden": "true",
+                  "class": "icon"
+                 },
+                 "c": [
+                  {
+                   "t": "use",
+                   "a": {
+                    "href": "#i-bag"
+                   },
+                   "c": []
+                  }
+                 ]
+                },
+                "Añadir"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "article",
+         "a": {
+          "class": "card",
+          "data-id": "marine-acero"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {
+            "class": "card-media"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "aria-hidden": "true",
+              "class": "card-img foto",
+              "href": "producto.html#marine-acero",
+              "tabindex": "-1"
+             },
+             "c": [
+              {
+               "t": "img",
+               "a": {
+                "alt": "",
+                "data-foto": "",
+                "loading": "lazy",
+                "src": "assets/relojes/marine-acero.jpg"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Añadir Marine Acero a favoritos",
+              "aria-pressed": "false",
+              "class": "fav",
+              "data-fav": "marine-acero",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-heart"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "card-coll"
+             },
+             "c": [
+              "Marine"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {
+              "class": "card-name"
+             },
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "producto.html#marine-acero"
+               },
+               "c": [
+                "Marine Acero"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {
+              "class": "card-spec"
+             },
+             "c": [
+              "Automático · Acero · 42 mm"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "card-foot"
+             },
+             "c": [
+              {
+               "t": "span",
+               "a": {
+                "class": "card-price"
+               },
+               "c": [
+                "2.890 €"
+               ]
+              },
+              {
+               "t": "button",
+               "a": {
+                "class": "add-btn",
+                "data-add": "marine-acero",
+                "type": "button"
+               },
+               "c": [
+                {
+                 "t": "svg",
+                 "a": {
+                  "aria-hidden": "true",
+                  "class": "icon"
+                 },
+                 "c": [
+                  {
+                   "t": "use",
+                   "a": {
+                    "href": "#i-bag"
+                   },
+                   "c": []
+                  }
+                 ]
+                },
+                "Añadir"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-label": "Ventajas de comprar en OKIDOKEI",
+    "class": "trust"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap trust-row"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#envios"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-truck"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Envío asegurado"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Gratis en toda España"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#devoluciones"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-return"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "30 días"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Devolución sencilla"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#garantia"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-shield"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Garantía 3 años"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "En todos los relojes"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#faq"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-cert"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Autenticidad"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Certificado en cada pieza"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#faq"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-lock"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Pago seguro"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Conexión cifrada SSL"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

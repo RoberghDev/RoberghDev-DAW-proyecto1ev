@@ -1,8 +1,69 @@
-import React from 'react';
-// Migrated from the original tienda.html page markup.
+import React, { useEffect, useRef, useState } from 'react';
+import { COLECCIONES, PRODUCTOS, buscarColeccion } from '../data.js';
+import { ProductCard } from '../components/Commerce.jsx';
+
+// Migrada desde la plantilla heredada tienda.html y public/js/tienda.js (fase 3).
 export const title = 'OKIDOKEI · Tienda';
 export const description = 'Todos los relojes OKIDOKEI: filtra por colección, caja y correa.';
+
+const FILTROS_INICIALES = { coleccion: 'todas', caja: 'todas', correa: 'todas', novedades: false, orden: 'destacados' };
+const CHIPS = [{ id: 'todas', nombre: 'Todas' }, ...COLECCIONES];
+
+// RESTAURA COLECCIÓN Y NOVEDADES DESDE EL FRAGMENTO DE LA URL (EL RESTO DE FILTROS SE CONSERVA).
+function filtrosDesdeDireccion(filtros) {
+    const fragmento = window.location.hash.slice(1);
+    let coleccion = 'todas';
+    let novedades = false;
+    if (fragmento === 'novedades') novedades = true;
+    else if (fragmento === 'limitadas') coleccion = 'origine';
+    else if (buscarColeccion(fragmento)) coleccion = fragmento;
+    return { ...filtros, coleccion, novedades };
+}
+
+function coincide(producto, filtros) {
+    return (filtros.coleccion === 'todas' || producto.coleccion === filtros.coleccion) &&
+        (filtros.caja === 'todas' || producto.caja === filtros.caja) &&
+        (filtros.correa === 'todas' || producto.correa === filtros.correa) &&
+        (!filtros.novedades || Boolean(producto.nuevo));
+}
+
+// ORDENA TODO EL CATÁLOGO (TAMBIÉN LAS TARJETAS OCULTAS), PARTIENDO SIEMPRE DEL ORDEN ORIGINAL.
+function ordenar(orden) {
+    return PRODUCTOS.slice().sort((a, b) => {
+        if (orden === 'precio-asc') return a.precio - b.precio;
+        if (orden === 'precio-desc') return b.precio - a.precio;
+        if (orden === 'nombre') return a.nombre.localeCompare(b.nombre, 'es');
+        return PRODUCTOS.indexOf(a) - PRODUCTOS.indexOf(b);
+    });
+}
+
 export default function Tienda() {
+    const [filtros, setFiltros] = useState(() => filtrosDesdeDireccion(FILTROS_INICIALES));
+    const novedadesRef = useRef(null);
+
+    // LA CASILLA SE SINCRONIZA POR PROPIEDAD (COMO tienda.js), SIN ESCRIBIR EL ATRIBUTO checked.
+    useEffect(() => { novedadesRef.current.checked = filtros.novedades; }, [filtros.novedades]);
+
+    useEffect(() => {
+        // ACTUALIZA LOS FILTROS SI CAMBIA EL FRAGMENTO DE LA URL.
+        const leerDireccion = () => setFiltros(filtrosDesdeDireccion);
+        window.addEventListener('hashchange', leerDireccion);
+        return () => window.removeEventListener('hashchange', leerDireccion);
+    }, []);
+
+    // APLICA UN CAMBIO DEL USUARIO Y REFLEJA COLECCIÓN O NOVEDADES EN LA URL.
+    function cambiar(nuevos) {
+        setFiltros(nuevos);
+        const fragmento = nuevos.coleccion !== 'todas' ? '#' + nuevos.coleccion : nuevos.novedades ? '#novedades' : '';
+        window.history.replaceState(null, '', window.location.pathname + fragmento);
+    }
+    const limpiar = () => cambiar(FILTROS_INICIALES);
+
+    const ordenados = ordenar(filtros.orden);
+    const visibles = PRODUCTOS.filter((producto) => coincide(producto, filtros)).length;
+    const coleccion = buscarColeccion(filtros.coleccion);
+    const titulo = coleccion ? 'Colección ' + coleccion.nombre : filtros.novedades ? 'Novedades' : 'Todos los relojes';
+
     return (
         <main>
 
@@ -16,85 +77,26 @@ export default function Tienda() {
                 <svg className={'page-mark'} aria-hidden={'true'}><use href={'#emblem'} /></svg>
             </section>
 
-            <section className={'section-dark shop-section'}>
-                <div className={'wrap'}>
-                    <div className={'shop-bar'}>
-                        <div className={'shop-chips'} role={'group'} aria-label={'Filtrar por colección'}><button className={'chip'} type={'button'} data-filtro-coleccion={'todas'} aria-pressed={'true'}>Todas</button><button className={'chip'} type={'button'} data-filtro-coleccion={'esqueleto'} aria-pressed={'false'}>Esqueleto</button><button className={'chip'} type={'button'} data-filtro-coleccion={'heritage'} aria-pressed={'false'}>Heritage</button><button className={'chip'} type={'button'} data-filtro-coleccion={'marine'} aria-pressed={'false'}>Marine</button><button className={'chip'} type={'button'} data-filtro-coleccion={'noir'} aria-pressed={'false'}>Noir</button><button className={'chip'} type={'button'} data-filtro-coleccion={'luna'} aria-pressed={'false'}>Luna</button><button className={'chip'} type={'button'} data-filtro-coleccion={'origine'} aria-pressed={'false'}>Origine</button></div>
-                        <div className={'shop-filters'}>
-                            <div className={'field'}><label htmlFor={'fCaja'}>Caja</label><select className={'select'} id={'fCaja'}><option value={'todas'}>Todas</option><option value={'cobre'}>Cobre</option><option value={'acero'}>Acero</option><option value={'negro'}>Acero negro</option></select></div>
-                            <div className={'field'}><label htmlFor={'fCorrea'}>Correa</label><select className={'select'} id={'fCorrea'}><option value={'todas'}>Todas</option><option value={'piel'}>Piel</option><option value={'acero'}>Brazalete de acero</option><option value={'caucho'}>Caucho</option></select></div>
-                            <div className={'field'}><label htmlFor={'fOrden'}>Ordenar</label><select className={'select'} id={'fOrden'}><option value={'destacados'}>Destacados</option><option value={'precio-asc'}>Precio: menor a mayor</option><option value={'precio-desc'}>Precio: mayor a menor</option><option value={'nombre'}>Nombre (A–Z)</option></select></div>
-                            <label className={'check'} htmlFor={'fNuevos'}><input type={'checkbox'} id={'fNuevos'} /> Solo novedades</label>
+            <section className="section-dark shop-section">
+                <div className="wrap">
+                    <div className="shop-bar">
+                        <div className="shop-chips" role="group" aria-label="Filtrar por colección">{CHIPS.map((chip) => <button key={chip.id} className="chip" type="button" data-filtro-coleccion={chip.id} aria-pressed={String(filtros.coleccion === chip.id)} onClick={() => cambiar({ ...filtros, coleccion: chip.id })}>{chip.nombre}</button>)}</div>
+                        <div className="shop-filters">
+                            <div className="field"><label htmlFor="fCaja">Caja</label><select className="select" id="fCaja" value={filtros.caja} onChange={(event) => cambiar({ ...filtros, caja: event.target.value })}><option value="todas">Todas</option><option value="cobre">Cobre</option><option value="acero">Acero</option><option value="negro">Acero negro</option></select></div>
+                            <div className="field"><label htmlFor="fCorrea">Correa</label><select className="select" id="fCorrea" value={filtros.correa} onChange={(event) => cambiar({ ...filtros, correa: event.target.value })}><option value="todas">Todas</option><option value="piel">Piel</option><option value="acero">Brazalete de acero</option><option value="caucho">Caucho</option></select></div>
+                            <div className="field"><label htmlFor="fOrden">Ordenar</label><select className="select" id="fOrden" value={filtros.orden} onChange={(event) => cambiar({ ...filtros, orden: event.target.value })}><option value="destacados">Destacados</option><option value="precio-asc">Precio: menor a mayor</option><option value="precio-desc">Precio: mayor a menor</option><option value="nombre">Nombre (A–Z)</option></select></div>
+                            <label className="check" htmlFor="fNuevos"><input ref={novedadesRef} type="checkbox" id="fNuevos" onChange={(event) => cambiar({ ...filtros, novedades: event.target.checked })} /> Solo novedades</label>
                         </div>
                     </div>
-                    <div className={'shop-head'}><h2 id={'shopTitle'}>Todos los relojes</h2><p><span className={'shop-count'} id={'shopCount'}>12 relojes</span> · <button className={'shop-clear'} type={'button'} data-limpiar>Quitar filtros</button></p></div>
-                    <div className={'grid-4'} id={'shopGrid'}>
-                        <article className={'card'} data-id={'esqueleto-cobre'} data-coleccion={'esqueleto'} data-caja={'cobre'} data-correa={'piel'} data-precio={'4950'} data-nombre={'Esqueleto Cobre'} data-orden={'0'} data-nuevo={'si'}>
-                            <div className={'card-media'}><a className={'card-img foto'} href={'producto.html#esqueleto-cobre'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/relojes/esqueleto-cobre.jpg'} alt={'Esqueleto Cobre: caja de cobre y piel marrón con pespunte crudo'} loading={'lazy'} data-foto /></a><span className={'tag'}>Nuevo</span><button className={'fav'} type={'button'} data-fav={'esqueleto-cobre'} aria-pressed={'false'} aria-label={'Añadir Esqueleto Cobre a favoritos'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-heart'} /></svg></button></div>
-                            <div className={'card-body'}><p className={'card-coll'}>Esqueleto</p><h3 className={'card-name'}><a href={'producto.html#esqueleto-cobre'}>Esqueleto Cobre</a></h3><p className={'card-spec'}>Automático esqueletado · Cobre · 42 mm</p>
-                                <div className={'card-foot'}><span className={'card-price'}>4.950 €</span><button className={'add-btn'} type={'button'} data-add={'esqueleto-cobre'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-bag'} /></svg>Añadir</button></div></div>
-                        </article>
-                        <article className={'card'} data-id={'esqueleto-acero'} data-coleccion={'esqueleto'} data-caja={'acero'} data-correa={'piel'} data-precio={'4650'} data-nombre={'Esqueleto Acero'} data-orden={'1'} data-nuevo={'no'}>
-                            <div className={'card-media'}><a className={'card-img foto'} href={'producto.html#esqueleto-acero'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/relojes/esqueleto-acero.jpg'} alt={'Esqueleto Acero: caja de acero y piel negra con pespunte cobre'} loading={'lazy'} data-foto /></a><button className={'fav'} type={'button'} data-fav={'esqueleto-acero'} aria-pressed={'false'} aria-label={'Añadir Esqueleto Acero a favoritos'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-heart'} /></svg></button></div>
-                            <div className={'card-body'}><p className={'card-coll'}>Esqueleto</p><h3 className={'card-name'}><a href={'producto.html#esqueleto-acero'}>Esqueleto Acero</a></h3><p className={'card-spec'}>Automático esqueletado · Acero · 42 mm</p>
-                                <div className={'card-foot'}><span className={'card-price'}>4.650 €</span><button className={'add-btn'} type={'button'} data-add={'esqueleto-acero'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-bag'} /></svg>Añadir</button></div></div>
-                        </article>
-                        <article className={'card'} data-id={'heritage-cobre'} data-coleccion={'heritage'} data-caja={'cobre'} data-correa={'piel'} data-precio={'1980'} data-nombre={'Heritage Cobre'} data-orden={'2'} data-nuevo={'no'}>
-                            <div className={'card-media'}><a className={'card-img foto'} href={'producto.html#heritage-cobre'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/relojes/heritage-cobre.jpg'} alt={'Heritage Cobre: caja de cobre y piel marrón oscuro'} loading={'lazy'} data-foto /></a><button className={'fav'} type={'button'} data-fav={'heritage-cobre'} aria-pressed={'false'} aria-label={'Añadir Heritage Cobre a favoritos'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-heart'} /></svg></button></div>
-                            <div className={'card-body'}><p className={'card-coll'}>Heritage</p><h3 className={'card-name'}><a href={'producto.html#heritage-cobre'}>Heritage Cobre</a></h3><p className={'card-spec'}>Automático · Cobre · 40 mm</p>
-                                <div className={'card-foot'}><span className={'card-price'}>1.980 €</span><button className={'add-btn'} type={'button'} data-add={'heritage-cobre'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-bag'} /></svg>Añadir</button></div></div>
-                        </article>
-                        <article className={'card'} data-id={'heritage-acero'} data-coleccion={'heritage'} data-caja={'acero'} data-correa={'piel'} data-precio={'1790'} data-nombre={'Heritage Acero'} data-orden={'3'} data-nuevo={'no'}>
-                            <div className={'card-media'}><a className={'card-img foto'} href={'producto.html#heritage-acero'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/relojes/heritage-acero.jpg'} alt={'Heritage Acero: caja de acero y piel negra'} loading={'lazy'} data-foto /></a><button className={'fav'} type={'button'} data-fav={'heritage-acero'} aria-pressed={'false'} aria-label={'Añadir Heritage Acero a favoritos'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-heart'} /></svg></button></div>
-                            <div className={'card-body'}><p className={'card-coll'}>Heritage</p><h3 className={'card-name'}><a href={'producto.html#heritage-acero'}>Heritage Acero</a></h3><p className={'card-spec'}>Automático · Acero · 40 mm</p>
-                                <div className={'card-foot'}><span className={'card-price'}>1.790 €</span><button className={'add-btn'} type={'button'} data-add={'heritage-acero'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-bag'} /></svg>Añadir</button></div></div>
-                        </article>
-                        <article className={'card'} data-id={'marine-acero'} data-coleccion={'marine'} data-caja={'acero'} data-correa={'acero'} data-precio={'2890'} data-nombre={'Marine Acero'} data-orden={'4'} data-nuevo={'no'}>
-                            <div className={'card-media'}><a className={'card-img foto'} href={'producto.html#marine-acero'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/relojes/marine-acero.jpg'} alt={'Marine Acero: caja de acero y brazalete de acero de tres eslabones'} loading={'lazy'} data-foto /></a><button className={'fav'} type={'button'} data-fav={'marine-acero'} aria-pressed={'false'} aria-label={'Añadir Marine Acero a favoritos'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-heart'} /></svg></button></div>
-                            <div className={'card-body'}><p className={'card-coll'}>Marine</p><h3 className={'card-name'}><a href={'producto.html#marine-acero'}>Marine Acero</a></h3><p className={'card-spec'}>Automático · Acero · 42 mm</p>
-                                <div className={'card-foot'}><span className={'card-price'}>2.890 €</span><button className={'add-btn'} type={'button'} data-add={'marine-acero'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-bag'} /></svg>Añadir</button></div></div>
-                        </article>
-                        <article className={'card'} data-id={'marine-caucho'} data-coleccion={'marine'} data-caja={'acero'} data-correa={'caucho'} data-precio={'2690'} data-nombre={'Marine Caucho'} data-orden={'5'} data-nuevo={'si'}>
-                            <div className={'card-media'}><a className={'card-img foto'} href={'producto.html#marine-caucho'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/relojes/marine-caucho.jpg'} alt={'Marine Caucho: caja de acero y caucho negro'} loading={'lazy'} data-foto /></a><span className={'tag'}>Nuevo</span><button className={'fav'} type={'button'} data-fav={'marine-caucho'} aria-pressed={'false'} aria-label={'Añadir Marine Caucho a favoritos'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-heart'} /></svg></button></div>
-                            <div className={'card-body'}><p className={'card-coll'}>Marine</p><h3 className={'card-name'}><a href={'producto.html#marine-caucho'}>Marine Caucho</a></h3><p className={'card-spec'}>Automático · Acero · 42 mm</p>
-                                <div className={'card-foot'}><span className={'card-price'}>2.690 €</span><button className={'add-btn'} type={'button'} data-add={'marine-caucho'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-bag'} /></svg>Añadir</button></div></div>
-                        </article>
-                        <article className={'card'} data-id={'marine-cobre'} data-coleccion={'marine'} data-caja={'cobre'} data-correa={'caucho'} data-precio={'3190'} data-nombre={'Marine Cobre'} data-orden={'6'} data-nuevo={'no'}>
-                            <div className={'card-media'}><a className={'card-img foto'} href={'producto.html#marine-cobre'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/relojes/marine-cobre.jpg'} alt={'Marine Cobre: caja de cobre y caucho negro'} loading={'lazy'} data-foto /></a><button className={'fav'} type={'button'} data-fav={'marine-cobre'} aria-pressed={'false'} aria-label={'Añadir Marine Cobre a favoritos'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-heart'} /></svg></button></div>
-                            <div className={'card-body'}><p className={'card-coll'}>Marine</p><h3 className={'card-name'}><a href={'producto.html#marine-cobre'}>Marine Cobre</a></h3><p className={'card-spec'}>Automático · Cobre · 42 mm</p>
-                                <div className={'card-foot'}><span className={'card-price'}>3.190 €</span><button className={'add-btn'} type={'button'} data-add={'marine-cobre'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-bag'} /></svg>Añadir</button></div></div>
-                        </article>
-                        <article className={'card'} data-id={'noir-caucho'} data-coleccion={'noir'} data-caja={'negro'} data-correa={'caucho'} data-precio={'3450'} data-nombre={'Noir Caucho'} data-orden={'7'} data-nuevo={'si'}>
-                            <div className={'card-media'}><a className={'card-img foto'} href={'producto.html#noir-caucho'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/relojes/noir-caucho.jpg'} alt={'Noir Caucho: caja de acero negro y caucho negro'} loading={'lazy'} data-foto /></a><span className={'tag'}>Nuevo</span><button className={'fav'} type={'button'} data-fav={'noir-caucho'} aria-pressed={'false'} aria-label={'Añadir Noir Caucho a favoritos'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-heart'} /></svg></button></div>
-                            <div className={'card-body'}><p className={'card-coll'}>Noir</p><h3 className={'card-name'}><a href={'producto.html#noir-caucho'}>Noir Caucho</a></h3><p className={'card-spec'}>Automático · Acero negro · 41 mm</p>
-                                <div className={'card-foot'}><span className={'card-price'}>3.450 €</span><button className={'add-btn'} type={'button'} data-add={'noir-caucho'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-bag'} /></svg>Añadir</button></div></div>
-                        </article>
-                        <article className={'card'} data-id={'noir-piel'} data-coleccion={'noir'} data-caja={'negro'} data-correa={'piel'} data-precio={'3390'} data-nombre={'Noir Piel'} data-orden={'8'} data-nuevo={'no'}>
-                            <div className={'card-media'}><a className={'card-img foto'} href={'producto.html#noir-piel'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/relojes/noir-piel.jpg'} alt={'Noir Piel: caja de acero negro y piel negra con pespunte cobre'} loading={'lazy'} data-foto /></a><button className={'fav'} type={'button'} data-fav={'noir-piel'} aria-pressed={'false'} aria-label={'Añadir Noir Piel a favoritos'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-heart'} /></svg></button></div>
-                            <div className={'card-body'}><p className={'card-coll'}>Noir</p><h3 className={'card-name'}><a href={'producto.html#noir-piel'}>Noir Piel</a></h3><p className={'card-spec'}>Automático · Acero negro · 41 mm</p>
-                                <div className={'card-foot'}><span className={'card-price'}>3.390 €</span><button className={'add-btn'} type={'button'} data-add={'noir-piel'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-bag'} /></svg>Añadir</button></div></div>
-                        </article>
-                        <article className={'card'} data-id={'luna-acero'} data-coleccion={'luna'} data-caja={'acero'} data-correa={'piel'} data-precio={'3150'} data-nombre={'Luna Acero'} data-orden={'9'} data-nuevo={'no'}>
-                            <div className={'card-media'}><a className={'card-img foto'} href={'producto.html#luna-acero'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/relojes/luna-acero.jpg'} alt={'Luna Acero: caja de acero y piel negra con pespunte cobre'} loading={'lazy'} data-foto /></a><button className={'fav'} type={'button'} data-fav={'luna-acero'} aria-pressed={'false'} aria-label={'Añadir Luna Acero a favoritos'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-heart'} /></svg></button></div>
-                            <div className={'card-body'}><p className={'card-coll'}>Luna</p><h3 className={'card-name'}><a href={'producto.html#luna-acero'}>Luna Acero</a></h3><p className={'card-spec'}>Automático con fase lunar · Acero · 40 mm</p>
-                                <div className={'card-foot'}><span className={'card-price'}>3.150 €</span><button className={'add-btn'} type={'button'} data-add={'luna-acero'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-bag'} /></svg>Añadir</button></div></div>
-                        </article>
-                        <article className={'card'} data-id={'luna-cobre'} data-coleccion={'luna'} data-caja={'cobre'} data-correa={'piel'} data-precio={'3350'} data-nombre={'Luna Cobre'} data-orden={'10'} data-nuevo={'si'}>
-                            <div className={'card-media'}><a className={'card-img foto'} href={'producto.html#luna-cobre'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/relojes/luna-cobre.jpg'} alt={'Luna Cobre: caja de cobre y piel marrón'} loading={'lazy'} data-foto /></a><span className={'tag'}>Nuevo</span><button className={'fav'} type={'button'} data-fav={'luna-cobre'} aria-pressed={'false'} aria-label={'Añadir Luna Cobre a favoritos'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-heart'} /></svg></button></div>
-                            <div className={'card-body'}><p className={'card-coll'}>Luna</p><h3 className={'card-name'}><a href={'producto.html#luna-cobre'}>Luna Cobre</a></h3><p className={'card-spec'}>Automático con fase lunar · Cobre · 40 mm</p>
-                                <div className={'card-foot'}><span className={'card-price'}>3.350 €</span><button className={'add-btn'} type={'button'} data-add={'luna-cobre'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-bag'} /></svg>Añadir</button></div></div>
-                        </article>
-                        <article className={'card'} data-id={'origine'} data-coleccion={'origine'} data-caja={'cobre'} data-correa={'piel'} data-precio={'18900'} data-nombre={'Origine Tourbillon'} data-orden={'11'} data-nuevo={'no'}>
-                            <div className={'card-media'}><a className={'card-img foto'} href={'producto.html#origine'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/relojes/origine.jpg'} alt={'Origine Tourbillon: caja de cobre y piel negra con pespunte cobre'} loading={'lazy'} data-foto /></a><span className={'tag'}>Edición limitada</span><button className={'fav'} type={'button'} data-fav={'origine'} aria-pressed={'false'} aria-label={'Añadir Origine Tourbillon a favoritos'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-heart'} /></svg></button></div>
-                            <div className={'card-body'}><p className={'card-coll'}>Origine</p><h3 className={'card-name'}><a href={'producto.html#origine'}>Origine Tourbillon</a></h3><p className={'card-spec'}>Tourbillon de carga manual · Cobre · 43 mm</p>
-                                <div className={'card-foot'}><span className={'card-price'}>18.900 €</span><button className={'add-btn'} type={'button'} data-add={'origine'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-bag'} /></svg>Añadir</button></div></div>
-                        </article>
+                    <div className="shop-head"><h2 id="shopTitle">{titulo}</h2><p><span className="shop-count" id="shopCount">{visibles + (visibles === 1 ? ' reloj' : ' relojes')}</span> · <button className="shop-clear" type="button" data-limpiar="" onClick={limpiar}>Quitar filtros</button></p></div>
+                    <div className="grid-4" id="shopGrid">
+                        {ordenados.map((producto) => <ProductCard key={producto.id} product={producto} hidden={!coincide(producto, filtros)} />)}
                     </div>
-                    <div className={'empty'} id={'shopEmpty'} hidden>
-                        <svg className={'mark'} aria-hidden={'true'}><use href={'#emblem'} /></svg>
+                    <div className="empty" id="shopEmpty" hidden={visibles > 0}>
+                        <svg className="mark" aria-hidden="true"><use href="#emblem" /></svg>
                         <h2>Ningún reloj con esos filtros</h2>
                         <p>Prueba con otra caja u otra correa, o mira toda la colección.</p>
-                        <button className={'btn btn-outline'} type={'button'} data-limpiar>Ver todos los relojes</button>
+                        <button className="btn btn-outline" type="button" data-limpiar="" onClick={limpiar}>Ver todos los relojes</button>
                     </div>
                 </div>
             </section>

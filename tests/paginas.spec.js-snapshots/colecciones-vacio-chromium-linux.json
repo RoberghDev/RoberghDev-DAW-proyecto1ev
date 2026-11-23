@@ -1,0 +1,1550 @@
+{
+ "t": "main",
+ "a": {},
+ "c": [
+  {
+   "t": "section",
+   "a": {
+    "class": "page-hero"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "nav",
+       "a": {
+        "aria-label": "Estás aquí",
+        "class": "crumbs"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "href": "index.html"
+         },
+         "c": [
+          "Inicio"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-hidden": "true"
+         },
+         "c": [
+          "/"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-current": "page"
+         },
+         "c": [
+          "Colecciones"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "eyebrow"
+       },
+       "c": [
+        "Seis maneras de llevar el tiempo"
+       ]
+      },
+      {
+       "t": "h1",
+       "a": {
+        "class": "page-title"
+       },
+       "c": [
+        "Colecciones"
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "page-sub"
+       },
+       "c": [
+        "Del vestir clásico al buceo, del esqueleto a la fase lunar. Elige la que va contigo."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "svg",
+     "a": {
+      "aria-hidden": "true",
+      "class": "page-mark"
+     },
+     "c": [
+      {
+       "t": "use",
+       "a": {
+        "href": "#emblem"
+       },
+       "c": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "nav",
+   "a": {
+    "aria-label": "Colecciones",
+    "class": "subnav"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "href": "#esqueleto"
+       },
+       "c": [
+        "Esqueleto"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "#heritage"
+       },
+       "c": [
+        "Heritage"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "#marine"
+       },
+       "c": [
+        "Marine"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "#noir"
+       },
+       "c": [
+        "Noir"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "#luna"
+       },
+       "c": [
+        "Luna"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "#origine"
+       },
+       "c": [
+        "Origine"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "div",
+   "a": {
+    "class": "wrap"
+   },
+   "c": [
+    {
+     "t": "section",
+     "a": {
+      "aria-labelledby": "t-esqueleto",
+      "class": "coll",
+      "id": "esqueleto"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "aria-label": "Ver Esqueleto Cobre",
+        "class": "coll-media foto",
+        "href": "producto.html#esqueleto-cobre"
+       },
+       "c": [
+        {
+         "t": "img",
+         "a": {
+          "alt": "Reloj Esqueleto Cobre",
+          "data-foto": "",
+          "loading": "lazy",
+          "src": "assets/relojes/esqueleto-cobre.jpg"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "coll-text"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-num"
+         },
+         "c": [
+          "01 / 06 ·",
+          {
+           "t": "span",
+           "a": {
+            "class": "eyebrow"
+           },
+           "c": [
+            "Esqueleto"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {
+          "id": "t-esqueleto"
+         },
+         "c": [
+          "ESQUELETO"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-lema"
+         },
+         "c": [
+          "El arte en movimiento"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Puentes vaciados y un calibre automático que se deja ver entero a través de la esfera. Para quien quiere mirar cómo late el tiempo."
+         ]
+        },
+        {
+         "t": "ul",
+         "a": {
+          "class": "coll-facts"
+         },
+         "c": [
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "42 mm"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Automático esqueletado"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "5 ATM (50 m)"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Desde 4.650 €"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-models"
+         },
+         "c": [
+          "Modelos:",
+          {
+           "t": "a",
+           "a": {
+            "href": "producto.html#esqueleto-cobre"
+           },
+           "c": [
+            "Esqueleto Cobre"
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "href": "producto.html#esqueleto-acero"
+           },
+           "c": [
+            "Esqueleto Acero"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "row"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "class": "btn btn-outline",
+            "href": "tienda.html#esqueleto"
+           },
+           "c": [
+            "Ver la colección"
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "class": "link-arrow",
+            "href": "producto.html#esqueleto-cobre"
+           },
+           "c": [
+            "Ver el reloj",
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-right"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "section",
+     "a": {
+      "aria-labelledby": "t-heritage",
+      "class": "coll",
+      "id": "heritage"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "aria-label": "Ver Heritage Cobre",
+        "class": "coll-media foto",
+        "href": "producto.html#heritage-cobre"
+       },
+       "c": [
+        {
+         "t": "img",
+         "a": {
+          "alt": "Reloj Heritage Cobre",
+          "data-foto": "",
+          "loading": "lazy",
+          "src": "assets/relojes/heritage-cobre.jpg"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "coll-text"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-num"
+         },
+         "c": [
+          "02 / 06 ·",
+          {
+           "t": "span",
+           "a": {
+            "class": "eyebrow"
+           },
+           "c": [
+            "Vestir"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {
+          "id": "t-heritage"
+         },
+         "c": [
+          "HERITAGE"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-lema"
+         },
+         "c": [
+          "Elegancia atemporal"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Esfera lacada blanca, números romanos con el IIII de los relojeros y una caja fina que se desliza bajo el puño de la camisa."
+         ]
+        },
+        {
+         "t": "ul",
+         "a": {
+          "class": "coll-facts"
+         },
+         "c": [
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "40 mm"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Automático"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "3 ATM (30 m)"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Desde 1.790 €"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-models"
+         },
+         "c": [
+          "Modelos:",
+          {
+           "t": "a",
+           "a": {
+            "href": "producto.html#heritage-cobre"
+           },
+           "c": [
+            "Heritage Cobre"
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "href": "producto.html#heritage-acero"
+           },
+           "c": [
+            "Heritage Acero"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "row"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "class": "btn btn-outline",
+            "href": "tienda.html#heritage"
+           },
+           "c": [
+            "Ver la colección"
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "class": "link-arrow",
+            "href": "producto.html#heritage-cobre"
+           },
+           "c": [
+            "Ver el reloj",
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-right"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "section",
+     "a": {
+      "aria-labelledby": "t-marine",
+      "class": "coll",
+      "id": "marine"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "aria-label": "Ver Marine Acero",
+        "class": "coll-media foto",
+        "href": "producto.html#marine-acero"
+       },
+       "c": [
+        {
+         "t": "img",
+         "a": {
+          "alt": "Reloj Marine Acero",
+          "data-foto": "",
+          "loading": "lazy",
+          "src": "assets/relojes/marine-acero.jpg"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "coll-text"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-num"
+         },
+         "c": [
+          "03 / 06 ·",
+          {
+           "t": "span",
+           "a": {
+            "class": "eyebrow"
+           },
+           "c": [
+            "Deportivos"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {
+          "id": "t-marine"
+         },
+         "c": [
+          "MARINE"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-lema"
+         },
+         "c": [
+          "Hechos para la acción"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Bisel unidireccional negro, índices luminiscentes y 300 metros de hermeticidad. Del barco a la oficina sin cambiar de reloj."
+         ]
+        },
+        {
+         "t": "ul",
+         "a": {
+          "class": "coll-facts"
+         },
+         "c": [
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "42 mm"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Automático"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "30 ATM (300 m)"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Desde 2.690 €"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-models"
+         },
+         "c": [
+          "Modelos:",
+          {
+           "t": "a",
+           "a": {
+            "href": "producto.html#marine-acero"
+           },
+           "c": [
+            "Marine Acero"
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "href": "producto.html#marine-caucho"
+           },
+           "c": [
+            "Marine Caucho"
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "href": "producto.html#marine-cobre"
+           },
+           "c": [
+            "Marine Cobre"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "row"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "class": "btn btn-outline",
+            "href": "tienda.html#marine"
+           },
+           "c": [
+            "Ver la colección"
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "class": "link-arrow",
+            "href": "producto.html#marine-acero"
+           },
+           "c": [
+            "Ver el reloj",
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-right"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "section",
+     "a": {
+      "aria-labelledby": "t-noir",
+      "class": "coll",
+      "id": "noir"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "aria-label": "Ver Noir Caucho",
+        "class": "coll-media foto",
+        "href": "producto.html#noir-caucho"
+       },
+       "c": [
+        {
+         "t": "img",
+         "a": {
+          "alt": "Reloj Noir Caucho",
+          "data-foto": "",
+          "loading": "lazy",
+          "src": "assets/relojes/noir-caucho.jpg"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "coll-text"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-num"
+         },
+         "c": [
+          "04 / 06 ·",
+          {
+           "t": "span",
+           "a": {
+            "class": "eyebrow"
+           },
+           "c": [
+            "Noir"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {
+          "id": "t-noir"
+         },
+         "c": [
+          "NOIR"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-lema"
+         },
+         "c": [
+          "Negro y cobre"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Caja de acero con tratamiento negro, esfera rayos de sol e índices aplicados de cobre que atrapan la luz."
+         ]
+        },
+        {
+         "t": "ul",
+         "a": {
+          "class": "coll-facts"
+         },
+         "c": [
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "41 mm"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Automático"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "10 ATM (100 m)"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Desde 3.390 €"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-models"
+         },
+         "c": [
+          "Modelos:",
+          {
+           "t": "a",
+           "a": {
+            "href": "producto.html#noir-caucho"
+           },
+           "c": [
+            "Noir Caucho"
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "href": "producto.html#noir-piel"
+           },
+           "c": [
+            "Noir Piel"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "row"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "class": "btn btn-outline",
+            "href": "tienda.html#noir"
+           },
+           "c": [
+            "Ver la colección"
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "class": "link-arrow",
+            "href": "producto.html#noir-caucho"
+           },
+           "c": [
+            "Ver el reloj",
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-right"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "section",
+     "a": {
+      "aria-labelledby": "t-luna",
+      "class": "coll",
+      "id": "luna"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "aria-label": "Ver Luna Acero",
+        "class": "coll-media foto",
+        "href": "producto.html#luna-acero"
+       },
+       "c": [
+        {
+         "t": "img",
+         "a": {
+          "alt": "Reloj Luna Acero",
+          "data-foto": "",
+          "loading": "lazy",
+          "src": "assets/relojes/luna-acero.jpg"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "coll-text"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-num"
+         },
+         "c": [
+          "05 / 06 ·",
+          {
+           "t": "span",
+           "a": {
+            "class": "eyebrow"
+           },
+           "c": [
+            "Fases lunares"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {
+          "id": "t-luna"
+         },
+         "c": [
+          "LUNA"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-lema"
+         },
+         "c": [
+          "El cielo en tu muñeca"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Una ventana a las 6 sigue el ciclo de 29,5 días de la luna, con dos lunas de cobre sobre un cielo negro."
+         ]
+        },
+        {
+         "t": "ul",
+         "a": {
+          "class": "coll-facts"
+         },
+         "c": [
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "40 mm"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Automático con fase lunar"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "3 ATM (30 m)"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Desde 3.150 €"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-models"
+         },
+         "c": [
+          "Modelos:",
+          {
+           "t": "a",
+           "a": {
+            "href": "producto.html#luna-acero"
+           },
+           "c": [
+            "Luna Acero"
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "href": "producto.html#luna-cobre"
+           },
+           "c": [
+            "Luna Cobre"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "row"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "class": "btn btn-outline",
+            "href": "tienda.html#luna"
+           },
+           "c": [
+            "Ver la colección"
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "class": "link-arrow",
+            "href": "producto.html#luna-acero"
+           },
+           "c": [
+            "Ver el reloj",
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-right"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "section",
+     "a": {
+      "aria-labelledby": "t-origine",
+      "class": "coll",
+      "id": "origine"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "aria-label": "Ver Origine Tourbillon",
+        "class": "coll-media foto",
+        "href": "producto.html#origine"
+       },
+       "c": [
+        {
+         "t": "img",
+         "a": {
+          "alt": "Reloj Origine Tourbillon",
+          "data-foto": "",
+          "loading": "lazy",
+          "src": "assets/relojes/origine.jpg"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "coll-text"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-num"
+         },
+         "c": [
+          "06 / 06 ·",
+          {
+           "t": "span",
+           "a": {
+            "class": "eyebrow"
+           },
+           "c": [
+            "Ediciones limitadas"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {
+          "id": "t-origine"
+         },
+         "c": [
+          "ORIGINE"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-lema"
+         },
+         "c": [
+          "Piezas numeradas"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Caja de cobre de 43 mm, esfera negra guilloché y un tourbillon que gira a la vista a las 6. Solo 100 piezas numeradas, cada una con su certificado."
+         ]
+        },
+        {
+         "t": "ul",
+         "a": {
+          "class": "coll-facts"
+         },
+         "c": [
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "43 mm"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Tourbillon de carga manual"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "3 ATM (30 m)"
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Desde 18.900 €"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "coll-models"
+         },
+         "c": [
+          "Modelos:",
+          {
+           "t": "a",
+           "a": {
+            "href": "producto.html#origine"
+           },
+           "c": [
+            "Origine Tourbillon"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "row"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "class": "btn btn-outline",
+            "href": "tienda.html#origine"
+           },
+           "c": [
+            "Ver la colección"
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "class": "link-arrow",
+            "href": "producto.html#origine"
+           },
+           "c": [
+            "Ver el reloj",
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-right"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-label": "Ventajas de comprar en OKIDOKEI",
+    "class": "trust"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap trust-row"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#envios"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-truck"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Envío asegurado"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Gratis en toda España"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#devoluciones"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-return"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "30 días"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Devolución sencilla"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#garantia"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-shield"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Garantía 3 años"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "En todos los relojes"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#faq"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-cert"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Autenticidad"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Certificado en cada pieza"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#faq"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-lock"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Pago seguro"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Conexión cifrada SSL"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1214 @@
+{
+ "t": "main",
+ "a": {},
+ "c": [
+  {
+   "t": "section",
+   "a": {
+    "class": "page-hero"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "nav",
+       "a": {
+        "aria-label": "Estás aquí",
+        "class": "crumbs"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "href": "index.html"
+         },
+         "c": [
+          "Inicio"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-hidden": "true"
+         },
+         "c": [
+          "/"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-current": "page"
+         },
+         "c": [
+          "Nosotros"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "eyebrow"
+       },
+       "c": [
+        "Nuestra historia"
+       ]
+      },
+      {
+       "t": "h1",
+       "a": {
+        "class": "page-title"
+       },
+       "c": [
+        "Nosotros"
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "page-sub"
+       },
+       "c": [
+        "Una relojería online hecha por gente que se para a mirar los relojes."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "svg",
+     "a": {
+      "aria-hidden": "true",
+      "class": "page-mark"
+     },
+     "c": [
+      {
+       "t": "use",
+       "a": {
+        "href": "#emblem"
+       },
+       "c": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "histTitle",
+    "class": "on-light section about-intro"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap split"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "about-visual foto"
+       },
+       "c": [
+        {
+         "t": "img",
+         "a": {
+          "alt": "Relojero revisando un movimiento en el taller",
+          "data-foto": "",
+          "loading": "lazy",
+          "src": "assets/nosotros/taller.jpg"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "about-text"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "eyebrow"
+         },
+         "c": [
+          "Quiénes somos"
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {
+          "id": "histTitle"
+         },
+         "c": [
+          "Comprar un reloj online con la misma confianza que en una boutique."
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "OKIDOKEI nació de una idea sencilla: que elegir un reloj por internet no fuera un salto al vacío. Por eso cada pieza que vendemos pasa antes por nuestras manos, viaja asegurada y llega con su certificado."
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "El nombre suena a «okey-dokey», a que todo va bien. Y en japonés,",
+          {
+           "t": "em",
+           "a": {},
+           "c": [
+            "okidokei"
+           ]
+          },
+          "(置時計) es el reloj que se deja sobre la mesa y marca el ritmo de la casa. Las dos cosas nos gustan."
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "class": "btn btn-dark",
+          "href": "tienda.html"
+         },
+         "c": [
+          "Ver los relojes"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "valTitle",
+    "class": "section-dark section"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "sec-head"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "p",
+           "a": {
+            "class": "eyebrow"
+           },
+           "c": [
+            "Lo que nos importa"
+           ]
+          },
+          {
+           "t": "h2",
+           "a": {
+            "class": "sec-title",
+            "id": "valTitle"
+           },
+           "c": [
+            "Nuestros valores"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "values"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {
+          "class": "value"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-gear"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Mecánica de verdad"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Relojes automáticos y de carga manual que se pueden revisar y durar décadas."
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "value"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-hand"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Detalle a mano"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Perlado, biselado y puentes que se ven. Lo que no se ve, también se cuida."
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "value"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-diamond"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Materiales nobles"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Acero, cobre y cristal de zafiro. Nada de chapados que se gasten en dos veranos."
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "value"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-hourglass"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Sin fecha de caducidad"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Diseños pensados para no pasar de moda y piezas de recambio disponibles."
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "tallerTitle",
+    "class": "on-light section",
+    "id": "taller"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "sec-head"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "p",
+           "a": {
+            "class": "eyebrow"
+           },
+           "c": [
+            "El taller"
+           ]
+          },
+          {
+           "t": "h2",
+           "a": {
+            "class": "sec-title",
+            "id": "tallerTitle"
+           },
+           "c": [
+            "Así revisamos cada reloj"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {
+            "class": "sec-lead"
+           },
+           "c": [
+            "Antes de salir hacia tu casa, cada reloj recorre estos cuatro pasos."
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "ol",
+       "a": {
+        "class": "steps"
+       },
+       "c": [
+        {
+         "t": "li",
+         "a": {
+          "class": "step"
+         },
+         "c": [
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Recepción"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Comprobamos referencia, número de serie y documentación de cada pieza."
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {
+          "class": "step"
+         },
+         "c": [
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Revisión"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Abrimos y revisamos el movimiento, las juntas y el estado de caja y cristal."
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {
+          "class": "step"
+         },
+         "c": [
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Regulación"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Ajustamos la marcha y la comprobamos en varias posiciones durante días."
+           ]
+          }
+         ]
+        },
+        {
+         "t": "li",
+         "a": {
+          "class": "step"
+         },
+         "c": [
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Control final"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Limpieza, prueba de hermeticidad, estuche, certificado y envío asegurado."
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "servTitle",
+    "class": "section-dark section",
+    "id": "servicios"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "sec-head"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "p",
+           "a": {
+            "class": "eyebrow"
+           },
+           "c": [
+            "Servicios de relojería"
+           ]
+          },
+          {
+           "t": "h2",
+           "a": {
+            "class": "sec-title",
+            "id": "servTitle"
+           },
+           "c": [
+            "Para tu reloj, también después"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "class": "link-arrow",
+          "href": "ayuda.html#contacto"
+         },
+         "c": [
+          "Pedir presupuesto",
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-right"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "service-grid"
+       },
+       "c": [
+        {
+         "t": "article",
+         "a": {
+          "class": "service",
+          "id": "grabado"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-pen"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Grabado personalizado"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Iniciales, una fecha o una frase corta en el fondo de la caja. Te enviamos una prueba antes de grabar. Los relojes grabados no admiten devolución."
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "class": "link-arrow",
+            "href": "ayuda.html#contacto"
+           },
+           "c": [
+            "Solicitar",
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-right"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "article",
+         "a": {
+          "class": "service",
+          "id": "mantenimiento"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-wrench"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Revisión y mantenimiento"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Un movimiento mecánico agradece una revisión cada 4 o 5 años: limpieza, lubricación, ajuste de marcha y prueba de hermeticidad."
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "class": "link-arrow",
+            "href": "ayuda.html#contacto"
+           },
+           "c": [
+            "Solicitar",
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-right"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "article",
+         "a": {
+          "class": "service",
+          "id": "brazalete"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-link"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Ajuste de brazalete"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Quitamos o añadimos eslabones para que el brazalete quede a tu medida. Dinos el contorno de tu muñeca al hacer el pedido."
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "class": "link-arrow",
+            "href": "ayuda.html#contacto"
+           },
+           "c": [
+            "Solicitar",
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-right"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "article",
+         "a": {
+          "class": "service",
+          "id": "regalo"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-gift"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Envoltorio de regalo"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Estuche negro, lazo de cobre y una tarjeta con tu mensaje escrito a mano. El precio no aparece en ningún documento del paquete."
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "class": "link-arrow",
+            "href": "ayuda.html#contacto"
+           },
+           "c": [
+            "Solicitar",
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-right"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "empTitle",
+    "class": "section-dark section jobs-section",
+    "id": "empleo"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "jobs"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "p",
+           "a": {
+            "class": "eyebrow"
+           },
+           "c": [
+            "Trabaja con nosotros"
+           ]
+          },
+          {
+           "t": "h2",
+           "a": {
+            "id": "empTitle"
+           },
+           "c": [
+            "¿Te apasionan los relojes?"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Buscamos de vez en cuando relojeros, fotógrafos de producto y personas de atención al cliente. Cuéntanos quién eres y qué te gustaría hacer."
+           ]
+          }
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "class": "btn btn-outline",
+          "href": "ayuda.html#contacto"
+         },
+         "c": [
+          "Escríbenos"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-label": "Ventajas de comprar en OKIDOKEI",
+    "class": "trust"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap trust-row"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#envios"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-truck"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Envío asegurado"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Gratis en toda España"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#devoluciones"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-return"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "30 días"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Devolución sencilla"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#garantia"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-shield"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Garantía 3 años"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "En todos los relojes"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#faq"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-cert"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Autenticidad"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Certificado en cada pieza"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#faq"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-lock"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Pago seguro"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Conexión cifrada SSL"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

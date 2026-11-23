@@ -1,0 +1,714 @@
+{
+ "t": "section",
+ "a": {
+  "aria-labelledby": "featTitle",
+  "class": "section-dark featured"
+ },
+ "c": [
+  {
+   "t": "div",
+   "a": {
+    "class": "wrap"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "sec-head"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {},
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "eyebrow"
+         },
+         "c": [
+          "Tienda"
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {
+          "class": "sec-title",
+          "id": "featTitle"
+         },
+         "c": [
+          "Piezas destacadas"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "link-arrow",
+        "href": "tienda.html"
+       },
+       "c": [
+        "Ver toda la tienda",
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-right"
+           },
+           "c": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "grid-4"
+     },
+     "c": [
+      {
+       "t": "article",
+       "a": {
+        "class": "card",
+        "data-id": "esqueleto-cobre"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {
+          "class": "card-media"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "aria-hidden": "true",
+            "class": "card-img foto",
+            "href": "producto.html#esqueleto-cobre",
+            "tabindex": "-1"
+           },
+           "c": [
+            {
+             "t": "img",
+             "a": {
+              "alt": "Esqueleto Cobre: caja de cobre y piel marrón con pespunte crudo",
+              "data-foto": "",
+              "loading": "lazy",
+              "src": "assets/relojes/esqueleto-cobre.jpg"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "span",
+           "a": {
+            "class": "tag"
+           },
+           "c": [
+            "Nuevo"
+           ]
+          },
+          {
+           "t": "button",
+           "a": {
+            "aria-label": "Añadir Esqueleto Cobre a favoritos",
+            "aria-pressed": "false",
+            "class": "fav",
+            "data-fav": "esqueleto-cobre",
+            "type": "button"
+           },
+           "c": [
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-heart"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "card-body"
+         },
+         "c": [
+          {
+           "t": "p",
+           "a": {
+            "class": "card-coll"
+           },
+           "c": [
+            "Esqueleto"
+           ]
+          },
+          {
+           "t": "h3",
+           "a": {
+            "class": "card-name"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "href": "producto.html#esqueleto-cobre"
+             },
+             "c": [
+              "Esqueleto Cobre"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "p",
+           "a": {
+            "class": "card-spec"
+           },
+           "c": [
+            "Automático esqueletado · Cobre · 42 mm"
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-foot"
+           },
+           "c": [
+            {
+             "t": "span",
+             "a": {
+              "class": "card-price"
+             },
+             "c": [
+              "4.950 €"
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "class": "add-btn",
+              "data-add": "esqueleto-cobre",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-bag"
+                 },
+                 "c": []
+                }
+               ]
+              },
+              "Añadir"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "article",
+       "a": {
+        "class": "card",
+        "data-id": "marine-acero"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {
+          "class": "card-media"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "aria-hidden": "true",
+            "class": "card-img foto",
+            "href": "producto.html#marine-acero",
+            "tabindex": "-1"
+           },
+           "c": [
+            {
+             "t": "img",
+             "a": {
+              "alt": "Marine Acero: caja de acero y brazalete de acero de tres eslabones",
+              "data-foto": "",
+              "loading": "lazy",
+              "src": "assets/relojes/marine-acero.jpg"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "button",
+           "a": {
+            "aria-label": "Añadir Marine Acero a favoritos",
+            "aria-pressed": "false",
+            "class": "fav",
+            "data-fav": "marine-acero",
+            "type": "button"
+           },
+           "c": [
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-heart"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "card-body"
+         },
+         "c": [
+          {
+           "t": "p",
+           "a": {
+            "class": "card-coll"
+           },
+           "c": [
+            "Marine"
+           ]
+          },
+          {
+           "t": "h3",
+           "a": {
+            "class": "card-name"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "href": "producto.html#marine-acero"
+             },
+             "c": [
+              "Marine Acero"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "p",
+           "a": {
+            "class": "card-spec"
+           },
+           "c": [
+            "Automático · Acero · 42 mm"
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-foot"
+           },
+           "c": [
+            {
+             "t": "span",
+             "a": {
+              "class": "card-price"
+             },
+             "c": [
+              "2.890 €"
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "class": "add-btn",
+              "data-add": "marine-acero",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-bag"
+                 },
+                 "c": []
+                }
+               ]
+              },
+              "Añadir"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "article",
+       "a": {
+        "class": "card",
+        "data-id": "noir-caucho"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {
+          "class": "card-media"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "aria-hidden": "true",
+            "class": "card-img foto",
+            "href": "producto.html#noir-caucho",
+            "tabindex": "-1"
+           },
+           "c": [
+            {
+             "t": "img",
+             "a": {
+              "alt": "Noir Caucho: caja de acero negro y caucho negro",
+              "data-foto": "",
+              "loading": "lazy",
+              "src": "assets/relojes/noir-caucho.jpg"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "span",
+           "a": {
+            "class": "tag"
+           },
+           "c": [
+            "Nuevo"
+           ]
+          },
+          {
+           "t": "button",
+           "a": {
+            "aria-label": "Quitar Noir Caucho de favoritos",
+            "aria-pressed": "true",
+            "class": "fav",
+            "data-fav": "noir-caucho",
+            "type": "button"
+           },
+           "c": [
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-heart"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "card-body"
+         },
+         "c": [
+          {
+           "t": "p",
+           "a": {
+            "class": "card-coll"
+           },
+           "c": [
+            "Noir"
+           ]
+          },
+          {
+           "t": "h3",
+           "a": {
+            "class": "card-name"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "href": "producto.html#noir-caucho"
+             },
+             "c": [
+              "Noir Caucho"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "p",
+           "a": {
+            "class": "card-spec"
+           },
+           "c": [
+            "Automático · Acero negro · 41 mm"
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-foot"
+           },
+           "c": [
+            {
+             "t": "span",
+             "a": {
+              "class": "card-price"
+             },
+             "c": [
+              "3.450 €"
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "class": "add-btn",
+              "data-add": "noir-caucho",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-bag"
+                 },
+                 "c": []
+                }
+               ]
+              },
+              "Añadir"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "article",
+       "a": {
+        "class": "card",
+        "data-id": "heritage-cobre"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {
+          "class": "card-media"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "aria-hidden": "true",
+            "class": "card-img foto",
+            "href": "producto.html#heritage-cobre",
+            "tabindex": "-1"
+           },
+           "c": [
+            {
+             "t": "img",
+             "a": {
+              "alt": "Heritage Cobre: caja de cobre y piel marrón oscuro",
+              "data-foto": "",
+              "loading": "lazy",
+              "src": "assets/relojes/heritage-cobre.jpg"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "button",
+           "a": {
+            "aria-label": "Añadir Heritage Cobre a favoritos",
+            "aria-pressed": "false",
+            "class": "fav",
+            "data-fav": "heritage-cobre",
+            "type": "button"
+           },
+           "c": [
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-heart"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "card-body"
+         },
+         "c": [
+          {
+           "t": "p",
+           "a": {
+            "class": "card-coll"
+           },
+           "c": [
+            "Heritage"
+           ]
+          },
+          {
+           "t": "h3",
+           "a": {
+            "class": "card-name"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "href": "producto.html#heritage-cobre"
+             },
+             "c": [
+              "Heritage Cobre"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "p",
+           "a": {
+            "class": "card-spec"
+           },
+           "c": [
+            "Automático · Cobre · 40 mm"
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-foot"
+           },
+           "c": [
+            {
+             "t": "span",
+             "a": {
+              "class": "card-price"
+             },
+             "c": [
+              "1.980 €"
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "class": "add-btn",
+              "data-add": "heritage-cobre",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-bag"
+                 },
+                 "c": []
+                }
+               ]
+              },
+              "Añadir"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

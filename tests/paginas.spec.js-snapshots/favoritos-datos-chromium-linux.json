@@ -1,0 +1,535 @@
+{
+ "t": "main",
+ "a": {},
+ "c": [
+  {
+   "t": "section",
+   "a": {
+    "class": "page-hero"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "nav",
+       "a": {
+        "aria-label": "Estás aquí",
+        "class": "crumbs"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "href": "index.html"
+         },
+         "c": [
+          "Inicio"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-hidden": "true"
+         },
+         "c": [
+          "/"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-current": "page"
+         },
+         "c": [
+          "Favoritos"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "eyebrow"
+       },
+       "c": [
+        "Tu selección"
+       ]
+      },
+      {
+       "t": "h1",
+       "a": {
+        "class": "page-title"
+       },
+       "c": [
+        "Favoritos"
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "page-sub"
+       },
+       "c": [
+        "Los relojes que has guardado con el corazón. Se quedan en este navegador para cuando vuelvas."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "svg",
+     "a": {
+      "aria-hidden": "true",
+      "class": "page-mark"
+     },
+     "c": [
+      {
+       "t": "use",
+       "a": {
+        "href": "#emblem"
+       },
+       "c": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-label": "Relojes guardados",
+    "class": "section-dark section"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "list-head",
+        "id": "favActions"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "id": "favCountText"
+         },
+         "c": [
+          "2 relojes guardados"
+         ]
+        },
+        {
+         "t": "button",
+         "a": {
+          "class": "btn btn-outline",
+          "id": "favAllToCart",
+          "type": "button"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-bag"
+             },
+             "c": []
+            }
+           ]
+          },
+          "Añadir todos al carrito"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "grid-4",
+        "id": "favGrid"
+       },
+       "c": [
+        {
+         "t": "article",
+         "a": {
+          "class": "card",
+          "data-id": "luna-cobre"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {
+            "class": "card-media"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "aria-hidden": "true",
+              "class": "card-img foto",
+              "href": "producto.html#luna-cobre",
+              "tabindex": "-1"
+             },
+             "c": [
+              {
+               "t": "img",
+               "a": {
+                "alt": "",
+                "data-foto": "",
+                "loading": "lazy",
+                "src": "assets/relojes/luna-cobre.jpg"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "span",
+             "a": {
+              "class": "tag"
+             },
+             "c": [
+              "Nuevo"
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Quitar Luna Cobre de favoritos",
+              "aria-pressed": "true",
+              "class": "fav",
+              "data-fav": "luna-cobre",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-heart"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "card-coll"
+             },
+             "c": [
+              "Luna"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {
+              "class": "card-name"
+             },
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "producto.html#luna-cobre"
+               },
+               "c": [
+                "Luna Cobre"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {
+              "class": "card-spec"
+             },
+             "c": [
+              "Automático con fase lunar · Cobre · 40 mm"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "card-foot"
+             },
+             "c": [
+              {
+               "t": "span",
+               "a": {
+                "class": "card-price"
+               },
+               "c": [
+                "3.350 €"
+               ]
+              },
+              {
+               "t": "button",
+               "a": {
+                "class": "add-btn",
+                "data-add": "luna-cobre",
+                "type": "button"
+               },
+               "c": [
+                {
+                 "t": "svg",
+                 "a": {
+                  "aria-hidden": "true",
+                  "class": "icon"
+                 },
+                 "c": [
+                  {
+                   "t": "use",
+                   "a": {
+                    "href": "#i-bag"
+                   },
+                   "c": []
+                  }
+                 ]
+                },
+                "Añadir"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "article",
+         "a": {
+          "class": "card",
+          "data-id": "marine-acero"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {
+            "class": "card-media"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "aria-hidden": "true",
+              "class": "card-img foto",
+              "href": "producto.html#marine-acero",
+              "tabindex": "-1"
+             },
+             "c": [
+              {
+               "t": "img",
+               "a": {
+                "alt": "",
+                "data-foto": "",
+                "loading": "lazy",
+                "src": "assets/relojes/marine-acero.jpg"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Quitar Marine Acero de favoritos",
+              "aria-pressed": "true",
+              "class": "fav",
+              "data-fav": "marine-acero",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-heart"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "card-coll"
+             },
+             "c": [
+              "Marine"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {
+              "class": "card-name"
+             },
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "producto.html#marine-acero"
+               },
+               "c": [
+                "Marine Acero"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {
+              "class": "card-spec"
+             },
+             "c": [
+              "Automático · Acero · 42 mm"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "card-foot"
+             },
+             "c": [
+              {
+               "t": "span",
+               "a": {
+                "class": "card-price"
+               },
+               "c": [
+                "2.890 €"
+               ]
+              },
+              {
+               "t": "button",
+               "a": {
+                "class": "add-btn",
+                "data-add": "marine-acero",
+                "type": "button"
+               },
+               "c": [
+                {
+                 "t": "svg",
+                 "a": {
+                  "aria-hidden": "true",
+                  "class": "icon"
+                 },
+                 "c": [
+                  {
+                   "t": "use",
+                   "a": {
+                    "href": "#i-bag"
+                   },
+                   "c": []
+                  }
+                 ]
+                },
+                "Añadir"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "empty",
+        "hidden": "",
+        "id": "favEmpty"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "mark"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#emblem"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {},
+         "c": [
+          "Aún no tienes favoritos"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Pulsa el corazón de cualquier reloj para guardarlo aquí y compararlo con calma."
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "class": "btn btn-outline",
+          "href": "tienda.html"
+         },
+         "c": [
+          "Ir a la tienda"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

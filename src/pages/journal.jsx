@@ -1,4 +1,5 @@
 import React from 'react';
+import { eventosFoto } from '../components/foto.js';
 import { NewsletterForm } from '../components/Forms.jsx';
 // Migrated from the original journal.html page markup.
 export const title = 'OKIDOKEI · Journal';
@@ -21,11 +22,11 @@ export default function Journal() {
         <div className={'wrap'}>
             <div className={'sec-head'}><div><p className={'eyebrow'}>Artículos</p><h2 className={'sec-title'} id={'jTitle'}>Últimos artículos</h2></div></div>
             <div className={'grid-3'}>
-                <article className={'story'}><a className={'story-img foto'} href={'#esqueletado'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/journal/esqueletado.jpg'} alt={'Detalle del volante y los puentes de un movimiento esqueletado'} loading={'lazy'} data-foto /></a>
+                <article className={'story'}><a className={'story-img foto'} href={'#esqueletado'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/journal/esqueletado.jpg'} alt={'Detalle del volante y los puentes de un movimiento esqueletado'} loading={'lazy'} data-foto="" {...eventosFoto} /></a>
                     <div className={'story-body'}><p className={'eyebrow'}>Artesanía</p><h3><a href={'#esqueletado'}>El arte del esqueletado</a></h3><p>Cómo se vacía un movimiento sin restarle resistencia.</p><a className={'link-arrow'} href={'#esqueletado'}>Leer más <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></div></article>
-                <article className={'story'}><a className={'story-img foto'} href={'#buceo'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/journal/buceo.jpg'} alt={'Perfil de un reloj de buceo con bisel giratorio y corona'} loading={'lazy'} data-foto /></a>
+                <article className={'story'}><a className={'story-img foto'} href={'#buceo'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/journal/buceo.jpg'} alt={'Perfil de un reloj de buceo con bisel giratorio y corona'} loading={'lazy'} data-foto="" {...eventosFoto} /></a>
                     <div className={'story-body'}><p className={'eyebrow'}>Guía</p><h3><a href={'#buceo'}>Cómo elegir tu primer reloj de buceo</a></h3><p>Hermeticidad, bisel y legibilidad: lo que de verdad importa.</p><a className={'link-arrow'} href={'#buceo'}>Leer más <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></div></article>
-                <article className={'story'}><a className={'story-img foto'} href={'#fases-lunares'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/journal/fases-lunares.jpg'} alt={'Ventana de fases lunares sobre una esfera blanca'} loading={'lazy'} data-foto /></a>
+                <article className={'story'}><a className={'story-img foto'} href={'#fases-lunares'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/journal/fases-lunares.jpg'} alt={'Ventana de fases lunares sobre una esfera blanca'} loading={'lazy'} data-foto="" {...eventosFoto} /></a>
                     <div className={'story-body'}><p className={'eyebrow'}>Colecciones</p><h3><a href={'#fases-lunares'}>Fases lunares, una complicación poética</a></h3><p>El mecanismo que sigue el ciclo de 29,5 días de la luna.</p><a className={'link-arrow'} href={'#fases-lunares'}>Leer más <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></div></article>
             </div>
         </div>
@@ -33,7 +34,7 @@ export default function Journal() {
     <div className={'section-2'}>
         <article className={'article'} id={'esqueletado'} aria-labelledby={'t-esqueletado'}>
             <header className={'article-head'}><p className={'eyebrow'}>Artesanía</p><h2 id={'t-esqueletado'}>El arte del esqueletado</h2><p className={'article-meta'}>12 de noviembre de 2026 · 4 min de lectura</p></header>
-            <div className={'article-img foto'}><img src={'assets/journal/esqueletado.jpg'} alt={'Detalle del volante y los puentes de un movimiento esqueletado'} loading={'lazy'} data-foto /></div>
+            <div className={'article-img foto'}><img src={'assets/journal/esqueletado.jpg'} alt={'Detalle del volante y los puentes de un movimiento esqueletado'} loading={'lazy'} data-foto="" {...eventosFoto} /></div>
             <div className={'prose'}>
                 <p>Un reloj esqueletado es aquel al que se le ha quitado todo el metal que no es imprescindible de la platina y los puentes, para que el movimiento quede a la vista. Lo que queda es una estructura de arcos y brazos que tiene que seguir sujetando cada rueda en su sitio, al micrómetro.</p>
                 <h3>Cómo se hace</h3>
@@ -48,7 +49,7 @@ export default function Journal() {
         </article>
         <article className={'article'} id={'buceo'} aria-labelledby={'t-buceo'}>
             <header className={'article-head'}><p className={'eyebrow'}>Guía</p><h2 id={'t-buceo'}>Cómo elegir tu primer reloj de buceo</h2><p className={'article-meta'}>5 de noviembre de 2026 · 5 min de lectura</p></header>
-            <div className={'article-img foto'}><img src={'assets/journal/buceo.jpg'} alt={'Perfil de un reloj de buceo con bisel giratorio y corona'} loading={'lazy'} data-foto /></div>
+            <div className={'article-img foto'}><img src={'assets/journal/buceo.jpg'} alt={'Perfil de un reloj de buceo con bisel giratorio y corona'} loading={'lazy'} data-foto="" {...eventosFoto} /></div>
             <div className={'prose'}>
                 <p>Un reloj de buceo es probablemente el reloj más versátil que puedes tener: aguanta el agua, se lee en cualquier luz y queda bien con traje. Estas son las claves para elegir el primero.</p>
                 <h3>Hermeticidad: lo que significan los metros</h3>
@@ -65,7 +66,7 @@ export default function Journal() {
         </article>
         <article className={'article'} id={'fases-lunares'} aria-labelledby={'t-fases-lunares'}>
             <header className={'article-head'}><p className={'eyebrow'}>Colecciones</p><h2 id={'t-fases-lunares'}>Fases lunares, una complicación poética</h2><p className={'article-meta'}>28 de octubre de 2026 · 4 min de lectura</p></header>
-            <div className={'article-img foto'}><img src={'assets/journal/fases-lunares.jpg'} alt={'Ventana de fases lunares sobre una esfera blanca'} loading={'lazy'} data-foto /></div>
+            <div className={'article-img foto'}><img src={'assets/journal/fases-lunares.jpg'} alt={'Ventana de fases lunares sobre una esfera blanca'} loading={'lazy'} data-foto="" {...eventosFoto} /></div>
             <div className={'prose'}>
                 <p>De todas las complicaciones de un reloj, la fase lunar es la más poética: no sirve para llegar puntual, sirve para saber cómo está el cielo.</p>
                 <h3>Cómo funciona</h3>

@@ -1,0 +1,45 @@
+{
+ "t": "div",
+ "a": {
+  "class": "pdp-gallery"
+ },
+ "c": [
+  {
+   "t": "div",
+   "a": {
+    "class": "pdp-main foto"
+   },
+   "c": [
+    {
+     "t": "img",
+     "a": {
+      "alt": "Origine Tourbillon: caja de cobre y piel negra con pespunte cobre",
+      "data-foto": "",
+      "id": "pFoto",
+      "src": "assets/relojes/origine.jpg"
+     },
+     "c": []
+    },
+    {
+     "t": "span",
+     "a": {
+      "class": "tag",
+      "id": "pTag"
+     },
+     "c": [
+      "Edición limitada"
+     ]
+    }
+   ]
+  },
+  {
+   "t": "div",
+   "a": {
+    "class": "pdp-thumbs",
+    "hidden": "",
+    "id": "pThumbs"
+   },
+   "c": []
+  }
+ ]
+}

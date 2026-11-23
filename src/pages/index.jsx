@@ -1,8 +1,15 @@
 import React from 'react';
-import { Hero, GearCanvas } from '../components/Visuals.jsx';
-import { FeaturedProducts } from '../components/Commerce.jsx';
+import { buscarProducto } from '../data.js';
+import { ProductCard } from '../components/Commerce.jsx';
 import { NewsletterForm } from '../components/Forms.jsx';
-// Migrated from the original index.html page markup.
+import { eventosFoto } from '../components/foto.js';
+import HeroColecciones from '../components/HeroColecciones.jsx';
+import Engranajes from '../components/Engranajes.jsx';
+
+// Migrada desde la plantilla heredada index.html (fase 3). El carrusel 3D y los engranajes son
+// componentes React desde la fase 4 (antes hero.js, relojes3d.js y engranajes.js).
+const DESTACADOS = ['esqueleto-cobre', 'marine-acero', 'noir-caucho', 'heritage-cobre'];
+
 export const title = 'OKIDOKEI · Relojería online';
 export const description = 'OKIDOKEI, tu relojería online de confianza: relojes automáticos, esqueletados, de buceo y ediciones limitadas en negro, blanco y cobre.';
 export default function Index() {
@@ -10,17 +17,17 @@ export default function Index() {
 <main>
 
 
-    <Hero />
+    <HeroColecciones />
 
     <section className={'on-light cats'} aria-labelledby={'catsTitle'}>
         <h2 className={'sr-only'} id={'catsTitle'}>Colecciones</h2>
         <div className={'wrap cats-row'}>
-            <a className={'cat'} href={'colecciones.html#heritage'}><span className={'cat-img foto'}><img src={'assets/relojes/heritage-cobre.jpg'} alt={'Reloj Heritage de esfera blanca'} loading={'lazy'} data-foto /></span><span className={'cat-name'}>Vestir</span><span className={'cat-sub'}>Elegancia atemporal</span></a>
-            <a className={'cat'} href={'colecciones.html#marine'}><span className={'cat-img foto'}><img src={'assets/relojes/marine-acero.jpg'} alt={'Reloj Marine de buceo'} loading={'lazy'} data-foto /></span><span className={'cat-name'}>Deportivos</span><span className={'cat-sub'}>Hechos para la acción</span></a>
-            <a className={'cat'} href={'colecciones.html#esqueleto'}><span className={'cat-img foto'}><img src={'assets/relojes/esqueleto-cobre.jpg'} alt={'Reloj Esqueleto con el movimiento visible'} loading={'lazy'} data-foto /></span><span className={'cat-name'}>Esqueleto</span><span className={'cat-sub'}>El arte en movimiento</span></a>
-            <a className={'cat'} href={'colecciones.html#luna'}><span className={'cat-img foto'}><img src={'assets/relojes/luna-acero.jpg'} alt={'Reloj Luna con fases lunares'} loading={'lazy'} data-foto /></span><span className={'cat-name'}>Fases lunares</span><span className={'cat-sub'}>El cielo en tu muñeca</span></a>
-            <a className={'cat'} href={'colecciones.html#noir'}><span className={'cat-img foto'}><img src={'assets/relojes/noir-caucho.jpg'} alt={'Reloj Noir negro con índices de cobre'} loading={'lazy'} data-foto /></span><span className={'cat-name'}>Noir</span><span className={'cat-sub'}>Negro y cobre</span></a>
-            <a className={'cat'} href={'colecciones.html#origine'}><span className={'cat-img foto'}><img src={'assets/relojes/origine.jpg'} alt={'Reloj Origine con tourbillon'} loading={'lazy'} data-foto /></span><span className={'cat-name'}>Ediciones limitadas</span><span className={'cat-sub'}>Piezas numeradas</span></a>
+            <a className={'cat'} href={'colecciones.html#heritage'}><span className={'cat-img foto'}><img src={'assets/relojes/heritage-cobre.jpg'} alt={'Reloj Heritage de esfera blanca'} loading={'lazy'} data-foto="" {...eventosFoto} /></span><span className={'cat-name'}>Vestir</span><span className={'cat-sub'}>Elegancia atemporal</span></a>
+            <a className={'cat'} href={'colecciones.html#marine'}><span className={'cat-img foto'}><img src={'assets/relojes/marine-acero.jpg'} alt={'Reloj Marine de buceo'} loading={'lazy'} data-foto="" {...eventosFoto} /></span><span className={'cat-name'}>Deportivos</span><span className={'cat-sub'}>Hechos para la acción</span></a>
+            <a className={'cat'} href={'colecciones.html#esqueleto'}><span className={'cat-img foto'}><img src={'assets/relojes/esqueleto-cobre.jpg'} alt={'Reloj Esqueleto con el movimiento visible'} loading={'lazy'} data-foto="" {...eventosFoto} /></span><span className={'cat-name'}>Esqueleto</span><span className={'cat-sub'}>El arte en movimiento</span></a>
+            <a className={'cat'} href={'colecciones.html#luna'}><span className={'cat-img foto'}><img src={'assets/relojes/luna-acero.jpg'} alt={'Reloj Luna con fases lunares'} loading={'lazy'} data-foto="" {...eventosFoto} /></span><span className={'cat-name'}>Fases lunares</span><span className={'cat-sub'}>El cielo en tu muñeca</span></a>
+            <a className={'cat'} href={'colecciones.html#noir'}><span className={'cat-img foto'}><img src={'assets/relojes/noir-caucho.jpg'} alt={'Reloj Noir negro con índices de cobre'} loading={'lazy'} data-foto="" {...eventosFoto} /></span><span className={'cat-name'}>Noir</span><span className={'cat-sub'}>Negro y cobre</span></a>
+            <a className={'cat'} href={'colecciones.html#origine'}><span className={'cat-img foto'}><img src={'assets/relojes/origine.jpg'} alt={'Reloj Origine con tourbillon'} loading={'lazy'} data-foto="" {...eventosFoto} /></span><span className={'cat-name'}>Ediciones limitadas</span><span className={'cat-sub'}>Piezas numeradas</span></a>
         </div>
     </section>
 
@@ -30,13 +37,13 @@ export default function Index() {
                 <div><p className={'eyebrow'}>Tienda</p><h2 className={'sec-title'} id={'featTitle'}>Piezas destacadas</h2></div>
                 <a className={'link-arrow'} href={'tienda.html'}>Ver toda la tienda <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a>
             </div>
-            <FeaturedProducts />
+            <div className="grid-4">{DESTACADOS.map((id) => <ProductCard key={id} product={buscarProducto(id)} destacada />)}</div>
         </div>
     </section>
 
     <section className={'on-light craft'} aria-labelledby={'craftTitle'}>
         <div className={'craft-visual'}>
-            <GearCanvas />
+            <Engranajes />
             <p className={'craft-caption'}>Calibre OK-01 · 28.800 alternancias/h · 42 h de reserva</p>
         </div>
         <div className={'craft-text'}>
@@ -65,7 +72,7 @@ export default function Index() {
 
     <section className={'limited'} aria-labelledby={'limTitle'}>
         <div className={'wrap limited-grid'}>
-            <a className={'limited-img foto'} href={'producto.html#origine'} aria-label={'Ver Origine Tourbillon'}><img src={'assets/relojes/origine.jpg'} alt={'OKIDOKEI Origine con tourbillon visible a las 6'} loading={'lazy'} data-foto /></a>
+            <a className={'limited-img foto'} href={'producto.html#origine'} aria-label={'Ver Origine Tourbillon'}><img src={'assets/relojes/origine.jpg'} alt={'OKIDOKEI Origine con tourbillon visible a las 6'} loading={'lazy'} data-foto="" {...eventosFoto} /></a>
             <div className={'limited-text'}>
                 <p className={'eyebrow'}>Edición limitada</p>
                 <h2 id={'limTitle'}><span className={'cu-text'}>ORIGINE</span> · TOURBILLON</h2>
@@ -112,11 +119,11 @@ export default function Index() {
                 <a className={'link-arrow'} href={'journal.html'}>Ver todos los artículos <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a>
             </div>
             <div className={'grid-3'}>
-                <article className={'story'}><a className={'story-img foto'} href={'journal.html#esqueletado'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/journal/esqueletado.jpg'} alt={'Detalle del volante y los puentes de un movimiento esqueletado'} loading={'lazy'} data-foto /></a>
+                <article className={'story'}><a className={'story-img foto'} href={'journal.html#esqueletado'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/journal/esqueletado.jpg'} alt={'Detalle del volante y los puentes de un movimiento esqueletado'} loading={'lazy'} data-foto="" {...eventosFoto} /></a>
                     <div className={'story-body'}><p className={'eyebrow'}>Artesanía</p><h3><a href={'journal.html#esqueletado'}>El arte del esqueletado</a></h3><p>Cómo se vacía un movimiento sin restarle resistencia.</p><a className={'link-arrow'} href={'journal.html#esqueletado'}>Leer más <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></div></article>
-                <article className={'story'}><a className={'story-img foto'} href={'journal.html#buceo'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/journal/buceo.jpg'} alt={'Perfil de un reloj de buceo con bisel giratorio y corona'} loading={'lazy'} data-foto /></a>
+                <article className={'story'}><a className={'story-img foto'} href={'journal.html#buceo'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/journal/buceo.jpg'} alt={'Perfil de un reloj de buceo con bisel giratorio y corona'} loading={'lazy'} data-foto="" {...eventosFoto} /></a>
                     <div className={'story-body'}><p className={'eyebrow'}>Guía</p><h3><a href={'journal.html#buceo'}>Cómo elegir tu primer reloj de buceo</a></h3><p>Hermeticidad, bisel y legibilidad: lo que de verdad importa.</p><a className={'link-arrow'} href={'journal.html#buceo'}>Leer más <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></div></article>
-                <article className={'story'}><a className={'story-img foto'} href={'journal.html#fases-lunares'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/journal/fases-lunares.jpg'} alt={'Ventana de fases lunares sobre una esfera blanca'} loading={'lazy'} data-foto /></a>
+                <article className={'story'}><a className={'story-img foto'} href={'journal.html#fases-lunares'} tabIndex={'-1'} aria-hidden={'true'}><img src={'assets/journal/fases-lunares.jpg'} alt={'Ventana de fases lunares sobre una esfera blanca'} loading={'lazy'} data-foto="" {...eventosFoto} /></a>
                     <div className={'story-body'}><p className={'eyebrow'}>Colecciones</p><h3><a href={'journal.html#fases-lunares'}>Fases lunares, una complicación poética</a></h3><p>El mecanismo que sigue el ciclo de 29,5 días de la luna.</p><a className={'link-arrow'} href={'journal.html#fases-lunares'}>Leer más <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></div></article>
             </div>
         </div>

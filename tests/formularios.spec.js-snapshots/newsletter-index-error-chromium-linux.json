@@ -1,0 +1,95 @@
+{
+ "t": "form",
+ "a": {
+  "class": "news-form",
+  "data-newsletter": "",
+  "novalidate": ""
+ },
+ "c": [
+  {
+   "t": "div",
+   "a": {
+    "class": "news-row"
+   },
+   "c": [
+    {
+     "t": "label",
+     "a": {
+      "class": "sr-only",
+      "for": "newsEmail"
+     },
+     "c": [
+      "Correo electrónico"
+     ]
+    },
+    {
+     "t": "input",
+     "a": {
+      "autocomplete": "email",
+      "id": "newsEmail",
+      "name": "email",
+      "placeholder": "Tu correo electrónico",
+      "required": "",
+      "type": "email"
+     },
+     "c": []
+    },
+    {
+     "t": "button",
+     "a": {
+      "class": "btn btn-dark",
+      "type": "submit"
+     },
+     "c": [
+      "Suscribirme"
+     ]
+    }
+   ]
+  },
+  {
+   "t": "label",
+   "a": {
+    "class": "check",
+    "for": "newsConsent"
+   },
+   "c": [
+    {
+     "t": "input",
+     "a": {
+      "id": "newsConsent",
+      "required": "",
+      "type": "checkbox"
+     },
+     "c": []
+    },
+    {
+     "t": "span",
+     "a": {},
+     "c": [
+      "Acepto recibir comunicaciones de OKIDOKEI y la",
+      {
+       "t": "a",
+       "a": {
+        "href": "legal.html#privacidad"
+       },
+       "c": [
+        "política de privacidad"
+       ]
+      },
+      "."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "p",
+   "a": {
+    "class": "form-msg",
+    "role": "status"
+   },
+   "c": [
+    "Marca la casilla de privacidad para suscribirte."
+   ]
+  }
+ ]
+}

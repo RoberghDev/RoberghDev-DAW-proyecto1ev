@@ -1,0 +1,221 @@
+{
+ "t": "main",
+ "a": {},
+ "c": [
+  {
+   "t": "section",
+   "a": {
+    "class": "page-hero"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "nav",
+       "a": {
+        "aria-label": "Estás aquí",
+        "class": "crumbs"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "href": "index.html"
+         },
+         "c": [
+          "Inicio"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-hidden": "true"
+         },
+         "c": [
+          "/"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-current": "page"
+         },
+         "c": [
+          "Favoritos"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "eyebrow"
+       },
+       "c": [
+        "Tu selección"
+       ]
+      },
+      {
+       "t": "h1",
+       "a": {
+        "class": "page-title"
+       },
+       "c": [
+        "Favoritos"
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "page-sub"
+       },
+       "c": [
+        "Los relojes que has guardado con el corazón. Se quedan en este navegador para cuando vuelvas."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "svg",
+     "a": {
+      "aria-hidden": "true",
+      "class": "page-mark"
+     },
+     "c": [
+      {
+       "t": "use",
+       "a": {
+        "href": "#emblem"
+       },
+       "c": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-label": "Relojes guardados",
+    "class": "section-dark section"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "list-head",
+        "hidden": "",
+        "id": "favActions"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "id": "favCountText"
+         },
+         "c": [
+          "0 relojes guardados"
+         ]
+        },
+        {
+         "t": "button",
+         "a": {
+          "class": "btn btn-outline",
+          "id": "favAllToCart",
+          "type": "button"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-bag"
+             },
+             "c": []
+            }
+           ]
+          },
+          "Añadir todos al carrito"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "grid-4",
+        "id": "favGrid"
+       },
+       "c": []
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "empty",
+        "id": "favEmpty"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "mark"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#emblem"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {},
+         "c": [
+          "Aún no tienes favoritos"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Pulsa el corazón de cualquier reloj para guardarlo aquí y compararlo con calma."
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "class": "btn btn-outline",
+          "href": "tienda.html"
+         },
+         "c": [
+          "Ir a la tienda"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

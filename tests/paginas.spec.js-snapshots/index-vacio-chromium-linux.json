@@ -1,0 +1,3130 @@
+{
+ "t": "main",
+ "a": {},
+ "c": [
+  {
+   "t": "section",
+   "a": {
+    "aria-label": "Colecciones OKIDOKEI",
+    "class": "hero",
+    "id": "inicio"
+   },
+   "c": [
+    {
+     "t": "canvas",
+     "a": {
+      "aria-hidden": "true",
+      "data-engine": "three.js r160",
+      "id": "hero3d"
+     },
+     "c": []
+    },
+    {
+     "t": "svg",
+     "a": {
+      "aria-hidden": "true",
+      "class": "hero-fallback"
+     },
+     "c": [
+      {
+       "t": "use",
+       "a": {
+        "href": "#emblem"
+       },
+       "c": []
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "hero-ui"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "aria-label": "Colecciones",
+        "class": "tabs",
+        "role": "tablist"
+       },
+       "c": [
+        {
+         "t": "button",
+         "a": {
+          "aria-selected": "true",
+          "class": "hero-tab",
+          "data-tab": "0",
+          "role": "tab",
+          "type": "button"
+         },
+         "c": [
+          "Esqueleto"
+         ]
+        },
+        {
+         "t": "button",
+         "a": {
+          "aria-selected": "false",
+          "class": "hero-tab",
+          "data-tab": "1",
+          "role": "tab",
+          "tabindex": "-1",
+          "type": "button"
+         },
+         "c": [
+          "Heritage"
+         ]
+        },
+        {
+         "t": "button",
+         "a": {
+          "aria-selected": "false",
+          "class": "hero-tab",
+          "data-tab": "2",
+          "role": "tab",
+          "tabindex": "-1",
+          "type": "button"
+         },
+         "c": [
+          "Marine"
+         ]
+        },
+        {
+         "t": "button",
+         "a": {
+          "aria-selected": "false",
+          "class": "hero-tab",
+          "data-tab": "3",
+          "role": "tab",
+          "tabindex": "-1",
+          "type": "button"
+         },
+         "c": [
+          "Noir"
+         ]
+        },
+        {
+         "t": "button",
+         "a": {
+          "aria-selected": "false",
+          "class": "hero-tab",
+          "data-tab": "4",
+          "role": "tab",
+          "tabindex": "-1",
+          "type": "button"
+         },
+         "c": [
+          "Luna"
+         ]
+        },
+        {
+         "t": "button",
+         "a": {
+          "aria-selected": "false",
+          "class": "hero-tab",
+          "data-tab": "5",
+          "role": "tab",
+          "tabindex": "-1",
+          "type": "button"
+         },
+         "c": [
+          "Origine"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "hero-copy"
+       },
+       "c": [
+        {
+         "t": "h1",
+         "a": {
+          "aria-label": "Esqueleto",
+          "class": "hero-title",
+          "id": "heroTitle"
+         },
+         "c": [
+          {
+           "t": "span",
+           "a": {
+            "aria-hidden": "true",
+            "style": "--d: 0ms;"
+           },
+           "c": [
+            "E"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {
+            "aria-hidden": "true",
+            "style": "--d: 45ms;"
+           },
+           "c": [
+            "S"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {
+            "aria-hidden": "true",
+            "style": "--d: 90ms;"
+           },
+           "c": [
+            "Q"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {
+            "aria-hidden": "true",
+            "style": "--d: 135ms;"
+           },
+           "c": [
+            "U"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {
+            "aria-hidden": "true",
+            "style": "--d: 180ms;"
+           },
+           "c": [
+            "E"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {
+            "aria-hidden": "true",
+            "style": "--d: 225ms;"
+           },
+           "c": [
+            "L"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {
+            "aria-hidden": "true",
+            "style": "--d: 270ms;"
+           },
+           "c": [
+            "E"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {
+            "aria-hidden": "true",
+            "style": "--d: 315ms;"
+           },
+           "c": [
+            "T"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {
+            "aria-hidden": "true",
+            "style": "--d: 360ms;"
+           },
+           "c": [
+            "O"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "hero-sub",
+          "id": "heroSub"
+         },
+         "c": [
+          "Fuerza y elegancia",
+          {
+           "t": "br",
+           "a": {},
+           "c": []
+          },
+          "con el movimiento a la vista"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-hidden": "true",
+          "class": "hero-dash"
+         },
+         "c": []
+        },
+        {
+         "t": "a",
+         "a": {
+          "class": "btn btn-outline",
+          "href": "colecciones.html#esqueleto",
+          "id": "heroExplore"
+         },
+         "c": [
+          "Explorar colección"
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "hero-foot"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "counter"
+       },
+       "c": [
+        {
+         "t": "strong",
+         "a": {
+          "id": "heroCount"
+         },
+         "c": [
+          "01"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-hidden": "true",
+          "class": "progress"
+         },
+         "c": [
+          {
+           "t": "i",
+           "a": {
+            "id": "heroProgress",
+            "style": "transform: scaleX(0);"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "06"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "drag-hint"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-drag"
+           },
+           "c": []
+          }
+         ]
+        },
+        "Arrastra para girar"
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "hero-actions"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "class": "hero-model",
+          "href": "producto.html#esqueleto-cobre",
+          "id": "heroModel"
+         },
+         "c": [
+          {
+           "t": "span",
+           "a": {
+            "class": "spec",
+            "id": "heroSpec"
+           },
+           "c": [
+            "Automático esqueletado · Cobre · 42 mm"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {
+            "class": "price",
+            "id": "heroPrice"
+           },
+           "c": [
+            "4.950 €"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "button",
+         "a": {
+          "aria-label": "Girar el reloj 360 grados",
+          "aria-pressed": "false",
+          "class": "round-btn",
+          "id": "spinBtn",
+          "type": "button"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-rotate"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "button",
+         "a": {
+          "aria-label": "Reloj anterior",
+          "class": "round-btn",
+          "id": "prevBtn",
+          "type": "button"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-left"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "button",
+         "a": {
+          "aria-label": "Reloj siguiente",
+          "class": "round-btn",
+          "id": "nextBtn",
+          "type": "button"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-right"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "catsTitle",
+    "class": "on-light cats"
+   },
+   "c": [
+    {
+     "t": "h2",
+     "a": {
+      "class": "sr-only",
+      "id": "catsTitle"
+     },
+     "c": [
+      "Colecciones"
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap cats-row"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "class": "cat",
+        "href": "colecciones.html#heritage"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-img foto"
+         },
+         "c": [
+          {
+           "t": "img",
+           "a": {
+            "alt": "Reloj Heritage de esfera blanca",
+            "data-foto": "",
+            "loading": "lazy",
+            "src": "assets/relojes/heritage-cobre.jpg"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-name"
+         },
+         "c": [
+          "Vestir"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-sub"
+         },
+         "c": [
+          "Elegancia atemporal"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "cat",
+        "href": "colecciones.html#marine"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-img foto"
+         },
+         "c": [
+          {
+           "t": "img",
+           "a": {
+            "alt": "Reloj Marine de buceo",
+            "data-foto": "",
+            "loading": "lazy",
+            "src": "assets/relojes/marine-acero.jpg"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-name"
+         },
+         "c": [
+          "Deportivos"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-sub"
+         },
+         "c": [
+          "Hechos para la acción"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "cat",
+        "href": "colecciones.html#esqueleto"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-img foto"
+         },
+         "c": [
+          {
+           "t": "img",
+           "a": {
+            "alt": "Reloj Esqueleto con el movimiento visible",
+            "data-foto": "",
+            "loading": "lazy",
+            "src": "assets/relojes/esqueleto-cobre.jpg"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-name"
+         },
+         "c": [
+          "Esqueleto"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-sub"
+         },
+         "c": [
+          "El arte en movimiento"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "cat",
+        "href": "colecciones.html#luna"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-img foto"
+         },
+         "c": [
+          {
+           "t": "img",
+           "a": {
+            "alt": "Reloj Luna con fases lunares",
+            "data-foto": "",
+            "loading": "lazy",
+            "src": "assets/relojes/luna-acero.jpg"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-name"
+         },
+         "c": [
+          "Fases lunares"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-sub"
+         },
+         "c": [
+          "El cielo en tu muñeca"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "cat",
+        "href": "colecciones.html#noir"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-img foto"
+         },
+         "c": [
+          {
+           "t": "img",
+           "a": {
+            "alt": "Reloj Noir negro con índices de cobre",
+            "data-foto": "",
+            "loading": "lazy",
+            "src": "assets/relojes/noir-caucho.jpg"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-name"
+         },
+         "c": [
+          "Noir"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-sub"
+         },
+         "c": [
+          "Negro y cobre"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "cat",
+        "href": "colecciones.html#origine"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-img foto"
+         },
+         "c": [
+          {
+           "t": "img",
+           "a": {
+            "alt": "Reloj Origine con tourbillon",
+            "data-foto": "",
+            "loading": "lazy",
+            "src": "assets/relojes/origine.jpg"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-name"
+         },
+         "c": [
+          "Ediciones limitadas"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "class": "cat-sub"
+         },
+         "c": [
+          "Piezas numeradas"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "featTitle",
+    "class": "section-dark featured"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "sec-head"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "p",
+           "a": {
+            "class": "eyebrow"
+           },
+           "c": [
+            "Tienda"
+           ]
+          },
+          {
+           "t": "h2",
+           "a": {
+            "class": "sec-title",
+            "id": "featTitle"
+           },
+           "c": [
+            "Piezas destacadas"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "class": "link-arrow",
+          "href": "tienda.html"
+         },
+         "c": [
+          "Ver toda la tienda",
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-right"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "grid-4"
+       },
+       "c": [
+        {
+         "t": "article",
+         "a": {
+          "class": "card",
+          "data-id": "esqueleto-cobre"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {
+            "class": "card-media"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "aria-hidden": "true",
+              "class": "card-img foto",
+              "href": "producto.html#esqueleto-cobre",
+              "tabindex": "-1"
+             },
+             "c": [
+              {
+               "t": "img",
+               "a": {
+                "alt": "Esqueleto Cobre: caja de cobre y piel marrón con pespunte crudo",
+                "data-foto": "",
+                "loading": "lazy",
+                "src": "assets/relojes/esqueleto-cobre.jpg"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "span",
+             "a": {
+              "class": "tag"
+             },
+             "c": [
+              "Nuevo"
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Añadir Esqueleto Cobre a favoritos",
+              "aria-pressed": "false",
+              "class": "fav",
+              "data-fav": "esqueleto-cobre",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-heart"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "card-coll"
+             },
+             "c": [
+              "Esqueleto"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {
+              "class": "card-name"
+             },
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "producto.html#esqueleto-cobre"
+               },
+               "c": [
+                "Esqueleto Cobre"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {
+              "class": "card-spec"
+             },
+             "c": [
+              "Automático esqueletado · Cobre · 42 mm"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "card-foot"
+             },
+             "c": [
+              {
+               "t": "span",
+               "a": {
+                "class": "card-price"
+               },
+               "c": [
+                "4.950 €"
+               ]
+              },
+              {
+               "t": "button",
+               "a": {
+                "class": "add-btn",
+                "data-add": "esqueleto-cobre",
+                "type": "button"
+               },
+               "c": [
+                {
+                 "t": "svg",
+                 "a": {
+                  "aria-hidden": "true",
+                  "class": "icon"
+                 },
+                 "c": [
+                  {
+                   "t": "use",
+                   "a": {
+                    "href": "#i-bag"
+                   },
+                   "c": []
+                  }
+                 ]
+                },
+                "Añadir"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "article",
+         "a": {
+          "class": "card",
+          "data-id": "marine-acero"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {
+            "class": "card-media"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "aria-hidden": "true",
+              "class": "card-img foto",
+              "href": "producto.html#marine-acero",
+              "tabindex": "-1"
+             },
+             "c": [
+              {
+               "t": "img",
+               "a": {
+                "alt": "Marine Acero: caja de acero y brazalete de acero de tres eslabones",
+                "data-foto": "",
+                "loading": "lazy",
+                "src": "assets/relojes/marine-acero.jpg"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Añadir Marine Acero a favoritos",
+              "aria-pressed": "false",
+              "class": "fav",
+              "data-fav": "marine-acero",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-heart"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "card-coll"
+             },
+             "c": [
+              "Marine"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {
+              "class": "card-name"
+             },
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "producto.html#marine-acero"
+               },
+               "c": [
+                "Marine Acero"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {
+              "class": "card-spec"
+             },
+             "c": [
+              "Automático · Acero · 42 mm"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "card-foot"
+             },
+             "c": [
+              {
+               "t": "span",
+               "a": {
+                "class": "card-price"
+               },
+               "c": [
+                "2.890 €"
+               ]
+              },
+              {
+               "t": "button",
+               "a": {
+                "class": "add-btn",
+                "data-add": "marine-acero",
+                "type": "button"
+               },
+               "c": [
+                {
+                 "t": "svg",
+                 "a": {
+                  "aria-hidden": "true",
+                  "class": "icon"
+                 },
+                 "c": [
+                  {
+                   "t": "use",
+                   "a": {
+                    "href": "#i-bag"
+                   },
+                   "c": []
+                  }
+                 ]
+                },
+                "Añadir"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "article",
+         "a": {
+          "class": "card",
+          "data-id": "noir-caucho"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {
+            "class": "card-media"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "aria-hidden": "true",
+              "class": "card-img foto",
+              "href": "producto.html#noir-caucho",
+              "tabindex": "-1"
+             },
+             "c": [
+              {
+               "t": "img",
+               "a": {
+                "alt": "Noir Caucho: caja de acero negro y caucho negro",
+                "data-foto": "",
+                "loading": "lazy",
+                "src": "assets/relojes/noir-caucho.jpg"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "span",
+             "a": {
+              "class": "tag"
+             },
+             "c": [
+              "Nuevo"
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Añadir Noir Caucho a favoritos",
+              "aria-pressed": "false",
+              "class": "fav",
+              "data-fav": "noir-caucho",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-heart"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "card-coll"
+             },
+             "c": [
+              "Noir"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {
+              "class": "card-name"
+             },
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "producto.html#noir-caucho"
+               },
+               "c": [
+                "Noir Caucho"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {
+              "class": "card-spec"
+             },
+             "c": [
+              "Automático · Acero negro · 41 mm"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "card-foot"
+             },
+             "c": [
+              {
+               "t": "span",
+               "a": {
+                "class": "card-price"
+               },
+               "c": [
+                "3.450 €"
+               ]
+              },
+              {
+               "t": "button",
+               "a": {
+                "class": "add-btn",
+                "data-add": "noir-caucho",
+                "type": "button"
+               },
+               "c": [
+                {
+                 "t": "svg",
+                 "a": {
+                  "aria-hidden": "true",
+                  "class": "icon"
+                 },
+                 "c": [
+                  {
+                   "t": "use",
+                   "a": {
+                    "href": "#i-bag"
+                   },
+                   "c": []
+                  }
+                 ]
+                },
+                "Añadir"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "article",
+         "a": {
+          "class": "card",
+          "data-id": "heritage-cobre"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {
+            "class": "card-media"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "aria-hidden": "true",
+              "class": "card-img foto",
+              "href": "producto.html#heritage-cobre",
+              "tabindex": "-1"
+             },
+             "c": [
+              {
+               "t": "img",
+               "a": {
+                "alt": "Heritage Cobre: caja de cobre y piel marrón oscuro",
+                "data-foto": "",
+                "loading": "lazy",
+                "src": "assets/relojes/heritage-cobre.jpg"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Añadir Heritage Cobre a favoritos",
+              "aria-pressed": "false",
+              "class": "fav",
+              "data-fav": "heritage-cobre",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-heart"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "card-coll"
+             },
+             "c": [
+              "Heritage"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {
+              "class": "card-name"
+             },
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "producto.html#heritage-cobre"
+               },
+               "c": [
+                "Heritage Cobre"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {
+              "class": "card-spec"
+             },
+             "c": [
+              "Automático · Cobre · 40 mm"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "card-foot"
+             },
+             "c": [
+              {
+               "t": "span",
+               "a": {
+                "class": "card-price"
+               },
+               "c": [
+                "1.980 €"
+               ]
+              },
+              {
+               "t": "button",
+               "a": {
+                "class": "add-btn",
+                "data-add": "heritage-cobre",
+                "type": "button"
+               },
+               "c": [
+                {
+                 "t": "svg",
+                 "a": {
+                  "aria-hidden": "true",
+                  "class": "icon"
+                 },
+                 "c": [
+                  {
+                   "t": "use",
+                   "a": {
+                    "href": "#i-bag"
+                   },
+                   "c": []
+                  }
+                 ]
+                },
+                "Añadir"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "craftTitle",
+    "class": "on-light craft"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "craft-visual"
+     },
+     "c": [
+      {
+       "t": "canvas",
+       "a": {
+        "aria-label": "Animación de los engranajes de un movimiento mecánico",
+        "data-engranajes": "",
+        "role": "img"
+       },
+       "c": []
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "craft-caption"
+       },
+       "c": [
+        "Calibre OK-01 · 28.800 alternancias/h · 42 h de reserva"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "div",
+     "a": {
+      "class": "craft-text"
+     },
+     "c": [
+      {
+       "t": "p",
+       "a": {
+        "class": "eyebrow"
+       },
+       "c": [
+        "Nuestro oficio"
+       ]
+      },
+      {
+       "t": "h2",
+       "a": {
+        "id": "craftTitle"
+       },
+       "c": [
+        "Construido sobre la tradición.",
+        {
+         "t": "br",
+         "a": {},
+         "c": []
+        },
+        {
+         "t": "em",
+         "a": {},
+         "c": [
+          "Movido por la precisión."
+         ]
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "a": {},
+       "c": [
+        "Cada reloj OKIDOKEI pasa por nuestro taller antes de llegar a tus manos. Lo revisamos, regulamos su marcha y comprobamos cada detalle, porque un buen reloj se elige para acompañarte durante años."
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "btn btn-dark",
+        "href": "nosotros.html"
+       },
+       "c": [
+        "Descubre nuestra historia"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "ul",
+     "a": {
+      "class": "craft-list"
+     },
+     "c": [
+      {
+       "t": "li",
+       "a": {
+        "class": "craft-item"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-gear"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Movimientos automáticos"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Precisión que puedes sentir"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "li",
+       "a": {
+        "class": "craft-item"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-hand"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Acabados a mano"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Perlado y biselado en cada pieza"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "li",
+       "a": {
+        "class": "craft-item"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-diamond"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Materiales nobles"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Acero, cobre y cristal de zafiro"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "li",
+       "a": {
+        "class": "craft-item"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-hourglass"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Hechos para durar"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Diseño que no caduca"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-label": "Ventajas de comprar en OKIDOKEI",
+    "class": "trust"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap trust-row"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#envios"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-truck"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Envío asegurado"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Gratis en toda España"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#devoluciones"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-return"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "30 días"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Devolución sencilla"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#garantia"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-shield"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Garantía 3 años"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "En todos los relojes"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#faq"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-cert"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Autenticidad"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Certificado en cada pieza"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "trust-item",
+        "href": "ayuda.html#faq"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "icon"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#i-lock"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "strong",
+           "a": {},
+           "c": [
+            "Pago seguro"
+           ]
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Conexión cifrada SSL"
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "limTitle",
+    "class": "limited"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap limited-grid"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "aria-label": "Ver Origine Tourbillon",
+        "class": "limited-img foto",
+        "href": "producto.html#origine"
+       },
+       "c": [
+        {
+         "t": "img",
+         "a": {
+          "alt": "OKIDOKEI Origine con tourbillon visible a las 6",
+          "data-foto": "",
+          "loading": "lazy",
+          "src": "assets/relojes/origine.jpg"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "limited-text"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "eyebrow"
+         },
+         "c": [
+          "Edición limitada"
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {
+          "id": "limTitle"
+         },
+         "c": [
+          {
+           "t": "span",
+           "a": {
+            "class": "cu-text"
+           },
+           "c": [
+            "ORIGINE"
+           ]
+          },
+          "· TOURBILLON"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Caja de cobre de 43 mm, esfera negra guilloché y un tourbillon que gira a la vista a las 6. Solo 100 piezas numeradas, cada una con su certificado."
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "row"
+         },
+         "c": [
+          {
+           "t": "span",
+           "a": {
+            "class": "limited-price"
+           },
+           "c": [
+            "18.900 €"
+           ]
+          },
+          {
+           "t": "button",
+           "a": {
+            "class": "btn btn-outline",
+            "data-add": "origine",
+            "type": "button"
+           },
+           "c": [
+            "Reservar la mía"
+           ]
+          },
+          {
+           "t": "a",
+           "a": {
+            "class": "link-arrow",
+            "href": "producto.html#origine"
+           },
+           "c": [
+            "Ver la ficha",
+            {
+             "t": "svg",
+             "a": {
+              "aria-hidden": "true",
+              "class": "icon"
+             },
+             "c": [
+              {
+               "t": "use",
+               "a": {
+                "href": "#i-right"
+               },
+               "c": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "aria-label": "Quedan 23 de 100 piezas",
+        "class": "pieces"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "lbl"
+         },
+         "c": [
+          "Piezas disponibles"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "num cu-text"
+         },
+         "c": [
+          "23"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "of"
+         },
+         "c": [
+          "de 100"
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "aria-hidden": "true",
+          "class": "pieces-bar"
+         },
+         "c": [
+          {
+           "t": "i",
+           "a": {},
+           "c": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "manTitle",
+    "class": "on-light manifesto"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap man-grid"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "man-left"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "eyebrow"
+         },
+         "c": [
+          "Para amantes de la relojería"
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {
+          "id": "manTitle"
+         },
+         "c": [
+          "Diseños atemporales.",
+          {
+           "t": "br",
+           "a": {},
+           "c": []
+          },
+          "Confianza en cada segundo."
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "class": "btn btn-dark",
+          "href": "nosotros.html"
+         },
+         "c": [
+          "Conoce OKIDOKEI"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "figure",
+       "a": {
+        "class": "quote"
+       },
+       "c": [
+        {
+         "t": "span",
+         "a": {
+          "aria-hidden": "true",
+          "class": "qmark"
+         },
+         "c": [
+          "“"
+         ]
+        },
+        {
+         "t": "blockquote",
+         "a": {},
+         "c": [
+          "Un buen reloj no se compra para hoy. Se elige para acompañarte durante años, y por eso cuidamos cada detalle: desde que lo descubres hasta que lo llevas puesto."
+         ]
+        },
+        {
+         "t": "figcaption",
+         "a": {},
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#emblem"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {},
+           "c": [
+            {
+             "t": "strong",
+             "a": {},
+             "c": [
+              "El equipo OKIDOKEI"
+             ]
+            },
+            {
+             "t": "span",
+             "a": {},
+             "c": [
+              "Tu relojería online de confianza"
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "services"
+       },
+       "c": [
+        {
+         "t": "h3",
+         "a": {
+          "class": "eyebrow"
+         },
+         "c": [
+          "Servicios de relojería"
+         ]
+        },
+        {
+         "t": "ul",
+         "a": {},
+         "c": [
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "href": "nosotros.html#grabado"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-pen"
+                 },
+                 "c": []
+                }
+               ]
+              },
+              "Grabado personalizado",
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon arr"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-right"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "href": "nosotros.html#mantenimiento"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-wrench"
+                 },
+                 "c": []
+                }
+               ]
+              },
+              "Revisión y mantenimiento",
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon arr"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-right"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "href": "nosotros.html#brazalete"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-link"
+                 },
+                 "c": []
+                }
+               ]
+              },
+              "Ajuste de brazalete",
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon arr"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-right"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "href": "nosotros.html#regalo"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-gift"
+                 },
+                 "c": []
+                }
+               ]
+              },
+              "Envoltorio de regalo",
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon arr"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-right"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "jTitle",
+    "class": "section-dark journal"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "sec-head"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "p",
+           "a": {
+            "class": "eyebrow"
+           },
+           "c": [
+            "Journal"
+           ]
+          },
+          {
+           "t": "h2",
+           "a": {
+            "class": "sec-title",
+            "id": "jTitle"
+           },
+           "c": [
+            "Historias que inspiran"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "class": "link-arrow",
+          "href": "journal.html"
+         },
+         "c": [
+          "Ver todos los artículos",
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-right"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "grid-3"
+       },
+       "c": [
+        {
+         "t": "article",
+         "a": {
+          "class": "story"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "aria-hidden": "true",
+            "class": "story-img foto",
+            "href": "journal.html#esqueletado",
+            "tabindex": "-1"
+           },
+           "c": [
+            {
+             "t": "img",
+             "a": {
+              "alt": "Detalle del volante y los puentes de un movimiento esqueletado",
+              "data-foto": "",
+              "loading": "lazy",
+              "src": "assets/journal/esqueletado.jpg"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "story-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "eyebrow"
+             },
+             "c": [
+              "Artesanía"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {},
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "journal.html#esqueletado"
+               },
+               "c": [
+                "El arte del esqueletado"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {},
+             "c": [
+              "Cómo se vacía un movimiento sin restarle resistencia."
+             ]
+            },
+            {
+             "t": "a",
+             "a": {
+              "class": "link-arrow",
+              "href": "journal.html#esqueletado"
+             },
+             "c": [
+              "Leer más",
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-right"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "article",
+         "a": {
+          "class": "story"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "aria-hidden": "true",
+            "class": "story-img foto",
+            "href": "journal.html#buceo",
+            "tabindex": "-1"
+           },
+           "c": [
+            {
+             "t": "img",
+             "a": {
+              "alt": "Perfil de un reloj de buceo con bisel giratorio y corona",
+              "data-foto": "",
+              "loading": "lazy",
+              "src": "assets/journal/buceo.jpg"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "story-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "eyebrow"
+             },
+             "c": [
+              "Guía"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {},
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "journal.html#buceo"
+               },
+               "c": [
+                "Cómo elegir tu primer reloj de buceo"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {},
+             "c": [
+              "Hermeticidad, bisel y legibilidad: lo que de verdad importa."
+             ]
+            },
+            {
+             "t": "a",
+             "a": {
+              "class": "link-arrow",
+              "href": "journal.html#buceo"
+             },
+             "c": [
+              "Leer más",
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-right"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "article",
+         "a": {
+          "class": "story"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "aria-hidden": "true",
+            "class": "story-img foto",
+            "href": "journal.html#fases-lunares",
+            "tabindex": "-1"
+           },
+           "c": [
+            {
+             "t": "img",
+             "a": {
+              "alt": "Ventana de fases lunares sobre una esfera blanca",
+              "data-foto": "",
+              "loading": "lazy",
+              "src": "assets/journal/fases-lunares.jpg"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "story-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "eyebrow"
+             },
+             "c": [
+              "Colecciones"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {},
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "journal.html#fases-lunares"
+               },
+               "c": [
+                "Fases lunares, una complicación poética"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {},
+             "c": [
+              "El mecanismo que sigue el ciclo de 29,5 días de la luna."
+             ]
+            },
+            {
+             "t": "a",
+             "a": {
+              "class": "link-arrow",
+              "href": "journal.html#fases-lunares"
+             },
+             "c": [
+              "Leer más",
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-right"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "newsTitle",
+    "class": "on-light news",
+    "id": "newsletter"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap news-grid"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "aria-hidden": "true",
+        "class": "news-art"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "fill": "none",
+          "stroke": "currentColor",
+          "stroke-width": ".7",
+          "viewBox": "0 0 200 200"
+         },
+         "c": [
+          {
+           "t": "circle",
+           "a": {
+            "cx": "100",
+            "cy": "100",
+            "r": "78"
+           },
+           "c": []
+          },
+          {
+           "t": "circle",
+           "a": {
+            "cx": "100",
+            "cy": "100",
+            "r": "70"
+           },
+           "c": []
+          },
+          {
+           "t": "circle",
+           "a": {
+            "cx": "100",
+            "cy": "100",
+            "r": "52"
+           },
+           "c": []
+          },
+          {
+           "t": "circle",
+           "a": {
+            "cx": "100",
+            "cy": "100",
+            "r": "4"
+           },
+           "c": []
+          },
+          {
+           "t": "path",
+           "a": {
+            "d": "M100 30v10M100 160v10M30 100h10M160 100h10M135 39.4l-5 8.7M65 160.6l5-8.7M39.4 65l8.7 5M160.6 135l-8.7-5M39.4 135l8.7-5M160.6 65l-8.7 5M65 39.4l5 8.7M135 160.6l-5-8.7"
+           },
+           "c": []
+          },
+          {
+           "t": "path",
+           "a": {
+            "d": "M100 100 70 72M100 100l38-20"
+           },
+           "c": []
+          },
+          {
+           "t": "path",
+           "a": {
+            "d": "M178 92h8v16h-8M88 22V10h24v12M88 178v12h24v-12"
+           },
+           "c": []
+          },
+          {
+           "t": "circle",
+           "a": {
+            "cx": "100",
+            "cy": "132",
+            "r": "14"
+           },
+           "c": []
+          },
+          {
+           "t": "circle",
+           "a": {
+            "cx": "100",
+            "cy": "132",
+            "r": "9"
+           },
+           "c": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "news-copy"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "eyebrow"
+         },
+         "c": [
+          "Sé el primero en saberlo"
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {
+          "id": "newsTitle"
+         },
+         "c": [
+          "Únete a nuestra comunidad."
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Recibe novedades, lanzamientos y ofertas exclusivas directamente en tu correo."
+         ]
+        }
+       ]
+      },
+      {
+       "t": "form",
+       "a": {
+        "class": "news-form",
+        "data-newsletter": "",
+        "novalidate": ""
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {
+          "class": "news-row"
+         },
+         "c": [
+          {
+           "t": "label",
+           "a": {
+            "class": "sr-only",
+            "for": "newsEmail"
+           },
+           "c": [
+            "Correo electrónico"
+           ]
+          },
+          {
+           "t": "input",
+           "a": {
+            "autocomplete": "email",
+            "id": "newsEmail",
+            "name": "email",
+            "placeholder": "Tu correo electrónico",
+            "required": "",
+            "type": "email"
+           },
+           "c": []
+          },
+          {
+           "t": "button",
+           "a": {
+            "class": "btn btn-dark",
+            "type": "submit"
+           },
+           "c": [
+            "Suscribirme"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "label",
+         "a": {
+          "class": "check",
+          "for": "newsConsent"
+         },
+         "c": [
+          {
+           "t": "input",
+           "a": {
+            "id": "newsConsent",
+            "required": "",
+            "type": "checkbox"
+           },
+           "c": []
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Acepto recibir comunicaciones de OKIDOKEI y la",
+            {
+             "t": "a",
+             "a": {
+              "href": "legal.html#privacidad"
+             },
+             "c": [
+              "política de privacidad"
+             ]
+            },
+            "."
+           ]
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "form-msg",
+          "role": "status"
+         },
+         "c": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

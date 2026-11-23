@@ -1,0 +1,544 @@
+{
+ "t": "main",
+ "a": {},
+ "c": [
+  {
+   "t": "section",
+   "a": {
+    "class": "page-hero"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "nav",
+       "a": {
+        "aria-label": "Estás aquí",
+        "class": "crumbs"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "href": "index.html"
+         },
+         "c": [
+          "Inicio"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-hidden": "true"
+         },
+         "c": [
+          "/"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-current": "page"
+         },
+         "c": [
+          "Favoritos"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "eyebrow"
+       },
+       "c": [
+        "Tu selección"
+       ]
+      },
+      {
+       "t": "h1",
+       "a": {
+        "class": "page-title"
+       },
+       "c": [
+        "Favoritos"
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "page-sub"
+       },
+       "c": [
+        "Los relojes que has guardado con el corazón. Se quedan en este navegador para cuando vuelvas."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "svg",
+     "a": {
+      "aria-hidden": "true",
+      "class": "page-mark"
+     },
+     "c": [
+      {
+       "t": "use",
+       "a": {
+        "href": "#emblem"
+       },
+       "c": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-label": "Relojes guardados",
+    "class": "section-dark section"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "list-head",
+        "id": "favActions"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "id": "favCountText"
+         },
+         "c": [
+          "2 relojes guardados"
+         ]
+        },
+        {
+         "t": "button",
+         "a": {
+          "class": "btn btn-outline",
+          "id": "favAllToCart",
+          "type": "button"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-bag"
+             },
+             "c": []
+            }
+           ]
+          },
+          "Añadir todos al carrito"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "grid-4",
+        "id": "favGrid"
+       },
+       "c": [
+        {
+         "t": "article",
+         "a": {
+          "class": "card",
+          "data-id": "origine"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {
+            "class": "card-media"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "aria-hidden": "true",
+              "class": "card-img foto",
+              "href": "producto.html#origine",
+              "tabindex": "-1"
+             },
+             "c": [
+              {
+               "t": "img",
+               "a": {
+                "alt": "",
+                "data-foto": "",
+                "loading": "lazy",
+                "src": "assets/relojes/origine.jpg"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "span",
+             "a": {
+              "class": "tag"
+             },
+             "c": [
+              "Edición limitada"
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Quitar Origine Tourbillon de favoritos",
+              "aria-pressed": "true",
+              "class": "fav",
+              "data-fav": "origine",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-heart"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "card-coll"
+             },
+             "c": [
+              "Origine"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {
+              "class": "card-name"
+             },
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "producto.html#origine"
+               },
+               "c": [
+                "Origine Tourbillon"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {
+              "class": "card-spec"
+             },
+             "c": [
+              "Tourbillon de carga manual · Cobre · 43 mm"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "card-foot"
+             },
+             "c": [
+              {
+               "t": "span",
+               "a": {
+                "class": "card-price"
+               },
+               "c": [
+                "18.900 €"
+               ]
+              },
+              {
+               "t": "button",
+               "a": {
+                "class": "add-btn",
+                "data-add": "origine",
+                "type": "button"
+               },
+               "c": [
+                {
+                 "t": "svg",
+                 "a": {
+                  "aria-hidden": "true",
+                  "class": "icon"
+                 },
+                 "c": [
+                  {
+                   "t": "use",
+                   "a": {
+                    "href": "#i-bag"
+                   },
+                   "c": []
+                  }
+                 ]
+                },
+                "Añadir"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "article",
+         "a": {
+          "class": "card",
+          "data-id": "marine-caucho"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {
+            "class": "card-media"
+           },
+           "c": [
+            {
+             "t": "a",
+             "a": {
+              "aria-hidden": "true",
+              "class": "card-img foto",
+              "href": "producto.html#marine-caucho",
+              "tabindex": "-1"
+             },
+             "c": [
+              {
+               "t": "img",
+               "a": {
+                "alt": "",
+                "data-foto": "",
+                "loading": "lazy",
+                "src": "assets/relojes/marine-caucho.jpg"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "span",
+             "a": {
+              "class": "tag"
+             },
+             "c": [
+              "Nuevo"
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "aria-label": "Quitar Marine Caucho de favoritos",
+              "aria-pressed": "true",
+              "class": "fav",
+              "data-fav": "marine-caucho",
+              "type": "button"
+             },
+             "c": [
+              {
+               "t": "svg",
+               "a": {
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-heart"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "card-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "card-coll"
+             },
+             "c": [
+              "Marine"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {
+              "class": "card-name"
+             },
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "producto.html#marine-caucho"
+               },
+               "c": [
+                "Marine Caucho"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {
+              "class": "card-spec"
+             },
+             "c": [
+              "Automático · Acero · 42 mm"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "card-foot"
+             },
+             "c": [
+              {
+               "t": "span",
+               "a": {
+                "class": "card-price"
+               },
+               "c": [
+                "2.690 €"
+               ]
+              },
+              {
+               "t": "button",
+               "a": {
+                "class": "add-btn",
+                "data-add": "marine-caucho",
+                "type": "button"
+               },
+               "c": [
+                {
+                 "t": "svg",
+                 "a": {
+                  "aria-hidden": "true",
+                  "class": "icon"
+                 },
+                 "c": [
+                  {
+                   "t": "use",
+                   "a": {
+                    "href": "#i-bag"
+                   },
+                   "c": []
+                  }
+                 ]
+                },
+                "Añadir"
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "empty",
+        "hidden": "",
+        "id": "favEmpty"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "aria-hidden": "true",
+          "class": "mark"
+         },
+         "c": [
+          {
+           "t": "use",
+           "a": {
+            "href": "#emblem"
+           },
+           "c": []
+          }
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {},
+         "c": [
+          "Aún no tienes favoritos"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Pulsa el corazón de cualquier reloj para guardarlo aquí y compararlo con calma."
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "class": "btn btn-outline",
+          "href": "tienda.html"
+         },
+         "c": [
+          "Ir a la tienda"
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

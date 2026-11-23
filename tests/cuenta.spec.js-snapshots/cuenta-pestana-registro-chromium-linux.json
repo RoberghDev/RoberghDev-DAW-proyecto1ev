@@ -1,0 +1,355 @@
+{
+ "t": "div",
+ "a": {
+  "id": "accountForms"
+ },
+ "c": [
+  {
+   "t": "div",
+   "a": {
+    "aria-label": "Cuenta",
+    "class": "acc-tabs",
+    "role": "tablist"
+   },
+   "c": [
+    {
+     "t": "button",
+     "a": {
+      "aria-selected": "false",
+      "data-tab-cuenta": "formEntrar",
+      "role": "tab",
+      "type": "button"
+     },
+     "c": [
+      "Entrar"
+     ]
+    },
+    {
+     "t": "button",
+     "a": {
+      "aria-selected": "true",
+      "data-tab-cuenta": "formRegistro",
+      "role": "tab",
+      "type": "button"
+     },
+     "c": [
+      "Crear cuenta"
+     ]
+    }
+   ]
+  },
+  {
+   "t": "div",
+   "a": {
+    "class": "acc-grid"
+   },
+   "c": [
+    {
+     "t": "form",
+     "a": {
+      "class": "acc-form",
+      "id": "formEntrar",
+      "novalidate": ""
+     },
+     "c": [
+      {
+       "t": "h2",
+       "a": {},
+       "c": [
+        "Iniciar sesión"
+       ]
+      },
+      {
+       "t": "p",
+       "a": {},
+       "c": [
+        "¿Ya tienes cuenta? Entra con tu correo electrónico."
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "field"
+       },
+       "c": [
+        {
+         "t": "label",
+         "a": {
+          "for": "entrarEmail"
+         },
+         "c": [
+          "Correo electrónico"
+         ]
+        },
+        {
+         "t": "input",
+         "a": {
+          "autocomplete": "email",
+          "class": "input",
+          "id": "entrarEmail",
+          "placeholder": "nombre@dominio.com",
+          "type": "email"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "field"
+       },
+       "c": [
+        {
+         "t": "label",
+         "a": {
+          "for": "entrarPass"
+         },
+         "c": [
+          "Contraseña"
+         ]
+        },
+        {
+         "t": "input",
+         "a": {
+          "autocomplete": "current-password",
+          "class": "input",
+          "id": "entrarPass",
+          "placeholder": "Mínimo 6 caracteres",
+          "type": "password"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "button",
+       "a": {
+        "class": "btn btn-copper",
+        "type": "submit"
+       },
+       "c": [
+        "Entrar"
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "form-msg",
+        "role": "status"
+       },
+       "c": []
+      },
+      {
+       "t": "a",
+       "a": {
+        "class": "link-arrow",
+        "href": "ayuda.html#contacto"
+       },
+       "c": [
+        "¿Has olvidado tu contraseña?"
+       ]
+      }
+     ]
+    },
+    {
+     "t": "form",
+     "a": {
+      "class": "acc-form is-active",
+      "id": "formRegistro",
+      "novalidate": ""
+     },
+     "c": [
+      {
+       "t": "h2",
+       "a": {},
+       "c": [
+        "Crear cuenta"
+       ]
+      },
+      {
+       "t": "p",
+       "a": {},
+       "c": [
+        "Guarda tus favoritos, sigue tus pedidos y recibe antes que nadie las ediciones limitadas."
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "field"
+       },
+       "c": [
+        {
+         "t": "label",
+         "a": {
+          "for": "regNombre"
+         },
+         "c": [
+          "Nombre"
+         ]
+        },
+        {
+         "t": "input",
+         "a": {
+          "autocomplete": "given-name",
+          "class": "input",
+          "id": "regNombre",
+          "placeholder": "Tu nombre",
+          "type": "text"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "field"
+       },
+       "c": [
+        {
+         "t": "label",
+         "a": {
+          "for": "regEmail"
+         },
+         "c": [
+          "Correo electrónico"
+         ]
+        },
+        {
+         "t": "input",
+         "a": {
+          "autocomplete": "email",
+          "class": "input",
+          "id": "regEmail",
+          "placeholder": "nombre@dominio.com",
+          "type": "email"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "field"
+       },
+       "c": [
+        {
+         "t": "label",
+         "a": {
+          "for": "regTelefono"
+         },
+         "c": [
+          "Número de teléfono"
+         ]
+        },
+        {
+         "t": "input",
+         "a": {
+          "autocomplete": "tel",
+          "class": "input",
+          "id": "regTelefono",
+          "placeholder": "Tu número de teléfono",
+          "type": "tel"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "field"
+       },
+       "c": [
+        {
+         "t": "label",
+         "a": {
+          "for": "regPass"
+         },
+         "c": [
+          "Contraseña"
+         ]
+        },
+        {
+         "t": "input",
+         "a": {
+          "autocomplete": "new-password",
+          "class": "input",
+          "id": "regPass",
+          "placeholder": "Mínimo 6 caracteres",
+          "type": "password"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "label",
+       "a": {
+        "class": "check",
+        "for": "regAcepto"
+       },
+       "c": [
+        {
+         "t": "input",
+         "a": {
+          "id": "regAcepto",
+          "type": "checkbox"
+         },
+         "c": []
+        },
+        {
+         "t": "span",
+         "a": {},
+         "c": [
+          "Acepto la",
+          {
+           "t": "a",
+           "a": {
+            "href": "legal.html#privacidad"
+           },
+           "c": [
+            "política de privacidad"
+           ]
+          },
+          "."
+         ]
+        }
+       ]
+      },
+      {
+       "t": "button",
+       "a": {
+        "class": "btn btn-outline",
+        "type": "submit"
+       },
+       "c": [
+        "Crear cuenta"
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "form-msg",
+        "role": "status"
+       },
+       "c": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "p",
+   "a": {
+    "class": "acc-note"
+   },
+   "c": [
+    "Mientras la tienda no esté conectada a su plataforma de pedidos, la cuenta se guarda solo en este navegador (nombre y correo; la contraseña no se guarda)."
+   ]
+  }
+ ]
+}

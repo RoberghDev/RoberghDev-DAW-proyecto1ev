@@ -1,22 +1,57 @@
-import React, { useState } from 'react';
-import { login, registrarNuevoUsuario } from '../../services/api.js';
-import { useStore } from '../store.jsx';
+import React, { useRef, useState } from 'react';
 
+const CORREO_VALIDO = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// NEWSLETTER (PORTADA Y JOURNAL). Mismo HTML y validación que comun.js.
 export function NewsletterForm() {
-  const [message,setMessage]=useState('');
-  return <form className="news-form" data-newsletter noValidate onSubmit={(event)=>{event.preventDefault();const email=event.currentTarget.elements.email;const consent=event.currentTarget.querySelector('input[type="checkbox"]');if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){setMessage('Escribe un correo válido, por ejemplo nombre@dominio.com.');email.focus();return;}if(consent&&!consent.checked){setMessage('Marca la casilla de privacidad para suscribirte.');consent.focus();return;}setMessage(`¡Gracias! Te avisaremos de las novedades en ${email.value}.`);event.currentTarget.reset();}}><label className="sr-only" htmlFor="newsEmail">Correo electrónico</label><input id="newsEmail" name="email" type="email" placeholder="Tu correo electrónico" autoComplete="email" required /><button className="btn btn-dark" type="submit">Suscribirme</button><label className="check" htmlFor="newsConsent"><input id="newsConsent" type="checkbox" required /> <span>Acepto recibir comunicaciones de OKIDOKEI y la <a href="legal.html#privacidad">política de privacidad</a>.</span></label><p className="form-msg" role="status">{message}</p></form>;
+  const [message, setMessage] = useState('');
+  const emailRef = useRef(null);
+  const consentRef = useRef(null);
+  function submit(event) {
+    event.preventDefault();
+    const email = emailRef.current;
+    const consent = consentRef.current;
+    if (!CORREO_VALIDO.test(email.value)) { setMessage('Escribe un correo válido, por ejemplo nombre@dominio.com.'); email.focus(); return; }
+    if (!consent.checked) { setMessage('Marca la casilla de privacidad para suscribirte.'); consent.focus(); return; }
+    setMessage(`¡Gracias! Te avisaremos de las novedades en ${email.value}.`);
+    event.currentTarget.reset();
+  }
+  return <form className="news-form" data-newsletter="" noValidate onSubmit={submit}>
+    <div className="news-row">
+      <label className="sr-only" htmlFor="newsEmail">Correo electrónico</label>
+      <input ref={emailRef} id="newsEmail" name="email" type="email" placeholder="Tu correo electrónico" autoComplete="email" required />
+      <button className="btn btn-dark" type="submit">Suscribirme</button>
+    </div>
+    <label className="check" htmlFor="newsConsent"><input ref={consentRef} id="newsConsent" type="checkbox" required /> <span>Acepto recibir comunicaciones de OKIDOKEI y la <a href="legal.html#privacidad">política de privacidad</a>.</span></label>
+    <p className="form-msg" role="status">{message}</p>
+  </form>;
 }
 
+// CONTACTO (AYUDA). Mismo HTML y validación que public/js/ayuda.js.
 export function ContactForm() {
-  const [message,setMessage]=useState('');
-  return <form className="contact-form" id="contactForm" noValidate onSubmit={(event)=>{event.preventDefault();const form=event.currentTarget;const name=form.elements.cNombre.value.trim();const email=form.elements.cEmail.value.trim();const note=form.elements.cMensaje.value.trim();if(name.length<2){setMessage('Escribe tu nombre.');form.elements.cNombre.focus();return;}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){setMessage('Escribe un correo válido para poder responderte.');form.elements.cEmail.focus();return;}if(note.length<10){setMessage('Cuéntanos un poco más en el mensaje.');form.elements.cMensaje.focus();return;}if(!form.elements.cAcepto.checked){setMessage('Marca la casilla de privacidad para enviar el mensaje.');return;}setMessage(`Gracias, ${name}. Hemos recibido tu mensaje y te responderemos en ${email}.`);form.reset();}}><div className="field"><label htmlFor="cNombre">Nombre</label><input className="input" id="cNombre" name="cNombre" type="text" autoComplete="name" /></div><div className="field"><label htmlFor="cEmail">Correo electrónico</label><input className="input" id="cEmail" name="cEmail" type="email" autoComplete="email" /></div><div className="field"><label htmlFor="cMotivo">Motivo</label><select className="select" id="cMotivo"><option>Elegir un reloj</option><option>Un pedido</option><option>Grabado o regalo</option><option>Revisión o reparación</option><option>Trabajar con nosotros</option><option>Otro</option></select></div><div className="field"><label htmlFor="cPedido">Nº de pedido (opcional)</label><input className="input" id="cPedido" type="text" /></div><div className="field full"><label htmlFor="cMensaje">Mensaje</label><textarea className="textarea" id="cMensaje" name="cMensaje" /></div><label className="check full" htmlFor="cAcepto"><input type="checkbox" id="cAcepto" /> <span>He leído la <a href="legal.html#privacidad">política de privacidad</a>.</span></label><button className="btn btn-copper" type="submit">Enviar mensaje</button><p className="form-msg full" role="status">{message}</p></form>;
+  const [message, setMessage] = useState('');
+  function submit(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const campo = (id) => form.querySelector(`#${id}`);
+    const name = campo('cNombre').value.trim();
+    const email = campo('cEmail').value.trim();
+    const note = campo('cMensaje').value.trim();
+    if (name.length < 2) { setMessage('Escribe tu nombre.'); campo('cNombre').focus(); return; }
+    if (!CORREO_VALIDO.test(email)) { setMessage('Escribe un correo válido para poder responderte.'); campo('cEmail').focus(); return; }
+    if (note.length < 10) { setMessage('Cuéntanos un poco más en el mensaje.'); campo('cMensaje').focus(); return; }
+    if (!campo('cAcepto').checked) { setMessage('Marca la casilla de privacidad para enviar el mensaje.'); return; }
+    setMessage(`Gracias, ${name}. Hemos recibido tu mensaje y te responderemos en ${email}.`);
+    form.reset();
+  }
+  return <form className="contact-form" id="contactForm" noValidate onSubmit={submit}>
+    <div className="field"><label htmlFor="cNombre">Nombre</label><input className="input" id="cNombre" type="text" autoComplete="name" /></div>
+    <div className="field"><label htmlFor="cEmail">Correo electrónico</label><input className="input" id="cEmail" type="email" autoComplete="email" /></div>
+    <div className="field"><label htmlFor="cMotivo">Motivo</label><select className="select" id="cMotivo"><option>Elegir un reloj</option><option>Un pedido</option><option>Grabado o regalo</option><option>Revisión o reparación</option><option>Trabajar con nosotros</option><option>Otro</option></select></div>
+    <div className="field"><label htmlFor="cPedido">Nº de pedido (opcional)</label><input className="input" id="cPedido" type="text" /></div>
+    <div className="field full"><label htmlFor="cMensaje">Mensaje</label><textarea className="textarea" id="cMensaje" /></div>
+    <label className="check full" htmlFor="cAcepto"><input type="checkbox" id="cAcepto" /> <span>He leído la <a href="legal.html#privacidad">política de privacidad</a>.</span></label>
+    <button className="btn btn-copper" type="submit">Enviar mensaje</button>
+    <p className="form-msg full" role="status">{message}</p>
+  </form>;
 }
-
-export function AccountPage() {
-  const store=useStore(); const [tab,setTab]=useState('formEntrar'); const [loginMessage,setLoginMessage]=useState(''); const [registerMessage,setRegisterMessage]=useState(''); const [busy,setBusy]=useState(false);
-  async function submitLogin(event){event.preventDefault();const form=event.currentTarget;const email=form.elements.entrarEmail.value.trim();const password=form.elements.entrarPass.value;if(!email){setLoginMessage('Escribe tu correo electrónico.');return;}if(!/^[^\s@]+@[^\s@]+\.com$/i.test(email)){setLoginMessage('Escribe un correo válido terminado en .com.');return;}if(password.length<3){setLoginMessage('La contraseña tiene al menos 6 caracteres.');return;}setLoginMessage('Iniciando sesión…');setBusy(true);try{const result=await login(email,password);if(!result?.token)throw new Error('La API no devolvió el token de sesión esperado.');const user={nombre:email,email};store.save('token',result.token);store.save('usuario',user);setLoginMessage('');store.setToast(`Hola de nuevo, ${user.nombre}`);}catch(error){setLoginMessage(error.message||'No se pudo iniciar sesión.');}finally{setBusy(false);}}
-  async function submitRegister(event){event.preventDefault();const form=event.currentTarget;const name=form.elements.regNombre.value.trim();const email=form.elements.regEmail.value.trim();const password=form.elements.regPass.value.trim();const phone=form.elements.regTelefono.value.trim();if(name.length<2){setRegisterMessage('Escribe tu nombre.');return;}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){setRegisterMessage('Escribe un correo válido, por ejemplo nombre@dominio.com.');return;}if(password.length<6){setRegisterMessage('La contraseña necesita al menos 6 caracteres.');return;}if(phone.length!==9){setRegisterMessage('Escribe un número de teléfono válido.');return;}if(!form.elements.regAcepto.checked){setRegisterMessage('Acepta la política de privacidad para crear la cuenta.');return;}setRegisterMessage('Creando cuenta…');setBusy(true);try{await registrarNuevoUsuario(name,password,email,phone);const result=await login(email,password);if(!result?.token)throw new Error('La API no devolvió el token de sesión esperado.');const user={nombre:name,email};const accounts=store.user?.accounts||store.read?.('cuentas')||{};accounts[email.toLowerCase()]=user;store.save('cuentas',accounts);store.save('token',result.token);store.save('usuario',user);form.reset();setRegisterMessage('');store.setToast(`Cuenta creada. Bienvenido, ${name}`);}catch(error){setRegisterMessage(error.message||'No se pudo crear la cuenta.');}finally{setBusy(false);}}
-  const user=store.user;const favoriteCount=store.favorites.length;const quantity=store.cartCount;
-  return <><section className="page-hero"><div className="wrap"><nav className="crumbs" aria-label="Estás aquí"><a href="index.html">Inicio</a><span>/</span><span aria-current="page">Mi cuenta</span></nav><p className="eyebrow">Tu espacio</p><h1 className="page-title">Mi cuenta</h1><p className="page-sub">Entra para ver tus favoritos y tu carrito, o crea una cuenta en un minuto.</p></div><svg className="page-mark" aria-hidden="true"><use href="#emblem" /></svg></section><section className="section-dark section"><div className="wrap">{!user?<div id="accountForms"><div className="acc-tabs" role="tablist" aria-label="Cuenta"><button type="button" role="tab" aria-selected={tab==='formEntrar'} onClick={()=>setTab('formEntrar')}>Entrar</button><button type="button" role="tab" aria-selected={tab==='formRegistro'} onClick={()=>setTab('formRegistro')}>Crear cuenta</button></div><div className="acc-grid"><form className={`acc-form${tab==='formEntrar'?' is-active':''}`} id="formEntrar" noValidate onSubmit={submitLogin}><h2>Iniciar sesión</h2><p>¿Ya tienes cuenta? Entra con tu correo electrónico.</p><div className="field"><label htmlFor="entrarEmail">Correo electrónico</label><input className="input" id="entrarEmail" name="entrarEmail" type="email" autoComplete="email" placeholder="nombre@dominio.com" /></div><div className="field"><label htmlFor="entrarPass">Contraseña</label><input className="input" id="entrarPass" name="entrarPass" type="password" autoComplete="current-password" placeholder="Mínimo 6 caracteres" /></div><button className="btn btn-copper" type="submit" disabled={busy}>Entrar</button><p className="form-msg" role="status">{loginMessage}</p><a className="link-arrow" href="ayuda.html#contacto">¿Has olvidado tu contraseña?</a></form><form className={`acc-form${tab==='formRegistro'?' is-active':''}`} id="formRegistro" noValidate onSubmit={submitRegister}><h2>Crear cuenta</h2><p>Guarda tus favoritos, sigue tus pedidos y recibe antes que nadie las ediciones limitadas.</p><div className="field"><label htmlFor="regNombre">Nombre</label><input className="input" id="regNombre" name="regNombre" type="text" autoComplete="given-name" placeholder="Tu nombre" /></div><div className="field"><label htmlFor="regEmail">Correo electrónico</label><input className="input" id="regEmail" name="regEmail" type="email" autoComplete="email" placeholder="nombre@dominio.com" /></div><div className="field"><label htmlFor="regTelefono">Número de teléfono</label><input className="input" id="regTelefono" name="regTelefono" type="tel" autoComplete="tel" placeholder="Tu número de teléfono" /></div><div className="field"><label htmlFor="regPass">Contraseña</label><input className="input" id="regPass" name="regPass" type="password" autoComplete="new-password" placeholder="Mínimo 6 caracteres" /></div><label className="check" htmlFor="regAcepto"><input type="checkbox" id="regAcepto" /> <span>Acepto la <a href="legal.html#privacidad">política de privacidad</a>.</span></label><button className="btn btn-outline" type="submit" disabled={busy}>Crear cuenta</button><p className="form-msg" role="status">{registerMessage}</p></form></div><p className="acc-note">Mientras la tienda no esté conectada a su plataforma de pedidos, la cuenta se guarda solo en este navegador (nombre y correo; la contraseña no se guarda).</p></div>:<div className="acc-panel"><div className="acc-card"><p className="eyebrow">Mi cuenta</p><h2>Hola, {user.nombre}</h2><p>{user.email}</p><button className="btn btn-ghost" type="button" onClick={()=>{store.forget('usuario');store.forget('token');store.setToast('Has cerrado la sesión');}}>Cerrar sesión</button></div><div className="acc-card"><svg className="icon" aria-hidden="true"><use href="#i-heart" /></svg><h3>Favoritos</h3><p>{favoriteCount} {favoriteCount===1?'reloj guardado':'relojes guardados'}</p><a className="link-arrow" href="favoritos.html">Ver favoritos <IconRight /></a></div><div className="acc-card"><svg className="icon" aria-hidden="true"><use href="#i-bag" /></svg><h3>Carrito</h3><p>{quantity} {quantity===1?'artículo':'artículos'}</p><a className="link-arrow" href="carrito.html">Ir al carrito <IconRight /></a></div></div>}</div></section></>;
-}
-function IconRight(){return <svg className="icon" aria-hidden="true"><use href="#i-right" /></svg>;}

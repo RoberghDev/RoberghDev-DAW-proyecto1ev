@@ -1,0 +1,1404 @@
+{
+ "t": "main",
+ "a": {},
+ "c": [
+  {
+   "t": "section",
+   "a": {
+    "class": "page-hero"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "nav",
+       "a": {
+        "aria-label": "Estás aquí",
+        "class": "crumbs"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "href": "index.html"
+         },
+         "c": [
+          "Inicio"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-hidden": "true"
+         },
+         "c": [
+          "/"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-current": "page"
+         },
+         "c": [
+          "Journal"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "eyebrow"
+       },
+       "c": [
+        "Historias que inspiran"
+       ]
+      },
+      {
+       "t": "h1",
+       "a": {
+        "class": "page-title"
+       },
+       "c": [
+        "Journal"
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "page-sub"
+       },
+       "c": [
+        "Oficio, guías y curiosidades del mundo de la relojería."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "svg",
+     "a": {
+      "aria-hidden": "true",
+      "class": "page-mark"
+     },
+     "c": [
+      {
+       "t": "use",
+       "a": {
+        "href": "#emblem"
+       },
+       "c": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "jTitle",
+    "class": "section-dark section",
+    "id": "articulos"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "class": "sec-head"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {},
+         "c": [
+          {
+           "t": "p",
+           "a": {
+            "class": "eyebrow"
+           },
+           "c": [
+            "Artículos"
+           ]
+          },
+          {
+           "t": "h2",
+           "a": {
+            "class": "sec-title",
+            "id": "jTitle"
+           },
+           "c": [
+            "Últimos artículos"
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "grid-3"
+       },
+       "c": [
+        {
+         "t": "article",
+         "a": {
+          "class": "story"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "aria-hidden": "true",
+            "class": "story-img foto",
+            "href": "#esqueletado",
+            "tabindex": "-1"
+           },
+           "c": [
+            {
+             "t": "img",
+             "a": {
+              "alt": "Detalle del volante y los puentes de un movimiento esqueletado",
+              "data-foto": "",
+              "loading": "lazy",
+              "src": "assets/journal/esqueletado.jpg"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "story-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "eyebrow"
+             },
+             "c": [
+              "Artesanía"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {},
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "#esqueletado"
+               },
+               "c": [
+                "El arte del esqueletado"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {},
+             "c": [
+              "Cómo se vacía un movimiento sin restarle resistencia."
+             ]
+            },
+            {
+             "t": "a",
+             "a": {
+              "class": "link-arrow",
+              "href": "#esqueletado"
+             },
+             "c": [
+              "Leer más",
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-right"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "article",
+         "a": {
+          "class": "story"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "aria-hidden": "true",
+            "class": "story-img foto",
+            "href": "#buceo",
+            "tabindex": "-1"
+           },
+           "c": [
+            {
+             "t": "img",
+             "a": {
+              "alt": "Perfil de un reloj de buceo con bisel giratorio y corona",
+              "data-foto": "",
+              "loading": "lazy",
+              "src": "assets/journal/buceo.jpg"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "story-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "eyebrow"
+             },
+             "c": [
+              "Guía"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {},
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "#buceo"
+               },
+               "c": [
+                "Cómo elegir tu primer reloj de buceo"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {},
+             "c": [
+              "Hermeticidad, bisel y legibilidad: lo que de verdad importa."
+             ]
+            },
+            {
+             "t": "a",
+             "a": {
+              "class": "link-arrow",
+              "href": "#buceo"
+             },
+             "c": [
+              "Leer más",
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-right"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "article",
+         "a": {
+          "class": "story"
+         },
+         "c": [
+          {
+           "t": "a",
+           "a": {
+            "aria-hidden": "true",
+            "class": "story-img foto",
+            "href": "#fases-lunares",
+            "tabindex": "-1"
+           },
+           "c": [
+            {
+             "t": "img",
+             "a": {
+              "alt": "Ventana de fases lunares sobre una esfera blanca",
+              "data-foto": "",
+              "loading": "lazy",
+              "src": "assets/journal/fases-lunares.jpg"
+             },
+             "c": []
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "story-body"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "eyebrow"
+             },
+             "c": [
+              "Colecciones"
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {},
+             "c": [
+              {
+               "t": "a",
+               "a": {
+                "href": "#fases-lunares"
+               },
+               "c": [
+                "Fases lunares, una complicación poética"
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {},
+             "c": [
+              "El mecanismo que sigue el ciclo de 29,5 días de la luna."
+             ]
+            },
+            {
+             "t": "a",
+             "a": {
+              "class": "link-arrow",
+              "href": "#fases-lunares"
+             },
+             "c": [
+              "Leer más",
+              {
+               "t": "svg",
+               "a": {
+                "aria-hidden": "true",
+                "class": "icon"
+               },
+               "c": [
+                {
+                 "t": "use",
+                 "a": {
+                  "href": "#i-right"
+                 },
+                 "c": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "div",
+   "a": {
+    "class": "section-2"
+   },
+   "c": [
+    {
+     "t": "article",
+     "a": {
+      "aria-labelledby": "t-esqueletado",
+      "class": "article",
+      "id": "esqueletado"
+     },
+     "c": [
+      {
+       "t": "header",
+       "a": {
+        "class": "article-head"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "eyebrow"
+         },
+         "c": [
+          "Artesanía"
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {
+          "id": "t-esqueletado"
+         },
+         "c": [
+          "El arte del esqueletado"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "article-meta"
+         },
+         "c": [
+          "12 de noviembre de 2026 · 4 min de lectura"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "article-img foto"
+       },
+       "c": [
+        {
+         "t": "img",
+         "a": {
+          "alt": "Detalle del volante y los puentes de un movimiento esqueletado",
+          "data-foto": "",
+          "loading": "lazy",
+          "src": "assets/journal/esqueletado.jpg"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "prose"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Un reloj esqueletado es aquel al que se le ha quitado todo el metal que no es imprescindible de la platina y los puentes, para que el movimiento quede a la vista. Lo que queda es una estructura de arcos y brazos que tiene que seguir sujetando cada rueda en su sitio, al micrómetro."
+         ]
+        },
+        {
+         "t": "h3",
+         "a": {},
+         "c": [
+          "Cómo se hace"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Tradicionalmente, el relojero dibuja el diseño sobre la pieza, taladra pequeños agujeros de entrada y recorta con una sierra de marquetería muy fina. Después lima y pule cada borde a mano. Hoy muchas casas recortan con máquinas de control numérico o electroerosión y reservan la mano para lo que más se nota: el acabado."
+         ]
+        },
+        {
+         "t": "h3",
+         "a": {},
+         "c": [
+          "Los acabados que lo hacen brillar"
+         ]
+        },
+        {
+         "t": "ul",
+         "a": {},
+         "c": [
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            {
+             "t": "strong",
+             "a": {},
+             "c": [
+              "Biselado:"
+             ]
+            },
+            "los cantos se achaflanan y se pulen para que cada brazo atrape la luz."
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            {
+             "t": "strong",
+             "a": {},
+             "c": [
+              "Perlado:"
+             ]
+            },
+            "pequeños círculos superpuestos sobre la platina, como escamas."
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            {
+             "t": "strong",
+             "a": {},
+             "c": [
+              "Côtes de Genève:"
+             ]
+            },
+            "franjas onduladas sobre los puentes."
+           ]
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "En un esqueleto los acabados importan más que en ningún otro reloj, porque no hay esfera que los esconda."
+         ]
+        },
+        {
+         "t": "blockquote",
+         "a": {},
+         "c": [
+          "Quitar metal es fácil. Quitarlo sin que el reloj pierda rigidez es el oficio."
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Nuestra colección",
+          {
+           "t": "a",
+           "a": {
+            "href": "colecciones.html#esqueleto"
+           },
+           "c": [
+            "Esqueleto"
+           ]
+          },
+          "deja ver el barrilete con el emblema de OKIDOKEI, el tren de rodaje y el volante latiendo cuatro veces por segundo (28.800 alternancias por hora).",
+          {
+           "t": "a",
+           "a": {
+            "href": "producto.html#esqueleto-cobre"
+           },
+           "c": [
+            "Míralo de cerca"
+           ]
+          },
+          "."
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "article-foot"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "class": "link-arrow",
+          "href": "#articulos"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-up"
+             },
+             "c": []
+            }
+           ]
+          },
+          "Volver a los artículos"
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "class": "link-arrow",
+          "href": "tienda.html"
+         },
+         "c": [
+          "Ir a la tienda",
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-right"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "article",
+     "a": {
+      "aria-labelledby": "t-buceo",
+      "class": "article",
+      "id": "buceo"
+     },
+     "c": [
+      {
+       "t": "header",
+       "a": {
+        "class": "article-head"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "eyebrow"
+         },
+         "c": [
+          "Guía"
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {
+          "id": "t-buceo"
+         },
+         "c": [
+          "Cómo elegir tu primer reloj de buceo"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "article-meta"
+         },
+         "c": [
+          "5 de noviembre de 2026 · 5 min de lectura"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "article-img foto"
+       },
+       "c": [
+        {
+         "t": "img",
+         "a": {
+          "alt": "Perfil de un reloj de buceo con bisel giratorio y corona",
+          "data-foto": "",
+          "loading": "lazy",
+          "src": "assets/journal/buceo.jpg"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "prose"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Un reloj de buceo es probablemente el reloj más versátil que puedes tener: aguanta el agua, se lee en cualquier luz y queda bien con traje. Estas son las claves para elegir el primero."
+         ]
+        },
+        {
+         "t": "h3",
+         "a": {},
+         "c": [
+          "Hermeticidad: lo que significan los metros"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "La cifra de la esfera (100 m, 200 m, 300 m) es una presión de prueba en laboratorio, no la profundidad a la que puedes bajar. Para nadar basta con 10 ATM (100 m). La norma internacional de relojes de buceo, ISO 6425, exige como mínimo 100 metros."
+         ]
+        },
+        {
+         "t": "h3",
+         "a": {},
+         "c": [
+          "El bisel solo gira en un sentido"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Antes de sumergirte alineas el triángulo del bisel con el minutero. Como solo gira hacia la izquierda, si se mueve por un golpe marcará más tiempo de inmersión, nunca menos. Es una medida de seguridad."
+         ]
+        },
+        {
+         "t": "h3",
+         "a": {},
+         "c": [
+          "Legibilidad y corona"
+         ]
+        },
+        {
+         "t": "ul",
+         "a": {},
+         "c": [
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Agujas e índices con material luminiscente: la norma pide poder leer la hora a 25 cm en la oscuridad."
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Corona roscada: enróscala siempre antes de entrar en el agua."
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Después del mar, acláralo con agua dulce."
+           ]
+          }
+         ]
+        },
+        {
+         "t": "h3",
+         "a": {},
+         "c": [
+          "¿Brazalete o caucho?"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "El brazalete de acero dura toda la vida y combina con todo; el caucho es más ligero y cómodo dentro del agua. La piel, para el agua, mejor no."
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Nuestro",
+          {
+           "t": "a",
+           "a": {
+            "href": "colecciones.html#marine"
+           },
+           "c": [
+            "Marine"
+           ]
+          },
+          "cumple todo lo anterior con 300 metros de hermeticidad. Si buceas a menudo, revisa sus juntas cada año."
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "article-foot"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "class": "link-arrow",
+          "href": "#articulos"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-up"
+             },
+             "c": []
+            }
+           ]
+          },
+          "Volver a los artículos"
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "class": "link-arrow",
+          "href": "tienda.html"
+         },
+         "c": [
+          "Ir a la tienda",
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-right"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "t": "article",
+     "a": {
+      "aria-labelledby": "t-fases-lunares",
+      "class": "article",
+      "id": "fases-lunares"
+     },
+     "c": [
+      {
+       "t": "header",
+       "a": {
+        "class": "article-head"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "eyebrow"
+         },
+         "c": [
+          "Colecciones"
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {
+          "id": "t-fases-lunares"
+         },
+         "c": [
+          "Fases lunares, una complicación poética"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "article-meta"
+         },
+         "c": [
+          "28 de octubre de 2026 · 4 min de lectura"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "article-img foto"
+       },
+       "c": [
+        {
+         "t": "img",
+         "a": {
+          "alt": "Ventana de fases lunares sobre una esfera blanca",
+          "data-foto": "",
+          "loading": "lazy",
+          "src": "assets/journal/fases-lunares.jpg"
+         },
+         "c": []
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "prose"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "De todas las complicaciones de un reloj, la fase lunar es la más poética: no sirve para llegar puntual, sirve para saber cómo está el cielo."
+         ]
+        },
+        {
+         "t": "h3",
+         "a": {},
+         "c": [
+          "Cómo funciona"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "De una luna nueva a la siguiente pasan unos 29,53 días (el mes sinódico). El mecanismo clásico usa un disco con 59 dientes y dos lunas pintadas: avanza un diente cada día y completa media vuelta, una lunación, en 29,5 días."
+         ]
+        },
+        {
+         "t": "h3",
+         "a": {},
+         "c": [
+          "¿Es exacto?"
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Casi. La diferencia entre 29,5 y 29,53 días hace que el disco se adelante un día aproximadamente cada dos años y siete meses. Los mecanismos de alta precisión, con ruedas de 135 dientes, reducen el error a un día cada 122 años."
+         ]
+        },
+        {
+         "t": "h3",
+         "a": {},
+         "c": [
+          "Cómo ponerlo en hora"
+         ]
+        },
+        {
+         "t": "ol",
+         "a": {},
+         "c": [
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Busca la fecha de la última luna llena."
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Gira el disco con el corrector hasta que la luna quede centrada en la ventana."
+           ]
+          },
+          {
+           "t": "li",
+           "a": {},
+           "c": [
+            "Avanza un paso por cada día que haya pasado desde entonces."
+           ]
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "note"
+         },
+         "c": [
+          "Evita corregir la fase lunar o la fecha entre las 21:00 y las 3:00: a esas horas el mecanismo está engranando y puede dañarse."
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "En nuestro",
+          {
+           "t": "a",
+           "a": {
+            "href": "colecciones.html#luna"
+           },
+           "c": [
+            "Luna"
+           ]
+          },
+          "dos lunas de cobre recorren un cielo negro con estrellas.",
+          {
+           "t": "a",
+           "a": {
+            "href": "producto.html#luna-acero"
+           },
+           "c": [
+            "Míralo de cerca"
+           ]
+          },
+          "."
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "article-foot"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "class": "link-arrow",
+          "href": "#articulos"
+         },
+         "c": [
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-up"
+             },
+             "c": []
+            }
+           ]
+          },
+          "Volver a los artículos"
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "class": "link-arrow",
+          "href": "tienda.html"
+         },
+         "c": [
+          "Ir a la tienda",
+          {
+           "t": "svg",
+           "a": {
+            "aria-hidden": "true",
+            "class": "icon"
+           },
+           "c": [
+            {
+             "t": "use",
+             "a": {
+              "href": "#i-right"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "section",
+   "a": {
+    "aria-labelledby": "newsTitle",
+    "class": "on-light news",
+    "id": "newsletter"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap news-grid"
+     },
+     "c": [
+      {
+       "t": "div",
+       "a": {
+        "aria-hidden": "true",
+        "class": "news-art"
+       },
+       "c": [
+        {
+         "t": "svg",
+         "a": {
+          "fill": "none",
+          "stroke": "currentColor",
+          "stroke-width": ".7",
+          "viewBox": "0 0 200 200"
+         },
+         "c": [
+          {
+           "t": "circle",
+           "a": {
+            "cx": "100",
+            "cy": "100",
+            "r": "78"
+           },
+           "c": []
+          },
+          {
+           "t": "circle",
+           "a": {
+            "cx": "100",
+            "cy": "100",
+            "r": "70"
+           },
+           "c": []
+          },
+          {
+           "t": "circle",
+           "a": {
+            "cx": "100",
+            "cy": "100",
+            "r": "52"
+           },
+           "c": []
+          },
+          {
+           "t": "circle",
+           "a": {
+            "cx": "100",
+            "cy": "100",
+            "r": "4"
+           },
+           "c": []
+          },
+          {
+           "t": "path",
+           "a": {
+            "d": "M100 30v10M100 160v10M30 100h10M160 100h10M135 39.4l-5 8.7M65 160.6l5-8.7M39.4 65l8.7 5M160.6 135l-8.7-5M39.4 135l8.7-5M160.6 65l-8.7 5M65 39.4l5 8.7M135 160.6l-5-8.7"
+           },
+           "c": []
+          },
+          {
+           "t": "path",
+           "a": {
+            "d": "M100 100 70 72M100 100l38-20"
+           },
+           "c": []
+          },
+          {
+           "t": "path",
+           "a": {
+            "d": "M178 92h8v16h-8M88 22V10h24v12M88 178v12h24v-12"
+           },
+           "c": []
+          },
+          {
+           "t": "circle",
+           "a": {
+            "cx": "100",
+            "cy": "132",
+            "r": "14"
+           },
+           "c": []
+          },
+          {
+           "t": "circle",
+           "a": {
+            "cx": "100",
+            "cy": "132",
+            "r": "9"
+           },
+           "c": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {
+        "class": "news-copy"
+       },
+       "c": [
+        {
+         "t": "p",
+         "a": {
+          "class": "eyebrow"
+         },
+         "c": [
+          "Sé el primero en saberlo"
+         ]
+        },
+        {
+         "t": "h2",
+         "a": {
+          "id": "newsTitle"
+         },
+         "c": [
+          "Únete a nuestra comunidad."
+         ]
+        },
+        {
+         "t": "p",
+         "a": {},
+         "c": [
+          "Recibe novedades, lanzamientos y ofertas exclusivas directamente en tu correo."
+         ]
+        }
+       ]
+      },
+      {
+       "t": "form",
+       "a": {
+        "class": "news-form",
+        "data-newsletter": "",
+        "novalidate": ""
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {
+          "class": "news-row"
+         },
+         "c": [
+          {
+           "t": "label",
+           "a": {
+            "class": "sr-only",
+            "for": "newsEmail"
+           },
+           "c": [
+            "Correo electrónico"
+           ]
+          },
+          {
+           "t": "input",
+           "a": {
+            "autocomplete": "email",
+            "id": "newsEmail",
+            "name": "email",
+            "placeholder": "Tu correo electrónico",
+            "required": "",
+            "type": "email"
+           },
+           "c": []
+          },
+          {
+           "t": "button",
+           "a": {
+            "class": "btn btn-dark",
+            "type": "submit"
+           },
+           "c": [
+            "Suscribirme"
+           ]
+          }
+         ]
+        },
+        {
+         "t": "label",
+         "a": {
+          "class": "check",
+          "for": "newsConsent"
+         },
+         "c": [
+          {
+           "t": "input",
+           "a": {
+            "id": "newsConsent",
+            "required": "",
+            "type": "checkbox"
+           },
+           "c": []
+          },
+          {
+           "t": "span",
+           "a": {},
+           "c": [
+            "Acepto recibir comunicaciones de OKIDOKEI y la",
+            {
+             "t": "a",
+             "a": {
+              "href": "legal.html#privacidad"
+             },
+             "c": [
+              "política de privacidad"
+             ]
+            },
+            "."
+           ]
+          }
+         ]
+        },
+        {
+         "t": "p",
+         "a": {
+          "class": "form-msg",
+          "role": "status"
+         },
+         "c": []
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

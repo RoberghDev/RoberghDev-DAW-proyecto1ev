@@ -1,0 +1,1190 @@
+{
+ "t": "main",
+ "a": {},
+ "c": [
+  {
+   "t": "section",
+   "a": {
+    "class": "page-hero"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "nav",
+       "a": {
+        "aria-label": "Estás aquí",
+        "class": "crumbs"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "href": "index.html"
+         },
+         "c": [
+          "Inicio"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-hidden": "true"
+         },
+         "c": [
+          "/"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-current": "page"
+         },
+         "c": [
+          "Ayuda"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "eyebrow"
+       },
+       "c": [
+        "Atención al cliente"
+       ]
+      },
+      {
+       "t": "h1",
+       "a": {
+        "class": "page-title"
+       },
+       "c": [
+        "Ayuda"
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "page-sub"
+       },
+       "c": [
+        "Contacto, envíos, devoluciones, garantía y preguntas frecuentes."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "svg",
+     "a": {
+      "aria-hidden": "true",
+      "class": "page-mark"
+     },
+     "c": [
+      {
+       "t": "use",
+       "a": {
+        "href": "#emblem"
+       },
+       "c": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "nav",
+   "a": {
+    "aria-label": "Secciones de ayuda",
+    "class": "subnav"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "a",
+       "a": {
+        "href": "#contacto"
+       },
+       "c": [
+        "Contacto"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "#envios"
+       },
+       "c": [
+        "Envíos"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "#devoluciones"
+       },
+       "c": [
+        "Devoluciones"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "#garantia"
+       },
+       "c": [
+        "Garantía"
+       ]
+      },
+      {
+       "t": "a",
+       "a": {
+        "href": "#faq"
+       },
+       "c": [
+        "Preguntas frecuentes"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "div",
+   "a": {
+    "class": "section-dark"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "section",
+       "a": {
+        "aria-labelledby": "contTitle",
+        "class": "help-block",
+        "id": "contacto"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {
+          "class": "help-grid"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {},
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "eyebrow"
+             },
+             "c": [
+              "Contacto"
+             ]
+            },
+            {
+             "t": "h2",
+             "a": {
+              "id": "contTitle"
+             },
+             "c": [
+              "Hablemos"
+             ]
+            },
+            {
+             "t": "p",
+             "a": {},
+             "c": [
+              "¿Dudas con una talla de correa, un grabado o un regalo? Escríbenos y te responde una persona del equipo, no un robot."
+             ]
+            },
+            {
+             "t": "ul",
+             "a": {
+              "class": "contact-list"
+             },
+             "c": [
+              {
+               "t": "li",
+               "a": {},
+               "c": [
+                {
+                 "t": "svg",
+                 "a": {
+                  "aria-hidden": "true",
+                  "class": "icon"
+                 },
+                 "c": [
+                  {
+                   "t": "use",
+                   "a": {
+                    "href": "#i-clock"
+                   },
+                   "c": []
+                  }
+                 ]
+                },
+                {
+                 "t": "span",
+                 "a": {},
+                 "c": [
+                  "Lunes a viernes, de 10:00 a 19:00"
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "li",
+               "a": {},
+               "c": [
+                {
+                 "t": "svg",
+                 "a": {
+                  "aria-hidden": "true",
+                  "class": "icon"
+                 },
+                 "c": [
+                  {
+                   "t": "use",
+                   "a": {
+                    "href": "#i-mail"
+                   },
+                   "c": []
+                  }
+                 ]
+                },
+                {
+                 "t": "span",
+                 "a": {},
+                 "c": [
+                  "Respuesta en 24–48 h laborables"
+                 ]
+                }
+               ]
+              },
+              {
+               "t": "li",
+               "a": {},
+               "c": [
+                {
+                 "t": "svg",
+                 "a": {
+                  "aria-hidden": "true",
+                  "class": "icon"
+                 },
+                 "c": [
+                  {
+                   "t": "use",
+                   "a": {
+                    "href": "#i-box"
+                   },
+                   "c": []
+                  }
+                 ]
+                },
+                {
+                 "t": "span",
+                 "a": {},
+                 "c": [
+                  "Enviamos desde España a toda la península, islas y la UE"
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "form",
+           "a": {
+            "class": "contact-form",
+            "id": "contactForm",
+            "novalidate": ""
+           },
+           "c": [
+            {
+             "t": "div",
+             "a": {
+              "class": "field"
+             },
+             "c": [
+              {
+               "t": "label",
+               "a": {
+                "for": "cNombre"
+               },
+               "c": [
+                "Nombre"
+               ]
+              },
+              {
+               "t": "input",
+               "a": {
+                "autocomplete": "name",
+                "class": "input",
+                "id": "cNombre",
+                "type": "text"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "field"
+             },
+             "c": [
+              {
+               "t": "label",
+               "a": {
+                "for": "cEmail"
+               },
+               "c": [
+                "Correo electrónico"
+               ]
+              },
+              {
+               "t": "input",
+               "a": {
+                "autocomplete": "email",
+                "class": "input",
+                "id": "cEmail",
+                "type": "email"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "field"
+             },
+             "c": [
+              {
+               "t": "label",
+               "a": {
+                "for": "cMotivo"
+               },
+               "c": [
+                "Motivo"
+               ]
+              },
+              {
+               "t": "select",
+               "a": {
+                "class": "select",
+                "id": "cMotivo"
+               },
+               "c": [
+                {
+                 "t": "option",
+                 "a": {},
+                 "c": [
+                  "Elegir un reloj"
+                 ]
+                },
+                {
+                 "t": "option",
+                 "a": {},
+                 "c": [
+                  "Un pedido"
+                 ]
+                },
+                {
+                 "t": "option",
+                 "a": {},
+                 "c": [
+                  "Grabado o regalo"
+                 ]
+                },
+                {
+                 "t": "option",
+                 "a": {},
+                 "c": [
+                  "Revisión o reparación"
+                 ]
+                },
+                {
+                 "t": "option",
+                 "a": {},
+                 "c": [
+                  "Trabajar con nosotros"
+                 ]
+                },
+                {
+                 "t": "option",
+                 "a": {},
+                 "c": [
+                  "Otro"
+                 ]
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "field"
+             },
+             "c": [
+              {
+               "t": "label",
+               "a": {
+                "for": "cPedido"
+               },
+               "c": [
+                "Nº de pedido (opcional)"
+               ]
+              },
+              {
+               "t": "input",
+               "a": {
+                "class": "input",
+                "id": "cPedido",
+                "type": "text"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "field full"
+             },
+             "c": [
+              {
+               "t": "label",
+               "a": {
+                "for": "cMensaje"
+               },
+               "c": [
+                "Mensaje"
+               ]
+              },
+              {
+               "t": "textarea",
+               "a": {
+                "class": "textarea",
+                "id": "cMensaje"
+               },
+               "c": []
+              }
+             ]
+            },
+            {
+             "t": "label",
+             "a": {
+              "class": "check full",
+              "for": "cAcepto"
+             },
+             "c": [
+              {
+               "t": "input",
+               "a": {
+                "id": "cAcepto",
+                "type": "checkbox"
+               },
+               "c": []
+              },
+              {
+               "t": "span",
+               "a": {},
+               "c": [
+                "He leído la",
+                {
+                 "t": "a",
+                 "a": {
+                  "href": "legal.html#privacidad"
+                 },
+                 "c": [
+                  "política de privacidad"
+                 ]
+                },
+                "."
+               ]
+              }
+             ]
+            },
+            {
+             "t": "button",
+             "a": {
+              "class": "btn btn-copper",
+              "type": "submit"
+             },
+             "c": [
+              "Enviar mensaje"
+             ]
+            },
+            {
+             "t": "p",
+             "a": {
+              "class": "form-msg full",
+              "role": "status"
+             },
+             "c": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "section",
+       "a": {
+        "aria-labelledby": "envTitle",
+        "class": "help-block",
+        "id": "envios"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {
+          "class": "help-grid"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {},
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "eyebrow"
+             },
+             "c": [
+              "Envíos"
+             ]
+            },
+            {
+             "t": "h2",
+             "a": {
+              "id": "envTitle"
+             },
+             "c": [
+              "Envíos y entregas"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "prose"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {},
+             "c": [
+              "Todos los relojes viajan",
+              {
+               "t": "strong",
+               "a": {},
+               "c": [
+                "asegurados"
+               ]
+              },
+              ", en su estuche y con el certificado de autenticidad. El envío es",
+              {
+               "t": "strong",
+               "a": {},
+               "c": [
+                "gratuito"
+               ]
+              },
+              "en España."
+             ]
+            },
+            {
+             "t": "ul",
+             "a": {},
+             "c": [
+              {
+               "t": "li",
+               "a": {},
+               "c": [
+                "Península: 24–72 h laborables."
+               ]
+              },
+              {
+               "t": "li",
+               "a": {},
+               "c": [
+                "Baleares y Canarias: 3–6 días laborables (en Canarias pueden aplicarse tasas de importación)."
+               ]
+              },
+              {
+               "t": "li",
+               "a": {},
+               "c": [
+                "Unión Europea: 3–7 días laborables."
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {},
+             "c": [
+              "Cuando sale tu pedido te enviamos el número de seguimiento. Por seguridad, la entrega se hace en mano y con firma."
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "section",
+       "a": {
+        "aria-labelledby": "devTitle",
+        "class": "help-block",
+        "id": "devoluciones"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {
+          "class": "help-grid"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {},
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "eyebrow"
+             },
+             "c": [
+              "Devoluciones"
+             ]
+            },
+            {
+             "t": "h2",
+             "a": {
+              "id": "devTitle"
+             },
+             "c": [
+              "30 días para pensarlo"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "prose"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {},
+             "c": [
+              "Tienes",
+              {
+               "t": "strong",
+               "a": {},
+               "c": [
+                "30 días"
+               ]
+              },
+              "desde que recibes el reloj para devolverlo. Solo tiene que estar sin usar, con sus precintos y plásticos protectores, el estuche y toda la documentación."
+             ]
+            },
+            {
+             "t": "ol",
+             "a": {},
+             "c": [
+              {
+               "t": "li",
+               "a": {},
+               "c": [
+                "Escríbenos desde el",
+                {
+                 "t": "a",
+                 "a": {
+                  "href": "#contacto"
+                 },
+                 "c": [
+                  "formulario de contacto"
+                 ]
+                },
+                "con tu número de pedido."
+               ]
+              },
+              {
+               "t": "li",
+               "a": {},
+               "c": [
+                "Te enviamos la etiqueta y recogemos el paquete en tu casa."
+               ]
+              },
+              {
+               "t": "li",
+               "a": {},
+               "c": [
+                "Revisamos el reloj y te devolvemos el dinero por el mismo medio de pago en un máximo de 14 días."
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {
+              "class": "note"
+             },
+             "c": [
+              "Los relojes con grabado personalizado se hacen a medida y no admiten devolución."
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "section",
+       "a": {
+        "aria-labelledby": "garTitle",
+        "class": "help-block",
+        "id": "garantia"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {
+          "class": "help-grid"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {},
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "eyebrow"
+             },
+             "c": [
+              "Garantía"
+             ]
+            },
+            {
+             "t": "h2",
+             "a": {
+              "id": "garTitle"
+             },
+             "c": [
+              "3 años de garantía"
+             ]
+            }
+           ]
+          },
+          {
+           "t": "div",
+           "a": {
+            "class": "prose"
+           },
+           "c": [
+            {
+             "t": "p",
+             "a": {},
+             "c": [
+              "Todos nuestros relojes nuevos tienen",
+              {
+               "t": "strong",
+               "a": {},
+               "c": [
+                "3 años de garantía"
+               ]
+              },
+              ", la garantía legal en España, frente a cualquier defecto de fabricación."
+             ]
+            },
+            {
+             "t": "h3",
+             "a": {},
+             "c": [
+              "No cubre"
+             ]
+            },
+            {
+             "t": "ul",
+             "a": {},
+             "c": [
+              {
+               "t": "li",
+               "a": {},
+               "c": [
+                "El desgaste normal de correas, cristales y acabados."
+               ]
+              },
+              {
+               "t": "li",
+               "a": {},
+               "c": [
+                "Golpes, caídas o entrada de agua por llevar la corona sin enroscar."
+               ]
+              },
+              {
+               "t": "li",
+               "a": {},
+               "c": [
+                "Relojes abiertos o reparados fuera de nuestro taller."
+               ]
+              }
+             ]
+            },
+            {
+             "t": "p",
+             "a": {},
+             "c": [
+              "Para que dure décadas, te recomendamos una revisión del movimiento cada 4 o 5 años. Puedes pedirla en nuestro",
+              {
+               "t": "a",
+               "a": {
+                "href": "nosotros.html#mantenimiento"
+               },
+               "c": [
+                "servicio de mantenimiento"
+               ]
+              },
+              "."
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "t": "section",
+       "a": {
+        "aria-labelledby": "faqTitle",
+        "class": "help-block",
+        "id": "faq"
+       },
+       "c": [
+        {
+         "t": "div",
+         "a": {
+          "class": "sec-head"
+         },
+         "c": [
+          {
+           "t": "div",
+           "a": {},
+           "c": [
+            {
+             "t": "p",
+             "a": {
+              "class": "eyebrow"
+             },
+             "c": [
+              "Preguntas frecuentes"
+             ]
+            },
+            {
+             "t": "h2",
+             "a": {
+              "class": "sec-title",
+              "id": "faqTitle"
+             },
+             "c": [
+              "Lo que más nos preguntáis"
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "div",
+         "a": {
+          "class": "faq"
+         },
+         "c": [
+          {
+           "t": "details",
+           "a": {
+            "class": "acc",
+            "id": "autenticos"
+           },
+           "c": [
+            {
+             "t": "summary",
+             "a": {},
+             "c": [
+              "¿Los relojes son originales?"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "acc-body"
+             },
+             "c": [
+              {
+               "t": "p",
+               "a": {},
+               "c": [
+                "Sí. Cada reloj sale de nuestro taller con su certificado de autenticidad, número de serie y la documentación del fabricante."
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "details",
+           "a": {
+            "class": "acc",
+            "id": "automatico"
+           },
+           "c": [
+            {
+             "t": "summary",
+             "a": {},
+             "c": [
+              "¿Qué significa que un reloj es automático?"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "acc-body"
+             },
+             "c": [
+              {
+               "t": "p",
+               "a": {},
+               "c": [
+                "Que se carga solo con el movimiento de tu muñeca gracias a un rotor. Si lo dejas quieto, sigue funcionando el tiempo que indica su reserva de marcha (entre 40 y 72 horas en nuestros modelos); después basta con darle cuerda o volver a ponértelo."
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "details",
+           "a": {
+            "class": "acc",
+            "id": "plazos"
+           },
+           "c": [
+            {
+             "t": "summary",
+             "a": {},
+             "c": [
+              "¿Cuánto tarda en llegar mi pedido?"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "acc-body"
+             },
+             "c": [
+              {
+               "t": "p",
+               "a": {},
+               "c": [
+                "Normalmente entre 24 y 72 horas laborables en la península. Los pedidos con grabado o ajuste de brazalete necesitan unos días más."
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "details",
+           "a": {
+            "class": "acc",
+            "id": "grabado"
+           },
+           "c": [
+            {
+             "t": "summary",
+             "a": {},
+             "c": [
+              "¿Puedo grabar mi reloj?"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "acc-body"
+             },
+             "c": [
+              {
+               "t": "p",
+               "a": {},
+               "c": [
+                "Sí, en el fondo de la caja. Te enviamos una prueba antes de grabar. Los relojes grabados no admiten devolución. Más información en",
+                {
+                 "t": "a",
+                 "a": {
+                  "href": "nosotros.html#grabado"
+                 },
+                 "c": [
+                  "servicios de relojería"
+                 ]
+                },
+                "."
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "details",
+           "a": {
+            "class": "acc",
+            "id": "tarjeta-regalo"
+           },
+           "c": [
+            {
+             "t": "summary",
+             "a": {},
+             "c": [
+              "¿Tenéis tarjeta regalo?"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "acc-body"
+             },
+             "c": [
+              {
+               "t": "p",
+               "a": {},
+               "c": [
+                "Sí. Escríbenos desde el",
+                {
+                 "t": "a",
+                 "a": {
+                  "href": "#contacto"
+                 },
+                 "c": [
+                  "formulario de contacto"
+                 ]
+                },
+                "con el importe y te la preparamos en formato digital o en una tarjeta física dentro de nuestro estuche."
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "details",
+           "a": {
+            "class": "acc",
+            "id": "pago"
+           },
+           "c": [
+            {
+             "t": "summary",
+             "a": {},
+             "c": [
+              "¿Qué formas de pago aceptáis?"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "acc-body"
+             },
+             "c": [
+              {
+               "t": "p",
+               "a": {},
+               "c": [
+                "Tarjeta, PayPal, Bizum y transferencia. El pago se hace siempre a través de una conexión cifrada."
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "t": "details",
+           "a": {
+            "class": "acc",
+            "id": "fase-lunar"
+           },
+           "c": [
+            {
+             "t": "summary",
+             "a": {},
+             "c": [
+              "¿Cómo pongo en hora la fase lunar?"
+             ]
+            },
+            {
+             "t": "div",
+             "a": {
+              "class": "acc-body"
+             },
+             "c": [
+              {
+               "t": "p",
+               "a": {},
+               "c": [
+                "Lo explicamos paso a paso en el",
+                {
+                 "t": "a",
+                 "a": {
+                  "href": "journal.html#fases-lunares"
+                 },
+                 "c": [
+                  "Journal"
+                 ]
+                },
+                "."
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

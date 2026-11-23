@@ -1,5 +1,6 @@
 import React from 'react';
-// Migrated from the original nosotros.html page markup.
+import { eventosFoto } from '../components/foto.js';
+// Migrada desde la plantilla heredada nosotros.html (fase 3).
 export const title = 'OKIDOKEI · Nosotros';
 export const description = 'La historia de OKIDOKEI, nuestro taller y los servicios de relojería.';
 export default function Nosotros() {
@@ -18,7 +19,7 @@ export default function Nosotros() {
 
     <section className={'on-light section about-intro'} aria-labelledby={'histTitle'}>
         <div className={'wrap split'}>
-            <div className={'about-visual foto'}><img src={'assets/nosotros/taller.jpg'} alt={'Relojero revisando un movimiento en el taller'} loading={'lazy'} data-foto /></div>
+            <div className={'about-visual foto'}><img src={'assets/nosotros/taller.jpg'} alt={'Relojero revisando un movimiento en el taller'} loading={'lazy'} data-foto="" {...eventosFoto} /></div>
             <div className={'about-text'}>
                 <p className={'eyebrow'}>Quiénes somos</p>
                 <h2 id={'histTitle'}>Comprar un reloj online con la misma confianza que en una boutique.</h2>

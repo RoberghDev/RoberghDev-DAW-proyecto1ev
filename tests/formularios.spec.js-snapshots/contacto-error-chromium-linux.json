@@ -1,0 +1,237 @@
+{
+ "t": "form",
+ "a": {
+  "class": "contact-form",
+  "id": "contactForm",
+  "novalidate": ""
+ },
+ "c": [
+  {
+   "t": "div",
+   "a": {
+    "class": "field"
+   },
+   "c": [
+    {
+     "t": "label",
+     "a": {
+      "for": "cNombre"
+     },
+     "c": [
+      "Nombre"
+     ]
+    },
+    {
+     "t": "input",
+     "a": {
+      "autocomplete": "name",
+      "class": "input",
+      "id": "cNombre",
+      "type": "text"
+     },
+     "c": []
+    }
+   ]
+  },
+  {
+   "t": "div",
+   "a": {
+    "class": "field"
+   },
+   "c": [
+    {
+     "t": "label",
+     "a": {
+      "for": "cEmail"
+     },
+     "c": [
+      "Correo electrónico"
+     ]
+    },
+    {
+     "t": "input",
+     "a": {
+      "autocomplete": "email",
+      "class": "input",
+      "id": "cEmail",
+      "type": "email"
+     },
+     "c": []
+    }
+   ]
+  },
+  {
+   "t": "div",
+   "a": {
+    "class": "field"
+   },
+   "c": [
+    {
+     "t": "label",
+     "a": {
+      "for": "cMotivo"
+     },
+     "c": [
+      "Motivo"
+     ]
+    },
+    {
+     "t": "select",
+     "a": {
+      "class": "select",
+      "id": "cMotivo"
+     },
+     "c": [
+      {
+       "t": "option",
+       "a": {},
+       "c": [
+        "Elegir un reloj"
+       ]
+      },
+      {
+       "t": "option",
+       "a": {},
+       "c": [
+        "Un pedido"
+       ]
+      },
+      {
+       "t": "option",
+       "a": {},
+       "c": [
+        "Grabado o regalo"
+       ]
+      },
+      {
+       "t": "option",
+       "a": {},
+       "c": [
+        "Revisión o reparación"
+       ]
+      },
+      {
+       "t": "option",
+       "a": {},
+       "c": [
+        "Trabajar con nosotros"
+       ]
+      },
+      {
+       "t": "option",
+       "a": {},
+       "c": [
+        "Otro"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "div",
+   "a": {
+    "class": "field"
+   },
+   "c": [
+    {
+     "t": "label",
+     "a": {
+      "for": "cPedido"
+     },
+     "c": [
+      "Nº de pedido (opcional)"
+     ]
+    },
+    {
+     "t": "input",
+     "a": {
+      "class": "input",
+      "id": "cPedido",
+      "type": "text"
+     },
+     "c": []
+    }
+   ]
+  },
+  {
+   "t": "div",
+   "a": {
+    "class": "field full"
+   },
+   "c": [
+    {
+     "t": "label",
+     "a": {
+      "for": "cMensaje"
+     },
+     "c": [
+      "Mensaje"
+     ]
+    },
+    {
+     "t": "textarea",
+     "a": {
+      "class": "textarea",
+      "id": "cMensaje"
+     },
+     "c": []
+    }
+   ]
+  },
+  {
+   "t": "label",
+   "a": {
+    "class": "check full",
+    "for": "cAcepto"
+   },
+   "c": [
+    {
+     "t": "input",
+     "a": {
+      "id": "cAcepto",
+      "type": "checkbox"
+     },
+     "c": []
+    },
+    {
+     "t": "span",
+     "a": {},
+     "c": [
+      "He leído la",
+      {
+       "t": "a",
+       "a": {
+        "href": "legal.html#privacidad"
+       },
+       "c": [
+        "política de privacidad"
+       ]
+      },
+      "."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "button",
+   "a": {
+    "class": "btn btn-copper",
+    "type": "submit"
+   },
+   "c": [
+    "Enviar mensaje"
+   ]
+  },
+  {
+   "t": "p",
+   "a": {
+    "class": "form-msg full",
+    "role": "status"
+   },
+   "c": [
+    "Marca la casilla de privacidad para enviar el mensaje."
+   ]
+  }
+ ]
+}

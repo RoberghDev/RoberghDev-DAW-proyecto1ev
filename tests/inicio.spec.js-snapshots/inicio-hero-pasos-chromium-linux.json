@@ -1,0 +1,75 @@
+{
+ "inicio": {
+  "titulo": "ESQUELETO",
+  "tituloLabel": "Esqueleto",
+  "sub": "Fuerza y elegancia<br>con el movimiento a la vista",
+  "explorar": "colecciones.html#esqueleto",
+  "contador": "01",
+  "modelo": "producto.html#esqueleto-cobre",
+  "spec": "Automático esqueletado · Cobre · 42 mm",
+  "precio": "4.950 €",
+  "pestanas": "true/null false/-1 false/-1 false/-1 false/-1 false/-1",
+  "girar": "false"
+ },
+ "pestana2": {
+  "titulo": "MARINE",
+  "tituloLabel": "Marine",
+  "sub": "Hermético hasta 300 metros<br>con bisel giratorio",
+  "explorar": "colecciones.html#marine",
+  "contador": "03",
+  "modelo": "producto.html#marine-acero",
+  "spec": "Automático · Acero · 42 mm",
+  "precio": "2.890 €",
+  "pestanas": "false/-1 false/-1 true/0 false/-1 false/-1 false/-1",
+  "girar": "false"
+ },
+ "siguiente": {
+  "titulo": "NOIR",
+  "tituloLabel": "Noir",
+  "sub": "Acero negro e índices de cobre<br>para la noche",
+  "explorar": "colecciones.html#noir",
+  "contador": "04",
+  "modelo": "producto.html#noir-caucho",
+  "spec": "Automático · Acero negro · 41 mm",
+  "precio": "3.450 €",
+  "pestanas": "false/-1 false/-1 false/-1 true/0 false/-1 false/-1",
+  "girar": "false"
+ },
+ "vueltaAtras": {
+  "titulo": "ORIGINE",
+  "tituloLabel": "Origine",
+  "sub": "Tourbillon a la vista<br>edición limitada a 100 piezas",
+  "explorar": "colecciones.html#origine",
+  "contador": "06",
+  "modelo": "producto.html#origine",
+  "spec": "Tourbillon de carga manual · Cobre · 43 mm",
+  "precio": "18.900 €",
+  "pestanas": "false/-1 false/-1 false/-1 false/-1 false/-1 true/0",
+  "girar": "false"
+ },
+ "tecladoDerecha": {
+  "titulo": "ESQUELETO",
+  "tituloLabel": "Esqueleto",
+  "sub": "Fuerza y elegancia<br>con el movimiento a la vista",
+  "explorar": "colecciones.html#esqueleto",
+  "contador": "01",
+  "modelo": "producto.html#esqueleto-cobre",
+  "spec": "Automático esqueletado · Cobre · 42 mm",
+  "precio": "4.950 €",
+  "pestanas": "true/0 false/-1 false/-1 false/-1 false/-1 false/-1",
+  "girar": "false"
+ },
+ "foco": "0",
+ "girar": {
+  "titulo": "ESQUELETO",
+  "tituloLabel": "Esqueleto",
+  "sub": "Fuerza y elegancia<br>con el movimiento a la vista",
+  "explorar": "colecciones.html#esqueleto",
+  "contador": "01",
+  "modelo": "producto.html#esqueleto-cobre",
+  "spec": "Automático esqueletado · Cobre · 42 mm",
+  "precio": "4.950 €",
+  "pestanas": "true/0 false/-1 false/-1 false/-1 false/-1 false/-1",
+  "girar": "true"
+ }
+}

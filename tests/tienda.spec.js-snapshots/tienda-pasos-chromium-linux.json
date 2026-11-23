@@ -1,0 +1,538 @@
+{
+ "inicio": {
+  "hash": "",
+  "titulo": "Todos los relojes",
+  "contador": "12 relojes",
+  "vacioOculto": true,
+  "chips": [
+   "todas"
+  ],
+  "caja": "todas",
+  "correa": "todas",
+  "orden": "destacados",
+  "novedades": false,
+  "orden_dom": [
+   "+esqueleto-cobre",
+   "+esqueleto-acero",
+   "+heritage-cobre",
+   "+heritage-acero",
+   "+marine-acero",
+   "+marine-caucho",
+   "+marine-cobre",
+   "+noir-caucho",
+   "+noir-piel",
+   "+luna-acero",
+   "+luna-cobre",
+   "+origine"
+  ]
+ },
+ "chip-marine": {
+  "hash": "#marine",
+  "titulo": "Colección Marine",
+  "contador": "3 relojes",
+  "vacioOculto": true,
+  "chips": [
+   "marine"
+  ],
+  "caja": "todas",
+  "correa": "todas",
+  "orden": "destacados",
+  "novedades": false,
+  "orden_dom": [
+   "-esqueleto-cobre",
+   "-esqueleto-acero",
+   "-heritage-cobre",
+   "-heritage-acero",
+   "+marine-acero",
+   "+marine-caucho",
+   "+marine-cobre",
+   "-noir-caucho",
+   "-noir-piel",
+   "-luna-acero",
+   "-luna-cobre",
+   "-origine"
+  ]
+ },
+ "caja-cobre": {
+  "hash": "#marine",
+  "titulo": "Colección Marine",
+  "contador": "1 reloj",
+  "vacioOculto": true,
+  "chips": [
+   "marine"
+  ],
+  "caja": "cobre",
+  "correa": "todas",
+  "orden": "destacados",
+  "novedades": false,
+  "orden_dom": [
+   "-esqueleto-cobre",
+   "-esqueleto-acero",
+   "-heritage-cobre",
+   "-heritage-acero",
+   "-marine-acero",
+   "-marine-caucho",
+   "+marine-cobre",
+   "-noir-caucho",
+   "-noir-piel",
+   "-luna-acero",
+   "-luna-cobre",
+   "-origine"
+  ]
+ },
+ "caja-todas": {
+  "hash": "#marine",
+  "titulo": "Colección Marine",
+  "contador": "3 relojes",
+  "vacioOculto": true,
+  "chips": [
+   "marine"
+  ],
+  "caja": "todas",
+  "correa": "todas",
+  "orden": "destacados",
+  "novedades": false,
+  "orden_dom": [
+   "-esqueleto-cobre",
+   "-esqueleto-acero",
+   "-heritage-cobre",
+   "-heritage-acero",
+   "+marine-acero",
+   "+marine-caucho",
+   "+marine-cobre",
+   "-noir-caucho",
+   "-noir-piel",
+   "-luna-acero",
+   "-luna-cobre",
+   "-origine"
+  ]
+ },
+ "correa-caucho": {
+  "hash": "#marine",
+  "titulo": "Colección Marine",
+  "contador": "2 relojes",
+  "vacioOculto": true,
+  "chips": [
+   "marine"
+  ],
+  "caja": "todas",
+  "correa": "caucho",
+  "orden": "destacados",
+  "novedades": false,
+  "orden_dom": [
+   "-esqueleto-cobre",
+   "-esqueleto-acero",
+   "-heritage-cobre",
+   "-heritage-acero",
+   "-marine-acero",
+   "+marine-caucho",
+   "+marine-cobre",
+   "-noir-caucho",
+   "-noir-piel",
+   "-luna-acero",
+   "-luna-cobre",
+   "-origine"
+  ]
+ },
+ "orden-precio-desc": {
+  "hash": "#marine",
+  "titulo": "Colección Marine",
+  "contador": "2 relojes",
+  "vacioOculto": true,
+  "chips": [
+   "marine"
+  ],
+  "caja": "todas",
+  "correa": "caucho",
+  "orden": "precio-desc",
+  "novedades": false,
+  "orden_dom": [
+   "-origine",
+   "-esqueleto-cobre",
+   "-esqueleto-acero",
+   "-noir-caucho",
+   "-noir-piel",
+   "-luna-cobre",
+   "+marine-cobre",
+   "-luna-acero",
+   "-marine-acero",
+   "+marine-caucho",
+   "-heritage-cobre",
+   "-heritage-acero"
+  ]
+ },
+ "chip-todas": {
+  "hash": "",
+  "titulo": "Todos los relojes",
+  "contador": "3 relojes",
+  "vacioOculto": true,
+  "chips": [
+   "todas"
+  ],
+  "caja": "todas",
+  "correa": "caucho",
+  "orden": "precio-desc",
+  "novedades": false,
+  "orden_dom": [
+   "-origine",
+   "-esqueleto-cobre",
+   "-esqueleto-acero",
+   "+noir-caucho",
+   "-noir-piel",
+   "-luna-cobre",
+   "+marine-cobre",
+   "-luna-acero",
+   "-marine-acero",
+   "+marine-caucho",
+   "-heritage-cobre",
+   "-heritage-acero"
+  ]
+ },
+ "novedades": {
+  "hash": "#novedades",
+  "titulo": "Novedades",
+  "contador": "2 relojes",
+  "vacioOculto": true,
+  "chips": [
+   "todas"
+  ],
+  "caja": "todas",
+  "correa": "caucho",
+  "orden": "precio-desc",
+  "novedades": true,
+  "orden_dom": [
+   "-origine",
+   "-esqueleto-cobre",
+   "-esqueleto-acero",
+   "+noir-caucho",
+   "-noir-piel",
+   "-luna-cobre",
+   "-marine-cobre",
+   "-luna-acero",
+   "-marine-acero",
+   "+marine-caucho",
+   "-heritage-cobre",
+   "-heritage-acero"
+  ]
+ },
+ "orden-nombre": {
+  "hash": "#novedades",
+  "titulo": "Novedades",
+  "contador": "2 relojes",
+  "vacioOculto": true,
+  "chips": [
+   "todas"
+  ],
+  "caja": "todas",
+  "correa": "caucho",
+  "orden": "nombre",
+  "novedades": true,
+  "orden_dom": [
+   "-esqueleto-acero",
+   "-esqueleto-cobre",
+   "-heritage-acero",
+   "-heritage-cobre",
+   "-luna-acero",
+   "-luna-cobre",
+   "-marine-acero",
+   "+marine-caucho",
+   "-marine-cobre",
+   "+noir-caucho",
+   "-noir-piel",
+   "-origine"
+  ]
+ },
+ "orden-precio-asc": {
+  "hash": "#novedades",
+  "titulo": "Novedades",
+  "contador": "2 relojes",
+  "vacioOculto": true,
+  "chips": [
+   "todas"
+  ],
+  "caja": "todas",
+  "correa": "caucho",
+  "orden": "precio-asc",
+  "novedades": true,
+  "orden_dom": [
+   "-heritage-acero",
+   "-heritage-cobre",
+   "+marine-caucho",
+   "-marine-acero",
+   "-luna-acero",
+   "-marine-cobre",
+   "-luna-cobre",
+   "-noir-piel",
+   "+noir-caucho",
+   "-esqueleto-acero",
+   "-esqueleto-cobre",
+   "-origine"
+  ]
+ },
+ "chip-heritage-con-novedades": {
+  "hash": "#heritage",
+  "titulo": "Colección Heritage",
+  "contador": "0 relojes",
+  "vacioOculto": false,
+  "chips": [
+   "heritage"
+  ],
+  "caja": "todas",
+  "correa": "caucho",
+  "orden": "precio-asc",
+  "novedades": true,
+  "orden_dom": [
+   "-heritage-acero",
+   "-heritage-cobre",
+   "-marine-caucho",
+   "-marine-acero",
+   "-luna-acero",
+   "-marine-cobre",
+   "-luna-cobre",
+   "-noir-piel",
+   "-noir-caucho",
+   "-esqueleto-acero",
+   "-esqueleto-cobre",
+   "-origine"
+  ]
+ },
+ "vacio-dom": {
+  "t": "div",
+  "a": {
+   "class": "empty",
+   "id": "shopEmpty"
+  },
+  "c": [
+   {
+    "t": "svg",
+    "a": {
+     "aria-hidden": "true",
+     "class": "mark"
+    },
+    "c": [
+     {
+      "t": "use",
+      "a": {
+       "href": "#emblem"
+      },
+      "c": []
+     }
+    ]
+   },
+   {
+    "t": "h2",
+    "a": {},
+    "c": [
+     "Ningún reloj con esos filtros"
+    ]
+   },
+   {
+    "t": "p",
+    "a": {},
+    "c": [
+     "Prueba con otra caja u otra correa, o mira toda la colección."
+    ]
+   },
+   {
+    "t": "button",
+    "a": {
+     "class": "btn btn-outline",
+     "data-limpiar": "",
+     "type": "button"
+    },
+    "c": [
+     "Ver todos los relojes"
+    ]
+   }
+  ]
+ },
+ "limpiar-desde-vacio": {
+  "hash": "",
+  "titulo": "Todos los relojes",
+  "contador": "12 relojes",
+  "vacioOculto": true,
+  "chips": [
+   "todas"
+  ],
+  "caja": "todas",
+  "correa": "todas",
+  "orden": "destacados",
+  "novedades": false,
+  "orden_dom": [
+   "+esqueleto-cobre",
+   "+esqueleto-acero",
+   "+heritage-cobre",
+   "+heritage-acero",
+   "+marine-acero",
+   "+marine-caucho",
+   "+marine-cobre",
+   "+noir-caucho",
+   "+noir-piel",
+   "+luna-acero",
+   "+luna-cobre",
+   "+origine"
+  ]
+ },
+ "noir-y-acero": {
+  "hash": "#noir",
+  "titulo": "Colección Noir",
+  "contador": "2 relojes",
+  "vacioOculto": true,
+  "chips": [
+   "noir"
+  ],
+  "caja": "negro",
+  "correa": "todas",
+  "orden": "destacados",
+  "novedades": false,
+  "orden_dom": [
+   "-esqueleto-cobre",
+   "-esqueleto-acero",
+   "-heritage-cobre",
+   "-heritage-acero",
+   "-marine-acero",
+   "-marine-caucho",
+   "-marine-cobre",
+   "+noir-caucho",
+   "+noir-piel",
+   "-luna-acero",
+   "-luna-cobre",
+   "-origine"
+  ]
+ },
+ "hash-luna": {
+  "hash": "#luna",
+  "titulo": "Colección Luna",
+  "contador": "0 relojes",
+  "vacioOculto": false,
+  "chips": [
+   "luna"
+  ],
+  "caja": "negro",
+  "correa": "todas",
+  "orden": "destacados",
+  "novedades": false,
+  "orden_dom": [
+   "-esqueleto-cobre",
+   "-esqueleto-acero",
+   "-heritage-cobre",
+   "-heritage-acero",
+   "-marine-acero",
+   "-marine-caucho",
+   "-marine-cobre",
+   "-noir-caucho",
+   "-noir-piel",
+   "-luna-acero",
+   "-luna-cobre",
+   "-origine"
+  ]
+ },
+ "hash-limitadas": {
+  "hash": "#limitadas",
+  "titulo": "Colección Origine",
+  "contador": "0 relojes",
+  "vacioOculto": false,
+  "chips": [
+   "origine"
+  ],
+  "caja": "negro",
+  "correa": "todas",
+  "orden": "destacados",
+  "novedades": false,
+  "orden_dom": [
+   "-esqueleto-cobre",
+   "-esqueleto-acero",
+   "-heritage-cobre",
+   "-heritage-acero",
+   "-marine-acero",
+   "-marine-caucho",
+   "-marine-cobre",
+   "-noir-caucho",
+   "-noir-piel",
+   "-luna-acero",
+   "-luna-cobre",
+   "-origine"
+  ]
+ },
+ "hash-novedades": {
+  "hash": "#novedades",
+  "titulo": "Novedades",
+  "contador": "1 reloj",
+  "vacioOculto": true,
+  "chips": [
+   "todas"
+  ],
+  "caja": "negro",
+  "correa": "todas",
+  "orden": "destacados",
+  "novedades": true,
+  "orden_dom": [
+   "-esqueleto-cobre",
+   "-esqueleto-acero",
+   "-heritage-cobre",
+   "-heritage-acero",
+   "-marine-acero",
+   "-marine-caucho",
+   "-marine-cobre",
+   "+noir-caucho",
+   "-noir-piel",
+   "-luna-acero",
+   "-luna-cobre",
+   "-origine"
+  ]
+ },
+ "hash-desconocido": {
+  "hash": "#nada",
+  "titulo": "Todos los relojes",
+  "contador": "2 relojes",
+  "vacioOculto": true,
+  "chips": [
+   "todas"
+  ],
+  "caja": "negro",
+  "correa": "todas",
+  "orden": "destacados",
+  "novedades": false,
+  "orden_dom": [
+   "-esqueleto-cobre",
+   "-esqueleto-acero",
+   "-heritage-cobre",
+   "-heritage-acero",
+   "-marine-acero",
+   "-marine-caucho",
+   "-marine-cobre",
+   "+noir-caucho",
+   "+noir-piel",
+   "-luna-acero",
+   "-luna-cobre",
+   "-origine"
+  ]
+ },
+ "limpiar-cabecera": {
+  "hash": "",
+  "titulo": "Todos los relojes",
+  "contador": "12 relojes",
+  "vacioOculto": true,
+  "chips": [
+   "todas"
+  ],
+  "caja": "todas",
+  "correa": "todas",
+  "orden": "destacados",
+  "novedades": false,
+  "orden_dom": [
+   "+esqueleto-cobre",
+   "+esqueleto-acero",
+   "+heritage-cobre",
+   "+heritage-acero",
+   "+marine-acero",
+   "+marine-caucho",
+   "+marine-cobre",
+   "+noir-caucho",
+   "+noir-piel",
+   "+luna-acero",
+   "+luna-cobre",
+   "+origine"
+  ]
+ }
+}

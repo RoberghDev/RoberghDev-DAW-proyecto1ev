@@ -1,0 +1,399 @@
+{
+ "t": "main",
+ "a": {},
+ "c": [
+  {
+   "t": "section",
+   "a": {
+    "class": "page-hero"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap"
+     },
+     "c": [
+      {
+       "t": "nav",
+       "a": {
+        "aria-label": "Estás aquí",
+        "class": "crumbs"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "href": "index.html"
+         },
+         "c": [
+          "Inicio"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-hidden": "true"
+         },
+         "c": [
+          "/"
+         ]
+        },
+        {
+         "t": "span",
+         "a": {
+          "aria-current": "page"
+         },
+         "c": [
+          "Legal"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "eyebrow"
+       },
+       "c": [
+        "Información legal"
+       ]
+      },
+      {
+       "t": "h1",
+       "a": {
+        "class": "page-title"
+       },
+       "c": [
+        "Legal"
+       ]
+      },
+      {
+       "t": "p",
+       "a": {
+        "class": "page-sub"
+       },
+       "c": [
+        "Aviso legal, política de privacidad y política de cookies."
+       ]
+      }
+     ]
+    },
+    {
+     "t": "svg",
+     "a": {
+      "aria-hidden": "true",
+      "class": "page-mark"
+     },
+     "c": [
+      {
+       "t": "use",
+       "a": {
+        "href": "#emblem"
+       },
+       "c": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "t": "div",
+   "a": {
+    "class": "on-light"
+   },
+   "c": [
+    {
+     "t": "div",
+     "a": {
+      "class": "wrap legal"
+     },
+     "c": [
+      {
+       "t": "nav",
+       "a": {
+        "aria-label": "Textos legales",
+        "class": "legal-nav"
+       },
+       "c": [
+        {
+         "t": "a",
+         "a": {
+          "href": "#aviso"
+         },
+         "c": [
+          "Aviso legal"
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "href": "#privacidad"
+         },
+         "c": [
+          "Privacidad"
+         ]
+        },
+        {
+         "t": "a",
+         "a": {
+          "href": "#cookies"
+         },
+         "c": [
+          "Cookies"
+         ]
+        }
+       ]
+      },
+      {
+       "t": "div",
+       "a": {},
+       "c": [
+        {
+         "t": "section",
+         "a": {
+          "aria-labelledby": "avisoTitle",
+          "class": "prose",
+          "id": "aviso"
+         },
+         "c": [
+          {
+           "t": "h2",
+           "a": {
+            "id": "avisoTitle"
+           },
+           "c": [
+            "Aviso legal y condiciones de compra"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {
+            "class": "note"
+           },
+           "c": [
+            "Texto orientativo. Sustituye los datos entre corchetes por los de tu empresa y revísalo con un profesional antes de publicar la web."
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "En cumplimiento de la Ley 34/2002 de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), te informamos de que este sitio web pertenece a",
+            {
+             "t": "strong",
+             "a": {},
+             "c": [
+              "[Razón social]"
+             ]
+            },
+            ", con NIF",
+            {
+             "t": "strong",
+             "a": {},
+             "c": [
+              "[NIF]"
+             ]
+            },
+            "y domicilio en",
+            {
+             "t": "strong",
+             "a": {},
+             "c": [
+              "[Dirección completa]"
+             ]
+            },
+            ". Correo de contacto:",
+            {
+             "t": "strong",
+             "a": {},
+             "c": [
+              "[correo de la tienda]"
+             ]
+            },
+            "."
+           ]
+          },
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Compras"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Los precios incluyen el IVA vigente. El contrato de compraventa se perfecciona cuando recibes la confirmación del pedido por correo electrónico. Tienes derecho a desistir de la compra según lo explicado en",
+            {
+             "t": "a",
+             "a": {
+              "href": "ayuda.html#devoluciones"
+             },
+             "c": [
+              "Devoluciones"
+             ]
+            },
+            "."
+           ]
+          },
+          {
+           "t": "h3",
+           "a": {},
+           "c": [
+            "Propiedad intelectual"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "La marca OKIDOKEI, su logotipo, los textos y los diseños de esta web pertenecen a [Razón social]. No se pueden reproducir sin autorización."
+           ]
+          }
+         ]
+        },
+        {
+         "t": "section",
+         "a": {
+          "aria-labelledby": "privTitle",
+          "class": "prose",
+          "id": "privacidad"
+         },
+         "c": [
+          {
+           "t": "h2",
+           "a": {
+            "id": "privTitle"
+           },
+           "c": [
+            "Política de privacidad"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Tratamos tus datos conforme al Reglamento (UE) 2016/679 (RGPD) y a la Ley Orgánica 3/2018 (LOPDGDD)."
+           ]
+          },
+          {
+           "t": "ul",
+           "a": {},
+           "c": [
+            {
+             "t": "li",
+             "a": {},
+             "c": [
+              {
+               "t": "strong",
+               "a": {},
+               "c": [
+                "Responsable:"
+               ]
+              },
+              "[Razón social], [NIF]."
+             ]
+            },
+            {
+             "t": "li",
+             "a": {},
+             "c": [
+              {
+               "t": "strong",
+               "a": {},
+               "c": [
+                "Finalidad:"
+               ]
+              },
+              "gestionar tus pedidos, responder a tus consultas y, si lo aceptas, enviarte la newsletter."
+             ]
+            },
+            {
+             "t": "li",
+             "a": {},
+             "c": [
+              {
+               "t": "strong",
+               "a": {},
+               "c": [
+                "Legitimación:"
+               ]
+              },
+              "la ejecución del contrato de compra y tu consentimiento."
+             ]
+            },
+            {
+             "t": "li",
+             "a": {},
+             "c": [
+              {
+               "t": "strong",
+               "a": {},
+               "c": [
+                "Conservación:"
+               ]
+              },
+              "el tiempo necesario para cumplir las obligaciones legales."
+             ]
+            },
+            {
+             "t": "li",
+             "a": {},
+             "c": [
+              {
+               "t": "strong",
+               "a": {},
+               "c": [
+                "Derechos:"
+               ]
+              },
+              "puedes acceder, rectificar, suprimir, oponerte y portar tus datos escribiendo a [correo de la tienda]. También puedes reclamar ante la Agencia Española de Protección de Datos."
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "t": "section",
+         "a": {
+          "aria-labelledby": "cookTitle",
+          "class": "prose",
+          "id": "cookies"
+         },
+         "c": [
+          {
+           "t": "h2",
+           "a": {
+            "id": "cookTitle"
+           },
+           "c": [
+            "Política de cookies"
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Esta web no usa cookies de publicidad ni de analítica. Solo guarda en tu navegador (almacenamiento local) lo necesario para que funcione: tu carrito, tus favoritos y, si creas una cuenta, tu nombre y correo."
+           ]
+          },
+          {
+           "t": "p",
+           "a": {},
+           "c": [
+            "Puedes borrar estos datos en cualquier momento desde la configuración de tu navegador. Si en el futuro añadimos herramientas de analítica o publicidad, te pediremos permiso antes con un aviso de cookies."
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
