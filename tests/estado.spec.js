@@ -7,7 +7,7 @@ const leerAlmacen = (page, clave) =>
   page.evaluate((c) => JSON.parse(localStorage.getItem('okidokei.' + c)), clave);
 
 // ABRE UNA PÁGINA (HEREDADA O YA MIGRADA) Y ESPERA A QUE ESTÉ LISTA.
-async function abrirLegado(page, ruta) {
+async function abrirPagina(page, ruta) {
   await page.goto(ruta);
   await page.locator('#siteHeader').waitFor();
   await page.waitForLoadState('networkidle');
@@ -19,9 +19,9 @@ function vigilarErrores(page) {
   return errores;
 }
 
-test('legado: añadir desde la tienda actualiza contador, minicarrito, aviso y persiste', async ({ page }) => {
+test('añadir desde la tienda actualiza contador, minicarrito, aviso y persiste', async ({ page }) => {
   const errores = vigilarErrores(page);
-  await abrirLegado(page, '/tienda.html');
+  await abrirPagina(page, '/tienda.html');
 
   const boton = page.locator('[data-add="esqueleto-cobre"]').first();
   await boton.click();
@@ -34,7 +34,7 @@ test('legado: añadir desde la tienda actualiza contador, minicarrito, aviso y p
   await expect(page.locator('#cartTotal')).toHaveText('9.900 €');
   expect(await leerAlmacen(page, 'carrito')).toEqual([{ id: 'esqueleto-cobre', qty: 2 }]);
 
-  await abrirLegado(page, '/carrito.html');
+  await abrirPagina(page, '/carrito.html');
   await expect(page.locator('#cartRows .row-item')).toHaveCount(1);
   await expect(page.locator('#sumItems')).toHaveText('2 artículos');
   await expect(page.locator('#sumTotal')).toHaveText('9.900 €');
@@ -49,9 +49,9 @@ test('legado: añadir desde la tienda actualiza contador, minicarrito, aviso y p
   expect(errores).toEqual([]);
 });
 
-test('legado: favoritos se alternan, persisten y se pasan al carrito', async ({ page }) => {
+test('favoritos se alternan, persisten y se pasan al carrito', async ({ page }) => {
   const errores = vigilarErrores(page);
-  await abrirLegado(page, '/tienda.html');
+  await abrirPagina(page, '/tienda.html');
 
   const corazon = page.locator('[data-fav="luna-cobre"]').first();
   await corazon.click();
@@ -60,7 +60,7 @@ test('legado: favoritos se alternan, persisten y se pasan al carrito', async ({ 
   await expect(page.locator('#favBtn [data-count="favoritos"]')).toHaveText('1');
   expect(await leerAlmacen(page, 'favoritos')).toEqual(['luna-cobre']);
 
-  await abrirLegado(page, '/favoritos.html');
+  await abrirPagina(page, '/favoritos.html');
   await expect(page.locator('#favGrid .card')).toHaveCount(1);
   await expect(page.locator('#favCountText')).toHaveText('1 reloj guardado');
   await page.locator('#favAllToCart').click();
@@ -75,14 +75,14 @@ test('legado: favoritos se alternan, persisten y se pasan al carrito', async ({ 
   expect(errores).toEqual([]);
 });
 
-test('legado: los productos inexistentes guardados se ignoran y se depuran al escribir', async ({ page }) => {
+test('los productos inexistentes guardados se ignoran y se depuran al escribir', async ({ page }) => {
   await page.addInitScript(() => {
     if (sessionStorage.getItem('semilla')) return;
     sessionStorage.setItem('semilla', '1');
     localStorage.setItem('okidokei.carrito', JSON.stringify([{ id: 'no-existe', qty: 3 }, { id: 'noir-piel', qty: 1 }]));
     localStorage.setItem('okidokei.favoritos', JSON.stringify(['no-existe', 'noir-piel']));
   });
-  await abrirLegado(page, '/tienda.html');
+  await abrirPagina(page, '/tienda.html');
 
   await expect(page.locator('#cartBtn [data-count="carrito"]')).toHaveText('1');
   await expect(page.locator('#favBtn [data-count="favoritos"]')).toHaveText('1');
@@ -94,7 +94,7 @@ test('legado: los productos inexistentes guardados se ignoran y se depuran al es
   expect(await leerAlmacen(page, 'favoritos')).toEqual(['noir-piel', 'heritage-acero']);
 });
 
-test('legado: la cuenta muestra la sesión guardada y el logout la borra sin llamar a la API', async ({ page }) => {
+test('la cuenta muestra la sesión guardada y el logout la borra sin llamar a la API', async ({ page }) => {
   const errores = vigilarErrores(page);
   await page.addInitScript(() => {
     if (sessionStorage.getItem('semilla')) return;
@@ -103,7 +103,7 @@ test('legado: la cuenta muestra la sesión guardada y el logout la borra sin lla
     localStorage.setItem('okidokei.token', JSON.stringify('t0k3n'));
     localStorage.setItem('okidokei.favoritos', JSON.stringify(['origine']));
   });
-  await abrirLegado(page, '/cuenta.html');
+  await abrirPagina(page, '/cuenta.html');
 
   await expect(page.locator('#accountPanel')).toBeVisible();
   await expect(page.locator('#accName')).toHaveText('Ana');
@@ -118,30 +118,32 @@ test('legado: la cuenta muestra la sesión guardada y el logout la borra sin lla
   expect(errores).toEqual([]);
 });
 
-test('el estado guardado por el legado lo lee la vista React y viceversa', async ({ page }) => {
+test('el estado se conserva al navegar y al recargar', async ({ page }) => {
   const errores = vigilarErrores(page);
-  await abrirLegado(page, '/tienda.html');
+  await abrirPagina(page, '/tienda');
   await page.locator('[data-add="marine-acero"]').first().click();
   await page.keyboard.press('Escape');
   await page.locator('[data-fav="marine-acero"]').first().click();
 
-  await page.goto('/tienda.html?react=1');
+  // NAVEGACIÓN INTERNA (SIN RECARGA): LA CABECERA Y LA PÁGINA DE DESTINO VEN EL MISMO ESTADO.
+  await page.getByRole('link', { name: /^Carrito/ }).click();
+  await expect(page).toHaveURL(/\/carrito$/);
   await expect(page.locator('#cartBtn [data-count="carrito"]')).toHaveText('1');
   await expect(page.locator('#favBtn [data-count="favoritos"]')).toHaveText('1');
+  await expect(page.locator('#cartRows .row-item')).toHaveCount(1);
 
-  await page.goto('/carrito.html?react=1');
-  await expect(page.locator('#cartBtn [data-count="carrito"]')).toHaveText('1');
-
+  // RECARGA: EL ESTADO PERSISTE EN localStorage.
   await page.evaluate(() => {
     localStorage.setItem('okidokei.carrito', JSON.stringify([{ id: 'marine-acero', qty: 1 }, { id: 'origine', qty: 1 }]));
   });
-  await abrirLegado(page, '/carrito.html');
+  await page.reload();
+  await page.locator('#siteHeader').waitFor();
   await expect(page.locator('#cartRows .row-item')).toHaveCount(2);
   await expect(page.locator('#sumTotal')).toHaveText('21.790 €');
   expect(errores).toEqual([]);
 });
 
-test('vista React: escribe el almacenamiento con las mismas reglas que el legado', async ({ page }) => {
+test('las tarjetas escriben el almacenamiento con las mismas reglas que la versión original', async ({ page }) => {
   const errores = vigilarErrores(page);
   await page.addInitScript(() => {
     if (sessionStorage.getItem('semilla')) return;
@@ -149,7 +151,7 @@ test('vista React: escribe el almacenamiento con las mismas reglas que el legado
     localStorage.setItem('okidokei.carrito', JSON.stringify([{ id: 'no-existe', qty: 3 }, { id: 'noir-piel', qty: 1 }]));
     localStorage.setItem('okidokei.favoritos', JSON.stringify(['no-existe', 'noir-piel']));
   });
-  await page.goto('/index.html?react=1');
+  await page.goto('/');
 
   await expect(page.locator('#cartBtn [data-count="carrito"]')).toHaveText('1');
   await expect(page.locator('#favBtn [data-count="favoritos"]')).toHaveText('1');

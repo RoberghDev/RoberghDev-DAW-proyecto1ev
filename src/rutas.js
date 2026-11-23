@@ -1,7 +1,7 @@
 // RUTAS DE LA SPA Y COMPATIBILIDAD CON LAS URLS DE LA ANTIGUA WEB MULTIPÁGINA.
 
 // CLAVES DE PÁGINA CON RUTA PROPIA (/tienda, /colecciones…). La portada es "/" y el producto "/producto/:id".
-export const PAGINAS_SIMPLES = ['tienda', 'colecciones', 'carrito', 'favoritos', 'cuenta', 'ayuda', 'journal', 'nosotros', 'legal'];
+const PAGINAS_SIMPLES = ['tienda', 'colecciones', 'carrito', 'favoritos', 'cuenta', 'ayuda', 'journal', 'nosotros', 'legal'];
 
 // DEVUELVE LA CLAVE DE PÁGINA (index, tienda, producto…) DE UNA RUTA, O null SI NO EXISTE.
 export function claveDeRuta(pathname) {

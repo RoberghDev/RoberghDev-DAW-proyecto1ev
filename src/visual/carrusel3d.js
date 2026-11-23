@@ -8,7 +8,7 @@ import { COLECCIONES } from '../data.js';
 // Devuelve null (y marca no-webgl) si no se puede crear el renderer, como hacía hero.js.
 // CREA LA ESCENA 3D INTERACTIVA DEL CARRUSEL DE RELOJES.
 export function iniciarCarrusel3D(opciones) {
-    var THREE = opciones.THREE, OKI3D = opciones.relojes3d, hero = opciones.hero, canvas = opciones.canvas;
+    var THREE = opciones.THREE, modelos = opciones.relojes3d, hero = opciones.hero, canvas = opciones.canvas;
     var progreso = opciones.progreso, reducirMovimiento = opciones.reducirMovimiento, elegir = opciones.elegir, irAProducto = opciones.irAProducto;
     var cantidadColecciones = COLECCIONES.length;
     // TODO LO QUE SE REGISTRA AQUÍ SE RETIRA EN destruir().
@@ -46,13 +46,13 @@ export function iniciarCarrusel3D(opciones) {
         p.userData.semillas = semillas; scene.add(p); return p;
     })();
 
-    OKI3D.fuentes.then(function () {
+    modelos.fuentes.then(function () {
         if (destruido) return;
-        scene.environment = OKI3D.entorno(renderer);
-        OKI3D.luces(scene);
-        var M = OKI3D.materiales();
+        scene.environment = modelos.entorno(renderer);
+        modelos.luces(scene);
+        var M = modelos.materiales();
         COLECCIONES.forEach(function (coleccion, indiceColeccion) {
-            var w = OKI3D.construir(OKI3D.config(coleccion.principal), M), a = indiceColeccion * STEP;
+            var w = modelos.construir(modelos.config(coleccion.principal), M), a = indiceColeccion * STEP;
             w.root.position.set(Math.sin(a) * RADIO, 0, Math.cos(a) * RADIO);
             w.root.rotation.y = a;
             w.root.traverse(function (objeto) { objeto.userData.index = indiceColeccion; });
@@ -163,7 +163,7 @@ export function iniciarCarrusel3D(opciones) {
         progreso.style.transform = 'scaleX(' + Math.min(1, autoT / 6) + ')';
 
         px += (tpx - px) * Math.min(1, dt * 4); py += (tpy - py) * Math.min(1, dt * 4);
-        var hora = OKI3D.horaActual();
+        var hora = modelos.horaActual();
         relojes.forEach(function (w, indiceReloj) {
             var rel = indiceReloj - actual; rel = ((rel % cantidadColecciones) + cantidadColecciones + cantidadColecciones / 2) % cantidadColecciones - cantidadColecciones / 2;
             var fw = Math.max(0, 1 - Math.abs(rel));

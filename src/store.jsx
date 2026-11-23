@@ -1,6 +1,6 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { buscarProducto } from './data.js';
-import { borrar, carrito, favoritos, guardar, leer } from './store/storage.js';
+import { carrito, favoritos, leer } from './store/storage.js';
 import { aviso, suscribirUI } from './store/ui.js';
 
 // CAPA REACT SOBRE src/store/storage.js Y src/store/ui.js. No reimplementa la lógica
@@ -32,7 +32,6 @@ export function StoreProvider({ children }) {
   }, [refresh]);
   useEffect(() => suscribirUI((orden) => {
     if (orden.tipo === 'aviso') setAvisoActual((anterior) => ({ texto: orden.texto, visible: true, numero: anterior.numero + 1 }));
-    if (orden.tipo === 'abrir-carrito') setCartOpen(true);
   }), []);
   useEffect(() => {
     if (!avisoActual.visible) return undefined;
@@ -50,8 +49,7 @@ export function StoreProvider({ children }) {
   }), [revision]);
   const api = useMemo(() => ({
     ...datos,
-    revision, cartOpen, setCartOpen,
-    toast: avisoActual.visible ? avisoActual.texto : '',
+    cartOpen, setCartOpen,
     setToast(texto) { aviso(texto); },
     add(id, qty = 1) {
       if (!buscarProducto(id)) return;
@@ -60,11 +58,8 @@ export function StoreProvider({ children }) {
     setQty(id, qty) { carrito.poner(id, qty); },
     remove(id) { carrito.quitar(id); },
     clearCart() { carrito.vaciar(); },
-    toggleFavorite(id) { return favoritos.alternar(id); },
-    read(key, initial) { return leer(key, initial); },
-    save(key, value) { guardar(key, value); refresh(); },
-    forget(key) { borrar(key); refresh(); }
-  }), [datos, revision, cartOpen, avisoActual, refresh]);
+    toggleFavorite(id) { return favoritos.alternar(id); }
+  }), [datos, cartOpen]);
   return <StoreContext.Provider value={api}>{children}<Toast texto={avisoActual.texto} visible={avisoActual.visible} /></StoreContext.Provider>;
 }
 export function useStore() { return useContext(StoreContext); }

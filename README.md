@@ -17,7 +17,7 @@ Frontend de OKIDOKEI, una tienda y escaparate de relojes: una SPA con React, Rea
 
 ## Requisitos y puesta en marcha
 
-Se necesita Node.js y npm. Desde la raíz del frontend:
+Se necesita Node.js 22.22 o superior (lo exige React Router 8) y npm. Desde la raíz del frontend:
 
 ```bash
 npm install
@@ -86,7 +86,7 @@ Frontend/
 │   ├── navegacion.js          # Contexto con la función de navegación
 │   ├── data.js                # Catálogo único (colecciones y productos)
 │   ├── store.jsx              # Contexto React del estado compartido y aviso global
-│   ├── store/                 # storage.js (carrito, favoritos, localStorage) y ui.js (aviso, minicarrito)
+│   ├── store/                 # storage.js (carrito, favoritos, localStorage) y ui.js (aviso global)
 │   ├── pages/                 # Las once páginas (index.jsx, tienda.jsx, producto.jsx…)
 │   ├── components/            # SiteShell (cabecera, pie, minicarrito), tarjetas, formularios, iconos
 │   └── visual/                # Motor del carrusel 3D, modelos de relojes, engranajes y carga de Three.js
@@ -107,8 +107,9 @@ Frontend/
 │           └── three-LICENSE.txt
 ├── tests/                     # Pruebas de Playwright (paridad con la versión original)
 └── docs/
-    ├── Okidokei_FRONTEND.pptx.pdf  # Presentación del proyecto
-    └── migracion/             # Plan y registro de la migración a React
+    ├── Okidokei_FRONTEND-V1.0.pptx.pdf  # Presentación del proyecto
+    ├── Plan_migracion_React_OKIDOKEI.pdf  # Plan de migración a React
+    └── migracion/             # Registro de la migración a React (una nota por fase)
 ```
 
 `index.html` es la única entrada y solo contiene el contenedor `#root`. El contenido de cada página es un componente de `src/pages/`. `dist/` es la salida generada por Vite, no el código fuente.
@@ -148,7 +149,7 @@ Las URLs de la antigua web multipágina siguen funcionando: `/index.html` → `/
 El estado compartido se reparte así:
 
 - `src/store/storage.js`: carrito y favoritos, almacenados en `localStorage` con el prefijo `okidokei.`, y eventos `oki:carrito` / `oki:favoritos`.
-- `src/store/ui.js`: órdenes de interfaz compartidas (aviso temporal y apertura del minicarrito).
+- `src/store/ui.js`: canal del aviso temporal global.
 - `src/store.jsx`: contexto React sobre los dos módulos anteriores; sincroniza la interfaz ante cambios de `localStorage` en otras pestañas.
 
 La clave `usuario` mantiene los datos básicos visibles de la sesión y `token` almacena el token devuelto por el login. Si `localStorage` no está disponible, las utilidades compartidas recurren a memoria para esa carga de página; ese estado alternativo no persiste al recargar.

@@ -42,34 +42,6 @@ export default [
     }
   },
   {
-    files: ['public/js/**/*.js'],
-    languageOptions: {
-      sourceType: 'script',
-      globals: {
-        COLECCIONES: 'readonly',
-        OKI: 'readonly',
-        OKI3D: 'readonly',
-        OKI_API: 'readonly',
-        PRODUCTOS: 'readonly',
-        TEXTOS_CAJA: 'readonly',
-        TEXTOS_CORREA: 'readonly',
-        THREE: 'readonly',
-        buscarColeccion: 'readonly',
-        buscarProducto: 'readonly',
-        fotoProducto: 'readonly',
-        precioTexto: 'readonly',
-        productosDe: 'readonly',
-        productosDeColeccion: 'readonly',
-        resumenProducto: 'readonly'
-      }
-    },
-    rules: {
-      // These classic scripts intentionally share globals across files.
-      'no-redeclare': 'off',
-      'no-unused-vars': 'off'
-    }
-  },
-  {
     files: ['src/visual/relojes3d.js'],
     rules: {
       // The dial renderer intentionally skips the 3 o'clock marker.
