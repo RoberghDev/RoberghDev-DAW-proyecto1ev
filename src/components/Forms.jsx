@@ -22,7 +22,7 @@ export function NewsletterForm() {
       <input ref={emailRef} id="newsEmail" name="email" type="email" placeholder="Tu correo electrónico" autoComplete="email" required />
       <button className="btn btn-dark" type="submit">Suscribirme</button>
     </div>
-    <label className="check" htmlFor="newsConsent"><input ref={consentRef} id="newsConsent" type="checkbox" required /> <span>Acepto recibir comunicaciones de OKIDOKEI y la <a href="legal.html#privacidad">política de privacidad</a>.</span></label>
+    <label className="check" htmlFor="newsConsent"><input ref={consentRef} id="newsConsent" type="checkbox" required /> <span>Acepto recibir comunicaciones de OKIDOKEI y la <a href="/legal#privacidad">política de privacidad</a>.</span></label>
     <p className="form-msg" role="status">{message}</p>
   </form>;
 }
@@ -50,7 +50,7 @@ export function ContactForm() {
     <div className="field"><label htmlFor="cMotivo">Motivo</label><select className="select" id="cMotivo"><option>Elegir un reloj</option><option>Un pedido</option><option>Grabado o regalo</option><option>Revisión o reparación</option><option>Trabajar con nosotros</option><option>Otro</option></select></div>
     <div className="field"><label htmlFor="cPedido">Nº de pedido (opcional)</label><input className="input" id="cPedido" type="text" /></div>
     <div className="field full"><label htmlFor="cMensaje">Mensaje</label><textarea className="textarea" id="cMensaje" /></div>
-    <label className="check full" htmlFor="cAcepto"><input type="checkbox" id="cAcepto" /> <span>He leído la <a href="legal.html#privacidad">política de privacidad</a>.</span></label>
+    <label className="check full" htmlFor="cAcepto"><input type="checkbox" id="cAcepto" /> <span>He leído la <a href="/legal#privacidad">política de privacidad</a>.</span></label>
     <button className="btn btn-copper" type="submit">Enviar mensaje</button>
     <p className="form-msg full" role="status">{message}</p>
   </form>;

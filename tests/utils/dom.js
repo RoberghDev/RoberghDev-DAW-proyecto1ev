@@ -4,11 +4,13 @@
 // Se ignoran la marca de foto ausente (depende del tiempo de carga) y el año del pie;
 // el atributo style se compara por su valor CSS normalizado.
 export async function serializar(page, selector) {
-  return page.evaluate((sel) => {
+  return page.evaluate(([sel, fuenteRutaAntigua]) => {
     const raiz = document.querySelector(sel);
     if (!raiz) return null;
     const copia = raiz.cloneNode(true);
     copia.normalize();
+    // RUTAS DE LA SPA TRADUCIDAS A SU FORMA ANTIGUA (VER rutaAntigua MÁS ABAJO).
+    const rutaAntigua = new Function('return ' + fuenteRutaAntigua)();
     const nodo = (n) => {
       if (n.nodeType === 3) {
         const texto = n.textContent.replace(/\s+/g, ' ').trim();
@@ -28,13 +30,26 @@ export async function serializar(page, selector) {
             if (clases) atributos[a.name] = clases;
           }
           else if (a.name === 'style') atributos[a.name] = n.style.cssText;
+          else if (a.name === 'href' || a.name === 'src') atributos[a.name] = rutaAntigua(a.value);
           else atributos[a.name] = a.value;
         });
       const hijos = n.hasAttribute('data-year') ? ['<año>'] : [...n.childNodes].map(nodo).filter((x) => x !== null);
       return { t: n.tagName.toLowerCase(), a: atributos, c: hijos };
     };
     return JSON.stringify(nodo(copia), null, 1);
-  }, selector);
+  }, [selector, rutaAntigua.toString()]);
+}
+
+// LAS INSTANTÁNEAS SE TOMARON CON LA WEB MULTIPÁGINA: LAS RUTAS DE LA SPA SE TRADUCEN A SU FORMA
+// ANTIGUA (/tienda#x → tienda.html#x, /producto/x → producto.html#x, / → index.html, /assets/… → assets/…).
+export function rutaAntigua(valor) {
+  if (!valor.startsWith('/') || valor.startsWith('//')) return valor;
+  if (valor.startsWith('/assets/') || valor.startsWith('/js/')) return valor.slice(1);
+  const [ruta, fragmento] = valor.split('#');
+  const conFragmento = fragmento === undefined ? '' : '#' + fragmento;
+  if (ruta === '/') return 'index.html' + conFragmento;
+  if (ruta.startsWith('/producto/')) return 'producto.html#' + ruta.slice('/producto/'.length);
+  return ruta.slice(1) + '.html' + conFragmento;
 }
 
 // ESPERA A QUE LA PÁGINA ESTÉ MONTADA (CABECERA REACT) Y SIN PETICIONES PENDIENTES.

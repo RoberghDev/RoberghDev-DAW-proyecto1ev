@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { abrir, serializar, vigilarErrores } from './utils/dom.js';
+import { abrir, rutaAntigua, serializar, vigilarErrores } from './utils/dom.js';
 
 // PORTADA. Fijado con la versión heredada (plantilla index.html + comun.js + scripts 3D).
 // El WebGL por software hace estas pruebas lentas: se triplica su tiempo límite.
@@ -9,7 +9,7 @@ const almacen = (page, clave) => page.evaluate((c) => JSON.parse(localStorage.ge
 
 // ESTADO VISIBLE DEL HERO (TEXTOS, ENLACES Y PESTAÑAS) TRAS CADA ACCIÓN.
 async function estadoHero(page) {
-  return page.evaluate(() => ({
+  const estado = await page.evaluate(() => ({
     titulo: document.querySelector('#heroTitle').textContent,
     tituloLabel: document.querySelector('#heroTitle').getAttribute('aria-label'),
     sub: document.querySelector('#heroSub').innerHTML,
@@ -21,6 +21,7 @@ async function estadoHero(page) {
     pestanas: [...document.querySelectorAll('.hero-tab')].map((t) => `${t.getAttribute('aria-selected')}/${t.getAttribute('tabindex')}`).join(' '),
     girar: document.querySelector('#spinBtn').getAttribute('aria-pressed')
   }));
+  return { ...estado, explorar: rutaAntigua(estado.explorar), modelo: rutaAntigua(estado.modelo) };
 }
 
 test('inicio: el hero cambia de colección con pestañas, flechas y teclado', async ({ page }) => {

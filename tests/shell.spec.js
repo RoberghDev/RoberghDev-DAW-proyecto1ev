@@ -63,7 +63,7 @@ test('buscador: abre, enfoca, filtra, cierra con Escape y navega con Enter', asy
   await page.locator('#searchBtn').click();
   await page.locator('#searchInput').fill('marine caucho');
   await page.keyboard.press('Enter');
-  await expect(page).toHaveURL(/producto\.html#marine-caucho$/);
+  await expect(page).toHaveURL(/\/producto\/marine-caucho$/);
 });
 
 test('menú móvil: abre, enfoca el primer enlace y se cierra', async ({ page }) => {

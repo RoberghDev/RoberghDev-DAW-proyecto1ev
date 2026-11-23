@@ -23,7 +23,7 @@ export default function Favoritos() {
 <main>
     <section className="page-hero">
         <div className="wrap">
-            <nav className="crumbs" aria-label="Estás aquí"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Favoritos</span></nav>
+            <nav className="crumbs" aria-label="Estás aquí"><a href="/">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Favoritos</span></nav>
             <p className="eyebrow">Tu selección</p>
             <h1 className="page-title">Favoritos</h1>
             <p className="page-sub">Los relojes que has guardado con el corazón. Se quedan en este navegador para cuando vuelvas.</p>
@@ -39,7 +39,7 @@ export default function Favoritos() {
                 <svg className="mark" aria-hidden="true"><use href="#emblem" /></svg>
                 <h2>Aún no tienes favoritos</h2>
                 <p>Pulsa el corazón de cualquier reloj para guardarlo aquí y compararlo con calma.</p>
-                <a className="btn btn-outline" href="tienda.html">Ir a la tienda</a>
+                <a className="btn btn-outline" href="/tienda">Ir a la tienda</a>
             </div>
         </div>
     </section>

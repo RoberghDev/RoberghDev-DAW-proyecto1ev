@@ -2,13 +2,14 @@ import { COLECCIONES } from '../data.js';
 
 // MOTOR DEL CARRUSEL 3D DE LA PORTADA (antes la función iniciar3D de public/js/hero.js).
 // Mismos cálculos de cámara, arrastre, inercia, giro automático, polvo y animación de entrada.
-// Diferencias: recibe sus dependencias (THREE, modelos, elementos del hero y la función elegir)
+// Diferencias: recibe sus dependencias (THREE, modelos, elementos del hero y las funciones elegir e
+// irAProducto, que abre la ficha al pulsar el reloj frontal)
 // y devuelve destruir() para no dejar animaciones, listeners ni recursos WebGL al desmontar.
 // Devuelve null (y marca no-webgl) si no se puede crear el renderer, como hacía hero.js.
 // CREA LA ESCENA 3D INTERACTIVA DEL CARRUSEL DE RELOJES.
 export function iniciarCarrusel3D(opciones) {
     var THREE = opciones.THREE, OKI3D = opciones.relojes3d, hero = opciones.hero, canvas = opciones.canvas;
-    var progreso = opciones.progreso, reducirMovimiento = opciones.reducirMovimiento, elegir = opciones.elegir;
+    var progreso = opciones.progreso, reducirMovimiento = opciones.reducirMovimiento, elegir = opciones.elegir, irAProducto = opciones.irAProducto;
     var cantidadColecciones = COLECCIONES.length;
     // TODO LO QUE SE REGISTRA AQUÍ SE RETIRA EN destruir().
     var controlador = new AbortController(), raf = 0, destruido = false;
@@ -116,7 +117,7 @@ export function iniciarCarrusel3D(opciones) {
         if (!arrastrando) return; arrastrando = false;
         if (movido < 6) {
             var indiceTocado = tocado(eventoPuntero.clientX, eventoPuntero.clientY);
-            if (indiceTocado >= 0 && indiceTocado === frente) location.href = 'producto.html#' + COLECCIONES[indiceTocado].principal;
+            if (indiceTocado >= 0 && indiceTocado === frente) irAProducto(COLECCIONES[indiceTocado].principal);
             else if (indiceTocado >= 0) elegir(indiceTocado, 'ui');
             return;
         }

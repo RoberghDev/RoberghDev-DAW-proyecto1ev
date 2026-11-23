@@ -13,15 +13,15 @@ test('producto: título por producto y cambio de variante por hash', async ({ pa
   await page.mouse.wheel(0, 900);
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBeGreaterThan(300);
   await page.locator('#pQty').fill('4');
-  await page.locator('#pVariantes a[href="producto.html#heritage-cobre"]').click();
-  await expect(page).toHaveURL(/#heritage-cobre$/);
+  await page.locator('#pVariantes a[href="/producto/heritage-cobre"]').click();
+  await expect(page).toHaveURL(/\/producto\/heritage-cobre$/);
   await expect(page).toHaveTitle('OKIDOKEI · Heritage Cobre');
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(0);
   await expect(page.locator('#pQty')).toHaveValue('1');
   await page.waitForLoadState('networkidle');
   expect(await serializar(page, 'main')).toMatchSnapshot('producto-tras-variante.json');
 
-  await page.evaluate(() => { location.hash = 'no-existe'; });
+  await page.goto('/producto/no-existe');
   await expect(page).toHaveTitle('OKIDOKEI · Esqueleto Cobre');
   expect(errores).toEqual([]);
 });
@@ -77,10 +77,10 @@ test('producto: favorito de la ficha y acciones en relacionados', async ({ page 
   expect(await serializar(page, 'main')).toMatchSnapshot('producto-tras-acciones.json');
 
   // AL CAMBIAR DE PRODUCTO, EL CORAZÓN DE LA FICHA REFLEJA EL NUEVO PRODUCTO.
-  await page.locator('#pVariantes a[href="producto.html#marine-caucho"]').click();
+  await page.locator('#pVariantes a[href="/producto/marine-caucho"]').click();
   await expect(page.locator('#pFav')).toHaveAttribute('data-fav', 'marine-caucho');
   await expect(page.locator('#pFav')).toHaveAttribute('aria-pressed', 'true');
-  await page.locator('#pVariantes a[href="producto.html#marine-cobre"]').click();
+  await page.locator('#pVariantes a[href="/producto/marine-cobre"]').click();
   await expect(page.locator('#pFav')).toHaveAttribute('aria-pressed', 'false');
   expect(errores).toEqual([]);
 });

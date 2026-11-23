@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { COLECCIONES, PRODUCTOS, buscarColeccion } from '../data.js';
+import { useLocation, useNavigate } from 'react-router';
 import { ProductCard } from '../components/Commerce.jsx';
 
 // Migrada desde la plantilla heredada tienda.html y public/js/tienda.js (fase 3).
@@ -44,18 +45,22 @@ export default function Tienda() {
     // LA CASILLA SE SINCRONIZA POR PROPIEDAD (COMO tienda.js), SIN ESCRIBIR EL ATRIBUTO checked.
     useEffect(() => { novedadesRef.current.checked = filtros.novedades; }, [filtros.novedades]);
 
+    // ACTUALIZA LOS FILTROS SI CAMBIA EL FRAGMENTO DE LA URL DESDE FUERA (ENLACE, ATRÁS/ADELANTE…),
+    // COMO EL hashchange DE tienda.js. LOS CAMBIOS QUE ESCRIBE LA PROPIA TIENDA SE IGNORAN.
+    const location = useLocation();
+    const navigate = useNavigate();
+    const primeraVez = useRef(true);
     useEffect(() => {
-        // ACTUALIZA LOS FILTROS SI CAMBIA EL FRAGMENTO DE LA URL.
-        const leerDireccion = () => setFiltros(filtrosDesdeDireccion);
-        window.addEventListener('hashchange', leerDireccion);
-        return () => window.removeEventListener('hashchange', leerDireccion);
-    }, []);
+        if (primeraVez.current) { primeraVez.current = false; return; }
+        if (location.state?.filtros) return;
+        setFiltros(filtrosDesdeDireccion);
+    }, [location.hash]);
 
-    // APLICA UN CAMBIO DEL USUARIO Y REFLEJA COLECCIÓN O NOVEDADES EN LA URL.
+    // APLICA UN CAMBIO DEL USUARIO Y REFLEJA COLECCIÓN O NOVEDADES EN LA URL (SIN AÑADIR HISTORIAL).
     function cambiar(nuevos) {
         setFiltros(nuevos);
         const fragmento = nuevos.coleccion !== 'todas' ? '#' + nuevos.coleccion : nuevos.novedades ? '#novedades' : '';
-        window.history.replaceState(null, '', window.location.pathname + fragmento);
+        navigate(window.location.pathname + fragmento, { replace: true, state: { carga: location.state?.carga, filtros: true } });
     }
     const limpiar = () => cambiar(FILTROS_INICIALES);
 
@@ -69,7 +74,7 @@ export default function Tienda() {
 
             <section className={'page-hero'}>
                 <div className={'wrap'}>
-                    <nav className={'crumbs'} aria-label={'Estás aquí'}><a href={'index.html'}>Inicio</a><span aria-hidden={'true'}>/</span><span aria-current={'page'}>Tienda</span></nav>
+                    <nav className={'crumbs'} aria-label={'Estás aquí'}><a href={'/'}>Inicio</a><span aria-hidden={'true'}>/</span><span aria-current={'page'}>Tienda</span></nav>
                     <p className={'eyebrow'}>Relojería online</p>
                     <h1 className={'page-title'}>Tienda</h1>
                     <p className={'page-sub'}>12 relojes en 6 colecciones, con envío asegurado, 30 días de devolución y 3 años de garantía.</p>
@@ -103,11 +108,11 @@ export default function Tienda() {
 
             <section className={'trust'} aria-label={'Ventajas de comprar en OKIDOKEI'}>
                 <div className={'wrap trust-row'}>
-                    <a className={'trust-item'} href={'ayuda.html#envios'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-truck'} /></svg><div><strong>Envío asegurado</strong><span>Gratis en toda España</span></div></a>
-                    <a className={'trust-item'} href={'ayuda.html#devoluciones'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-return'} /></svg><div><strong>30 días</strong><span>Devolución sencilla</span></div></a>
-                    <a className={'trust-item'} href={'ayuda.html#garantia'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-shield'} /></svg><div><strong>Garantía 3 años</strong><span>En todos los relojes</span></div></a>
-                    <a className={'trust-item'} href={'ayuda.html#faq'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-cert'} /></svg><div><strong>Autenticidad</strong><span>Certificado en cada pieza</span></div></a>
-                    <a className={'trust-item'} href={'ayuda.html#faq'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-lock'} /></svg><div><strong>Pago seguro</strong><span>Conexión cifrada SSL</span></div></a>
+                    <a className={'trust-item'} href={'/ayuda#envios'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-truck'} /></svg><div><strong>Envío asegurado</strong><span>Gratis en toda España</span></div></a>
+                    <a className={'trust-item'} href={'/ayuda#devoluciones'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-return'} /></svg><div><strong>30 días</strong><span>Devolución sencilla</span></div></a>
+                    <a className={'trust-item'} href={'/ayuda#garantia'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-shield'} /></svg><div><strong>Garantía 3 años</strong><span>En todos los relojes</span></div></a>
+                    <a className={'trust-item'} href={'/ayuda#faq'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-cert'} /></svg><div><strong>Autenticidad</strong><span>Certificado en cada pieza</span></div></a>
+                    <a className={'trust-item'} href={'/ayuda#faq'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-lock'} /></svg><div><strong>Pago seguro</strong><span>Conexión cifrada SSL</span></div></a>
                 </div>
             </section>
 

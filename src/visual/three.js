@@ -7,7 +7,7 @@ export function cargarThree() {
     if (!promesaThree) {
         promesaThree = new Promise((resolve, reject) => {
             const script = document.createElement('script');
-            script.src = new URL('js/vendor/three.min.js', window.location.href).href;
+            script.src = new URL('/js/vendor/three.min.js', window.location.href).href;
             script.async = false;
             script.onload = () => resolve(window.THREE);
             script.onerror = () => { promesaThree = null; reject(new Error('No se pudo cargar el script js/vendor/three.min.js')); };

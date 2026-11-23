@@ -120,7 +120,7 @@ function productosDe(identificadorColeccion) {
 
 // CONSTRUYE LA RUTA DE LA FOTOGRAFÍA INDICADA PARA UN PRODUCTO.
 function fotoProducto(producto, numeroFotografia) {
-    return 'assets/relojes/' + producto.id + (numeroFotografia > 1 ? '-' + numeroFotografia : '') + '.jpg';
+    return '/assets/relojes/' + producto.id + (numeroFotografia > 1 ? '-' + numeroFotografia : '') + '.jpg';
 }
 
 // FORMATEA UN PRECIO CON SEPARADOR DE MILES Y SÍMBOLO DE EURO.

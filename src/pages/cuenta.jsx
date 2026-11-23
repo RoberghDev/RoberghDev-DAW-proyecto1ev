@@ -123,7 +123,7 @@ export default function Cuenta() {
 <main>
     <section className="page-hero">
         <div className="wrap">
-            <nav className="crumbs" aria-label="Estás aquí"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Mi cuenta</span></nav>
+            <nav className="crumbs" aria-label="Estás aquí"><a href="/">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Mi cuenta</span></nav>
             <p className="eyebrow">Tu espacio</p>
             <h1 className="page-title">Mi cuenta</h1>
             <p className="page-sub">Entra para ver tus favoritos y tu carrito, o crea una cuenta en un minuto.</p>
@@ -146,7 +146,7 @@ export default function Cuenta() {
                         <div className="field"><label htmlFor="entrarPass">Contraseña</label><input className="input" id="entrarPass" type="password" autoComplete="current-password" placeholder="Mínimo 6 caracteres" /></div>
                         <button className="btn btn-copper" type="submit" disabled={entrando}>Entrar</button>
                         <p className="form-msg" role="status">{mensajeEntrar}</p>
-                        <a className="link-arrow" href="ayuda.html#contacto">¿Has olvidado tu contraseña?</a>
+                        <a className="link-arrow" href="/ayuda#contacto">¿Has olvidado tu contraseña?</a>
                     </form>
                     <form className={`acc-form${pestana === 'formRegistro' ? ' is-active' : ''}`} id="formRegistro" noValidate onSubmit={enviarRegistro}>
                         <h2>Crear cuenta</h2>
@@ -155,7 +155,7 @@ export default function Cuenta() {
                         <div className="field"><label htmlFor="regEmail">Correo electrónico</label><input className="input" id="regEmail" type="email" autoComplete="email" placeholder="nombre@dominio.com" /></div>
                         <div className="field"><label htmlFor="regTelefono">Número de teléfono</label><input className="input" id="regTelefono" type="tel" autoComplete="tel" placeholder="Tu número de teléfono" /></div>
                         <div className="field"><label htmlFor="regPass">Contraseña</label><input className="input" id="regPass" type="password" autoComplete="new-password" placeholder="Mínimo 6 caracteres" /></div>
-                        <label className="check" htmlFor="regAcepto"><input type="checkbox" id="regAcepto" /> <span>Acepto la <a href="legal.html#privacidad">política de privacidad</a>.</span></label>
+                        <label className="check" htmlFor="regAcepto"><input type="checkbox" id="regAcepto" /> <span>Acepto la <a href="/legal#privacidad">política de privacidad</a>.</span></label>
                         <button className="btn btn-outline" type="submit" disabled={registrando}>Crear cuenta</button>
                         <p className="form-msg" role="status">{mensajeRegistro}</p>
                     </form>
@@ -164,8 +164,8 @@ export default function Cuenta() {
             </div>
             <div className="acc-panel" id="accountPanel" hidden={!panel.conSesion}>
                 <div className="acc-card"><p className="eyebrow">Mi cuenta</p><h2>Hola, <span id="accName">{panel.nombre}</span></h2><p id="accEmail">{panel.email}</p><button className="btn btn-ghost" type="button" id="logout" onClick={salir}>Cerrar sesión</button></div>
-                <div className="acc-card"><svg className="icon" aria-hidden="true"><use href="#i-heart" /></svg><h3>Favoritos</h3><p id="accFavs">{panel.favoritos}</p><a className="link-arrow" href="favoritos.html">Ver favoritos <svg className="icon" aria-hidden="true"><use href="#i-right" /></svg></a></div>
-                <div className="acc-card"><svg className="icon" aria-hidden="true"><use href="#i-bag" /></svg><h3>Carrito</h3><p id="accCart">{panel.carrito}</p><a className="link-arrow" href="carrito.html">Ir al carrito <svg className="icon" aria-hidden="true"><use href="#i-right" /></svg></a></div>
+                <div className="acc-card"><svg className="icon" aria-hidden="true"><use href="#i-heart" /></svg><h3>Favoritos</h3><p id="accFavs">{panel.favoritos}</p><a className="link-arrow" href="/favoritos">Ver favoritos <svg className="icon" aria-hidden="true"><use href="#i-right" /></svg></a></div>
+                <div className="acc-card"><svg className="icon" aria-hidden="true"><use href="#i-bag" /></svg><h3>Carrito</h3><p id="accCart">{panel.carrito}</p><a className="link-arrow" href="/carrito">Ir al carrito <svg className="icon" aria-hidden="true"><use href="#i-right" /></svg></a></div>
             </div>
         </div>
     </section>

@@ -8,7 +8,7 @@ export default function Legal() {
 
     <section className={'page-hero'}>
         <div className={'wrap'}>
-            <nav className={'crumbs'} aria-label={'Estás aquí'}><a href={'index.html'}>Inicio</a><span aria-hidden={'true'}>/</span><span aria-current={'page'}>Legal</span></nav>
+            <nav className={'crumbs'} aria-label={'Estás aquí'}><a href={'/'}>Inicio</a><span aria-hidden={'true'}>/</span><span aria-current={'page'}>Legal</span></nav>
             <p className={'eyebrow'}>Información legal</p>
             <h1 className={'page-title'}>Legal</h1>
             <p className={'page-sub'}>Aviso legal, política de privacidad y política de cookies.</p>
@@ -24,7 +24,7 @@ export default function Legal() {
                 <p className={'note'}>Texto orientativo. Sustituye los datos entre corchetes por los de tu empresa y revísalo con un profesional antes de publicar la web.</p>
                 <p>En cumplimiento de la Ley 34/2002 de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), te informamos de que este sitio web pertenece a <strong>[Razón social]</strong>, con NIF <strong>[NIF]</strong> y domicilio en <strong>[Dirección completa]</strong>. Correo de contacto: <strong>[correo de la tienda]</strong>.</p>
                 <h3>Compras</h3>
-                <p>Los precios incluyen el IVA vigente. El contrato de compraventa se perfecciona cuando recibes la confirmación del pedido por correo electrónico. Tienes derecho a desistir de la compra según lo explicado en <a href={'ayuda.html#devoluciones'}>Devoluciones</a>.</p>
+                <p>Los precios incluyen el IVA vigente. El contrato de compraventa se perfecciona cuando recibes la confirmación del pedido por correo electrónico. Tienes derecho a desistir de la compra según lo explicado en <a href={'/ayuda#devoluciones'}>Devoluciones</a>.</p>
                 <h3>Propiedad intelectual</h3>
                 <p>La marca OKIDOKEI, su logotipo, los textos y los diseños de esta web pertenecen a [Razón social]. No se pueden reproducir sin autorización.</p>
             </section>

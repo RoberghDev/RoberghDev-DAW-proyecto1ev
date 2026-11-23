@@ -9,7 +9,7 @@ export default function Ayuda() {
 
     <section className={'page-hero'}>
         <div className={'wrap'}>
-            <nav className={'crumbs'} aria-label={'Estás aquí'}><a href={'index.html'}>Inicio</a><span aria-hidden={'true'}>/</span><span aria-current={'page'}>Ayuda</span></nav>
+            <nav className={'crumbs'} aria-label={'Estás aquí'}><a href={'/'}>Inicio</a><span aria-hidden={'true'}>/</span><span aria-current={'page'}>Ayuda</span></nav>
             <p className={'eyebrow'}>Atención al cliente</p>
             <h1 className={'page-title'}>Ayuda</h1>
             <p className={'page-sub'}>Contacto, envíos, devoluciones, garantía y preguntas frecuentes.</p>
@@ -64,7 +64,7 @@ export default function Ayuda() {
                     <p>Todos nuestros relojes nuevos tienen <strong>3 años de garantía</strong>, la garantía legal en España, frente a cualquier defecto de fabricación.</p>
                     <h3>No cubre</h3>
                     <ul><li>El desgaste normal de correas, cristales y acabados.</li><li>Golpes, caídas o entrada de agua por llevar la corona sin enroscar.</li><li>Relojes abiertos o reparados fuera de nuestro taller.</li></ul>
-                    <p>Para que dure décadas, te recomendamos una revisión del movimiento cada 4 o 5 años. Puedes pedirla en nuestro <a href={'nosotros.html#mantenimiento'}>servicio de mantenimiento</a>.</p>
+                    <p>Para que dure décadas, te recomendamos una revisión del movimiento cada 4 o 5 años. Puedes pedirla en nuestro <a href={'/nosotros#mantenimiento'}>servicio de mantenimiento</a>.</p>
                 </div>
             </div>
         </section>
@@ -75,10 +75,10 @@ export default function Ayuda() {
                 <details className={'acc'} id={'autenticos'}><summary>¿Los relojes son originales?</summary><div className={'acc-body'}><p>Sí. Cada reloj sale de nuestro taller con su certificado de autenticidad, número de serie y la documentación del fabricante.</p></div></details>
                 <details className={'acc'} id={'automatico'}><summary>¿Qué significa que un reloj es automático?</summary><div className={'acc-body'}><p>Que se carga solo con el movimiento de tu muñeca gracias a un rotor. Si lo dejas quieto, sigue funcionando el tiempo que indica su reserva de marcha (entre 40 y 72 horas en nuestros modelos); después basta con darle cuerda o volver a ponértelo.</p></div></details>
                 <details className={'acc'} id={'plazos'}><summary>¿Cuánto tarda en llegar mi pedido?</summary><div className={'acc-body'}><p>Normalmente entre 24 y 72 horas laborables en la península. Los pedidos con grabado o ajuste de brazalete necesitan unos días más.</p></div></details>
-                <details className={'acc'} id={'grabado'}><summary>¿Puedo grabar mi reloj?</summary><div className={'acc-body'}><p>Sí, en el fondo de la caja. Te enviamos una prueba antes de grabar. Los relojes grabados no admiten devolución. Más información en <a href={'nosotros.html#grabado'}>servicios de relojería</a>.</p></div></details>
+                <details className={'acc'} id={'grabado'}><summary>¿Puedo grabar mi reloj?</summary><div className={'acc-body'}><p>Sí, en el fondo de la caja. Te enviamos una prueba antes de grabar. Los relojes grabados no admiten devolución. Más información en <a href={'/nosotros#grabado'}>servicios de relojería</a>.</p></div></details>
                 <details className={'acc'} id={'tarjeta-regalo'}><summary>¿Tenéis tarjeta regalo?</summary><div className={'acc-body'}><p>Sí. Escríbenos desde el <a href={'#contacto'}>formulario de contacto</a> con el importe y te la preparamos en formato digital o en una tarjeta física dentro de nuestro estuche.</p></div></details>
                 <details className={'acc'} id={'pago'}><summary>¿Qué formas de pago aceptáis?</summary><div className={'acc-body'}><p>Tarjeta, PayPal, Bizum y transferencia. El pago se hace siempre a través de una conexión cifrada.</p></div></details>
-                <details className={'acc'} id={'fase-lunar'}><summary>¿Cómo pongo en hora la fase lunar?</summary><div className={'acc-body'}><p>Lo explicamos paso a paso en el <a href={'journal.html#fases-lunares'}>Journal</a>.</p></div></details>
+                <details className={'acc'} id={'fase-lunar'}><summary>¿Cómo pongo en hora la fase lunar?</summary><div className={'acc-body'}><p>Lo explicamos paso a paso en el <a href={'/journal#fases-lunares'}>Journal</a>.</p></div></details>
             </div>
         </section>
     </div></div>

@@ -30,29 +30,25 @@ for (const [path, heading] of pages) {
   });
 }
 
-test('la vista React muestra sus componentes y conserva el modo al navegar', async ({ page }) => {
-  const runtimeErrors = [];
-  page.on('pageerror', (error) => runtimeErrors.push(error.message));
+// ANCLAS: CON REACT ROUTER LA PÁGINA BAJA A LA SECCIÓN, TANTO AL NAVEGAR DESDE UN ENLACE COMO AL
+// ABRIR LA URL DIRECTAMENTE (ANTES DE LA FASE 5 NO OCURRÍA: EL CONTENIDO SE PINTABA DESPUÉS DE CARGAR).
+test('los enlaces con ancla llevan a su sección', async ({ page }) => {
+  await page.goto('/');
+  await page.locator('footer a[href="/legal#privacidad"]').click();
+  await expect(page).toHaveURL(/\/legal#privacidad$/);
+  await expect(page.locator('#privacidad')).toBeInViewport();
 
-  await page.goto('/index.html?react=1');
-  await expect(page.locator('#siteHeader')).toBeVisible();
-  await expect(page.locator('#heroTitle')).toBeVisible();
-  await expect(page.locator('#legacy-page-content')).toHaveCount(0);
+  await page.goto('/nosotros#taller');
+  await expect(page.locator('#taller')).toBeInViewport();
 
-  await page.getByRole('navigation', { name: 'Principal' }).getByRole('link', { name: 'Tienda' }).click();
-  await expect(page).toHaveURL(/tienda\.html\?react=1$/);
-  await expect(page.locator('#legacy-page-content')).toHaveCount(0);
-  await expect(page.locator('main h1').first()).toHaveText('Tienda');
-  expect(runtimeErrors).toEqual([]);
-});
+  // URL ANTIGUA CON ANCLA: SE REDIRIGE Y TAMBIÉN BAJA A LA SECCIÓN.
+  await page.goto('/ayuda.html#garantia');
+  await expect(page).toHaveURL(/\/ayuda#garantia$/);
+  await expect(page.locator('#garantia')).toBeInViewport();
 
-// FALLO PREVIO (YA PRESENTE ANTES DE LA MIGRACIÓN): al abrir una URL con ancla, el navegador no
-// desplaza hasta la sección porque el contenido lo pinta React después de cargar el documento.
-// Se documenta su comportamiento actual para detectar cambios.
-test('los enlaces con ancla abren la página correcta (sin desplazamiento: fallo previo)', async ({ page }) => {
-  await page.goto('/index.html');
-  await page.locator('footer a[href="legal.html#privacidad"]').click();
-  await expect(page).toHaveURL(/legal\.html#privacidad$/);
-  await expect(page.locator('#privacidad')).toBeAttached();
-  await expect(page.locator('#privacidad')).not.toBeInViewport();
+  // ANCLA DENTRO DE LA MISMA PÁGINA.
+  await page.goto('/colecciones');
+  await page.locator('.subnav a[href="#luna"]').click();
+  await expect(page).toHaveURL(/\/colecciones#luna$/);
+  await expect(page.locator('#luna')).toBeInViewport();
 });

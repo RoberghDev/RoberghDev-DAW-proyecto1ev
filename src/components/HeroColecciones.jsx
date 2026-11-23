@@ -3,6 +3,7 @@ import { COLECCIONES, buscarProducto, precioTexto, resumenProducto } from '../da
 import { iniciarCarrusel3D } from '../visual/carrusel3d.js';
 import { crearRelojes3D } from '../visual/relojes3d.js';
 import { cargarThree } from '../visual/three.js';
+import { useNavegar } from '../navegacion.js';
 
 // HERO DE LA PORTADA CON EL CARRUSEL 3D DE COLECCIONES (antes public/js/hero.js).
 // Mismo HTML que la plantilla; la colección activa, las pestañas, los textos y el botón de giro
@@ -30,6 +31,9 @@ export default function HeroColecciones() {
   const pestanasRef = useRef([]);
   const giroRef = useRef(false);
   giroRef.current = giro;
+  const navegar = useNavegar();
+  const navegarRef = useRef(navegar);
+  navegarRef.current = navegar;
 
   // CAMBIA LA COLECCIÓN ACTIVA Y SINCRONIZA EL CONTENIDO Y EL CARRUSEL 3D.
   const elegir = useCallback((indiceColeccion, origen) => {
@@ -71,7 +75,8 @@ export default function HeroColecciones() {
         canvas: canvasRef.current,
         progreso: progresoRef.current,
         reducirMovimiento: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
-        elegir: (indiceColeccion, origen) => elegirRef.current(indiceColeccion, origen)
+        elegir: (indiceColeccion, origen) => elegirRef.current(indiceColeccion, origen),
+        irAProducto: (id) => navegarRef.current(`/producto/${id}`)
       });
       motorRef.current = motor;
       // SI SE ELIGIÓ OTRA COLECCIÓN O SE ACTIVÓ EL GIRO ANTES DE QUE CARGARA THREE.JS, SE APLICA AHORA.
@@ -110,14 +115,14 @@ export default function HeroColecciones() {
                 <h1 ref={tituloRef} className="hero-title" id="heroTitle" aria-label={coleccion.titulo.charAt(0) + coleccion.titulo.slice(1).toLowerCase()}>{coleccion.titulo.split('').map((caracter, i) => <span key={`${coleccion.id}-${i}`} aria-hidden="true" style={{ '--d': `${i * 45}ms` }}>{caracter}</span>)}</h1>
                 <p ref={subRef} className="hero-sub" id="heroSub" dangerouslySetInnerHTML={{ __html: coleccion.sub }}></p>
                 <span className="hero-dash" aria-hidden="true"></span>
-                <a className="btn btn-outline" id="heroExplore" href={`colecciones.html#${coleccion.id}`}>Explorar colección</a>
+                <a className="btn btn-outline" id="heroExplore" href={`/colecciones#${coleccion.id}`}>Explorar colección</a>
             </div>
         </div>
         <div className="hero-foot">
             <div className="counter"><strong id="heroCount">{dosCifras(indice + 1)}</strong><span className="progress" aria-hidden="true"><i ref={progresoRef} id="heroProgress"></i></span><span>06</span></div>
             <div className="drag-hint"><svg className="icon" aria-hidden="true"><use href="#i-drag" /></svg>Arrastra para girar</div>
             <div className="hero-actions">
-                <a className="hero-model" id="heroModel" href={`producto.html#${principal.id}`}><span className="spec" id="heroSpec">{resumenProducto(principal)}</span><span className="price" id="heroPrice">{precioTexto(principal.precio)}</span></a>
+                <a className="hero-model" id="heroModel" href={`/producto/${principal.id}`}><span className="spec" id="heroSpec">{resumenProducto(principal)}</span><span className="price" id="heroPrice">{precioTexto(principal.precio)}</span></a>
                 <button className="round-btn" id="spinBtn" type="button" aria-pressed={String(giro)} aria-label="Girar el reloj 360 grados" onClick={() => {
                   // ACTIVA O DESACTIVA EL GIRO CONTINUO DEL RELOJ SELECCIONADO.
                   const activo = !giro;

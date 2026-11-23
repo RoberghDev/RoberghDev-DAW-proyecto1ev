@@ -1,15 +1,8 @@
-import { resolve } from 'node:path';
-import { globSync } from 'node:fs';
 import { defineConfig } from 'vite';
 
-const pages = Object.fromEntries(
-  globSync('*.html').map((file) => [file.slice(0, -5), resolve(import.meta.dirname, file)])
-);
-
+// SPA CON UN ÚNICO index.html. Con appType 'spa' (valor por defecto), el servidor de desarrollo y
+// `vite preview` devuelven index.html para cualquier ruta que no sea un archivo, y React Router
+// decide qué página mostrar (incluidas las URLs antiguas *.html, que redirige a su ruta nueva).
 export default defineConfig({
-  build: {
-    rollupOptions: {
-      input: pages
-    }
-  }
+  appType: 'spa'
 });

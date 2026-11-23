@@ -9,7 +9,7 @@ export default function Nosotros() {
 
     <section className={'page-hero'}>
         <div className={'wrap'}>
-            <nav className={'crumbs'} aria-label={'Estás aquí'}><a href={'index.html'}>Inicio</a><span aria-hidden={'true'}>/</span><span aria-current={'page'}>Nosotros</span></nav>
+            <nav className={'crumbs'} aria-label={'Estás aquí'}><a href={'/'}>Inicio</a><span aria-hidden={'true'}>/</span><span aria-current={'page'}>Nosotros</span></nav>
             <p className={'eyebrow'}>Nuestra historia</p>
             <h1 className={'page-title'}>Nosotros</h1>
             <p className={'page-sub'}>Una relojería online hecha por gente que se para a mirar los relojes.</p>
@@ -19,13 +19,13 @@ export default function Nosotros() {
 
     <section className={'on-light section about-intro'} aria-labelledby={'histTitle'}>
         <div className={'wrap split'}>
-            <div className={'about-visual foto'}><img src={'assets/nosotros/taller.jpg'} alt={'Relojero revisando un movimiento en el taller'} loading={'lazy'} data-foto="" {...eventosFoto} /></div>
+            <div className={'about-visual foto'}><img src={'/assets/nosotros/taller.jpg'} alt={'Relojero revisando un movimiento en el taller'} loading={'lazy'} data-foto="" {...eventosFoto} /></div>
             <div className={'about-text'}>
                 <p className={'eyebrow'}>Quiénes somos</p>
                 <h2 id={'histTitle'}>Comprar un reloj online con la misma confianza que en una boutique.</h2>
                 <p>OKIDOKEI nació de una idea sencilla: que elegir un reloj por internet no fuera un salto al vacío. Por eso cada pieza que vendemos pasa antes por nuestras manos, viaja asegurada y llega con su certificado.</p>
                 <p>El nombre suena a «okey-dokey», a que todo va bien. Y en japonés, <em>okidokei</em> (置時計) es el reloj que se deja sobre la mesa y marca el ritmo de la casa. Las dos cosas nos gustan.</p>
-                <a className={'btn btn-dark'} href={'tienda.html'}>Ver los relojes</a>
+                <a className={'btn btn-dark'} href={'/tienda'}>Ver los relojes</a>
             </div>
         </div>
     </section>
@@ -56,12 +56,12 @@ export default function Nosotros() {
 
     <section className={'section-dark section'} id={'servicios'} aria-labelledby={'servTitle'}>
         <div className={'wrap'}>
-            <div className={'sec-head'}><div><p className={'eyebrow'}>Servicios de relojería</p><h2 className={'sec-title'} id={'servTitle'}>Para tu reloj, también después</h2></div><a className={'link-arrow'} href={'ayuda.html#contacto'}>Pedir presupuesto <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></div>
+            <div className={'sec-head'}><div><p className={'eyebrow'}>Servicios de relojería</p><h2 className={'sec-title'} id={'servTitle'}>Para tu reloj, también después</h2></div><a className={'link-arrow'} href={'/ayuda#contacto'}>Pedir presupuesto <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></div>
             <div className={'service-grid'}>
-            <article className={'service'} id={'grabado'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-pen'} /></svg><h3>Grabado personalizado</h3><p>Iniciales, una fecha o una frase corta en el fondo de la caja. Te enviamos una prueba antes de grabar. Los relojes grabados no admiten devolución.</p><a className={'link-arrow'} href={'ayuda.html#contacto'}>Solicitar <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></article>
-            <article className={'service'} id={'mantenimiento'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-wrench'} /></svg><h3>Revisión y mantenimiento</h3><p>Un movimiento mecánico agradece una revisión cada 4 o 5 años: limpieza, lubricación, ajuste de marcha y prueba de hermeticidad.</p><a className={'link-arrow'} href={'ayuda.html#contacto'}>Solicitar <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></article>
-            <article className={'service'} id={'brazalete'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-link'} /></svg><h3>Ajuste de brazalete</h3><p>Quitamos o añadimos eslabones para que el brazalete quede a tu medida. Dinos el contorno de tu muñeca al hacer el pedido.</p><a className={'link-arrow'} href={'ayuda.html#contacto'}>Solicitar <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></article>
-            <article className={'service'} id={'regalo'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-gift'} /></svg><h3>Envoltorio de regalo</h3><p>Estuche negro, lazo de cobre y una tarjeta con tu mensaje escrito a mano. El precio no aparece en ningún documento del paquete.</p><a className={'link-arrow'} href={'ayuda.html#contacto'}>Solicitar <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></article>
+            <article className={'service'} id={'grabado'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-pen'} /></svg><h3>Grabado personalizado</h3><p>Iniciales, una fecha o una frase corta en el fondo de la caja. Te enviamos una prueba antes de grabar. Los relojes grabados no admiten devolución.</p><a className={'link-arrow'} href={'/ayuda#contacto'}>Solicitar <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></article>
+            <article className={'service'} id={'mantenimiento'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-wrench'} /></svg><h3>Revisión y mantenimiento</h3><p>Un movimiento mecánico agradece una revisión cada 4 o 5 años: limpieza, lubricación, ajuste de marcha y prueba de hermeticidad.</p><a className={'link-arrow'} href={'/ayuda#contacto'}>Solicitar <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></article>
+            <article className={'service'} id={'brazalete'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-link'} /></svg><h3>Ajuste de brazalete</h3><p>Quitamos o añadimos eslabones para que el brazalete quede a tu medida. Dinos el contorno de tu muñeca al hacer el pedido.</p><a className={'link-arrow'} href={'/ayuda#contacto'}>Solicitar <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></article>
+            <article className={'service'} id={'regalo'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-gift'} /></svg><h3>Envoltorio de regalo</h3><p>Estuche negro, lazo de cobre y una tarjeta con tu mensaje escrito a mano. El precio no aparece en ningún documento del paquete.</p><a className={'link-arrow'} href={'/ayuda#contacto'}>Solicitar <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a></article>
             </div>
         </div>
     </section>
@@ -70,18 +70,18 @@ export default function Nosotros() {
         <div className={'wrap'}>
             <div className={'jobs'}>
                 <div><p className={'eyebrow'}>Trabaja con nosotros</p><h2 id={'empTitle'}>¿Te apasionan los relojes?</h2><p>Buscamos de vez en cuando relojeros, fotógrafos de producto y personas de atención al cliente. Cuéntanos quién eres y qué te gustaría hacer.</p></div>
-                <a className={'btn btn-outline'} href={'ayuda.html#contacto'}>Escríbenos</a>
+                <a className={'btn btn-outline'} href={'/ayuda#contacto'}>Escríbenos</a>
             </div>
         </div>
     </section>
 
     <section className={'trust'} aria-label={'Ventajas de comprar en OKIDOKEI'}>
         <div className={'wrap trust-row'}>
-            <a className={'trust-item'} href={'ayuda.html#envios'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-truck'} /></svg><div><strong>Envío asegurado</strong><span>Gratis en toda España</span></div></a>
-            <a className={'trust-item'} href={'ayuda.html#devoluciones'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-return'} /></svg><div><strong>30 días</strong><span>Devolución sencilla</span></div></a>
-            <a className={'trust-item'} href={'ayuda.html#garantia'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-shield'} /></svg><div><strong>Garantía 3 años</strong><span>En todos los relojes</span></div></a>
-            <a className={'trust-item'} href={'ayuda.html#faq'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-cert'} /></svg><div><strong>Autenticidad</strong><span>Certificado en cada pieza</span></div></a>
-            <a className={'trust-item'} href={'ayuda.html#faq'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-lock'} /></svg><div><strong>Pago seguro</strong><span>Conexión cifrada SSL</span></div></a>
+            <a className={'trust-item'} href={'/ayuda#envios'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-truck'} /></svg><div><strong>Envío asegurado</strong><span>Gratis en toda España</span></div></a>
+            <a className={'trust-item'} href={'/ayuda#devoluciones'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-return'} /></svg><div><strong>30 días</strong><span>Devolución sencilla</span></div></a>
+            <a className={'trust-item'} href={'/ayuda#garantia'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-shield'} /></svg><div><strong>Garantía 3 años</strong><span>En todos los relojes</span></div></a>
+            <a className={'trust-item'} href={'/ayuda#faq'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-cert'} /></svg><div><strong>Autenticidad</strong><span>Certificado en cada pieza</span></div></a>
+            <a className={'trust-item'} href={'/ayuda#faq'}><svg className={'icon'} aria-hidden={'true'}><use href={'#i-lock'} /></svg><div><strong>Pago seguro</strong><span>Conexión cifrada SSL</span></div></a>
         </div>
     </section>
 
