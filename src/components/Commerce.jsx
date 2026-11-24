@@ -1,7 +1,8 @@
 import React from 'react';
-import { PRODUCTOS, TEXTOS_CAJA, buscarColeccion, fotoProducto, precioTexto, resumenProducto } from '../data.js';
+import { TEXTOS_CAJA, buscarColeccion, fotoProducto, precioTexto, resumenProducto } from '../data.js';
 import { useStore } from '../store.jsx';
 import { eventosFoto } from './foto.js';
+import { productosCatalogo } from '../catalogo.js';
 
 function Icon({ name }) { return <svg className="icon" aria-hidden="true"><use href={`#i-${name}`} /></svg>; }
 // ACCIONES DE UNA TARJETA (MISMO COMPORTAMIENTO QUE LA DELEGACIÓN DE CLICS DE comun.js).
@@ -29,7 +30,7 @@ export function useAccionesProducto(product) {
 export function ProductCard({ product, order, hidden = false, destacada = false }) {
   const collection = buscarColeccion(product.coleccion);
   const { fav, favLabel, toggleFav, add } = useAccionesProducto(product);
-  const filtro = destacada ? {} : { 'data-coleccion': product.coleccion, 'data-caja': product.caja, 'data-correa': product.correa, 'data-precio': product.precio, 'data-nombre': product.nombre, 'data-orden': order ?? PRODUCTOS.indexOf(product), 'data-nuevo': product.nuevo ? 'si' : 'no' };
+  const filtro = destacada ? {} : { 'data-coleccion': product.coleccion, 'data-caja': product.caja, 'data-correa': product.correa, 'data-precio': product.precio, 'data-nombre': product.nombre, 'data-orden': order ?? productosCatalogo().indexOf(product), 'data-nuevo': product.nuevo ? 'si' : 'no' };
   return (
     <article className="card" data-id={product.id} {...filtro} hidden={hidden}>
       <div className="card-media">

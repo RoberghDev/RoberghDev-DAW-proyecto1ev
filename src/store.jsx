@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import { buscarProducto } from './data.js';
+import { buscarProducto, cargarCatalogo, estadoCatalogo } from './catalogo.js';
 import { carrito, favoritos, leer } from './store/storage.js';
 import { aviso, suscribirUI } from './store/ui.js';
 
@@ -23,10 +23,15 @@ export function StoreProvider({ children }) {
   useEffect(() => {
     document.addEventListener('oki:carrito', refresh);
     document.addEventListener('oki:favoritos', refresh);
+    document.addEventListener('oki:catalogo', refresh);
     window.addEventListener('storage', refresh);
+    // DESCARGA LOS PRODUCTOS DE LA API UNA SOLA VEZ PARA TODA LA WEB. El then() vuelve a pintar
+    // aunque la descarga terminase antes de registrar el listener (el proveedor se remonta al navegar).
+    cargarCatalogo().then(refresh);
     return () => {
       document.removeEventListener('oki:carrito', refresh);
       document.removeEventListener('oki:favoritos', refresh);
+      document.removeEventListener('oki:catalogo', refresh);
       window.removeEventListener('storage', refresh);
     };
   }, [refresh]);
@@ -45,7 +50,9 @@ export function StoreProvider({ children }) {
     favorites: favoritos.lista(),
     user: leer('usuario', null),
     cartCount: carrito.cantidad(),
-    total: carrito.total()
+    total: carrito.total(),
+    // CATÁLOGO DE LA API: { productos, estado: 'cargando' | 'listo' | 'error', error }.
+    catalogo: estadoCatalogo()
   }), [revision]);
   const api = useMemo(() => ({
     ...datos,

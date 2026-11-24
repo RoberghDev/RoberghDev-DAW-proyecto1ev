@@ -1,5 +1,5 @@
 import React from 'react';
-import { buscarProducto } from '../data.js';
+import { buscarProducto } from '../catalogo.js';
 import { TarjetaSimple } from '../components/Commerce.jsx';
 import { useStore } from '../store.jsx';
 
@@ -9,7 +9,7 @@ export const description = 'Tus relojes favoritos de OKIDOKEI.';
 
 export default function Favoritos() {
     const store = useStore();
-    const productos = store.favorites.map(buscarProducto);
+    const productos = store.favorites.map(buscarProducto).filter(Boolean);
 
     // AÑADE TODOS LOS FAVORITOS AL CARRITO Y ABRE EL MINICARRITO.
     function anadirTodos() {

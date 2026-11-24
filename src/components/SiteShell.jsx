@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { COLECCIONES, PRODUCTOS, TEXTOS_CAJA, TEXTOS_CORREA, buscarColeccion, buscarProducto, fotoProducto, precioTexto, resumenProducto } from '../data.js';
+import { COLECCIONES, TEXTOS_CAJA, TEXTOS_CORREA, buscarColeccion, fotoProducto, precioTexto, resumenProducto } from '../data.js';
+import { buscarProducto, productosCatalogo } from '../catalogo.js';
 import { useStore } from '../store.jsx';
 import IconSprite from './IconSprite.jsx';
 import { eventosFoto } from './foto.js';
@@ -13,10 +14,10 @@ function Icon({ name }) { return <svg className="icon" aria-hidden="true"><use h
 // NORMALIZA TEXTO PARA COMPARAR BÚSQUEDAS SIN DIFERENCIAR ACENTOS NI MAYÚSCULAS.
 function normalizarTexto(texto) { return texto.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
 
-// FILTRA LOS PRODUCTOS QUE COINCIDEN CON EL TEXTO BUSCADO.
+// FILTRA LOS PRODUCTOS DE LA API QUE COINCIDEN CON EL TEXTO BUSCADO.
 function buscarRelojes(texto) {
   const consulta = normalizarTexto(texto.trim());
-  return PRODUCTOS.filter((producto) => {
+  return productosCatalogo().filter((producto) => {
     const coleccion = buscarColeccion(producto.coleccion);
     return !consulta || normalizarTexto([producto.nombre, coleccion.nombre, coleccion.categoria, TEXTOS_CAJA[producto.caja], TEXTOS_CORREA[producto.correa], producto.movimiento].join(' ')).indexOf(consulta) > -1;
   });
@@ -50,7 +51,9 @@ export function Header({ page }) {
   useEffect(() => { if (searchOpen) searchInputRef.current.focus(); }, [searchOpen]);
   useEffect(() => { if (menuOpen) firstMenuLinkRef.current.focus(); }, [menuOpen]);
 
-  const results = useMemo(() => buscarRelojes(query), [query]);
+  // SE RECALCULA TAMBIÉN CUANDO LLEGA EL CATÁLOGO DE LA API.
+  const catalogo = store.catalogo.productos;
+  const results = useMemo(() => buscarRelojes(query), [query, catalogo]);
   // LA FICHA DE PRODUCTO SE MARCA COMO PARTE DE LA TIENDA.
   const activa = page === 'producto' ? 'tienda' : page;
   const current = (name) => activa === name ? { 'aria-current': 'page' } : {};
@@ -154,6 +157,7 @@ export function Footer() {
 // LÍNEA DEL MINICARRITO (MISMO HTML QUE GENERABA comun.js).
 function DrawerLine({ line }) {
   const store = useStore(); const product = buscarProducto(line.id);
+  if (!product) return null; // EL CATÁLOGO DE LA API TODAVÍA NO HA LLEGADO.
   return <div className="cart-item" data-id={line.id}>
     <a href={`/producto/${product.id}`} className="cart-thumb foto"><img src={fotoProducto(product)} alt="" data-foto="" {...eventosFoto} /></a>
     <div><h3><a href={`/producto/${product.id}`}>{product.nombre}</a></h3><p className="unit">{precioTexto(product.precio)}</p>

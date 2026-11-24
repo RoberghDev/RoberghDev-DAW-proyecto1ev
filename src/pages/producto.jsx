@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router';
-import { PRODUCTOS, TEXTOS_CAJA, buscarColeccion, buscarProducto, fotoProducto, precioTexto, productosDe } from '../data.js';
+import { PRODUCTOS, TEXTOS_CAJA, buscarColeccion, fotoProducto, precioTexto, productosDe as productosLocalesDe } from '../data.js';
 import { TarjetaSimple, useAccionesProducto } from '../components/Commerce.jsx';
 import { eventosFoto } from '../components/foto.js';
 import { useStore } from '../store.jsx';
 import { buscarProductosPorID } from '../../services/api.js';
-import { normalizarProductos } from './tienda.jsx';
+import { buscarProducto, normalizarProducto, productosCatalogo, productosDe, registrarProducto } from '../catalogo.js';
 
 // Migrada desde la plantilla heredada producto.html y public/js/producto.js (fase 3).
 export const title = 'OKIDOKEI · Reloj';
@@ -34,29 +34,20 @@ function FilaEspecificacion({ nombre, valor }) {
     return <tr><th scope="row">{nombre}</th><td>{valor}</td></tr>;
 }
 
-// CONVIERTE EL PRODUCTO QUE DEVUELVE LA API (GET /api/productos/:id) A LA FORMA QUE USA LA FICHA.
-// LA API SÍ TRAE coleccion ('Heritage') Y tamañoEsfera ('40mm'): SE APROVECHAN SI SON VÁLIDOS.
-function productoDesdeApi(datos) {
-    const producto = normalizarProductos([datos])[0];
-    const coleccion = String(datos.coleccion || '').toLowerCase();
-    if (buscarColeccion(coleccion)) producto.coleccion = coleccion;
-    const milimetros = parseInt(datos['tamañoEsfera'], 10);
-    if (milimetros) producto.mm = milimetros;
-    return producto;
-}
-
 // CARGA EL PRODUCTO DE LA RUTA (/producto/:id) Y, CUANDO LO TIENE, PINTA LA FICHA.
-// - Sin id: el primer reloj del catálogo local (como antes).
-// - Id de data.js (enlaces de portada, colecciones…): el producto local (como antes).
-// - Cualquier otro id (los _id de MongoDB que enlaza la tienda): se pide a la API.
+// - Sin id: el primer reloj del catálogo de la API (si la API falla, el primero de data.js).
+// - Id que ya está en el catálogo (API) o en data.js (enlaces editoriales): se pinta directamente.
+// - Cualquier otro id (catálogo aún cargando, producto nuevo…): se pide a GET /api/productos/:id.
 export default function Producto() {
     const { id } = useParams();
-    const local = !id ? PRODUCTOS[0] : buscarProducto(id);
+    const { catalogo } = useStore();
+    const sinId = !id && (catalogo.productos[0] || (catalogo.estado === 'error' ? PRODUCTOS[0] : null));
+    const conocido = id ? buscarProducto(id) : sinId;
     const [remoto, setRemoto] = useState(null);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        if (local) return;
+        if (!id || buscarProducto(id)) return;
         let activo = true;
         setRemoto(null);
         setError(null);
@@ -64,7 +55,11 @@ export default function Producto() {
         async function cargarProducto() {
             try {
                 const datos = await buscarProductosPorID(id);
-                if (activo) setRemoto(productoDesdeApi(datos));
+                if (!activo) return;
+                const producto = normalizarProducto(datos);
+                setRemoto(producto);
+                // SE AÑADE AL CATÁLOGO PARA QUE EL CARRITO Y LOS FAVORITOS LO RECONOZCAN.
+                registrarProducto(producto);
             } catch (errorCarga) {
                 if (activo) setError(errorCarga.message);
             }
@@ -74,10 +69,23 @@ export default function Producto() {
         return () => { activo = false; };
     }, [id]);
 
-    if (local) return <FichaProducto producto={local} />;
+    const producto = conocido || (remoto && remoto.id === id ? remoto : null);
+    if (producto) return <FichaProducto producto={producto} />;
     if (error) return <main><section className="wrap section"><h1>No se pudo cargar el reloj</h1><p>{error}</p><a className="link-arrow" href="/tienda">Volver a la tienda</a></section></main>;
-    if (!remoto) return <main><section className="wrap section"><p>Cargando reloj…</p></section></main>;
-    return <FichaProducto producto={remoto} />;
+    return <main><section className="wrap section"><p>Cargando reloj…</p></section></main>;
+}
+
+// RELACIONADOS: OTROS RELOJES DE SU COLECCIÓN Y, DESPUÉS, UNO DE CADA COLECCIÓN DISTINTA (MÁXIMO 4).
+function relacionadosDe(producto) {
+    const catalogo = productosCatalogo();
+    const mismaColeccion = catalogo.filter((otro) => otro.id !== producto.id && otro.coleccion === producto.coleccion);
+    const vistas = new Set([producto.coleccion]);
+    const otrasColecciones = catalogo.filter((otro) => {
+        if (vistas.has(otro.coleccion)) return false;
+        vistas.add(otro.coleccion);
+        return true;
+    });
+    return mismaColeccion.concat(otrasColecciones).slice(0, 4);
 }
 
 function FichaProducto({ producto }) {
@@ -108,9 +116,11 @@ function FichaProducto({ producto }) {
         store.setCartOpen(true);
     }
 
-    const relacionados = PRODUCTOS.filter((otro) => otro.id !== producto.id && otro.coleccion === producto.coleccion)
-        .concat(PRODUCTOS.filter((otro) => otro.coleccion !== producto.coleccion && buscarColeccion(otro.coleccion).principal === otro.id))
-        .slice(0, 4);
+    const relacionados = relacionadosDe(producto);
+    // VERSIONES: LOS RELOJES DE SU MISMA COLECCIÓN Y DE SU MISMO ORIGEN (API O, SI ES UN RELOJ
+    // EDITORIAL DE data.js, LOS DE data.js), PARA QUE ÉL MISMO SIEMPRE APAREZCA MARCADO.
+    const esDeLaApi = productosCatalogo().includes(producto);
+    const variantes = esDeLaApi ? productosDe(coleccion.id) : productosLocalesDe(coleccion.id);
 
     return (
 <main>
@@ -124,7 +134,7 @@ function FichaProducto({ producto }) {
             <p className="pdp-ref" id="pRef">{`Ref. ${producto.ref}${producto.limitado ? ' · Edición limitada a 100 piezas' : ''}`}</p>
             <p className="pdp-price"><span id="pPrecio">{precioTexto(producto.precio)}</span><small>IVA incluido · Envío asegurado gratis</small></p>
             <p className="pdp-desc" id="pDesc">{producto.descripcion || coleccion.descripcion}</p>
-            <div className="field"><span className="lbl">Elige tu versión</span><div className="variants" id="pVariantes">{productosDe(coleccion.id).map((variante) => <a key={variante.id} className="variant" href={`/producto/${variante.id}`} aria-current={variante.id === producto.id ? 'true' : undefined}><span className={`variant-swatch sw-${variante.caja}`}></span><span><strong>{TEXTOS_CAJA[variante.caja]}</strong>{variante.correaTexto}</span><em>{precioTexto(variante.precio)}</em></a>)}</div></div>
+            <div className="field"><span className="lbl">Elige tu versión</span><div className="variants" id="pVariantes">{variantes.map((variante) => <a key={variante.id} className="variant" href={`/producto/${variante.id}`} aria-current={variante.id === producto.id ? 'true' : undefined}><span className={`variant-swatch sw-${variante.caja}`}></span><span><strong>{TEXTOS_CAJA[variante.caja]}</strong>{variante.correaTexto}</span><em>{precioTexto(variante.precio)}</em></a>)}</div></div>
             <div className="pdp-buy">
                 <div className="qty"><button type="button" data-step="-1" aria-label="Una unidad menos" onClick={() => pasoCantidad(-1)}><svg className="icon" aria-hidden="true"><use href="#i-minus" /></svg></button><label className="sr-only" htmlFor="pQty">Cantidad</label><input ref={cantidadRef} id="pQty" type="number" min="1" max="9" defaultValue="1" inputMode="numeric" /><button type="button" data-step="1" aria-label="Una unidad más" onClick={() => pasoCantidad(1)}><svg className="icon" aria-hidden="true"><use href="#i-plus" /></svg></button></div>
                 <button className="btn btn-copper" id="pAdd" type="button" onClick={anadirAlCarrito}><svg className="icon" aria-hidden="true"><use href="#i-bag" /></svg>Añadir al carrito</button>

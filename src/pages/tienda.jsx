@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { COLECCIONES, buscarColeccion } from '../data.js';
 import { useLocation, useNavigate } from 'react-router';
 import { ProductCard } from '../components/Commerce.jsx';
-import { verTodosLosProductos } from '../../services/api.js';
+import { useStore } from '../store.jsx';
 
 // Migrada desde la plantilla heredada tienda.html y public/js/tienda.js (fase 3).
 export const title = 'OKIDOKEI · Tienda';
@@ -39,73 +39,13 @@ function ordenar(orden, productos) {
     });
 }
 
-// ADAPTA LOS DATOS DE LA API A LA ESTRUCTURA QUE USA LAS TARJETAS EXISTENTES.
-export function normalizarProductos(datos) {
-    const productos = Array.isArray(datos) ? datos : datos?.productos || datos?.data || [];
-
-    return productos.map((item, indice) => {
-        const materiales = item.materiales || '';
-        const texto = `${item.nombreProducto || item.nombre || ''} ${item.descripcion || ''} ${materiales}`.toLowerCase();
-
-        const caja = texto.includes('negro') ? 'negro' : texto.includes('cobre') ? 'cobre' : 'acero';
-        const correa = texto.includes('cuero') || texto.includes('piel') ? 'piel'
-            : texto.includes('caucho') || texto.includes('silicona') || texto.includes('resina') ? 'caucho'
-            : 'acero';
-        const coleccion = texto.includes('buceo') || texto.includes('diver') || texto.includes('buc')
-            ? 'marine'
-            : texto.includes('negro') ? 'noir'
-            : texto.includes('luna') ? 'luna'
-            : 'heritage';
-
-        return {
-            id: item._id || item.id || `producto-${indice}`,
-            nombre: item.nombreProducto || item.nombre || 'Reloj',
-            precio: Number(item.precio) || 0,
-            descripcion: item.descripcion || '',
-            cantidad: item.cantidad,
-            nuevo: Boolean(item.nuevo),
-            limitado: Boolean(item.limitado),
-            coleccion,
-            caja,
-            correa,
-            correaTexto: correa === 'piel' ? 'Correa de piel'
-                : correa === 'caucho' ? 'Correa de caucho'
-                    : 'Brazalete de acero',
-            mm: item.mm || 42,
-            movimiento: item.tipoMovimiento || item.movimiento || 'Movimiento automático',
-            reserva: item.reserva || '',
-            agua: item.agua || '',
-            cristal: item.cristal || '',
-            ref: item.ref || item._id || item.id || `OK-${indice + 1}`,
-            modelo: item.modelo || {}
-        };
-    });
-}
-
 export default function Tienda() {
     const [filtros, setFiltros] = useState(() => filtrosDesdeDireccion(FILTROS_INICIALES));
-    const [productos, setProductos] = useState([]);
-    const [cargando, setCargando] = useState(true);
-    const [error, setError] = useState(null);
+    // PRODUCTOS DE LA API: LOS CARGA UNA VEZ EL StoreProvider (src/catalogo.js) Y LOS COMPARTE.
+    const { productos, estado, error: errorCatalogo } = useStore().catalogo;
+    const cargando = estado === 'pendiente' || estado === 'cargando';
+    const error = estado === 'error' ? errorCatalogo : null;
     const novedadesRef = useRef(null);
-
-    useEffect(() => {
-        let activo = true;
-
-        async function cargarProductos() {
-            try {
-                const datos = await verTodosLosProductos();
-                if (activo) setProductos(normalizarProductos(datos));
-            } catch (errorCarga) {
-                if (activo) setError(errorCarga.message);
-            } finally {
-                if (activo) setCargando(false);
-            }
-        }
-
-        cargarProductos();
-        return () => { activo = false; };
-    }, []);
 
     // LA CASILLA SE SINCRONIZA POR PROPIEDAD (COMO tienda.js), SIN ESCRIBIR EL ATRIBUTO checked.
     useEffect(() => { if (novedadesRef.current) novedadesRef.current.checked = filtros.novedades; }, [filtros.novedades]);

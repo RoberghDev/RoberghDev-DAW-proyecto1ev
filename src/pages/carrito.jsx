@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { buscarColeccion, buscarProducto, fotoProducto, precioTexto, resumenProducto } from '../data.js';
+import { buscarColeccion, fotoProducto, precioTexto, resumenProducto } from '../data.js';
+import { buscarProducto } from '../catalogo.js';
 import { eventosFoto } from '../components/foto.js';
 import { useStore } from '../store.jsx';
 
@@ -11,6 +12,7 @@ export const description = 'Tu carrito de OKIDOKEI.';
 function FilaCarrito({ linea }) {
     const store = useStore();
     const producto = buscarProducto(linea.id);
+    if (!producto) return null; // EL CATÁLOGO DE LA API TODAVÍA NO HA LLEGADO.
     const coleccion = buscarColeccion(producto.coleccion);
     return <li className="row-item" data-id={producto.id}>
         <a className="row-thumb foto" href={`/producto/${producto.id}`}><img src={fotoProducto(producto)} alt={producto.nombre} data-foto="" {...eventosFoto} /></a>

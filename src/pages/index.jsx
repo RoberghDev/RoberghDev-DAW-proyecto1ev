@@ -1,5 +1,6 @@
 import React from 'react';
-import { buscarProducto } from '../data.js';
+import { productosCatalogo } from '../catalogo.js';
+import { useStore } from '../store.jsx';
 import { ProductCard } from '../components/Commerce.jsx';
 import { NewsletterForm } from '../components/Forms.jsx';
 import { eventosFoto } from '../components/foto.js';
@@ -8,11 +9,18 @@ import Engranajes from '../components/Engranajes.jsx';
 
 // Migrada desde la plantilla heredada index.html (fase 3). El carrusel 3D y los engranajes son
 // componentes React desde la fase 4 (antes hero.js, relojes3d.js y engranajes.js).
-const DESTACADOS = ['esqueleto-cobre', 'marine-acero', 'noir-caucho', 'heritage-cobre'];
+// PIEZAS DESTACADAS: UN RELOJ DE LA API POR COLECCIÓN (LOS PRIMEROS 4); SI HAY MENOS COLECCIONES, SE COMPLETA.
+function destacados() {
+  const catalogo = productosCatalogo();
+  const vistas = new Set();
+  const unoPorColeccion = catalogo.filter((producto) => !vistas.has(producto.coleccion) && vistas.add(producto.coleccion));
+  return unoPorColeccion.concat(catalogo.filter((producto) => !unoPorColeccion.includes(producto))).slice(0, 4);
+}
 
 export const title = 'OKIDOKEI · Relojería online';
 export const description = 'OKIDOKEI, tu relojería online de confianza: relojes automáticos, esqueletados, de buceo y ediciones limitadas en negro, blanco y cobre.';
 export default function Index() {
+  const { catalogo } = useStore();
   return (
 <main>
 
@@ -37,7 +45,8 @@ export default function Index() {
                 <div><p className={'eyebrow'}>Tienda</p><h2 className={'sec-title'} id={'featTitle'}>Piezas destacadas</h2></div>
                 <a className={'link-arrow'} href={'/tienda'}>Ver toda la tienda <svg className={'icon'} aria-hidden={'true'}><use href={'#i-right'} /></svg></a>
             </div>
-            <div className="grid-4">{DESTACADOS.map((id) => <ProductCard key={id} product={buscarProducto(id)} destacada />)}</div>
+            {catalogo.estado === 'error' && <p role="alert">No se pudieron cargar los productos: {catalogo.error}</p>}
+            <div className="grid-4">{destacados().map((producto) => <ProductCard key={producto.id} product={producto} destacada />)}</div>
         </div>
     </section>
 

@@ -1,4 +1,4 @@
-import { buscarProducto } from '../data.js';
+import { buscarProducto, existeProducto } from '../catalogo.js';
 
 // ÚNICA IMPLEMENTACIÓN DEL ESTADO COMPARTIDO (CARRITO, FAVORITOS Y DATOS GUARDADOS).
 // La usan el StoreProvider de React y, a través de window.OKI, los scripts heredados.
@@ -36,7 +36,7 @@ function avisarCambio(nombreDato) { document.dispatchEvent(new CustomEvent('oki:
 export const carrito = {
     // DEVUELVE LOS ARTÍCULOS VÁLIDOS QUE HAY EN EL CARRITO.
     items() {
-        return leer('carrito', []).filter((articulo) => buscarProducto(articulo.id) && articulo.qty > 0);
+        return leer('carrito', []).filter((articulo) => existeProducto(articulo.id) && articulo.qty > 0);
     },
     // CALCULA EL NÚMERO TOTAL DE UNIDADES DEL CARRITO.
     cantidad() {
@@ -44,7 +44,8 @@ export const carrito = {
     },
     // CALCULA EL PRECIO TOTAL DE LOS ARTÍCULOS DEL CARRITO.
     total() {
-        return carrito.items().reduce((totalAcumulado, articulo) => totalAcumulado + buscarProducto(articulo.id).precio * articulo.qty, 0);
+        // SI EL CATÁLOGO AÚN NO HA LLEGADO, LOS PRODUCTOS QUE NO SE CONOCEN TODAVÍA NO SUMAN.
+        return carrito.items().reduce((totalAcumulado, articulo) => totalAcumulado + (buscarProducto(articulo.id)?.precio || 0) * articulo.qty, 0);
     },
     // AÑADE UNA CANTIDAD DEL PRODUCTO AL CARRITO.
     anadir(identificadorProducto, cantidad) {
@@ -72,7 +73,7 @@ export const carrito = {
 
 export const favoritos = {
     // DEVUELVE LOS IDENTIFICADORES DE PRODUCTOS FAVORITOS EXISTENTES.
-    lista() { return leer('favoritos', []).filter((identificadorProducto) => buscarProducto(identificadorProducto)); },
+    lista() { return leer('favoritos', []).filter((identificadorProducto) => existeProducto(identificadorProducto)); },
     // INDICA SI UN PRODUCTO FORMA PARTE DE FAVORITOS.
     tiene(identificadorProducto) { return favoritos.lista().indexOf(identificadorProducto) > -1; },
     // AÑADE O QUITA UN PRODUCTO DE LA LISTA DE FAVORITOS.

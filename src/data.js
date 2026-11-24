@@ -119,7 +119,10 @@ function productosDe(identificadorColeccion) {
 }
 
 // CONSTRUYE LA RUTA DE LA FOTOGRAFÍA INDICADA PARA UN PRODUCTO.
+// SI EL PRODUCTO VIENE DE LA API CON imagenUrl (FIREBASE STORAGE), LA FOTO PRINCIPAL ES ESA;
+// SI NO, SE USA LA FOTO LOCAL DE public/assets/relojes.
 function fotoProducto(producto, numeroFotografia) {
+    if (producto.imagenUrl && !(numeroFotografia > 1)) return producto.imagenUrl;
     return '/assets/relojes/' + producto.id + (numeroFotografia > 1 ? '-' + numeroFotografia : '') + '.jpg';
 }
 
