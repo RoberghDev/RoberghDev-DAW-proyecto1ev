@@ -40,7 +40,7 @@ function ordenar(orden, productos) {
 }
 
 // ADAPTA LOS DATOS DE LA API A LA ESTRUCTURA QUE USA LAS TARJETAS EXISTENTES.
-function normalizarProductos(datos) {
+export function normalizarProductos(datos) {
     const productos = Array.isArray(datos) ? datos : datos?.productos || datos?.data || [];
 
     return productos.map((item, indice) => {

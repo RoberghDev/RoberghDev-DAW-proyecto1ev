@@ -74,4 +74,27 @@ async function verTodosLosProductos() {
     }
 }
 
-export { login, registrarNuevoUsuario, verTodosLosProductos };
+// RECIBE UN PRODUCTO CONCRETO A PARTIR DE SU ID DE MONGODB
+async function buscarProductosPorID(idProducto) {
+    const respuesta = await fetch(`${API_URL}/productos/${idProducto}`)
+
+    if (respuesta.ok) {
+        const tipoContenido = respuesta.headers.get('content-type') || '';
+
+        if (!tipoContenido.includes('application/json')) {
+            throw new Error('El servidor no devolvió una respuesta JSON.');
+        }
+
+        return await respuesta.json();
+
+    } else {
+        const mensajesPorEstado = {
+            400: 'El ID del producto no es válido.',
+            404: 'Producto no encontrado.',
+            500: 'Error interno del servidor.'
+        };
+        throw new Error(mensajesPorEstado[respuesta.status] || `Error al obtener el producto (${respuesta.status}).`);
+    }
+}
+
+export { login, registrarNuevoUsuario, verTodosLosProductos, buscarProductosPorID};
