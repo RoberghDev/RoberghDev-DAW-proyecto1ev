@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router';
-import { PRODUCTOS, TEXTOS_CAJA, buscarColeccion, fotoProducto, precioTexto, productosDe as productosLocalesDe } from '../data.js';
+import { PRODUCTOS, TEXTOS_CAJA, buscarColeccion, fotoProducto, precioTexto } from '../data.js';
 import { TarjetaSimple, useAccionesProducto } from '../components/Commerce.jsx';
 import { eventosFoto } from '../components/foto.js';
 import { useStore } from '../store.jsx';
 import { buscarProductosPorID } from '../../services/api.js';
-import { buscarProducto, normalizarProducto, productosCatalogo, productosDe, registrarProducto } from '../catalogo.js';
+import { buscarProducto, normalizarProducto, productosCatalogo, registrarProducto } from '../catalogo.js';
 
 // Migrada desde la plantilla heredada producto.html y public/js/producto.js (fase 3).
 export const title = 'OKIDOKEI · Reloj';
-export const description = 'Ficha del reloj: fotos, precio, versiones y especificaciones.';
+export const description = 'Ficha del reloj: fotos, precio y especificaciones.';
 
 // LIMITA LA CANTIDAD ENTRE 1 Y 9 (TEXTO NO NUMÉRICO O VACÍO CUENTA COMO 1).
 const limitarCantidad = (valor) => Math.max(1, Math.min(9, valor));
@@ -117,10 +117,6 @@ function FichaProducto({ producto }) {
     }
 
     const relacionados = relacionadosDe(producto);
-    // VERSIONES: LOS RELOJES DE SU MISMA COLECCIÓN Y DE SU MISMO ORIGEN (API O, SI ES UN RELOJ
-    // EDITORIAL DE data.js, LOS DE data.js), PARA QUE ÉL MISMO SIEMPRE APAREZCA MARCADO.
-    const esDeLaApi = productosCatalogo().includes(producto);
-    const variantes = esDeLaApi ? productosDe(coleccion.id) : productosLocalesDe(coleccion.id);
 
     return (
 <main>
@@ -134,7 +130,6 @@ function FichaProducto({ producto }) {
             <p className="pdp-ref" id="pRef">{`Ref. ${producto.ref}${producto.limitado ? ' · Edición limitada a 100 piezas' : ''}`}</p>
             <p className="pdp-price"><span id="pPrecio">{precioTexto(producto.precio)}</span><small>IVA incluido · Envío asegurado gratis</small></p>
             <p className="pdp-desc" id="pDesc">{producto.descripcion || coleccion.descripcion}</p>
-            <div className="field"><span className="lbl">Elige tu versión</span><div className="variants" id="pVariantes">{variantes.map((variante) => <a key={variante.id} className="variant" href={`/producto/${variante.id}`} aria-current={variante.id === producto.id ? 'true' : undefined}><span className={`variant-swatch sw-${variante.caja}`}></span><span><strong>{TEXTOS_CAJA[variante.caja]}</strong>{variante.correaTexto}</span><em>{precioTexto(variante.precio)}</em></a>)}</div></div>
             <div className="pdp-buy">
                 <div className="qty"><button type="button" data-step="-1" aria-label="Una unidad menos" onClick={() => pasoCantidad(-1)}><svg className="icon" aria-hidden="true"><use href="#i-minus" /></svg></button><label className="sr-only" htmlFor="pQty">Cantidad</label><input ref={cantidadRef} id="pQty" type="number" min="1" max="9" defaultValue="1" inputMode="numeric" /><button type="button" data-step="1" aria-label="Una unidad más" onClick={() => pasoCantidad(1)}><svg className="icon" aria-hidden="true"><use href="#i-plus" /></svg></button></div>
                 <button className="btn btn-copper" id="pAdd" type="button" onClick={anadirAlCarrito}><svg className="icon" aria-hidden="true"><use href="#i-bag" /></svg>Añadir al carrito</button>

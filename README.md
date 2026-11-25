@@ -134,7 +134,7 @@ El producto se identifica por la ruta (`/producto/<id>`). En la tienda, el fragm
 | `/` | `src/pages/index.jsx` | Portada, selección de colecciones, carrusel 3D, categorías, productos destacados y contenidos editoriales. |
 | `/tienda` | `src/pages/tienda.jsx` | Catálogo de 12 variantes con filtros de colección, material de caja, correa y novedades; ordenación por destacados, precio o nombre. |
 | `/colecciones` | `src/pages/colecciones.jsx` | Presentación de las seis colecciones: Esqueleto, Heritage, Marine, Noir, Luna y Origine. |
-| `/producto/<id>` | `src/pages/producto.jsx` | Ficha seleccionada por la ruta, galería, variantes, especificaciones y productos relacionados. |
+| `/producto/<id>` | `src/pages/producto.jsx` | Ficha seleccionada por la ruta, galería, especificaciones y productos relacionados. |
 | `/carrito` | `src/pages/carrito.jsx` | Líneas del carrito, cantidades, eliminación, subtotal e IVA informativo. |
 | `/favoritos` | `src/pages/favoritos.jsx` | Lista de productos guardados y acción para añadirlos al carrito. |
 | `/cuenta` | `src/pages/cuenta.jsx` | Formularios de inicio de sesión y registro, y panel de sesión. |
