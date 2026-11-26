@@ -77,6 +77,7 @@ export function Header({ page }) {
           </div>
           <a href="/nosotros" {...current('nosotros')}>Nosotros</a>
           <a href="/journal" {...current('journal')}>Journal</a>
+          <a href="/incidencias" {...current('incidencias')}>Incidencias</a>
         </nav>
         <a className="brand" href="/" aria-label="OKIDOKEI, ir al inicio">
           <svg className="brand-mark" aria-hidden="true"><use href="#emblem" /></svg>
@@ -121,6 +122,7 @@ export function Header({ page }) {
         <a href="/favoritos" {...current('favoritos')}>Favoritos</a>
         <a href="/carrito" {...current('carrito')}>Carrito</a>
         <a href="/cuenta" {...current('cuenta')}>Mi cuenta</a>
+        <a href="/incidencias" {...current('incidencias')}>Incidencias</a>
         <a href="/ayuda" {...current('ayuda')}>Ayuda</a>
       </nav>
     </div>

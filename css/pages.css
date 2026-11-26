@@ -1565,3 +1565,185 @@
 .legal section:last-child {
     border-bottom: 0;
 }
+
+/* ───── INCIDENCIAS (/incidencias) ───── */
+.inc-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.inc-box {
+    background: var(--black-2);
+    border: 1px solid var(--line-dark);
+    padding: clamp(24px, 3vw, 40px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+.inc-box h2 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.inc-box > p,
+.inc-aviso {
+    color: var(--muted-on-dark);
+    font-size: 15px;
+}
+
+.inc-error {
+    color: var(--danger);
+}
+
+.inc-tabla-wrap {
+    overflow-x: auto;
+}
+
+.inc-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.inc-tabla th,
+.inc-tabla td {
+    text-align: left;
+    padding: 12px 12px 12px 0;
+    border-bottom: 1px solid var(--line-dark);
+    vertical-align: top;
+}
+
+.inc-tabla th {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--muted-on-dark);
+}
+
+.inc-estado {
+    display: inline-block;
+    padding: 3px 10px;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    font-size: 12px;
+    white-space: nowrap;
+    color: var(--muted-on-dark);
+}
+
+.inc-estado[data-estado="abierto"] { color: var(--copper); }
+.inc-estado[data-estado="en curso"] { color: var(--copper-hi); }
+.inc-estado[data-estado="resuelto"] { color: #9cc79a; }
+
+@media (max-width: 900px) {
+    .inc-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* MODAL DE NUEVA INCIDENCIA (<dialog>) */
+.inc-modal {
+    width: min(560px, calc(100% - 32px));
+    max-height: calc(100% - 32px);
+    margin: auto;
+    padding: 0;
+    background: var(--black-2);
+    color: var(--text-on-dark);
+    border: 1px solid var(--line-dark);
+}
+
+/* FONDO OSCURO DETRÁS DEL MODAL: LO PINTA EL NAVEGADOR Y SE ESTILA CON ::backdrop. */
+.inc-modal::backdrop {
+    background: rgba(0, 0, 0, .7);
+}
+
+.inc-modal-caja {
+    position: relative;
+    padding: clamp(24px, 4vw, 40px);
+}
+
+.inc-modal-cerrar {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+.inc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.inc-form h2 {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding-right: 40px;
+}
+
+.inc-form > p {
+    color: var(--muted-on-dark);
+    font-size: 15px;
+}
+
+.inc-form-botones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* TABLA DEL MODERADOR */
+.inc-ref {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 13px;
+    color: var(--muted-on-dark);
+    white-space: nowrap;
+}
+
+.inc-tabla .inc-select {
+    min-height: 38px;
+    min-width: 150px;
+    font-size: 14px;
+}
+
+.inc-btn-mini {
+    min-height: 38px;
+    padding: 0 14px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.inc-tu {
+    color: var(--copper-hi);
+    font-weight: 500;
+}
+
+.inc-otro {
+    color: var(--muted-on-dark);
+}
+
+.inc-tabla tr[aria-busy="true"] {
+    opacity: .55;
+}
+
+/* BOTÓN ELIMINAR (SOLO ADMIN) */
+.inc-btn-borrar {
+    border: 1px solid var(--danger);
+    color: var(--danger);
+    background: transparent;
+}
+
+.inc-btn-borrar:hover:not(:disabled) {
+    background: var(--danger);
+    color: var(--black);
+}

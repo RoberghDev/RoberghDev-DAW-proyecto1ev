@@ -9,6 +9,7 @@ import * as carritoPage from './pages/carrito.jsx';
 import * as coleccionesPage from './pages/colecciones.jsx';
 import * as cuentaPage from './pages/cuenta.jsx';
 import * as favoritosPage from './pages/favoritos.jsx';
+import * as incidenciasPage from './pages/incidencias.jsx';
 import * as indexPage from './pages/index.jsx';
 import * as journalPage from './pages/journal.jsx';
 import * as legalPage from './pages/legal.jsx';
@@ -142,6 +143,7 @@ export default function App() {
 				<Route path="journal" element={<PaginaReact pagina={journalPage} />} />
 				<Route path="nosotros" element={<PaginaReact pagina={nosotrosPage} />} />
 				<Route path="legal" element={<PaginaReact pagina={legalPage} />} />
+				<Route path="incidencias" element={<PaginaReact pagina={incidenciasPage} />} />
 				<Route path="*" element={<RedireccionAntigua />} />
 			</Route>
 		</Routes>
