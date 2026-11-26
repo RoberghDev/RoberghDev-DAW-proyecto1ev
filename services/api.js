@@ -1,4 +1,5 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+// const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+const API_URL = 'https://daw-proyecto1ev-backend.onrender.com/api';
 
 // LARGO MÁXIMO DEL MOTIVO QUE SE ENSEÑA AL USUARIO.
 const MAXIMO_MOTIVO = 80;
